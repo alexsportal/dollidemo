@@ -40,9 +40,8 @@ body{
     src: url(Zain/Zain-LightItalic.ttf);
 }
 #gamecontain{
-    max-width:390px;
-
-    min-width:390px;
+    max-width:370px;
+    min-width:370px;
     margin:auto;
     height:87vh;
     max-height:640px;
@@ -57,17 +56,18 @@ body{
 }
 
 #border{
-    max-width:405px;
+    max-width:390px;
+    min-width:390px;
+    margin:auto;
+    height:87vh;
+    max-height:640px;
+    width:auto;
     
     background:linear-gradient(180deg, #DFB6C6 1%, #C7A4B0 2.68%, #A76E88 4.92%, #AD7890 73.27%, #BD8BA0 99.61%);
     background-attachment:fixed;
-    margin:auto;
-    height:auto;
     
-    display:flex;
     position:relative;
-    left:0;
-    right:0;
+
     border-radius:10px;
     padding-bottom:10px;
     padding-top:7px;
@@ -76,10 +76,12 @@ body{
 
 @media screen and (max-width:400px){
     #border{
-       max-width: 360px;
+        max-width:350px;
+        min-width:350px;
     }
     #gamecontain{
-       width:350px;
+        max-width:330px;
+        min-width:330px;
     }
     #color{
        width:350px;
