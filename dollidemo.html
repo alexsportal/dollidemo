@@ -17,7 +17,7 @@ body{
     height:100vh;
     overflow-y: hidden;
     overflow-x:hidden;
-    background-image: url(DressupGame_Assets/background.png);
+    background-image: url(DressupGame_Assets/Scenes/background.jpg);
     background-size: cover;
     box-shadow: inset 0px 0px 50px #591437d9;
     padding-top: 3px;
@@ -39,6 +39,7 @@ body{
     font-family: zainlight;
     src: url(Zain/Zain-LightItalic.ttf);
 }
+
 #gamecontain{
     max-width:370px;
     min-width:370px;
@@ -138,7 +139,7 @@ img.faces{
     display:flex;
     flex-direction:column;
     position: absolute;
-    background-color: #b47f96;
+    background-color: #C7A4B0;
     padding-left:5px;
     padding-right:5px;
     z-index: 2;
@@ -148,6 +149,7 @@ img.faces{
     flex-wrap:wrap;
 
 }
+
 .colordisplay{
     flex:100%;
     width:auto;
@@ -252,13 +254,10 @@ img.faces{
     
 }
 
-.beautyoptions{
+.beautyoptionsskin{
     width: 103px;
     height:80px;
     background-color:#fbeff6;
-    background-size: 450px;
-    background-position: center;
-    background-position-y: -40px;
     scroll-snap-align: center;
     border-radius: 5px;
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
@@ -266,17 +265,203 @@ img.faces{
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:.3s;
     cursor: pointer;
-
+    background-size: 450px;
+    background-position: center;
+    background-position-y: -40px;
+    cursor:pointer;
 }
-@media screen and (max-width:390px){
-    .beautyoptions{
+
+.beautyoptionseyes{
+    width: 103px;
+    height:80px;
+    background-color:#fbeff6;
+    scroll-snap-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    transition:.3s;
+    cursor: pointer;
+    background-size: 1000px;
+    background-position: center;
+    background-position-y: -155px;
+    background-position-x: -430px;
+    cursor:pointer;
+}
+
+.beautyoptionsbrows{
+    width: 103px;
+    height:80px;
+    background-color:#fbeff6;
+    scroll-snap-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    transition:.3s;
+    cursor: pointer;
+    background-size: 1000px;
+    background-position: center;
+    background-position-y: -140px;
+    background-position-x: -420px;
+    cursor:pointer;
+}
+
+.beautyoptionsnose{
+    width: 103px;
+    height:80px;
+    background-color:#fbeff6;
+    scroll-snap-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    transition:.3s;
+    cursor: pointer;
+    background-size: 1100px;
+    background-position: center;
+    background-position-y: -195px;
+    background-position-x: -475px;
+    cursor:pointer;
+}
+
+.beautyoptionslips{
+    width: 103px;
+    height:80px;
+    background-color:#fbeff6;
+    scroll-snap-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    transition:.3s;
+    cursor: pointer;
+    background-size: 1200px;
+    background-position: center;
+    background-position-y: -243px;
+    background-position-x: -532px;
+    cursor:pointer;
+}
+
+.beautyoptionshair{
+    width: 103px;
+    height:90px;
+    background-color:#fbeff6;
+    scroll-snap-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    transition:.3s;
+    cursor: pointer;
+    background-size: 280px;
+    background-position: center;
+    background-position-y: -10px;
+    background-position-x: -90px;
+    cursor:pointer;
+}
+
+.beautyoptionsmakeup{
+    width: 103px;
+    height:80px;
+    background-color:#fbeff6;
+    scroll-snap-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    transition:.3s;
+    cursor: pointer;
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor:pointer;
+}
+
+.beautyoptionsbg{
+    width: 103px;
+    height:80px;
+    background-color:#fbeff6;
+    scroll-snap-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    transition:.3s;
+    cursor: pointer;
+    background-size: 450%;
+    background-position: 20%;
+    cursor:pointer;
+}
+
+.beautyoptionsskin:hover,
+.beautyoptionseyes:hover,
+.beautyoptionsbrows:hover,
+.beautyoptionsnose:hover,
+.beautyoptionslips:hover,
+.beautyoptionshair:hover,
+.beautyoptionsmakeup:hover,
+.beautyoptionsbg:hover{
+   transform: scale(1.02,1.02);
+}
+
+.beautyoptionsskin:active,
+.beautyoptionseyes:active,
+.beautyoptionsbrows:active,
+.beautyoptionsnose:active,
+.beautyoptionslips:active,
+.beautyoptionshair:active,
+.beautyoptionsmakeup:active,
+.beautyoptionsbg:active{
+
+    background-color:#d1cfdf;
+}
+
+@media screen and (max-width:396px){
+.beautyoptionsskin{
        width:91px;
     }
 }
+@media screen and (max-width:396px){
+.beautyoptionseyes{
+       width:91px;
+    }
+}
+@media screen and (max-width:396px){
+.beautyoptionsbrows{
+       width:91px;
+    }
+}
+@media screen and (max-width:396px){
+.beautyoptionsnose{
+       width:91px;
+    }
+}
+@media screen and (max-width:396px){
+.beautyoptionslips{
+       width:91px;
+    }
+}
+@media screen and (max-width:396px){
+.beautyoptionshair{
+       width:91px;
+    }
+}
+@media screen and (max-width:396px){
+.beautyoptionsmakeup{
+       width:91px;
+    }
+}
+@media screen and (max-width:396px){
+.beautyoptionbg{
+       width:91px;
+    }
+}
+
 #menu{
     width: auto;
     height:30px;
-    background-color: #b47f96;
+    background-color: #C7A4B0;
     display:flex;
     flex-direction: row;
     margin-top:-7px;
@@ -287,8 +472,8 @@ img.faces{
 .menubutton{
     width:50px;
     height:30px;
-    background-color:#b47f96;
-    color:white;
+    background-color:#C7A4B0;
+    color:#380225;
     text-align:center;
     font-size:14px;
     align-content: center;
@@ -300,7 +485,7 @@ img.faces{
 }
 
 .menubutton:hover{
-    background-color:#a16d84;
+    background-color:#b18393;
 }
 
 #banner{
@@ -324,6 +509,8 @@ img.faces{
     height:auto;
     position:auto;
 }
+
+
 
 /*#shadow{
     height:15px;
@@ -407,12 +594,12 @@ img.faces{
             <p class="optiontitle">SkinTones</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></div>
+                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)"></div>
+                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></div>
+                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></div>
+                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></div>
+                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></div>
+                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></div>
             </div>
             </div>
         </div>
@@ -422,12 +609,12 @@ img.faces{
             <p class="optiontitle">Eyes</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption1.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption2.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption3.png)"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
+                    <div class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/doe_eyes_dark_brown.png)"></div>
+                    <div class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/innocent_eyes_dark_brown.png)"></div>
+                    <div class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/sultry_eyes_dark_brown.png)"></div>
+                    <div class="beautyoptionseyes"></div>
+                    <div class="beautyoptionseyes"></div>
+                    <div class="beautyoptionseyes"></div>
             </div>
             </div>
         </div>
@@ -436,12 +623,12 @@ img.faces{
             <p class="optiontitle">Eyebrows</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption1.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption2.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption3.png)"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
+                    <div class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows1.png)"></div>
+                    <div class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows2.png)"></div>
+                    <div class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows3.png)"></div>
+                    <div class="beautyoptionsbrows"></div>
+                    <div class="beautyoptionsbrows"></div>
+                    <div class="beautyoptionsbrows"></div>
             </div>
             </div>
         </div>
@@ -450,12 +637,12 @@ img.faces{
             <p class="optiontitle">Noses</p>
              <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption1.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption2.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption3.png)"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
+                    <div class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/nose1_dark.png)"></div>
+                    <div class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/nose2_dark.png)"></div>
+                    <div class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/nose3_dark.png)"></div>
+                    <div class="beautyoptionsnose" ></div>
+                    <div class="beautyoptionsnose" ></div>
+                    <div class="beautyoptionsnose" ></div>
             </div>
             </div>
         </div>
@@ -464,26 +651,26 @@ img.faces{
             <p class="optiontitle">Lips</p>
              <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption1.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption2.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption3.png)"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
+                    <div class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/lips1.png)"></div>
+                    <div class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/lips2.png)"></div>
+                    <div class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/lips3.png)"></div>
+                    <div class="beautyoptionslips"></div>
+                    <div class="beautyoptionslips"></div>
+                    <div class="beautyoptionslips"></div>
             </div>
             </div>
         </div>
 <br>
-        <div class="itemcontainer"> 
+        <div class="itemcontainer" > 
             <p class="optiontitle">Hair</p>
-             <div class="padding">
-            <div class="optioncontainer">
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption1.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption2.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption3.png)"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
+             <div class="padding" style="height:110px;">
+            <div class="optioncontainer"style="height:110px">
+                    <div class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle1_blonde.png)"></div>
+                    <div class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle2_blonde.png)"></div>
+                    <div class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle3_blonde.png)"></div>
+                    <div class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle4_blonde.png)"></div>
+                    <div class="beautyoptionshair"></div>
+                    <div class="beautyoptionshair"></div>
             </div>
             </div>
         </div>
@@ -492,26 +679,26 @@ img.faces{
             <p class="optiontitle">Makeup</p>
              <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption1.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption2.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption3.png)"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
+                    <div class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/blush_icon.png)"></div>
+                    <div class="beautyoptionsmakeup" ></div>
+                    <div class="beautyoptionsmakeup" ></div>
+                    <div class="beautyoptionsmakeup" ></div>
+                    <div class="beautyoptionsmakeup" ></div>
+                    <div class="beautyoptionsmakeup" ></div>
             </div>
             </div>
         </div>
 <br>
-         <div class="itemcontainer"> 
+         <div class="itemcontainer" style="margin-bottom:20px;"> 
             <p class="optiontitle">Background</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption1.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption2.png)"></div>
-                    <div class="beautyoptions" style="background-image:url(DressupGame_Assets/Beauty/faceoption3.png)"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
-                    <div class="beautyoptions"></div>
+                    <div class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/background.png)"></div>
+                    <div class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/cloudyskyfield.png)"></div>
+                    <div class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/cloudysky.png)"></div>
+                    <div class="beautyoptionsbg"></div>
+                    <div class="beautyoptionsbg"></div>
+                    <div class="beautyoptionsbg"></div>
             </div>
             </div>
         </div>
