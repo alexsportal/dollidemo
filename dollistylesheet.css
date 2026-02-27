@@ -444,7 +444,7 @@ img.faces{
     }
 }
 @media screen and (max-width:396px){
-.beautyoptionbg{
+.beautyoptionsbg{
        width:91px;
     }
 }
@@ -521,7 +521,7 @@ img.faces{
 
 .navbuttonup, .navbuttondown{
     position: relative;
-    width:70px;
+    width:60px;
     height:25px;
     background: linear-gradient(180deg, #AA6E82 0%, #A35B7E 44.06%, #964B71 47.89%, #A45F82 93.86%);
     border-radius:5px;
