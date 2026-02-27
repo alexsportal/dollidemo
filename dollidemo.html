@@ -509,7 +509,27 @@ img.faces{
     position:auto;
 }
 
+.nav{
+    display:flex;
+    flex-direction:row;
+    position:sticky;
+    top:-20px;
+    justify-content: space-between;
+    margin-left:10px;
+    margin-right: 10px;
+    width:auto;
+    height:35px;
+    z-index:3;
+   
+}
 
+.navbutton{
+    width:70px;
+    height: 25px;
+    background: linear-gradient(180deg, #AA6E82 0%, #A35B7E 44.06%, #964B71 47.89%, #A45F82 93.86%);
+    border-radius:5px;
+    display:block;
+}
 
 /*#shadow{
     height:15px;
@@ -585,7 +605,6 @@ img.faces{
                 <!--BODIES-->
                 <img src="DressupGame_Assets/Bodies/skintones/bodycocoa.png" class="faces"/>
 
-
                 <!--EYES-->
 
                 <img src="DressupGame_Assets/Beauty/Eyes/doe_eyes_dark.png" class="faces"/>
@@ -594,7 +613,6 @@ img.faces{
 
                 <img src="DressupGame_Assets/Beauty/Brows/brows2.png" class="faces"/>
 
-                
                 <!--NOSE-->
 
                 <img src="DressupGame_Assets/Beauty/Nose/nose2_dark.png" class="faces"/>
@@ -620,17 +638,23 @@ img.faces{
     </div>
 
    <div id="options">
+        <section class="nav">
+        <div class="navbutton" id="up"></div>
+        <div class="navbutton" id="down"></div>
+        </section>
+
+
         <div id="shadow"></div>
         <div class="itemcontainer"> 
             <p class="optiontitle">SkinTones</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)"></div>
-                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></div>
-                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></div>
-                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></div>
-                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></div>
-                    <div class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></div>
+                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)"></img>
+                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></img>
+                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></img>
+                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></img>
+                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></img>
+                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></img>
             </div>
             </div>
         </div>
@@ -640,12 +664,12 @@ img.faces{
             <p class="optiontitle">Eyes</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/doe_eyes_dark_brown.png)"></div>
-                    <div class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/innocent_eyes_dark_brown.png)"></div>
-                    <div class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/sultry_eyes_dark_brown.png)"></div>
-                    <div class="beautyoptionseyes"></div>
-                    <div class="beautyoptionseyes"></div>
-                    <div class="beautyoptionseyes"></div>
+                    <img loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/doe_eyes_dark_brown.png)"></img>
+                    <img loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/innocent_eyes_dark_brown.png)"></img>
+                    <img loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/sultry_eyes_dark_brown.png)"></img>
+                    <img loading="lazy" class="beautyoptionseyes"  ></img>
+                    <img loading="lazy" class="beautyoptionseyes"  ></img>
+                    <img loading="lazy" class="beautyoptionseyes"  ></img>
             </div>
             </div>
         </div>
@@ -654,12 +678,12 @@ img.faces{
             <p class="optiontitle">Eyebrows</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows1.png)"></div>
-                    <div class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows2.png)"></div>
-                    <div class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows3.png)"></div>
-                    <div class="beautyoptionsbrows"></div>
-                    <div class="beautyoptionsbrows"></div>
-                    <div class="beautyoptionsbrows"></div>
+                    <img loading="lazy" class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows1.png)"></img>
+                    <img loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows2.png)"></img>
+                    <img loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows3.png)"></img>
+                    <img loading="lazy" class="beautyoptionsbrows" ></img>
+                    <img loading="lazy" class="beautyoptionsbrows" ></img>
+                    <img loading="lazy" class="beautyoptionsbrows" ></img>
             </div>
             </div>
         </div>
@@ -668,12 +692,12 @@ img.faces{
             <p class="optiontitle">Noses</p>
              <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/nose1_dark.png)"></div>
-                    <div class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/nose2_dark.png)"></div>
-                    <div class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/nose3_dark.png)"></div>
-                    <div class="beautyoptionsnose" ></div>
-                    <div class="beautyoptionsnose" ></div>
-                    <div class="beautyoptionsnose" ></div>
+                    <img loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/nose1_dark.png)"></img>
+                    <img loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/nose2_dark.png)"></img>
+                    <img loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/nose3_dark.png)"></img>
+                    <img loading="lazy" class="beautyoptionsnose" ></img>
+                    <img loading="lazy" class="beautyoptionsnose" ></img>
+                    <img loading="lazy" class="beautyoptionsnose" ></img>
             </div>
             </div>
         </div>
@@ -682,12 +706,12 @@ img.faces{
             <p class="optiontitle">Lips</p>
              <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/lips1.png)"></div>
-                    <div class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/lips2.png)"></div>
-                    <div class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/lips3.png)"></div>
-                    <div class="beautyoptionslips"></div>
-                    <div class="beautyoptionslips"></div>
-                    <div class="beautyoptionslips"></div>
+                    <img loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/lips1.png)"></img>
+                    <img loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/lips2.png)"></img>
+                    <img loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/lips3.png)"></img>
+                    <img loading="lazy" class="beautyoptionslips"></img>
+                    <img loading="lazy" class="beautyoptionslips"></img>
+                    <img loading="lazy" class="beautyoptionslips"></img>
             </div>
             </div>
         </div>
@@ -696,12 +720,12 @@ img.faces{
             <p class="optiontitle">Hair</p>
              <div class="padding" style="height:110px;">
             <div class="optioncontainer"style="height:110px">
-                    <div class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle1_blonde.png)"></div>
-                    <div class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle2_blonde.png)"></div>
-                    <div class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle3_blonde.png)"></div>
-                    <div class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle4_blonde.png)"></div>
-                    <div class="beautyoptionshair"></div>
-                    <div class="beautyoptionshair"></div>
+                    <img loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle1_blonde.png)"></img>
+                    <img loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle2_blonde.png)"></img>
+                    <img loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle3_blonde.png)"></img>
+                    <img loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairstyles/hairstyle4_blonde.png)"></img>
+                    <img loading="lazy" class="beautyoptionshair"></img>
+                    <img loading="lazy" class="beautyoptionshair"></img>
             </div>
             </div>
         </div>
@@ -710,12 +734,12 @@ img.faces{
             <p class="optiontitle">Makeup</p>
              <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/blush_icon.png)"></div>
-                    <div class="beautyoptionsmakeup" ></div>
-                    <div class="beautyoptionsmakeup" ></div>
-                    <div class="beautyoptionsmakeup" ></div>
-                    <div class="beautyoptionsmakeup" ></div>
-                    <div class="beautyoptionsmakeup" ></div>
+                    <img loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/blush_icon.png)"></img>
+                    <img loading="lazy" class="beautyoptionsmakeup" ></img>
+                    <img loading="lazy" class="beautyoptionsmakeup" ></img>
+                    <img loading="lazy" class="beautyoptionsmakeup" ></img>
+                    <img loading="lazy" class="beautyoptionsmakeup" ></img>
+                    <img loading="lazy" class="beautyoptionsmakeup" ></img>
             </div>
             </div>
         </div>
@@ -724,12 +748,12 @@ img.faces{
             <p class="optiontitle">Background</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <div class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/background.png)"></div>
-                    <div class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/cloudyskyfield.png)"></div>
-                    <div class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/cloudysky.png)"></div>
-                    <div class="beautyoptionsbg"></div>
-                    <div class="beautyoptionsbg"></div>
-                    <div class="beautyoptionsbg"></div>
+                    <img loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/background.png)"></img>
+                    <img loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/cloudyskyfield.png)"></img>
+                    <img loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/cloudysky.png)"></img>
+                    <img loading="lazy" class="beautyoptionsbg"></img>
+                    <img loading="lazy" class="beautyoptionsbg"></img>
+                    <img loading="lazy" class="beautyoptionsbg"></img>
             </div>
             </div>
         </div>
