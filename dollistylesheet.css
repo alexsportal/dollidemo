@@ -535,16 +535,21 @@ img.faces{
 .navbuttonup:hover, 
 .navbuttonup:active{
     cursor:pointer;
-    bottom: 1px;
     filter:contrast(115%);
 }
 .navbuttondown:hover, 
 .navbuttondown:active{
     cursor:pointer;
-    bottom:-1px;
     filter:contrast(115%);
 }
 
+.navbuttonup:active{
+    bottom: 1px;
+}
+
+.navbuttondown:active{
+    bottom:-1px;
+}
 
 #up{ 
     width:20px;
