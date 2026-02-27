@@ -146,7 +146,6 @@ img.faces{
     flex-direction:row;
     justify-content: space-between;
     flex-wrap:wrap;
-
 }
 
 .colordisplay{
@@ -217,6 +216,7 @@ img.faces{
     background: linear-gradient(180deg, #c39aa8 20.19%, #BE9CA7 67.31%, #b47f96 100%);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    transition:.3s;
 }
 
  #options::-webkit-scrollbar{
@@ -237,6 +237,7 @@ img.faces{
     border-radius: 5px;
     gap:10px;
     margin: auto;
+    transition: .3s;
 }
 
 .padding{
@@ -513,22 +514,59 @@ img.faces{
     display:flex;
     flex-direction:row;
     position:sticky;
-    top:-20px;
+    top:-25px;
     justify-content: space-between;
+    align-items: center;
     margin-left:10px;
     margin-right: 10px;
     width:auto;
     height:35px;
     z-index:3;
+  
+  
    
 }
 
-.navbutton{
+.navbuttonup, .navbuttondown{
+    position: relative;
     width:70px;
-    height: 25px;
+    height:25px;
     background: linear-gradient(180deg, #AA6E82 0%, #A35B7E 44.06%, #964B71 47.89%, #A45F82 93.86%);
     border-radius:5px;
     display:block;
+    transition:.3s;
+    box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+}
+
+.navbuttonup:hover, 
+.navbuttonup:active{
+    cursor:pointer;
+    bottom: 1px;
+    filter:contrast(115%);
+}
+.navbuttondown:hover, 
+.navbuttondown:active{
+    cursor:pointer;
+    bottom:-1px;
+    filter:contrast(115%);
+}
+
+
+#up{ 
+    width:20px;
+    display:block;
+    margin:auto;
+    margin-top:6px;
+    position: relative;
+}
+#down{
+    width:20px;
+    display:block;
+    margin:auto;
+    margin-top:8px;
+    position: relative;
 }
 
 /*#shadow{
@@ -639,8 +677,48 @@ img.faces{
 
    <div id="options">
         <section class="nav">
-        <div class="navbutton" id="up"></div>
-        <div class="navbutton" id="down"></div>
+        <div onClick="scrollUp(0, -100)" class="navbuttonup" >
+            
+            <svg id="up" viewBox="0 0 31 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_i_3504_9834)">
+            <path d="M14.0246 0.503089C14.7817 -0.16779 15.9205 -0.167789 16.6775 0.50309L30.0246 12.3308C31.4021 13.5515 30.5387 15.8276 28.6981 15.8276H2.00401C0.163473 15.8276 -0.699929 13.5515 0.677564 12.3308L14.0246 0.503089Z" fill="white"/>
+            </g>
+            <defs>
+            <filter id="filter0_i_3504_9834" x="0" y="0" width="30.7021" height="16.8276" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="1"/>
+            <feGaussianBlur stdDeviation="2.5"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.611538 0 0 0 0 0.404556 0 0 0 0 0.508047 0 0 0 0.38 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3504_9834"/>
+            </filter>
+            </defs>
+            </svg>
+
+        </div>
+        <div onClick="scrollDown(0, 100)" class="navbuttondown" >
+            
+            <svg id="down" viewBox="0 0 31 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_i_3505_9837)">
+            <path d="M14.0246 15.3245C14.7817 15.9954 15.9205 15.9954 16.6775 15.3245L30.0246 3.49684C31.4021 2.27615 30.5387 0 28.6981 0H2.00401C0.163473 0 -0.699929 2.27615 0.677564 3.49684L14.0246 15.3245Z" fill="white"/>
+            </g>
+            <defs>
+            <filter id="filter0_i_3505_9837" x="0" y="0" width="30.7021" height="16.8276" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="1"/>
+            <feGaussianBlur stdDeviation="2.5"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.611538 0 0 0 0 0.404556 0 0 0 0 0.508047 0 0 0 0.38 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3505_9837"/>
+            </filter>
+            </defs>
+            </svg>
+
+        </div>
         </section>
 
 
@@ -765,7 +843,15 @@ img.faces{
 
 
 
+<script>
+function scrollUp(x, y) {
+ document.getElementById("options").scrollBy(x, y);
+}
 
+function scrollDown(x, y) {
+  document.getElementById("options").scrollBy(x, y);
+}
+</script>
 
 </body>
 </html>
