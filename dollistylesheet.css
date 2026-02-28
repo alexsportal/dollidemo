@@ -545,6 +545,7 @@ img.faces{
     z-index:3;
     flex:100%;
     margin-top:15px;
+    overflow-y: hidden;
 }
 
 .navbuttonleft, .navbuttonright{
