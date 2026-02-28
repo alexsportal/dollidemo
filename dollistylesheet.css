@@ -5,11 +5,11 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition:.3s;
     width:auto;
-    height:100vh;
+    height:auto;
     overflow-y: hidden;
     overflow-x:hidden;
     overscroll-behavior-x:clip;
-    background-image: url(DressupGame_Assets/Scenes/background.jpeg);
+    /*background-image: url(DressupGame_Assets/Scenes/background.jpeg);*/
     background-size: cover;
     /*box-shadow: inset 0px 0px 50px #591437d9;*/
 
@@ -49,7 +49,7 @@ body{
     scroll-snap-type: y mandatory;
     border-radius:10px;
     overflow-x: hidden;
-     overflow-y: hidden;
+    overflow-y: hidden;
 }
 
 #border{
