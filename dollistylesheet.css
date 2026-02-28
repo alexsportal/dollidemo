@@ -183,7 +183,7 @@ img.faces{
 }
 
 .itemcontainer{
-    width:370px;
+    width:auto;
     height:auto;
     margin:auto;   
     scroll-snap-align: center;
@@ -213,7 +213,7 @@ img.faces{
     width:auto;
     flex-wrap:wrap;
     overflow-x: hidden;
-    margin-top:-4px;
+   margin-top:-4px;
 }
 
  #options::-webkit-scrollbar{
@@ -245,10 +245,18 @@ img.faces{
     display: block;
     border-radius: 5px;
     margin: auto;
+    margin-left:10px;
+    margin-right: 10px;
     margin-top:-15px;
     background-color:#C7A4B0;
     outline:#fbdfea3d solid 1px;
     
+}
+
+@media screen and (max-width:396px){
+.padding{
+    width:290px;
+    }
 }
 
 .beautyoptionsskin{
