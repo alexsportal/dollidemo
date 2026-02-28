@@ -7,11 +7,11 @@ body{
     height:100vh;
     overflow-y: hidden;
     overflow-x:hidden;
-    overscroll-behavior-x: contain;
+    overscroll-behavior-x:clip;
     background-image: url(DressupGame_Assets/Scenes/background.jpeg);
     background-size: cover;
     /*box-shadow: inset 0px 0px 50px #591437d9;*/
-    
+
     padding-top: 3px;
 }
 
@@ -56,6 +56,8 @@ body{
     height:87vh;
     max-height:640px;
     min-height:640px;
+    left:0;
+    right:0;
     width:auto;
     background:linear-gradient(180deg, #DFB6C6 1%, #C7A4B0 2.68%, #A76E88 4.92%, #AD7890 73.27%, #BD8BA0 99.61%);
     background-attachment:fixed;
