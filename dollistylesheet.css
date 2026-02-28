@@ -1,5 +1,6 @@
 body{
     background-color:#995175;
+    position: relative;
     margin:auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition:.3s;
@@ -48,6 +49,7 @@ body{
     scroll-snap-type: y mandatory;
     border-radius:10px;
     overflow-x: hidden;
+     overflow-y: hidden;
 }
 
 #border{
