@@ -36,6 +36,7 @@ body{
     margin:auto;
     height:87vh;
     max-height:640px;
+    min-height:640px;
     width:auto;
     display:flex;
     flex-direction: column;
@@ -52,6 +53,7 @@ body{
     margin:auto;
     height:87vh;
     max-height:640px;
+    min-height:640px;
     width:auto;
     background:linear-gradient(180deg, #DFB6C6 1%, #C7A4B0 2.68%, #A76E88 4.92%, #AD7890 73.27%, #BD8BA0 99.61%);
     background-attachment:fixed;
@@ -192,22 +194,26 @@ img.faces{
     font-weight:bold;
     text-align:center;
     font-family: zainboldx;
-    font-size:18px;
-    margin-top:15px;
+    font-size:20px;
+    margin-top:10px;
     color:#380225;
     -webkit-text-stroke: .3px #b47f96;
 }
 
 #options{
-    padding-top:30px;
-    overflow-y: auto;
     overscroll-behavior-y: contain;
     height:auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: x mandatory;
     background: linear-gradient(180deg, #c39aa8 20.19%, #BE9CA7 67.31%, #b47f96 100%);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transition:.3s;
+    display:flex;
+    flex-direction: column;
+    width:auto;
+    flex-wrap:wrap;
+    overflow-x: hidden;
+   margin-top:-4px;
 }
 
  #options::-webkit-scrollbar{
@@ -309,10 +315,10 @@ img.faces{
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:.3s;
     cursor: pointer;
-    background-size: 1100px;
+    background-size: 1400px;
     background-position: center;
-    background-position-y: -195px;
-    background-position-x: -475px;
+    background-position-y: -260px;
+    background-position-x: -618px;
     cursor:pointer;
 }
 
@@ -336,7 +342,7 @@ img.faces{
 
 .beautyoptionshair{
     width: 103px;
-    height:90px;
+    height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -410,42 +416,47 @@ img.faces{
 
 @media screen and (max-width:396px){
 .beautyoptionsskin{
-       width:91px;
+    width:91px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionseyes{
-       width:91px;
+    width:91px;
+    background-position-x: -435px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionsbrows{
-       width:91px;
+    width:91px;
+    background-position-x: -428px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionsnose{
-       width:91px;
+    width:91px;
+    background-position-x: -623px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionslips{
-       width:91px;
+    width:91px;
+    background-position-x: -538px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionshair{
-       width:91px;
+    width:91px;
+    background-position-x: -95px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionsmakeup{
-       width:91px;
+    width:91px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionsbg{
-       width:91px;
+    width:91px;
     }
 }
 
@@ -505,21 +516,20 @@ img.faces{
 .nav{
     display:flex;
     flex-direction:row;
-    position:sticky;
-    top:-25px;
+    position:fixed;
     justify-content: space-between;
     align-items: center;
-    margin-left:10px;
-    margin-right: 10px;
-    width:auto;
+    margin:auto;
+    left:0;
+    right:0;
+    width:350px;
     height:35px;
     z-index:3;
-  
-  
-   
+    flex:100%;
+    margin-top:15px;
 }
 
-.navbuttonup, .navbuttondown{
+.navbuttonleft, .navbuttonright{
     position: relative;
     width:60px;
     height:25px;
@@ -532,38 +542,48 @@ img.faces{
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
 }
 
-.navbuttonup:hover, 
-.navbuttonup:active{
+@media screen and (max-width:396px){
+.nav{
+    width:315px;
+    }
+}
+
+.navbuttonleft:hover, 
+.navbuttonleft:active{
     cursor:pointer;
     filter:contrast(115%);
 }
-.navbuttondown:hover, 
-.navbuttondown:active{
+.navbuttonright:hover, 
+.navbuttonright:active{
     cursor:pointer;
     filter:contrast(115%);
 }
 
-.navbuttonup:active{
+.navbuttonleft:active{
     bottom: 1px;
 }
 
-.navbuttondown:active{
+.navbuttonright:active{
     bottom:-1px;
 }
 
-#up{ 
-    width:20px;
+#left{ 
+    width:15px;
+    height:15px;
     display:block;
     margin:auto;
-    margin-top:6px;
+    margin-top:5px;
     position: relative;
+    padding-right:3px;
 }
-#down{
-    width:20px;
+#right{
+    width:15px;
+    height:15px;
     display:block;
     margin:auto;
-    margin-top:8px;
+    margin-top:5px;
     position: relative;
+    padding-left:3px;
 }
 
 /*#shadow{
