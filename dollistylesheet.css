@@ -183,7 +183,7 @@ img.faces{
 }
 
 .itemcontainer{
-    width:auto;
+    width:370px;
     height:auto;
     margin:auto;   
     scroll-snap-align: center;
@@ -213,7 +213,7 @@ img.faces{
     width:auto;
     flex-wrap:wrap;
     overflow-x: hidden;
-   margin-top:-4px;
+    margin-top:-4px;
 }
 
  #options::-webkit-scrollbar{
@@ -240,7 +240,7 @@ img.faces{
 .padding{
     padding:10px;
     height:100px;
-    width:89%;
+    width:330px;
     /*background: linear-gradient(180deg, #d8b6c2 20.19%, #BE9CA7 67.31%, #BD879E 100%);*/
     display: block;
     border-radius: 5px;
@@ -560,11 +560,11 @@ img.faces{
 }
 
 .navbuttonleft:active{
-    bottom: 1px;
+    right: 1px;
 }
 
 .navbuttonright:active{
-    bottom:-1px;
+    right:-1px;
 }
 
 #left{ 
