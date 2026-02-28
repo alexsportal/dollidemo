@@ -11,6 +11,7 @@ body{
     background-image: url(DressupGame_Assets/Scenes/background.jpeg);
     background-size: cover;
     /*box-shadow: inset 0px 0px 50px #591437d9;*/
+    
     padding-top: 3px;
 }
 
