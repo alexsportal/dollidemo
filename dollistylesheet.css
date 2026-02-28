@@ -242,6 +242,8 @@ img.faces{
     padding:10px;
     height:100px;
     width:330px;
+    max-width: 330px;
+    min-width:290px;
     /*background: linear-gradient(180deg, #d8b6c2 20.19%, #BE9CA7 67.31%, #BD879E 100%);*/
     display: block;
     border-radius: 5px;
