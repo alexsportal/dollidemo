@@ -21,39 +21,49 @@
     <div class="topitemcontainer">
           <div id="colors">
             <div class="colordisplay">
-                <div class="front"></div>
+                <div class="front">
+
+                    <!--SKIN COLORS-->
+                    <div class="skincolorsdisplay" style="background-color: #52281e;"></div>
+                    <div class="skincolorsdisplay" style="background-color: #65251c;"></div>
+                    <div class="skincolorsdisplay" style="background-color: #7c463b;"></div>
+                    <div class="skincolorsdisplay" style="background-color: #954f4b;"></div>
+                    <div class="skincolorsdisplay" style="background-color: #c37068;"></div>
+                    <div class="skincolorsdisplay" style="background-color: #c57e7f;"></div>
+
+                </div>
                 <div class="back"></div>
             </div>
 
             <div class="coloroptions">
                 <!--SKIN COLORS-->
-                <div class="skincolors" style="background-color: #52281e;"></div>
+                <div  onclick="changeSkin(1)" class="skincolors" style="background-color: #52281e;"></div>
 
 
             </div>
             <div class="coloroptions">
                   <!--SKIN COLORS-->
-                <div class="skincolors" style="background-color: #65251c;"></div>
+                <div onclick="changeSkin(2)" class="skincolors" style="background-color: #65251c;"></div>
+
+            </div>
+            <div  class="coloroptions">
+                  <!--SKIN COLORS-->
+                <div  onclick="changeSkin(3)" class="skincolors" style="background-color: #7c463b;"></div>
 
             </div>
             <div class="coloroptions">
                   <!--SKIN COLORS-->
-                <div class="skincolors" style="background-color: #7c463b;"></div>
-
-            </div>
-            <div class="coloroptions">
-                  <!--SKIN COLORS-->
-                <div class="skincolors" style="background-color: #954f4b;"></div>
+                <div  onclick="changeSkin(4)" class="skincolors" style="background-color: #954f4b;"></div>
 
             </div>
             <div class="coloroptions">
                 <!--SKIN COLORS-->
-                <div class="skincolors" style="background-color: #c37068 ;"></div>
+                <div  onclick="changeSkin(5)" class="skincolors" style="background-color: #c37068 ;"></div>
 
             </div>
             <div class="coloroptions">
                 <!--SKIN COLORS-->
-                <div class="skincolors" style="background-color: #c57e7f;"></div>
+                <div  onclick="changeSkin(6)"  class="skincolors" style="background-color: #c57e7f;"></div>
                 
             </div>
             <div class="coloroptions"></div>
@@ -67,7 +77,7 @@
         <div id="beautyparlour">  
             <div id="banner">
                <img src="DressupGame_Assets/Logos/Dolli_Logo3.png" id="dollilogo"/>
-               <p id="update">Last updated: 02.28.26</p>
+               <p id="update">Last updated: 03.01.26</p>
             </div>
             <div id="menu">
                 <div class="menubutton"><u>U</u>ndo</div>
@@ -181,12 +191,12 @@
             <p class="optiontitle"><img class="labelicon" src="DressupGame_Assets/Button_Icons/skinv2.png"/>SkinTones</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <img onclick="currentSlide(1)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)" ></img>
-                    <img onclick="currentSlide(2)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></img>
-                    <img onclick="currentSlide(3)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></img>
-                    <img onclick="currentSlide(4)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></img>
-                    <img onclick="currentSlide(5)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></img>
-                    <img onclick="currentSlide(6)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></img>
+                    <img onclick="changeSkin(1)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)" ></img>
+                    <img onclick="changeSkin(2)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></img>
+                    <img onclick="changeSkin(3)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></img>
+                    <img onclick="changeSkin(4)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></img>
+                    <img onclick="changeSkin(5)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></img>
+                    <img onclick="changeSkin(6)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></img>
             </div>
             </div>
         </div>
@@ -297,26 +307,39 @@
 
 <script>
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function changeSkin(n) {
+  skinSlides(slideIndex = n);
 }
 
-function showSlides(n) {
+
+
+
+
+function skinSlides(n) {
   let i;
   let skin = document.getElementsByClassName("skins");
   let dots = document.getElementsByClassName("beautyoptionsskin");
+  let skinColors = document.getElementsByClassName("skincolors");
+  let skincolorsDisplay = document.getElementsByClassName("skincolorsdisplay");
   
   if (n > skin.length) {slideIndex = 1}
   if (n < 1) {slideIndex = skin.length}
-  for (i = 0; i < skin.length; i++) {
+    for (i = 0; i < skin.length; i++) {
     skin[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
+   for (i = 0; i < skinColors.length; i++) {
+    skinColors[i].style.display = "block";
+  }
+     for (i = 0; i < skincolorsDisplay.length; i++) {
+    skincolorsDisplay[i].style.display = "none";
+  }
+    for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   skin[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-
+  skinColors[slideIndex-1].style.display = "block";
+  skincolorsDisplay[slideIndex-1].style.display = "block";
 }
 </script>
 

@@ -159,6 +159,7 @@ img.faces{
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
+
 .coloroptions{
     width:30px;
     height:30px;
@@ -171,9 +172,21 @@ img.faces{
     width:30px;
     height:30px;
     border-radius: 5px;
-    display:block;
+    display:none;
     transition:.3s;
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.skincolorsdisplay{
+    width:30px;
+    height:30px;
+    border-radius: 5px;
+    box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+    transition:.3s;
+    position:relative;
+    margin:auto;
+    display:none;
+    
 }
 
 .front, .back{
@@ -187,7 +200,7 @@ img.faces{
 }
 
 .front{
-    background-color:white;
+    background-color:rgb(241, 241, 241);
     top:13px;
     left:-7px;
     z-index:2;
