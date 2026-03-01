@@ -3,7 +3,7 @@ body{
     position: relative;
     margin:auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition:.3s;
+    transition:ease-out .3s;
     width:auto;
     height:auto;
     overflow-y: hidden;
@@ -44,7 +44,7 @@ body{
     flex-direction: column;
     position:relative;
     background-color: #C7A4B0;
-    transition:.3s;
+    transition:ease-out .3s;
     scroll-snap-type: y mandatory;
     border-radius:10px;
     overflow-x: hidden;
@@ -147,7 +147,7 @@ img.faces{
     flex-direction:row;
     justify-content: space-between;
     flex-wrap:wrap;
-    transition: .3s;
+    transition: ease-out .3s;
 }
 
 .colordisplay{
@@ -166,7 +166,7 @@ img.faces{
     height:30px;
     border-radius: 3px;
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
-    transition:.3s;
+    transition:ease-out .2s;
     cursor: pointer;
 }
 .skincolors{
@@ -174,12 +174,13 @@ img.faces{
     height:30px;
     border-radius: 3px;
     display:none;
-    transition:.3s;
+    transition:ease-out .2s;
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 .outline,
 .skincolors:hover{
-   box-shadow: 0px 0px 0px 3px #AA6E82;
+
+   outline:3px solid #e2bcc8;
 }
 
 .skincolorsdisplay{
@@ -187,7 +188,7 @@ img.faces{
     height:30px;
     border-radius: 3px;
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
-    transition:.3s;
+    transition:ease-out .3s;
     position:relative;
     margin:auto;
     display:none;
@@ -199,7 +200,7 @@ img.faces{
     height:30px;
     border-radius: 3px;
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
-    transition:.3s;
+    transition:ease-out .3s;
     position:relative;
     margin:auto;
 }
@@ -245,7 +246,7 @@ img.faces{
     background: linear-gradient(180deg, #c39aa8 20.19%, #BE9CA7 67.31%, #b47f96 100%);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    transition:.3s;
+    transition:ease-out .3s;
     display:flex;
     flex-direction: column;
     width:auto;
@@ -308,7 +309,7 @@ img.faces{
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
     background-size: 450px;
     background-position: center;
@@ -325,7 +326,7 @@ img.faces{
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
     background-size: 1000px;
     background-position: center;
@@ -343,7 +344,7 @@ img.faces{
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
     background-size: 1000px;
     background-position: center;
@@ -361,7 +362,7 @@ img.faces{
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
     background-size: 1400px;
     background-position: center;
@@ -379,7 +380,7 @@ img.faces{
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
     background-size: 1200px;
     background-position: center;
@@ -397,7 +398,7 @@ img.faces{
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
     background-size: 280px;
     background-position: center;
@@ -415,7 +416,7 @@ img.faces{
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
     background-size: 75%;
     background-position: center;
@@ -432,7 +433,7 @@ img.faces{
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
     background-size: 450%;
     background-position: 20%;
@@ -448,9 +449,8 @@ img.faces{
 .beautyoptionshair:hover,
 .beautyoptionsmakeup:hover,
 .beautyoptionsbg:hover{
-   transform: scale(1.02,1.02);
+   transform: scale(1.01,1.01);
    background-color:#d1cfdf;
-   box-shadow: inset 0px 0px 0px 2px #A88FFF;
 }
 
 
@@ -521,9 +521,9 @@ img.faces{
     font-size:14px;
     align-content: center;
     z-index:3;
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
-    transition:.3s;
+    transition:ease-out .3s;
     cursor: pointer;
 }
 
@@ -577,7 +577,7 @@ img.faces{
     background: linear-gradient(180deg, #AA6E82 0%, #A35B7E 44.06%, #964B71 47.89%, #A45F82 93.86%);
     border-radius:3px;
     display:block;
-    transition:.3s;
+    transition:ease-out .3s;
     box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
