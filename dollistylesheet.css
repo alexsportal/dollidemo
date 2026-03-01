@@ -147,6 +147,7 @@ img.faces{
     flex-direction:row;
     justify-content: space-between;
     flex-wrap:wrap;
+    transition: .3s;
 }
 
 .colordisplay{
@@ -449,6 +450,7 @@ img.faces{
 .beautyoptionsbg:hover{
    transform: scale(1.02,1.02);
    background-color:#d1cfdf;
+   box-shadow: inset 0px 0px 0px 2px #A88FFF;
 }
 
 
