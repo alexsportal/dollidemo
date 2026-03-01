@@ -167,6 +167,14 @@ img.faces{
     transition:.3s;
     cursor: pointer;
 }
+.skincolors{
+    width:30px;
+    height:30px;
+    border-radius: 5px;
+    display:block;
+    transition:.3s;
+    box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
 
 .front, .back{
     width:30px;
@@ -642,7 +650,8 @@ img.faces{
     margin-top: 7px;
     margin-right:5px;
 }
-img.skins{
+img.skins,
+img.eyes{
     width: 1000px;
     height: 410px;
     object-fit: cover;
