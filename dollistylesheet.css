@@ -128,6 +128,7 @@ img.faces{
     left:60%;
     transform: translate(-50%, -50%);
     margin:auto;
+  
 }
 
 #colors{
@@ -240,8 +241,8 @@ img.faces{
     border-radius: 5px;
     gap:10px;
     margin: auto;
-    transition: .3s;
 }
+
 
 .padding{
     padding:10px;
@@ -407,6 +408,7 @@ img.faces{
     cursor:pointer;
 }
 
+.active,
 .beautyoptionsskin:hover,
 .beautyoptionseyes:hover,
 .beautyoptionsbrows:hover,
@@ -416,19 +418,10 @@ img.faces{
 .beautyoptionsmakeup:hover,
 .beautyoptionsbg:hover{
    transform: scale(1.02,1.02);
+   background-color:#d1cfdf;
 }
 
-.beautyoptionsskin:active,
-.beautyoptionseyes:active,
-.beautyoptionsbrows:active,
-.beautyoptionsnose:active,
-.beautyoptionslips:active,
-.beautyoptionshair:active,
-.beautyoptionsmakeup:active,
-.beautyoptionsbg:active{
 
-    background-color:#d1cfdf;
-}
 
 @media screen and (max-width:396px){
 .beautyoptionsskin{
@@ -644,3 +637,16 @@ img.faces{
     margin-top: 7px;
     margin-right:5px;
 }
+img.skins{
+    width: 1000px;
+    height: 410px;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    top: 55%;
+    left:60%;
+    transform: translate(-50%, -50%);
+    margin:auto;
+    display:none;
+}
+

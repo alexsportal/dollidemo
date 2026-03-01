@@ -50,7 +50,15 @@
             </div>
 
                 <!--BODIES-->
-                <img src="DressupGame_Assets/Bodies/skintones/bodycocoa.png" class="faces"/>
+                <div class="skintones" > 
+                <img src="DressupGame_Assets/Bodies/skintones/bodycocoa.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/skintones/bodycocoa2.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/skintones/bodytoffee.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/skintones/bodytoffee2.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/skintones/bodystrawberry2.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/skintones/bodystrawberry.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/skintones/bodyplaceholder.png" class="skins" style="display:block;"/>
+                </div>
 
                 <!--EYES-->
 
@@ -131,17 +139,17 @@
         </section>
 
 
-        <div id="shadow"></div>
+      
         <div class="itemcontainer"> 
             <p class="optiontitle">SkinTones</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)"></img>
-                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></img>
-                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></img>
-                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></img>
-                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></img>
-                    <img loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></img>
+                    <img onclick="currentSlide(1)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)" ></img>
+                    <img onclick="currentSlide(2)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></img>
+                    <img onclick="currentSlide(3)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></img>
+                    <img onclick="currentSlide(4)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></img>
+                    <img onclick="currentSlide(5)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></img>
+                    <img onclick="currentSlide(6)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></img>
             </div>
             </div>
         </div>
@@ -250,7 +258,30 @@
 </div>
 
 
+<script>
 
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let skin = document.getElementsByClassName("skins");
+  let dots = document.getElementsByClassName("beautyoptionsskin");
+  
+  if (n > skin.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = skin.length}
+  for (i = 0; i < skin.length; i++) {
+    skin[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  skin[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+
+}
+</script>
 
 
 </body>
