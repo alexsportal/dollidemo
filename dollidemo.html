@@ -336,10 +336,14 @@ function skinSlides(n) {
     for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
+      for (i = 0; i < skinColors.length; i++) {
+    skinColors[i].className = skinColors[i].className.replace(" outline", "");
+  }
   skin[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  dots[slideIndex-1].className += " outline";
   skinColors[slideIndex-1].style.display = "block";
   skincolorsDisplay[slideIndex-1].style.display = "block";
+  skinColors[slideIndex-1].className += " outline";
 }
 </script>
 
