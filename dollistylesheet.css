@@ -203,8 +203,12 @@ img.faces{
     font-family: zainboldx;
     font-size:20px;
     margin-top:10px;
+    gap:10px;
     color:#380225;
     -webkit-text-stroke: .3px #b47f96;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #options{
@@ -532,10 +536,10 @@ img.faces{
     left:0;
     right:0;
     width:330px;
-    height:35px;
+    height:30px;
     z-index:3;
     flex:100%;
-    margin-top:15px;
+    margin-top:17px;
 }
 
 .navbuttonleft, .navbuttonright{
@@ -612,7 +616,7 @@ img.faces{
 
 ::-webkit-scrollbar {
   width: 10px;
-  height:10px;
+  height:11px;
 }
 
 ::-webkit-scrollbar-track {
@@ -650,3 +654,8 @@ img.skins{
     display:none;
 }
 
+.labelicon{
+    width:30px;
+    height:auto;
+    margin-top:-4px;
+}
