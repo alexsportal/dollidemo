@@ -169,7 +169,7 @@ img.faces{
     transition:ease-out .2s;
     cursor: pointer;
 }
-.skincolors{
+.coloroption{
     width:30px;
     height:30px;
     border-radius: 3px;
@@ -177,13 +177,15 @@ img.faces{
     transition:ease-out .2s;
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
+
 .outline,
-.skincolors:hover{
+.coloroption:hover{
 
    outline:3px solid #e2bcc8;
 }
 
-.skincolorsdisplay{
+.skincolorsdisplay,
+.eyecolorsdisplay{
     width:30px;
     height:30px;
     border-radius: 3px;
@@ -449,10 +451,8 @@ img.faces{
 .beautyoptionshair:hover,
 .beautyoptionsmakeup:hover,
 .beautyoptionsbg:hover{
-   transform: scale(1.01,1.01);
    background-color:#d1cfdf;
 }
-
 
 
 @media screen and (max-width:396px){
@@ -670,7 +670,8 @@ img.faces{
     margin-right:5px;
 }
 img.skins,
-img.eyes{
+img.darkeyes,
+img.lighteyes{
     width: 1000px;
     height: 410px;
     object-fit: cover;
@@ -680,11 +681,15 @@ img.eyes{
     left:60%;
     transform: translate(-50%, -50%);
     margin:auto;
-    display:none;
+  display:none;
 }
-
+.eyeshape{
+    display:block;
+}
 .labelicon{
     width:30px;
     height:auto;
     margin-top:-4px;
 }
+
+

@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,65 +20,56 @@
 <div id="border">
 <div id="gamecontain">
     <div class="topitemcontainer">
-          <div id="colors">
-            <div class="colordisplay">
-                <div class="front">
+         <div id="colors">
+  <div class="colordisplay">
+    <div class="front">
+      <!--SKIN COLOR DISPLAY-->
+      <div class="skincolorsdisplay" style="background-color: #52281e; display:block;"></div>
+      <div class="skincolorsdisplay" style="background-color: #65251c;"></div>
+      <div class="skincolorsdisplay" style="background-color: #7c463b;"></div>
+      <div class="skincolorsdisplay" style="background-color: #954f4b;"></div>
+      <div class="skincolorsdisplay" style="background-color: #c37068;"></div>
+      <div class="skincolorsdisplay" style="background-color: #c57e7f;"></div>
+      <!--EYE COLOR DISPLAY-->
+      <div class="eyecolorsdisplay" style="background-color: #1e3352;"></div>
+      <div class="eyecolorsdisplay" style="background-color: #1e523f;"></div>
+      <div class="eyecolorsdisplay" style="background-color: #5d3f27;"></div>
+    </div>
+    <div class="back"></div>
+  </div>
 
-                    <!--SKIN COLORS-->
-                    <div class="skincolorsdisplay" style="background-color: #52281e;"></div>
-                    <div class="skincolorsdisplay" style="background-color: #65251c;"></div>
-                    <div class="skincolorsdisplay" style="background-color: #7c463b;"></div>
-                    <div class="skincolorsdisplay" style="background-color: #954f4b;"></div>
-                    <div class="skincolorsdisplay" style="background-color: #c37068;"></div>
-                    <div class="skincolorsdisplay" style="background-color: #c57e7f;"></div>
-
-                </div>
-                <div class="back"></div>
-            </div>
-
-            <div class="coloroptions">
-                <!--SKIN COLORS-->
-                <div  onclick="changeSkin(1)" class="skincolors" style="background-color: #52281e;"></div>
-
-
-            </div>
-            <div class="coloroptions">
-                  <!--SKIN COLORS-->
-                <div onclick="changeSkin(2)" class="skincolors" style="background-color: #65251c;"></div>
-
-            </div>
-            <div  class="coloroptions">
-                  <!--SKIN COLORS-->
-                <div  onclick="changeSkin(3)" class="skincolors" style="background-color: #7c463b;"></div>
-
-            </div>
-            <div class="coloroptions">
-                  <!--SKIN COLORS-->
-                <div  onclick="changeSkin(4)" class="skincolors" style="background-color: #954f4b;"></div>
-
-            </div>
-            <div class="coloroptions">
-                <!--SKIN COLORS-->
-                <div  onclick="changeSkin(5)" class="skincolors" style="background-color: #c37068 ;"></div>
-
-            </div>
-            <div class="coloroptions">
-                <!--SKIN COLORS-->
-                <div  onclick="changeSkin(6)"  class="skincolors" style="background-color: #c57e7f;"></div>
-                
-            </div>
-            <div class="coloroptions"></div>
-            <div class="coloroptions"></div>
-            <div class="coloroptions"></div>
-            <div class="coloroptions"></div>
-            <div class="coloroptions"></div>
-            <div class="coloroptions"></div>
-         
-        </div>
+  <div class="coloroptions">
+    <div onclick="changeSkin(1), this" class="coloroption" data-category="skin" style="background-color: #52281e;"></div>
+    <div onclick="changeEyeColor('blue', this)" class="coloroption" data-category="eyes" style="background-color: #1e3352;"></div>
+  </div>
+  <div class="coloroptions">
+    <div onclick="changeSkin(2), this" class="coloroption" data-category="skin" style="background-color: #65251c;"></div>
+    <div onclick="changeEyeColor('green', this)" class="coloroption" data-category="eyes" style="background-color: #1e523f;"></div>
+  </div>
+  <div class="coloroptions">
+    <div onclick="changeSkin(3), this" class="coloroption" data-category="skin" style="background-color: #7c463b;"></div>
+    <div onclick="changeEyeColor('brown', this)" class="coloroption" data-category="eyes" style="background-color: #5d3f27;"></div>
+  </div>
+  <div class="coloroptions">
+    <div onclick="changeSkin(4), this" class="coloroption" data-category="skin" style="background-color: #954f4b;"></div>
+  </div>
+  <div class="coloroptions">
+    <div onclick="changeSkin(5), this" class="coloroption" data-category="skin" style="background-color: #c37068;"></div>
+  </div>
+  <div class="coloroptions">
+    <div onclick="changeSkin(6), this" class="coloroption" data-category="skin" style="background-color: #c57e7f;"></div>
+  </div>
+  <div class="coloroptions"></div>
+  <div class="coloroptions"></div>
+  <div class="coloroptions"></div>
+  <div class="coloroptions"></div>
+  <div class="coloroptions"></div>
+  <div class="coloroptions"></div>
+</div>
         <div id="beautyparlour">  
             <div id="banner">
                <img src="DressupGame_Assets/Logos/Dolli_Logo3.png" id="dollilogo"/>
-               <p id="update">Last updated: 03.01.26</p>
+               <p id="update">Last updated: 03.04.26</p>
             </div>
             <div id="menu">
                 <div class="menubutton"><u>U</u>ndo</div>
@@ -86,30 +78,54 @@
 
                 <!--BODIES-->
                 <div class="skintones" > 
-                <img src="DressupGame_Assets/Bodies/skintones/bodycocoa.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/skintones/bodycocoa.png"  style="display:block;" class="skins"/>
                 <img src="DressupGame_Assets/Bodies/skintones/bodycocoa2.png" class="skins"/>
                 <img src="DressupGame_Assets/Bodies/skintones/bodytoffee.png" class="skins"/>
                 <img src="DressupGame_Assets/Bodies/skintones/bodytoffee2.png" class="skins"/>
                 <img src="DressupGame_Assets/Bodies/skintones/bodystrawberry2.png" class="skins"/>
                 <img src="DressupGame_Assets/Bodies/skintones/bodystrawberry.png" class="skins"/>
-                <img src="DressupGame_Assets/Bodies/skintones/bodyplaceholder.png" class="skins" style="display:block;"/>
+                
+                
                 </div>
 
                 <!--EYES-->
-                <div class="doeseyes">
+                <div class="eyes">
+                <div class="eyeshape" id="shape-doe">
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_brown.png" style="display:block" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_green.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_green.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_brown.png"  class="lighteyes"/>
+                    
+                </div>
 
-                    <div class="doeeyesdark">
-                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_blue.png" class="eyes"/>
-                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_green.png" class="eyes"/>
-                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_brown.png" style="display:block" class="eyes"/>
-                    </div>
+                <div class="eyeshape" id="shape-innocent">
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/innocent_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/innocent_eyes_dark_green.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/innocent_eyes_dark_brown.png"  class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/innocent_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/innocent_eyes_light_green.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/innocent_eyes_light_brown.png" class="lighteyes"/>
+                </div> 
 
-                    <div class="doeeyeslight">
-                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_blue.png" class="eyes"/>
-                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_green.png" class="eyes"/>
-                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_brown.png" class="eyes"/>
-                    </div>
-
+                <div class="eyeshape" id="shape-sultry">
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/sultry_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/sultry_eyes_dark_green.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/sultry_eyes_dark_brown.png"  class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/sultry_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/sultry_eyes_light_green.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/sultry_eyes_light_brown.png" class="lighteyes"/>
+                </div>
+                    
+                <div class="eyeshape" id="shape-almond">
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/almond_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/almond_eyes_dark_green.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/almond_eyes_dark_brown.png"  class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/almond_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/almond_eyes_light_green.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/almond_eyes_light_brown.png" class="lighteyes"/>
+                </div>
                 </div>
                  <!--EYEBROWS-->
 
@@ -141,7 +157,7 @@
 
    <div id="options">
         <section class="nav">
-        <div onClick="scrollleft(-100, 0)" class="navbuttonleft" >
+        <div onClick="scrollleft(-100, 0);hideAllColorOptions()" class="navbuttonleft" >
             
             <svg id="left"  viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_i_3519_9871)">
@@ -162,7 +178,7 @@
             </svg>
 
         </div>
-        <div onClick="scrollright(100, 0)" class="navbuttonright" >
+        <div onClick="scrollright(100, 0);hideAllColorOptions()" class="navbuttonright" >
             
             <svg id="right" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_i_3519_9870)">
@@ -191,12 +207,12 @@
             <p class="optiontitle"><img class="labelicon" src="DressupGame_Assets/Button_Icons/skinv2.png"/>SkinTones</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <img onclick="changeSkin(1)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)" ></img>
-                    <img onclick="changeSkin(2)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></img>
-                    <img onclick="changeSkin(3)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></img>
-                    <img onclick="changeSkin(4)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></img>
-                    <img onclick="changeSkin(5)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></img>
-                    <img onclick="changeSkin(6)" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></img>
+                    <img onclick="changeSkin(1)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)" ></img>
+                    <img onclick="changeSkin(2)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></img>
+                    <img onclick="changeSkin(3)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></img>
+                    <img onclick="changeSkin(4)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></img>
+                    <img onclick="changeSkin(5)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></img>
+                    <img onclick="changeSkin(6)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></img>
             </div>
             </div>
         </div>
@@ -206,10 +222,10 @@
             <p class="optiontitle"><img class="labelicon" src="DressupGame_Assets/Button_Icons/eyev2.png"/>Eyes</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <img loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/doe_eyes.png)"></img>
-                    <img loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/innocent_eyes.png)"></img>
-                    <img loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/sultry_eyes.png)"></img>
-                    <img loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/almond_eyes.png)"></img>
+                    <img onclick="changeEyeShape('shape-doe', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/doe_eyes.png)"></img>
+                    <img onclick="changeEyeShape('shape-innocent', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/innocent_eyes.png)"></img>
+                    <img onclick="changeEyeShape('shape-sultry', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/sultry_eyes.png)"></img>
+                    <img onclick="changeEyeShape('shape-almond', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/almond_eyes.png)"></img>
                     <img loading="lazy" class="beautyoptionseyes"  ></img>
                     <img loading="lazy" class="beautyoptionseyes"  ></img>
             </div>
@@ -306,45 +322,176 @@
 
 
 <script>
+let currentEyeColor = "brown";
+const darkSkinIndices = [1, 2, 3];
+let slideIndex = 1;
+const eyeColorMap = { blue: 0, green: 1, brown: 2 };
+
+function updateEyesForSkin(slideIndex) {
+  const isDark = darkSkinIndices.includes(slideIndex);
+  const activeShape = document.querySelector(".eyeshape[style*='display:block'], .eyeshape[style*='display: block']")
+                   || document.getElementById("shape-doe");
+  if (!activeShape) return;
+
+  const darkEyes  = activeShape.querySelectorAll(".darkeyes");
+  const lightEyes = activeShape.querySelectorAll(".lighteyes");
+
+  darkEyes.forEach(img => img.style.display = "none");
+  lightEyes.forEach(img => img.style.display = "none");
+
+  if (isDark) {
+    darkEyes.forEach(img => {
+      if (img.src.includes(currentEyeColor)) img.style.display = "block";
+    });
+  } else {
+    lightEyes.forEach(img => {
+      if (img.src.includes(currentEyeColor)) img.style.display = "block";
+    });
+  }
+}
+
+function setOutline(category, index) {
+  const dots = document.querySelectorAll(`.coloroption[data-category="${category}"]`);
+  dots.forEach(dot => dot.classList.remove("outline"));
+  if (dots[index]) dots[index].classList.add("outline");
+}
+
+function showEyeColorDisplay(color) {
+  const eyeDisplays = document.getElementsByClassName("eyecolorsdisplay");
+  for (let i = 0; i < eyeDisplays.length; i++) {
+    eyeDisplays[i].style.display = "none";
+  }
+  const index = eyeColorMap[color];
+  if (index !== undefined) eyeDisplays[index].style.display = "block";
+}
+
+function showColorOptions(category) {
+  const all = document.querySelectorAll(".coloroption");
+  all.forEach(el => el.style.display = "none");
+
+  const active = document.querySelectorAll(`.coloroption[data-category="${category}"]`);
+  active.forEach(el => el.style.display = "block");
+
+  // ✅ hide/show skin color display based on category
+  const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
+  for (let i = 0; i < skinDisplays.length; i++) {
+    skinDisplays[i].style.display = "none";
+  }
+  if (category === "skin") {
+    skinDisplays[slideIndex - 1].style.display = "block";
+  }
+
+  // ✅ hide eye color display when switching away from eyes
+  const eyeDisplays = document.getElementsByClassName("eyecolorsdisplay");
+  for (let i = 0; i < eyeDisplays.length; i++) {
+    eyeDisplays[i].style.display = "none";
+  }
+  if (category === "eyes") {
+    showEyeColorDisplay(currentEyeColor);
+  }
+
+  activeColorCategory = category;
+}
+
+function hideAllColorOptions() {
+  const all = document.querySelectorAll(".coloroption");
+  all.forEach(el => el.style.display = "none");
+
+  // also hide eye color display when navigating away
+  const eyeDisplays = document.getElementsByClassName("eyecolorsdisplay");
+  for (let i = 0; i < eyeDisplays.length; i++) {
+    eyeDisplays[i].style.display = "none";
+  }
+
+  activeColorCategory = null;
+}
+
+let activeColorCategory = null;
 
 function changeSkin(n) {
-  skinSlides(slideIndex = n);
+  skinSlides(n);
+  showColorOptions("skin");
+  setOutline("skin", n - 1);
 }
 
+function changeEyeShape(shapeId, el) {
+  const shapes = document.getElementsByClassName("eyeshape");
+  for (let i = 0; i < shapes.length; i++) {
+    shapes[i].style.display = "none";
+  }
+  document.getElementById(shapeId).style.display = "block";
+  showColorOptions("eyes");
+  updateEyesForSkin(slideIndex);
 
+  // show current eye color display and outline
+  showEyeColorDisplay(currentEyeColor);
+  setOutline("eyes", eyeColorMap[currentEyeColor] ?? 2);
 
+  const eyeDots = document.getElementsByClassName("beautyoptionseyes");
+  for (let i = 0; i < eyeDots.length; i++) {
+    eyeDots[i].classList.remove("active");
+  }
+  el.classList.add("active");
+}
 
+function changeEyeColor(color, el) {
+  currentEyeColor = color;
+
+  showEyeColorDisplay(color);
+
+  const eyeColorDots = document.querySelectorAll('.coloroption[data-category="eyes"]');
+  eyeColorDots.forEach(dot => dot.classList.remove("outline"));
+  el.classList.add("outline");
+
+  const shapes = document.getElementsByClassName("eyeshape");
+  let activeShape;
+  for (let i = 0; i < shapes.length; i++) {
+    if (shapes[i].style.display === "block") {
+      activeShape = shapes[i];
+      break;
+    }
+  }
+  if (!activeShape) return;
+
+  const isDark = darkSkinIndices.includes(slideIndex);
+  const allEyes = activeShape.querySelectorAll(".darkeyes, .lighteyes");
+  allEyes.forEach(img => {
+    const rightColor = img.src.includes(color);
+    const rightShade = isDark ? img.classList.contains("darkeyes") : img.classList.contains("lighteyes");
+    img.style.display = (rightColor && rightShade) ? "block" : "none";
+  });
+}
 
 function skinSlides(n) {
-  let i;
   let skin = document.getElementsByClassName("skins");
   let dots = document.getElementsByClassName("beautyoptionsskin");
-  let skinColors = document.getElementsByClassName("skincolors");
   let skincolorsDisplay = document.getElementsByClassName("skincolorsdisplay");
-  
-  if (n > skin.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = skin.length}
-    for (i = 0; i < skin.length; i++) {
-    skin[i].style.display = "none";
-  }
-   for (i = 0; i < skinColors.length; i++) {
-    skinColors[i].style.display = "block";
-  }
-     for (i = 0; i < skincolorsDisplay.length; i++) {
-    skincolorsDisplay[i].style.display = "none";
-  }
-    for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-      for (i = 0; i < skinColors.length; i++) {
-    skinColors[i].className = skinColors[i].className.replace(" outline", "");
-  }
+
+  if (n > skin.length) { slideIndex = 1; }
+  else if (n < 1) { slideIndex = skin.length; }
+  else { slideIndex = n; }
+
+  for (let i = 0; i < skin.length; i++) { skin[i].style.display = "none"; }
+  for (let i = 0; i < skincolorsDisplay.length; i++) { skincolorsDisplay[i].style.display = "none"; }
+  for (let i = 0; i < dots.length; i++) { dots[i].classList.remove("active"); }
+
   skin[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  skinColors[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].classList.add("active");
   skincolorsDisplay[slideIndex-1].style.display = "block";
-  skinColors[slideIndex-1].className += " outline";
+
+  updateEyesForSkin(slideIndex);
 }
+
+window.onload = function() {
+  // hide eye color displays until user picks an eye shape
+  const eyeDisplays = document.getElementsByClassName("eyecolorsdisplay");
+  for (let i = 0; i < eyeDisplays.length; i++) {
+    eyeDisplays[i].style.display = "none";
+  }
+  showColorOptions("skin");
+  setOutline("skin", 0);
+  updateEyesForSkin(slideIndex);
+};
 </script>
 
 
