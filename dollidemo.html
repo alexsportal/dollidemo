@@ -2,6 +2,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +70,7 @@
         <div id="beautyparlour">  
             <div id="banner">
                <img src="DressupGame_Assets/Logos/Dolli_Logo3.png" id="dollilogo"/>
-               <p id="update">Last updated: 03.04.26</p>
+               <p id="update">Last updated: 03.05.26</p>
             </div>
             <div id="menu">
                 <div class="menubutton"><u>U</u>ndo</div>
@@ -133,7 +134,22 @@
 
                 <!--NOSE-->
 
-                <img src="DressupGame_Assets/Beauty/Nose/nose2_dark.png" class="faces"/>
+                <div class="noses">
+                <div class="noseshape" id="noseshape3">
+                <img style="display:block" src="DressupGame_Assets/Beauty/Nose/nose3_dark.png" class="nosedark"/>
+                <img src="DressupGame_Assets/Beauty/Nose/nose3_light.png" class="noselight"/>
+                </div>
+                <div class="noseshape" id="noseshape1">
+                <img src="DressupGame_Assets/Beauty/Nose/nose1_dark.png"  class="nosedark"/>
+                <img src="DressupGame_Assets/Beauty/Nose/nose1_light.png" class="noselight"/>
+                </div>
+
+                <div class="noseshape" id="noseshape2">
+                <img src="DressupGame_Assets/Beauty/Nose/nose2_dark.png"  class="nosedark"/>
+                <img src="DressupGame_Assets/Beauty/Nose/nose2_light.png" class="noselight"/>
+                </div>
+
+                </div>
 
                 <!--LIPS-->
 
@@ -250,9 +266,9 @@
             <p class="optiontitle"><img class="labelicon" src="DressupGame_Assets/Button_Icons/nosev2.png"/>Noses</p>
              <div class="padding">
             <div class="optioncontainer">
-                    <img loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose2.png)"></img>
-                    <img loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose3.png)"></img>
-                    <img loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose1.png)"></img>
+                    <img  onclick="changeNoseShape('noseshape1', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose1.png)"></img>
+                    <img  onclick="changeNoseShape('noseshape2', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose2.png)"></img>
+                    <img  onclick="changeNoseShape('noseshape3', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose3.png)"></img>
                     <img loading="lazy" class="beautyoptionsnose" ></img>
                     <img loading="lazy" class="beautyoptionsnose" ></img>
                     <img loading="lazy" class="beautyoptionsnose" ></img>
@@ -372,7 +388,7 @@ function showColorOptions(category) {
   const active = document.querySelectorAll(`.coloroption[data-category="${category}"]`);
   active.forEach(el => el.style.display = "block");
 
-  // ✅ hide/show skin color display based on category
+  //  hide/show skin color display based on category
   const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
   for (let i = 0; i < skinDisplays.length; i++) {
     skinDisplays[i].style.display = "none";
@@ -381,7 +397,7 @@ function showColorOptions(category) {
     skinDisplays[slideIndex - 1].style.display = "block";
   }
 
-  // ✅ hide eye color display when switching away from eyes
+  //  hide eye color display when switching away from eyes
   const eyeDisplays = document.getElementsByClassName("eyecolorsdisplay");
   for (let i = 0; i < eyeDisplays.length; i++) {
     eyeDisplays[i].style.display = "none";
@@ -434,6 +450,29 @@ function changeEyeShape(shapeId, el) {
   el.classList.add("active");
 }
 
+
+let currentNoseId = "noseshape3";
+
+function updateNosesForSkin(slideIndex) {
+  const isDark = darkSkinIndices.includes(slideIndex);
+  const activeNose = document.getElementById(currentNoseId);
+  if (!activeNose) return;
+
+  activeNose.querySelectorAll(".nosedark").forEach(img => img.style.display = isDark ? "block" : "none");
+  activeNose.querySelectorAll(".noselight").forEach(img => img.style.display = isDark ? "none" : "block");
+}
+
+function changeNoseShape(shapeId, el) {
+  document.querySelectorAll(".noseshape").forEach(s => s.style.display = "none");
+  currentNoseId = shapeId;
+  document.getElementById(shapeId).style.display = "block";
+  updateNosesForSkin(slideIndex);
+
+  document.querySelectorAll(".beautyoptionsnose").forEach(dot => dot.classList.remove("active"));
+  el.classList.add("active");
+}
+
+
 function changeEyeColor(color, el) {
   currentEyeColor = color;
 
@@ -480,6 +519,7 @@ function skinSlides(n) {
   skincolorsDisplay[slideIndex-1].style.display = "block";
 
   updateEyesForSkin(slideIndex);
+  updateNosesForSkin(slideIndex);
 }
 
 window.onload = function() {
@@ -491,6 +531,7 @@ window.onload = function() {
   showColorOptions("skin");
   setOutline("skin", 0);
   updateEyesForSkin(slideIndex);
+  updateNosesForSkin(slideIndex);
 };
 </script>
 

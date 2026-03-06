@@ -669,9 +669,12 @@ img.faces{
     margin-top: 7px;
     margin-right:5px;
 }
+
 img.skins,
 img.darkeyes,
-img.lighteyes{
+img.lighteyes,
+img.nosedark,
+img.noselight{
     width: 1000px;
     height: 410px;
     object-fit: cover;
@@ -681,11 +684,13 @@ img.lighteyes{
     left:60%;
     transform: translate(-50%, -50%);
     margin:auto;
-  display:none;
+    display:none;
 }
+
 .eyeshape{
     display:block;
 }
+
 .labelicon{
     width:30px;
     height:auto;
