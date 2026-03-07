@@ -20,52 +20,71 @@
 <body>
 <div id="border">
 <div id="gamecontain">
-    <div class="topitemcontainer">
-         <div id="colors">
-  <div class="colordisplay">
-    <div class="front">
-      <!--SKIN COLOR DISPLAY-->
-      <div class="skincolorsdisplay" style="background-color: #52281e; display:block;"></div>
-      <div class="skincolorsdisplay" style="background-color: #65251c;"></div>
-      <div class="skincolorsdisplay" style="background-color: #7c463b;"></div>
-      <div class="skincolorsdisplay" style="background-color: #954f4b;"></div>
-      <div class="skincolorsdisplay" style="background-color: #c37068;"></div>
-      <div class="skincolorsdisplay" style="background-color: #c57e7f;"></div>
-      <!--EYE COLOR DISPLAY-->
-      <div class="eyecolorsdisplay" style="background-color: #1e3352;"></div>
-      <div class="eyecolorsdisplay" style="background-color: #1e523f;"></div>
-      <div class="eyecolorsdisplay" style="background-color: #5d3f27;"></div>
+<div class="topitemcontainer">
+<div id="colors">
+    <div class="colordisplay">
+        <div class="front">
+            <!--SKIN COLOR DISPLAY-->
+            <div class="skincolorsdisplay" style="background-color: #52281e; display:block;"></div>
+            <div class="skincolorsdisplay" style="background-color: #65251c;"></div>
+            <div class="skincolorsdisplay" style="background-color: #7c463b;"></div>
+            <div class="skincolorsdisplay" style="background-color: #954f4b;"></div>
+            <div class="skincolorsdisplay" style="background-color: #c37068;"></div>
+            <div class="skincolorsdisplay" style="background-color: #c57e7f;"></div>
+            <!--EYE COLOR DISPLAY-->
+            <div class="eyecolorsdisplay" style="background-color: #1e3352;"></div>
+            <div class="eyecolorsdisplay" style="background-color: #1e523f;"></div>
+            <div class="eyecolorsdisplay" style="background-color: #5d3f27;"></div>
+            <!--HAIR COLOR DISPLAY-->
+            <div class="haircolorsdisplay" style="background-color: #000000;"></div>
+            <div class="haircolorsdisplay" style="background-color: #412b19;"></div>
+            <div class="haircolorsdisplay" style="background-color: #906847;"></div>
+            <div class="haircolorsdisplay" style="background-color: #914818;"></div>
+            
+            <!--HAIR COLOR DISPLAY-->
+            <div class="browcolorsdisplay" style="background-color: #000000;"></div>
+            <div class="browcolorsdisplay" style="background-color: #412b19;"></div>
+            <div class="browcolorsdisplay" style="background-color: #906847;"></div>
+            <div class="browcolorsdisplay" style="background-color: #914818;"></div>
+            </div>
+        <div class="back"></div>
     </div>
-    <div class="back"></div>
-  </div>
 
-  <div class="coloroptions">
-    <div onclick="changeSkin(1), this" class="coloroption" data-category="skin" style="background-color: #52281e;"></div>
-    <div onclick="changeEyeColor('blue', this)" class="coloroption" data-category="eyes" style="background-color: #1e3352;"></div>
-  </div>
-  <div class="coloroptions">
-    <div onclick="changeSkin(2), this" class="coloroption" data-category="skin" style="background-color: #65251c;"></div>
-    <div onclick="changeEyeColor('green', this)" class="coloroption" data-category="eyes" style="background-color: #1e523f;"></div>
-  </div>
-  <div class="coloroptions">
-    <div onclick="changeSkin(3), this" class="coloroption" data-category="skin" style="background-color: #7c463b;"></div>
-    <div onclick="changeEyeColor('brown', this)" class="coloroption" data-category="eyes" style="background-color: #5d3f27;"></div>
-  </div>
-  <div class="coloroptions">
-    <div onclick="changeSkin(4), this" class="coloroption" data-category="skin" style="background-color: #954f4b;"></div>
-  </div>
-  <div class="coloroptions">
-    <div onclick="changeSkin(5), this" class="coloroption" data-category="skin" style="background-color: #c37068;"></div>
-  </div>
-  <div class="coloroptions">
-    <div onclick="changeSkin(6), this" class="coloroption" data-category="skin" style="background-color: #c57e7f;"></div>
-  </div>
-  <div class="coloroptions"></div>
-  <div class="coloroptions"></div>
-  <div class="coloroptions"></div>
-  <div class="coloroptions"></div>
-  <div class="coloroptions"></div>
-  <div class="coloroptions"></div>
+    <div class="coloroptions">
+        <div onclick="changeSkin(1), this" class="coloroption" data-category="skin" style="background-color: #52281e;"></div>
+        <div onclick="changeEyeColor('blue', this)" class="coloroption" data-category="eyes" style="background-color: #1e3352;"></div>
+        <div onclick="changeHairColor('black', this)" class="coloroption" data-category="hairs" style="background-color: #000000;"></div>
+        <div onclick="changeBrowColor('black', this)" class="coloroption" data-category="brows" style="background-color: #000000;"></div>
+    </div>
+    <div class="coloroptions">
+        <div onclick="changeSkin(2), this" class="coloroption" data-category="skin" style="background-color: #65251c;"></div>
+        <div onclick="changeEyeColor('green', this)" class="coloroption" data-category="eyes" style="background-color: #1e523f;"></div>
+        <div onclick="changeHairColor('brown', this)" class="coloroption" data-category="hairs" style="background-color: #412b19;"></div>
+        <div onclick="changeBrowColor('brown', this)" class="coloroption" data-category="brows" style="background-color: #412b19;"></div>
+    </div>
+    <div class="coloroptions">
+        <div onclick="changeSkin(3), this" class="coloroption" data-category="skin" style="background-color: #7c463b;"></div>
+        <div onclick="changeEyeColor('brown', this)" class="coloroption" data-category="eyes" style="background-color: #5d3f27;"></div>
+        <div onclick="changeHairColor('blonde', this)" class="coloroption" data-category="hairs" style="background-color: #906847;"></div>
+        <div onclick="changeBrowColor('blonde', this)" class="coloroption" data-category="brows" style="background-color: #906847;"></div>
+    </div>
+    <div class="coloroptions">
+        <div onclick="changeSkin(4), this" class="coloroption" data-category="skin" style="background-color: #954f4b;"></div>
+        <div onclick="changeHairColor('orange', this)" class="coloroption" data-category="hairs" style="background-color: #914818;"></div>
+        <div onclick="changeBrowColor('orange', this)" class="coloroption" data-category="brows" style="background-color: #914818;"></div>
+    </div>
+    <div class="coloroptions">
+        <div onclick="changeSkin(5), this" class="coloroption" data-category="skin" style="background-color: #c37068;"></div>
+    </div>
+    <div class="coloroptions">
+        <div onclick="changeSkin(6), this" class="coloroption" data-category="skin" style="background-color: #c57e7f;"></div>
+    </div>
+    <div class="coloroptions"></div>
+    <div class="coloroptions"></div>
+    <div class="coloroptions"></div>
+    <div class="coloroptions"></div>
+    <div class="coloroptions"></div>
+    <div class="coloroptions"></div>
 </div>
         <div id="beautyparlour">  
             <div id="banner">
@@ -130,7 +149,30 @@
                 </div>
                  <!--EYEBROWS-->
 
-                <img src="DressupGame_Assets/Beauty/Brows/brows2.png" class="faces"/>
+            
+
+                <div class="brows">
+                    <div class="browshape" id="browshape1">
+                    <img src="DressupGame_Assets/Beauty/Brows/brows1black.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows1brown.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows1blonde.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows1orange.png" class="eyebrows"/>
+                    </div>
+                
+                    <div class="browshape" id="browshape2">
+                    <img src="DressupGame_Assets/Beauty/Brows/brows2black.png" style="display:block" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows2brown.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows2blonde.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows2orange.png" class="eyebrows"/>
+                    </div>
+
+                    <div class="browshape" id="browshape3">
+                    <img src="DressupGame_Assets/Beauty/Brows/brows3black.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows3brown.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows3blonde.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows3orange.png" class="eyebrows"/>
+                    </div>
+                </div>
 
                 <!--NOSE-->
 
@@ -153,13 +195,49 @@
 
                 <!--LIPS-->
 
-                <img src="DressupGame_Assets/Beauty/Lips/lips1_brown.png" class="faces"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips1_brown.png" style="display:block" class="lips"/>
 
                 <!--HAIR-->
 
-                <img src="DressupGame_Assets/Hairs/Base/basehair1_blonde.png" class="faces"/>
+               
 
+                <div class="hairs">
+                    <div class="hairshape"  id="basehair">
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/basehair1black.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/basehair1brown.png"  class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/basehair1blonde.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/basehair1orange.png" class="hairstyles"/>
+                    </div>
+                
+                    <div class="hairshape" id="hairstyle1">
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle1black.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle1brown.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle1blonde.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle1orange.png" class="hairstyles"/>
+                    </div>
 
+                    <div class="hairshape" id="hairstyle2">
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle2black.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle2brown.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle2blonde.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle2orange.png" class="hairstyles"/>
+                    </div>
+
+                    <div class="hairshape" id="hairstyle3">
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle3black.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle3brown.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle3blonde.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle3orange.png" class="hairstyles"/>
+                    </div>
+
+                    <div class="hairshape" id="hairstyle4">
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle4black.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle4brown.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle4blonde.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle4orange.png" class="hairstyles"/>
+                    </div>
+
+                </div>
 
 
 
@@ -252,9 +330,9 @@
             <p class="optiontitle"><img class="labelicon" src="DressupGame_Assets/Button_Icons/eyebrowv2.png"/>Eyebrows</p>
             <div class="padding">
             <div class="optioncontainer">
-                    <img loading="lazy" class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows1.png)"></img>
-                    <img loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows2.png)"></img>
-                    <img loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows3.png)"></img>
+                    <img onclick="changeBrowShape('browshape1', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows1black.png)"></img>
+                    <img onclick="changeBrowShape('browshape2', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows2black.png)"></img>
+                    <img onclick="changeBrowShape('browshape3', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows3black.png)"></img>
                     <img loading="lazy" class="beautyoptionsbrows" ></img>
                     <img loading="lazy" class="beautyoptionsbrows" ></img>
                     <img loading="lazy" class="beautyoptionsbrows" ></img>
@@ -294,11 +372,11 @@
             <p class="optiontitle"><img class="labelicon" src="DressupGame_Assets/Button_Icons/hair_style.png" style="width:40px;margin-top:3px"/>Hair</p>
              <div class="padding">
             <div class="optioncontainer">
-                    <img loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/basehair1.png)"></img>
-                    <img loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair1.png)"></img>
-                    <img loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair2.png)"></img>
-                    <img loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair3.png)"></img>
-                    <img loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair4.png)"></img>
+                    <img onclick="changeHairShape('basehair', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/basehair1.png)"></img>
+                    <img onclick="changeHairShape('hairstyle2', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair1.png)"></img>
+                    <img onclick="changeHairShape('hairstyle1', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair2.png)"></img>
+                    <img onclick="changeHairShape('hairstyle4', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair3.png)"></img>
+                    <img onclick="changeHairShape('hairstyle3', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair4.png)"></img>
                     <img loading="lazy" class="beautyoptionshair"></img>
             </div>
             </div>
@@ -339,9 +417,16 @@
 
 <script>
 let currentEyeColor = "brown";
+let currentHairColor = "black";
+let currentBrowColor = "black";
+let currentHairId = "basehair";
+let currentBrowId = "browshape2";
+let currentNoseId = "noseshape3";
 const darkSkinIndices = [1, 2, 3];
 let slideIndex = 1;
 const eyeColorMap = { blue: 0, green: 1, brown: 2 };
+const hairColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
+const browColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 
 function updateEyesForSkin(slideIndex) {
   const isDark = darkSkinIndices.includes(slideIndex);
@@ -349,7 +434,7 @@ function updateEyesForSkin(slideIndex) {
                    || document.getElementById("shape-doe");
   if (!activeShape) return;
 
-  const darkEyes  = activeShape.querySelectorAll(".darkeyes");
+  const darkEyes = activeShape.querySelectorAll(".darkeyes");
   const lightEyes = activeShape.querySelectorAll(".lighteyes");
 
   darkEyes.forEach(img => img.style.display = "none");
@@ -364,6 +449,24 @@ function updateEyesForSkin(slideIndex) {
       if (img.src.includes(currentEyeColor)) img.style.display = "block";
     });
   }
+}
+
+function updateNosesForSkin(slideIndex) {
+  const isDark = darkSkinIndices.includes(slideIndex);
+  const activeNose = document.getElementById(currentNoseId);
+  if (!activeNose) return;
+
+  activeNose.querySelectorAll(".nosedark").forEach(img => img.style.display = isDark ? "block" : "none");
+  activeNose.querySelectorAll(".noselight").forEach(img => img.style.display = isDark ? "none" : "block");
+}
+
+function updateBrowColor(color) {
+  currentBrowColor = color;
+  const activeBrow = document.getElementById(currentBrowId);
+  if (!activeBrow) return;
+  activeBrow.querySelectorAll(".eyebrows").forEach(img => {
+    img.style.display = img.src.includes(color) ? "block" : "none";
+  });
 }
 
 function setOutline(category, index) {
@@ -381,6 +484,24 @@ function showEyeColorDisplay(color) {
   if (index !== undefined) eyeDisplays[index].style.display = "block";
 }
 
+function showHairColorDisplay(color) {
+  const hairDisplays = document.getElementsByClassName("haircolorsdisplay");
+  for (let i = 0; i < hairDisplays.length; i++) {
+    hairDisplays[i].style.display = "none";
+  }
+  const index = hairColorMap[color];
+  if (index !== undefined) hairDisplays[index].style.display = "block";
+}
+
+function showBrowColorDisplay(color) {
+  const browDisplays = document.getElementsByClassName("browcolorsdisplay");
+  for (let i = 0; i < browDisplays.length; i++) {
+    browDisplays[i].style.display = "none";
+  }
+  const index = browColorMap[color];
+  if (index !== undefined) browDisplays[index].style.display = "block";
+}
+
 function showColorOptions(category) {
   const all = document.querySelectorAll(".coloroption");
   all.forEach(el => el.style.display = "none");
@@ -388,7 +509,6 @@ function showColorOptions(category) {
   const active = document.querySelectorAll(`.coloroption[data-category="${category}"]`);
   active.forEach(el => el.style.display = "block");
 
-  //  hide/show skin color display based on category
   const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
   for (let i = 0; i < skinDisplays.length; i++) {
     skinDisplays[i].style.display = "none";
@@ -397,13 +517,28 @@ function showColorOptions(category) {
     skinDisplays[slideIndex - 1].style.display = "block";
   }
 
-  //  hide eye color display when switching away from eyes
   const eyeDisplays = document.getElementsByClassName("eyecolorsdisplay");
   for (let i = 0; i < eyeDisplays.length; i++) {
     eyeDisplays[i].style.display = "none";
   }
   if (category === "eyes") {
     showEyeColorDisplay(currentEyeColor);
+  }
+
+  const hairDisplays = document.getElementsByClassName("haircolorsdisplay");
+  for (let i = 0; i < hairDisplays.length; i++) {
+    hairDisplays[i].style.display = "none";
+  }
+  if (category === "hairs") {
+    showHairColorDisplay(currentHairColor);
+  }
+
+  const browDisplays = document.getElementsByClassName("browcolorsdisplay");
+  for (let i = 0; i < browDisplays.length; i++) {
+    browDisplays[i].style.display = "none";
+  }
+  if (category === "brows") {
+    showBrowColorDisplay(currentBrowColor);
   }
 
   activeColorCategory = category;
@@ -413,10 +548,19 @@ function hideAllColorOptions() {
   const all = document.querySelectorAll(".coloroption");
   all.forEach(el => el.style.display = "none");
 
-  // also hide eye color display when navigating away
   const eyeDisplays = document.getElementsByClassName("eyecolorsdisplay");
   for (let i = 0; i < eyeDisplays.length; i++) {
     eyeDisplays[i].style.display = "none";
+  }
+
+  const hairDisplays = document.getElementsByClassName("haircolorsdisplay");
+  for (let i = 0; i < hairDisplays.length; i++) {
+    hairDisplays[i].style.display = "none";
+  }
+
+  const browDisplays = document.getElementsByClassName("browcolorsdisplay");
+  for (let i = 0; i < browDisplays.length; i++) {
+    browDisplays[i].style.display = "none";
   }
 
   activeColorCategory = null;
@@ -439,7 +583,6 @@ function changeEyeShape(shapeId, el) {
   showColorOptions("eyes");
   updateEyesForSkin(slideIndex);
 
-  // show current eye color display and outline
   showEyeColorDisplay(currentEyeColor);
   setOutline("eyes", eyeColorMap[currentEyeColor] ?? 2);
 
@@ -448,18 +591,6 @@ function changeEyeShape(shapeId, el) {
     eyeDots[i].classList.remove("active");
   }
   el.classList.add("active");
-}
-
-
-let currentNoseId = "noseshape3";
-
-function updateNosesForSkin(slideIndex) {
-  const isDark = darkSkinIndices.includes(slideIndex);
-  const activeNose = document.getElementById(currentNoseId);
-  if (!activeNose) return;
-
-  activeNose.querySelectorAll(".nosedark").forEach(img => img.style.display = isDark ? "block" : "none");
-  activeNose.querySelectorAll(".noselight").forEach(img => img.style.display = isDark ? "none" : "block");
 }
 
 function changeNoseShape(shapeId, el) {
@@ -472,6 +603,64 @@ function changeNoseShape(shapeId, el) {
   el.classList.add("active");
 }
 
+function changeHairShape(shapeId, el) {
+  document.querySelectorAll(".hairshape").forEach(s => s.style.display = "none");
+  currentHairId = shapeId;
+  document.getElementById(shapeId).style.display = "block";
+
+  document.getElementById(shapeId).querySelectorAll("img").forEach(img => {
+    img.style.display = img.src.includes(currentHairColor) ? "block" : "none";
+  });
+
+  showColorOptions("hairs");
+  showHairColorDisplay(currentHairColor);
+  setOutline("hairs", hairColorMap[currentHairColor] ?? 0);
+
+  document.querySelectorAll(".beautyoptionshair").forEach(dot => dot.classList.remove("active"));
+  el.classList.add("active");
+}
+
+function changeBrowShape(shapeId, el) {
+  document.querySelectorAll(".browshape").forEach(s => s.style.display = "none");
+  currentBrowId = shapeId;
+  document.getElementById(shapeId).style.display = "block";
+  updateBrowColor(currentBrowColor);
+  showColorOptions("brows");
+  showBrowColorDisplay(currentBrowColor);
+  setOutline("brows", browColorMap[currentBrowColor] ?? 0);
+
+  document.querySelectorAll(".beautyoptionsbrows").forEach(dot => dot.classList.remove("active"));
+  el.classList.add("active");
+}
+
+function changeBrowColor(color, el) {
+  currentBrowColor = color;
+
+  showBrowColorDisplay(color);
+
+  const browColorDots = document.querySelectorAll('.coloroption[data-category="brows"]');
+  browColorDots.forEach(dot => dot.classList.remove("outline"));
+  el.classList.add("outline");
+
+  updateBrowColor(color);
+}
+
+function changeHairColor(color, el) {
+  currentHairColor = color;
+
+  showHairColorDisplay(color);
+
+  const hairColorDots = document.querySelectorAll('.coloroption[data-category="hairs"]');
+  hairColorDots.forEach(dot => dot.classList.remove("outline"));
+  el.classList.add("outline");
+
+  const activeShape = document.getElementById(currentHairId);
+  if (!activeShape) return;
+
+  activeShape.querySelectorAll("img").forEach(img => {
+    img.style.display = img.src.includes(color) ? "block" : "none";
+  });
+}
 
 function changeEyeColor(color, el) {
   currentEyeColor = color;
@@ -523,15 +712,36 @@ function skinSlides(n) {
 }
 
 window.onload = function() {
-  // hide eye color displays until user picks an eye shape
   const eyeDisplays = document.getElementsByClassName("eyecolorsdisplay");
   for (let i = 0; i < eyeDisplays.length; i++) {
     eyeDisplays[i].style.display = "none";
   }
+
+  const hairDisplays = document.getElementsByClassName("haircolorsdisplay");
+  for (let i = 0; i < hairDisplays.length; i++) {
+    hairDisplays[i].style.display = "none";
+  }
+
+  const browDisplays = document.getElementsByClassName("browcolorsdisplay");
+  for (let i = 0; i < browDisplays.length; i++) {
+    browDisplays[i].style.display = "none";
+  }
+
+  document.querySelectorAll(".hairshape").forEach(s => s.style.display = "none");
+  document.getElementById(currentHairId).style.display = "block";
+
+  document.querySelectorAll(".browshape").forEach(s => s.style.display = "none");
+  document.getElementById(currentBrowId).style.display = "block";
+
   showColorOptions("skin");
   setOutline("skin", 0);
   updateEyesForSkin(slideIndex);
   updateNosesForSkin(slideIndex);
+  updateBrowColor(currentBrowColor);
+
+  document.getElementById(currentHairId).querySelectorAll("img").forEach(img => {
+    img.style.display = img.src.includes(currentHairColor) ? "block" : "none";
+  });
 };
 </script>
 

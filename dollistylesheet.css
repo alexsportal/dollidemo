@@ -674,7 +674,10 @@ img.skins,
 img.darkeyes,
 img.lighteyes,
 img.nosedark,
-img.noselight{
+img.noselight,
+img.eyebrows,
+img.hairstyles,
+img.lips{
     width: 1000px;
     height: 410px;
     object-fit: cover;
@@ -687,7 +690,9 @@ img.noselight{
     display:none;
 }
 
-.eyeshape{
+.eyeshape,
+.hairshape,
+.browshape{
     display:block;
 }
 
