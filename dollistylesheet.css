@@ -185,7 +185,8 @@ img.faces{
 }
 
 .skincolorsdisplay,
-.eyecolorsdisplay{
+.eyecolorsdisplay,
+.lipcolorsdisplay{
     width:30px;
     height:30px;
     border-radius: 3px;
@@ -669,7 +670,6 @@ img.faces{
     margin-top: 7px;
     margin-right:5px;
 }
-
 img.skins,
 img.darkeyes,
 img.lighteyes,
@@ -689,17 +689,26 @@ img.lips{
     margin:auto;
     display:none;
 }
+img.hairstyles{
+
+    margin-top:-.8px;
+    margin-left: -.5px;
+}
 
 .eyeshape,
 .hairshape,
-.browshape{
+.browshape,
+.lipshape{
     display:block;
 }
+
+
 
 .labelicon{
     width:30px;
     height:auto;
     margin-top:-4px;
 }
+
 
 
