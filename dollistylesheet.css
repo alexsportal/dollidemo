@@ -180,13 +180,14 @@ img.faces{
 
 .outline,
 .coloroption:hover{
-
    outline:3px solid #e2bcc8;
 }
 
 .skincolorsdisplay,
 .eyecolorsdisplay,
-.lipcolorsdisplay{
+.haircolorsdisplay,
+.browcolorsdisplay,
+.lipcolorsdisplay {
     width:30px;
     height:30px;
     border-radius: 3px;

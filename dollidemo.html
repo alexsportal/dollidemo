@@ -60,7 +60,7 @@
     </div>
 
     <div class="coloroptions">
-        <div onclick="changeSkin(1), this" class="coloroption" data-category="skin" style="background-color: #52281e;"></div>
+        <div onclick="changeSkin(2), this" class="coloroption" data-category="skin" style="background-color: #65251c;"></div>
         <div onclick="changeEyeColor('blue', this)" class="coloroption" data-category="eyes" style="background-color: #1e3352;"></div>
         <div onclick="changeHairColor('black', this)" class="coloroption" data-category="hairs" style="background-color: #000000;"></div>
         <div onclick="changeBrowColor('black', this)" class="coloroption" data-category="brows" style="background-color: #000000;"></div>
@@ -69,37 +69,32 @@
        <div class="coloroptions">
         <div onclick="changeSkin(1), this" class="coloroption" data-category="skin" style="background-color: #52281e;"></div>
         <div onclick="changeEyeColor('green', this)" class="coloroption" data-category="eyes" style="background-color: #1e523f;"></div>
-        <div onclick="changeHairColor('black', this)" class="coloroption" data-category="hairs" style="background-color: #000000;"></div>
+        <div onclick="changeHairColor('brown', this)" class="coloroption" data-category="hairs" style="background-color: #412b19;"></div>
         <div onclick="changeBrowColor('black', this)" class="coloroption" data-category="brows" style="background-color: #000000;"></div>
         <div onclick="changeLipColor('plum', this)" class="coloroption" data-category="lips" style="background-color: #411934;"></div> 
     </div>
     <div class="coloroptions">
-        <div onclick="changeSkin(2), this" class="coloroption" data-category="skin" style="background-color: #65251c;"></div>
-          <div onclick="changeEyeColor('brown', this)" class="coloroption" data-category="eyes" style="background-color: #5d3f27;"></div>
-        <div onclick="changeHairColor('brown', this)" class="coloroption" data-category="hairs" style="background-color: #412b19;"></div>
+        <div onclick="changeSkin(3), this" class="coloroption" data-category="skin" style="background-color: #7c463b;"></div>
+        <div onclick="changeEyeColor('brown', this)" class="coloroption" data-category="eyes" style="background-color: #5d3f27;"></div>
+        <div onclick="changeHairColor('blonde', this)" class="coloroption" data-category="hairs" style="background-color: #906847;"></div>
         <div onclick="changeBrowColor('brown', this)" class="coloroption" data-category="brows" style="background-color: #412b19;"></div>
         <div onclick="changeLipColor('pink', this)" class="coloroption" data-category="lips" style="background-color: #a14663;"></div>
     </div>
     <div class="coloroptions">
-        <div onclick="changeSkin(3), this" class="coloroption" data-category="skin" style="background-color: #7c463b;"></div>
-      
-        <div onclick="changeHairColor('blonde', this)" class="coloroption" data-category="hairs" style="background-color: #906847;"></div>
+        <div onclick="changeSkin(4), this" class="coloroption" data-category="skin" style="background-color: #954f4b;"></div>
+        <div onclick="changeHairColor('orange', this)" class="coloroption" data-category="hairs" style="background-color: #914818;"></div>
         <div onclick="changeBrowColor('blonde', this)" class="coloroption" data-category="brows" style="background-color: #906847;"></div>
         <div onclick="changeLipColor('lightpink', this)" class="coloroption" data-category="lips" style="background-color: #cf6986;"></div>
     </div>
     <div class="coloroptions">
-        <div onclick="changeSkin(4), this" class="coloroption" data-category="skin" style="background-color: #954f4b;"></div>
-        <div onclick="changeHairColor('orange', this)" class="coloroption" data-category="hairs" style="background-color: #914818;"></div>
-        <div onclick="changeBrowColor('orange', this)" class="coloroption" data-category="brows" style="background-color: #914818;"></div>
-    
-    </div>
-    <div class="coloroptions">
         <div onclick="changeSkin(5), this" class="coloroption" data-category="skin" style="background-color: #c37068;"></div>
+        <div onclick="changeBrowColor('orange', this)" class="coloroption" data-category="brows" style="background-color: #914818;"></div>
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(6), this" class="coloroption" data-category="skin" style="background-color: #c57e7f;"></div>
     </div>
-    <div class="coloroptions"></div>
+    <div class="coloroptions">
+    </div>
     <div class="coloroptions"></div>
     <div class="coloroptions"></div>
     <div class="coloroptions"></div>
@@ -295,7 +290,7 @@
 
    <div id="options">
         <section class="nav">
-        <div onClick="scrollleft(-100, 0);hideAllColorOptions()" class="navbuttonleft" >
+        <div onClick="scrollleft(-100, 0);onNavClick(-1)" class="navbuttonleft" >
             
             <svg id="left"  viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_i_3519_9871)">
@@ -316,7 +311,7 @@
             </svg>
 
         </div>
-        <div onClick="scrollright(100, 0);hideAllColorOptions()" class="navbuttonright" >
+        <div onClick="scrollright(100, 0);onNavClick(1)" class="navbuttonright" >
             
             <svg id="right" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_i_3519_9870)">
@@ -468,12 +463,14 @@ let currentHairId = "basehair";
 let currentBrowId = "browshape2";
 let currentNoseId = "noseshape3";
 let currentLipId = "lipshape1";
-const darkSkinIndices = [1, 2, 3];
+let currentSectionIndex = 0;
 let slideIndex = 1;
+const darkSkinIndices = [1, 2, 3];
 const eyeColorMap = { blue: 0, green: 1, brown: 2 };
 const hairColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const browColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const lipColorMap = { brown: 0, plum: 1, pink: 2, lightpink: 3 };
+const sections = ["skin", "eyes", "brows", "nose", "lips", "hairs", "makeup", "background"];
 
 function updateEyesForSkin(slideIndex) {
   const isDark = darkSkinIndices.includes(slideIndex);
@@ -618,31 +615,59 @@ if (category === "lips") {
   activeColorCategory = category;
 }
 
+function onNavClick(direction) {
+  currentSectionIndex += direction;
+  if (currentSectionIndex < 0) currentSectionIndex = 0;
+  if (currentSectionIndex >= sections.length) currentSectionIndex = sections.length - 1;
 
+  const category = sections[currentSectionIndex];
+  showColorOptions(category);
+
+
+ if (category === "skin") {
+    setOutline("skin", slideIndex - 1);
+    document.querySelectorAll(".beautyoptionsskin").forEach((el, i) => {
+      el.classList.toggle("active", i === slideIndex - 1);
+    });
+  }
+  if (category === "eyes") {
+    setOutline("eyes", eyeColorMap[currentEyeColor] ?? 2);
+  }
+  if (category === "hairs") {
+    setOutline("hairs", hairColorMap[currentHairColor] ?? 0);
+    document.querySelectorAll(".beautyoptionshair").forEach(el => el.classList.remove("active"));
+    const hairButtons = document.querySelectorAll(".beautyoptionshair");
+    hairButtons.forEach(el => {
+      if (el.getAttribute("onclick") && el.getAttribute("onclick").includes(currentHairId)) {
+        el.classList.add("active");
+      }
+    });
+  }
+  if (category === "brows") {
+    setOutline("brows", browColorMap[currentBrowColor] ?? 0);
+    document.querySelectorAll(".beautyoptionsbrows").forEach(el => {
+      el.classList.toggle("active", el.getAttribute("onclick") && el.getAttribute("onclick").includes(currentBrowId));
+    });
+  }
+  if (category === "lips") {
+    setOutline("lips", lipColorMap[currentLipColor] ?? 0);
+    document.querySelectorAll(".beautyoptionslips").forEach(el => {
+      el.classList.toggle("active", el.getAttribute("onclick") && el.getAttribute("onclick").includes(currentLipId));
+    });
+  }
+  if (category === "nose") {
+    document.querySelectorAll(".beautyoptionsnose").forEach(el => {
+      el.classList.toggle("active", el.getAttribute("onclick") && el.getAttribute("onclick").includes(currentNoseId));
+    });
+  }
+}
 
 function hideAllColorOptions() {
   const all = document.querySelectorAll(".coloroption");
   all.forEach(el => el.style.display = "none");
 
-  const eyeDisplays = document.getElementsByClassName("eyecolorsdisplay");
-  for (let i = 0; i < eyeDisplays.length; i++) {
-    eyeDisplays[i].style.display = "none";
-  }
-
-  const hairDisplays = document.getElementsByClassName("haircolorsdisplay");
-  for (let i = 0; i < hairDisplays.length; i++) {
-    hairDisplays[i].style.display = "none";
-  }
-
-  const browDisplays = document.getElementsByClassName("browcolorsdisplay");
-  for (let i = 0; i < browDisplays.length; i++) {
-    browDisplays[i].style.display = "none";
-  }
-
-  const lipDisplays = document.getElementsByClassName("lipcolorsdisplay");
-  for (let i = 0; i < lipDisplays.length; i++) {
-    lipDisplays[i].style.display = "none";
-    }
+  document.querySelectorAll(".skincolorsdisplay, .eyecolorsdisplay, .haircolorsdisplay, .browcolorsdisplay, .lipcolorsdisplay")
+    .forEach(el => el.style.display = "none");
 
   activeColorCategory = null;
 }
@@ -690,7 +715,7 @@ function changeHairShape(shapeId, el) {
   document.getElementById(shapeId).style.display = "block";
 
   document.getElementById(shapeId).querySelectorAll("img").forEach(img => {
-    img.style.display = img.src.includes(currentHairColor) ? "block" : "none";
+  img.style.display = img.src.includes(currentHairColor) ? "block" : "none";
   });
 
   showColorOptions("hairs");
