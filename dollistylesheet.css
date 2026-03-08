@@ -8,8 +8,8 @@ body{
     height:100vh;
     overflow-y: hidden;
     overflow-x:hidden;
-   /* background-image: url(DressupGame_Assets/Scenes/background2.jpg);
-    background-size: 150%;*/
+    background-image: url(DressupGame_Assets/Scenes/background2.jpg);
+    background-size: 200%;
     box-shadow: inset 0px 0px 50px #591437d9;
     padding-top: 3px;
     user-select: none;
@@ -251,7 +251,8 @@ img.faces{
     height:250px;
     max-height:250px;
     scroll-snap-type: x mandatory;
-    background: linear-gradient(180deg, #c39aa8 20.19%, #BE9CA7 67.31%, #b47f96 100%);
+    background-color:#c39aa8;
+    /*background: linear-gradient(180deg, #c39aa8 20.19%, #BE9CA7 67.31%, #b47f96 100%);*/
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transition:ease-out .3s;
@@ -292,14 +293,13 @@ img.faces{
     width:330px;
     max-width: 330px;
     min-width:290px;
-    /*background: linear-gradient(180deg, #d8b6c2 20.19%, #BE9CA7 67.31%, #BD879E 100%);*/
     display: block;
     border-radius: 5px;
     margin: auto;
     margin-left:10px;
     margin-right: 10px;
     margin-top:-15px;
-    background-color:#C7A4B0;
+    background-color:#b27690;
 
     
 }
@@ -621,7 +621,7 @@ img.faces{
     z-index: 3;
     flex: 100%;
     margin-top: 10px;
-    background-image: url(DressupGame_Assets/Button_Icons/navbuttoncontainer.jpg);
+   
     border-radius: 5px;
     background-color: #00000000;
     background-size: cover;
@@ -633,12 +633,17 @@ img.faces{
 .navbutton{
     width: 55px;
     height: 28px;
-    transition:ease-out .3s;
-    box-shadow: 3px 3px 10px #10011426;
+    transition: ease-out .3s;
+    box-shadow: 1px 2px 3px #8c4d6d;
     border-radius: 5px;
-    filter:brightness(.9);
+    filter: brightness(1);
 }
 
+.navbutton.active {
+    outline: 2px solid #96476f;
+    cursor: pointer;
+    filter: brightness(1.13);
+}
 .navbuttoncontainer{
     position: relative;
     display: flex;
@@ -649,14 +654,11 @@ img.faces{
     margin: auto;
     flex-wrap: wrap;
     justify-content: center;
-
-    
 }
 
 @media screen and (max-width:396px){
 .nav{
     width:315px;
-    background-image: url(DressupGame_Assets/Button_Icons/navbuttoncontainersmall.jpg);
     }
 }
 @media screen and (max-width:396px){
@@ -670,36 +672,9 @@ img.faces{
     }
 }
 
-
-.navbutton.active {
-    border: 2px solid #e2bcc8;
-    cursor:pointer;
-    filter:brightness(1);
-}
-
-#left{ 
-    width:15px;
-    height:15px;
-    display:block;
-    margin:auto;
-    margin-top:5px;
-    position: relative;
-    padding-right:3px;
-}
-#right{
-    width:15px;
-    height:15px;
-    display:block;
-    margin:auto;
-    margin-top:5px;
-    position: relative;
-    padding-left:3px;
-}
-
-
 ::-webkit-scrollbar {
-  width: 8px;
-  height:8px;
+  width: 10px;
+  height:10px;
   transition: .3S;
 }
 
@@ -710,13 +685,10 @@ img.faces{
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #EDC0D1 0%, #D2ACBA 44.06%, #C598A9 47.89%, #C7A4B0 93.86%);
+  background: linear-gradient(180deg,#aa6e82 -3.3%, #a35b7e 39.59%, #964b71 43.32%, rgb(164, 95, 130) 88.07%);
   border-radius: 10px;  
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background:linear-gradient(180deg, #EDC0D1 0%, #D2ACBA 44.06%, #c08da1 47.89%, #bc92a1 93.86%);
-}
 
 #update{
     color:white;
