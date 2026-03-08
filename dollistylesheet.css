@@ -38,8 +38,8 @@ body{
     min-width:370px;
     margin:auto;
     height:85vh;
-    max-height:690px;
-    min-height:690px;
+    max-height:680px;
+    min-height:680px;
     width:auto;
     display:flex;
     flex-direction: column;
@@ -57,8 +57,8 @@ body{
     min-width:390px;
     margin:auto;
     height:85vh;
-    max-height:688px;
-    min-height:688px;
+    max-height:687px;
+    min-height:687px;
     left:0;
     right:0;
     width:auto;
@@ -66,8 +66,7 @@ body{
     background-attachment:fixed;
     position:relative;
     border-radius:10px;
-    padding-bottom:10px;
-    padding-top:7px;
+    padding-top:6px;
     outline:#fbdfea8b solid 1px;
     box-shadow: 2px 8px 28px -8px #591437d9;
     -webkit-box-shadow: 2px 8px 28px -8px #591437d9;
@@ -77,8 +76,8 @@ body{
 
 @media screen and (max-width:400px){
     #border{
-        max-width:345px;
-        min-width:345px;
+        max-width:340px;
+        min-width:340px;
     }
     #gamecontain{
         max-width:330px;
@@ -214,7 +213,8 @@ body{
     font-family: zainboldx;
     font-size: 16px;
     width: auto;
-    margin-bottom: 17px;
+    margin-bottom: 0;
+    margin-top: 0;
     -webkit-text-stroke: .3px #b47f96;
     display: flex;
     justify-content: center;
@@ -238,7 +238,7 @@ body{
     flex-wrap: wrap;
     overflow-x: hidden;
     overflow-y: auto;
-    margin-top: -10px;
+
 }
 
  #options::-webkit-scrollbar{
@@ -247,47 +247,48 @@ body{
 }
 
 .optioncontainer{
-    padding:0;
-    height:107px;
-    width:auto;
+    padding: 0;
+    height: 105px;
+    width: auto;
     display: flex;
     flex-wrap: wrap;
-    flex-direction:column;
+    flex-direction: column;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     border-radius: 5px;
-    gap:10px;
+    gap: 10px;
     margin: auto;
 }
 
 
 .padding{
-    padding:10px;
-    padding-bottom:0px;
-    height:90px;
-    width:330px;
+  padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    height: 110px;
+    width: 330px;
     max-width: 330px;
-    min-width:290px;
+    min-width: 290px;
     display: block;
-    border-radius: 5px;
+    border-radius: 4px;
     margin: auto;
-    margin-left:10px;
+    margin-left: 10px;
     margin-right: 10px;
-    margin-top:-15px;
-    background-color:#b27690;
+    background-color: #b27690;
 }
 
 @media screen and (max-width:396px){
 .padding{
     width:290px;
-    height:80px;
+    height:100px;
     }
 .optioncontainer{
     height:100px;
 }
 .itemcontainer{
-    margin-bottom:35px;
+    margin-bottom:34px;
 }
 }
 
@@ -617,8 +618,6 @@ body{
     height: 80px;
     z-index: 3;
     flex: 100%;
-    margin-top: 10px;
-   
     border-radius: 5px;
     background-color: #00000000;
     background-size: cover;
@@ -665,7 +664,7 @@ body{
 }
 @media screen and (max-width:396px){
 .navbuttoncontainer{
-    gap:5px;
+    gap:9px;
     }
 }
 
