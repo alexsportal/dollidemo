@@ -1,5 +1,5 @@
 body{
-    background-color:#ad7b8e;
+    background-color:#974d73;
     position: relative;
     margin:auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,9 +8,9 @@ body{
     height:100vh;
     overflow-y: hidden;
     overflow-x:hidden;
-    background-image: url(DressupGame_Assets/Scenes/background2.jpg);
+    /*background-image: url(DressupGame_Assets/Scenes/background2.jpg);*/
     background-size: 200%;
-    box-shadow: inset 0px 0px 50px #591437d9;
+    box-shadow: inset 0px 0px 50px #5914374d;
     padding-top: 3px;
     user-select: none;
 }
@@ -34,12 +34,12 @@ body{
 
 
 #gamecontain{
-    max-width:370px;
-    min-width:370px;
+    max-width:380px;
+    min-width:380px;
     margin:auto;
     height:85vh;
-    max-height:680px;
-    min-height:680px;
+    max-height:681px;
+    min-height:681px;
     width:auto;
     display:flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ body{
     min-width:390px;
     margin:auto;
     height:85vh;
-    max-height:687px;
+    max-height:685px;
     min-height:687px;
     left:0;
     right:0;
@@ -66,11 +66,10 @@ body{
     background-attachment:fixed;
     position:relative;
     border-radius:10px;
-    padding-top:6px;
-    outline:#fbdfea8b solid 1px;
-    box-shadow: 2px 8px 28px -8px #591437d9;
-    -webkit-box-shadow: 2px 8px 28px -8px #591437d9;
-    -moz-box-shadow: 2px 8px 28px -8px #591437d9;
+    padding-top:5px;
+    box-shadow: 2px 8px 28px -8px #400824bf;
+    -webkit-box-shadow: 2px 8px 28px -8px #400824bf;
+    -moz-box-shadow: 2px 8px 28px -8px #400824bf;
     overflow-y: hidden;
 }
 
@@ -78,10 +77,14 @@ body{
     #border{
         max-width:340px;
         min-width:340px;
+        max-height:677px;
+        min-height:677px;
     }
     #gamecontain{
         max-width:330px;
         min-width:330px;
+        max-height:670px;
+        min-height:670px;
     }
 }
 
@@ -157,7 +160,7 @@ body{
 
 .outline,
 .coloroption:hover{
-   outline:3px solid #e2bcc8;
+   outline:3px solid #96476f;
 }
 
 .skincolorsdisplay,
@@ -218,6 +221,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #561a39;
 }
 
 #options{
@@ -246,7 +250,7 @@ body{
 
 .optioncontainer{
     padding: 0;
-    height: 105px;
+    height: 106px;
     width: auto;
     display: flex;
     flex-wrap: wrap;
@@ -261,20 +265,20 @@ body{
 
 
 .padding{
-  padding-left: 10px;
+    padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 5px;
     padding-top: 5px;
     height: 110px;
-    width: 330px;
-    max-width: 330px;
+    width: auto;
     min-width: 290px;
     display: block;
-    border-radius: 4px;
+    border-radius: 5px;
     margin: auto;
     margin-left: 10px;
     margin-right: 10px;
     background-color: #b27690;
+    box-shadow: 0px 0px 0px 1.5px #a9507d;
 }
 
 @media screen and (max-width:396px){
@@ -283,15 +287,13 @@ body{
     height:100px;
     }
 .optioncontainer{
-    height:100px;
+    height:97px;
 }
-.itemcontainer{
-    margin-bottom:34px;
-}
+
 }
 
 .beautyoptionsskin{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -308,7 +310,7 @@ body{
 }
 
 .beautyoptionseyes{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -326,7 +328,7 @@ body{
 }
 
 .beautyoptionsbrows{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -344,7 +346,7 @@ body{
 }
 
 .beautyoptionsnose{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -362,7 +364,7 @@ body{
 }
 
 .beautyoptionslips{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -380,7 +382,7 @@ body{
 }
 
 .beautyoptionshair{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -398,7 +400,7 @@ body{
 }
 
 .beautyoptionsmakeup{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -414,7 +416,7 @@ body{
     cursor:pointer;
 }
 .beautyoptionstops{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -431,7 +433,7 @@ body{
     cursor:pointer;
 }
 .beautyoptionsjewelry{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -448,7 +450,7 @@ body{
     cursor:pointer;
 }
 .beautyoptionsbg{
-    width: 103px;
+    width: 107px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -474,7 +476,8 @@ body{
 .beautyoptionsjewelry:hover,
 .beautyoptionstops:hover,
 .beautyoptionsbg:hover{
-   background-color:#d1cfdf;
+   background-color: #d3dae5;
+
 }
 
 
@@ -525,30 +528,27 @@ body{
     height: 70px;
     }
 }
-@media screen and (max-width:396px){
-.beautyoptionsmakeup{
-    width:90px;
-    height: 70px;
-    }
-}
-@media screen and (max-width:396px){
-.beautyoptionstops{
-    width:90px;
-    height: 70px;
-    }
-}
+
 @media screen and (max-width:396px){
 .beautyoptionsjewelry{
     width:90px;
     height: 70px;
     }
-}
-@media screen and (max-width:396px){
 .beautyoptionsbg{
     width:90px;
     height: 70px;
     }
+    
+.beautyoptionstops{
+    width:90px;
+    height: 70px;
+    }
+.beautyoptionsmakeup{
+    width:90px;
+    height: 70px;
+    }
 }
+
 
 #menu{
     width: auto;
@@ -584,6 +584,7 @@ body{
     width: auto;
     height:30px;
     background:  linear-gradient(180deg, #AA6E82 0%, #A35B7E 44.06%, #964B71 47.89%, #A45F82 93.86%);
+    box-shadow: inset 0px 1px 4px #833e61d2;
     display:flex;
     flex-direction: row;
     padding:5px;
@@ -603,8 +604,10 @@ body{
     position:auto;
 }
 
+
+
 .nav{
-     display: flex;
+    display: flex;
     flex-direction: row;
     position: fixed;
     justify-content: space-between;
@@ -612,7 +615,7 @@ body{
     margin: auto;
     left: 0;
     right: 0;
-    width: 346px;
+    width: 360px;
     height: 80px;
     z-index: 3;
     flex: 100%;
@@ -628,7 +631,7 @@ body{
     width: auto;
     height: 28px;
     transition: ease-out .3s;
-    box-shadow: 1px 2px 3px #8c4d6d;
+    box-shadow: 1px 1px 3px #8c4d6ded;
     border-radius: 5px;
     filter: brightness(1);
 }
@@ -669,13 +672,11 @@ body{
 ::-webkit-scrollbar {
   width: 10px;
   height:10px;
-  transition: .3S;
 }
 
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color:#b27690;
-;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -734,7 +735,10 @@ img.hairstyles{
     top: 2px;
     cursor: pointer;
     transition:ease-out .3s;
+    margin-right:5px;
+        
 }
+
 #helpbutton:hover{
    filter:contrast(1.2);
 }
