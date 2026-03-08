@@ -12,9 +12,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 <link rel="stylesheet" href="dollistylesheet.css">
 <script src="updown.js"></script>
-<style>
-
-
+<style media="print">
+html, body {
+    height: 455px !important;
+    width: 300px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+  body * { visibility: hidden; }
+  #beautyparlour, #beautyparlour * { visibility: visible; }
+  #beautyparlour {
+    position: fixed;
+    top: 0;
+    left: -70px;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    width: 370px !important;
+    height: 455px !important;
+    overflow: hidden !important;
+}
+  #colors { display: none !important; }
+  #menu { display: none !important; }
+  #banner { display: none !important; }
+  @page {
+    size: 300px 455px;
+    margin: 0;
+  }
 </style>
 </head>
 
@@ -64,31 +89,31 @@
         <div onclick="changeEyeColor('blue', this)" class="coloroption" data-category="eyes" style="background-color: #1e3352;"></div>
         <div onclick="changeHairColor('black', this)" class="coloroption" data-category="hairs" style="background-color: #000000;"></div>
         <div onclick="changeBrowColor('black', this)" class="coloroption" data-category="brows" style="background-color: #000000;"></div>
-         <div onclick="changeLipColor('brown', this)" class="coloroption" data-category="lips" style="background-color: #391b04;"></div>
+        <div onclick="changeLipColor('brown', this)" class="coloroption" data-category="lips" style="background-color: #391b04;"></div>
     </div>
        <div class="coloroptions">
         <div onclick="changeSkin(2), this" class="coloroption" data-category="skin" style="background-color: #65251c;"></div>
         <div onclick="changeEyeColor('green', this)" class="coloroption" data-category="eyes" style="background-color: #1e523f;"></div>
         <div onclick="changeHairColor('brown', this)" class="coloroption" data-category="hairs" style="background-color: #412b19;"></div>
-        <div onclick="changeBrowColor('black', this)" class="coloroption" data-category="brows" style="background-color: #000000;"></div>
+        <div onclick="changeBrowColor('brown', this)" class="coloroption" data-category="brows" style="background-color: #412b19;"></div>
         <div onclick="changeLipColor('plum', this)" class="coloroption" data-category="lips" style="background-color: #411934;"></div> 
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(3), this" class="coloroption" data-category="skin" style="background-color: #7c463b;"></div>
         <div onclick="changeEyeColor('brown', this)" class="coloroption" data-category="eyes" style="background-color: #5d3f27;"></div>
         <div onclick="changeHairColor('blonde', this)" class="coloroption" data-category="hairs" style="background-color: #906847;"></div>
-        <div onclick="changeBrowColor('brown', this)" class="coloroption" data-category="brows" style="background-color: #412b19;"></div>
+       <div onclick="changeBrowColor('blonde', this)" class="coloroption" data-category="brows" style="background-color: #906847;"></div>
         <div onclick="changeLipColor('pink', this)" class="coloroption" data-category="lips" style="background-color: #a14663;"></div>
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(4), this" class="coloroption" data-category="skin" style="background-color: #954f4b;"></div>
         <div onclick="changeHairColor('orange', this)" class="coloroption" data-category="hairs" style="background-color: #914818;"></div>
-        <div onclick="changeBrowColor('blonde', this)" class="coloroption" data-category="brows" style="background-color: #906847;"></div>
+        <div onclick="changeBrowColor('orange', this)" class="coloroption" data-category="brows" style="background-color: #914818;"></div>
         <div onclick="changeLipColor('lightpink', this)" class="coloroption" data-category="lips" style="background-color: #cf6986;"></div>
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(5), this" class="coloroption" data-category="skin" style="background-color: #c37068;"></div>
-        <div onclick="changeBrowColor('orange', this)" class="coloroption" data-category="brows" style="background-color: #914818;"></div>
+        
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(6), this" class="coloroption" data-category="skin" style="background-color: #c57e7f;"></div>
@@ -135,7 +160,7 @@
             </div>
             <div id="menu">
                 <div class="menubutton"><u>U</u>ndo</div>
-                <div class="menubutton"><u>S</u>ave</div>
+                <div onClick="saveImage()" class="menubutton"><u>S</u>ave</div>
             </div>
 
                 <!--BODIES-->
@@ -500,6 +525,10 @@ const hairColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const browColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const lipColorMap = { brown: 0, plum: 1, pink: 2, lightpink: 3 };
 const sections = ["skin", "eyes", "brows", "nose", "lips", "hairs", "makeup", "background"];
+
+function saveImage() {
+  window.print();
+}
 
 function updateEyesForSkin(slideIndex) {
   const isDark = darkSkinIndices.includes(slideIndex);
