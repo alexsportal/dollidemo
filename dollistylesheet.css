@@ -215,11 +215,11 @@ body{
     width: auto;
     margin-bottom: 0;
     margin-top: 0;
-    -webkit-text-stroke: .3px #b47f96;
+    -webkit-text-stroke: .3px #8b3a67;
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-text-stroke: 1px #a87084;
+    -webkit-text-stroke: 1px #8b3a67;
 }
 
 #options{
@@ -614,7 +614,7 @@ body{
     margin: auto;
     left: 0;
     right: 0;
-    width: 335px;
+    width: 346px;
     height: 80px;
     z-index: 3;
     flex: 100%;
@@ -627,7 +627,7 @@ body{
 
 
 .navbutton{
-    width: 55px;
+    width: auto;
     height: 28px;
     transition: ease-out .3s;
     box-shadow: 1px 2px 3px #8c4d6d;
@@ -646,10 +646,10 @@ body{
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    width: 330px;
+    width: auto;
     margin: auto;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 @media screen and (max-width:396px){
