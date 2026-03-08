@@ -636,6 +636,7 @@ img.faces{
     transition:ease-out .3s;
     box-shadow: 3px 3px 10px #10011426;
     border-radius: 5px;
+    filter:brightness(.9);
 }
 
 .navbuttoncontainer{
@@ -673,7 +674,7 @@ img.faces{
 .navbutton.active {
     border: 2px solid #e2bcc8;
     cursor:pointer;
-    filter:contrast(115%);
+    filter:brightness(1);
 }
 
 #left{ 
