@@ -729,14 +729,19 @@ img.hairstyles{
     display:block;
 }
 
-
-
 .labelicon{
     width:30px;
     height:auto;
     margin-top:-4px;
-  
 }
 
-
+#helpbutton{
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+    transition:ease-out .3s;
+}
+#helpbutton:hover{
+   filter:contrast(1.2);
+}
 
