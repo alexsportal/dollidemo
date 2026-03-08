@@ -38,8 +38,8 @@ body{
     min-width:370px;
     margin:auto;
     height:85vh;
-    max-height:700px;
-    min-height:700px;
+    max-height:690px;
+    min-height:690px;
     width:auto;
     display:flex;
     flex-direction: column;
@@ -57,8 +57,8 @@ body{
     min-width:390px;
     margin:auto;
     height:85vh;
-    max-height:700px;
-    min-height:700px;
+    max-height:688px;
+    min-height:688px;
     left:0;
     right:0;
     width:auto;
@@ -205,7 +205,7 @@ body{
     height: auto;
     margin: auto;
     scroll-snap-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 .optiontitle{
@@ -287,7 +287,7 @@ body{
     height:100px;
 }
 .itemcontainer{
-    margin-bottom:45px;
+    margin-bottom:35px;
 }
 }
 
