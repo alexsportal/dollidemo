@@ -37,7 +37,7 @@ body{
     max-width:370px;
     min-width:370px;
     margin:auto;
-    height:87vh;
+    height:85vh;
     max-height:700px;
     min-height:700px;
     width:auto;
@@ -56,7 +56,7 @@ body{
     max-width:390px;
     min-width:390px;
     margin:auto;
-    height:87vh;
+    height:85vh;
     max-height:700px;
     min-height:700px;
     left:0;
@@ -83,18 +83,6 @@ body{
     #gamecontain{
         max-width:330px;
         min-width:330px;
-    }
-    #color{
-       width:350px;
-    }
-    #banner{
-       width:350px;
-    }
-    .topitemcontainer{
-       width:250px;
-    }  
-    .topitemcontainer{
-       width:250px;
     }
 }
 
@@ -288,14 +276,19 @@ body{
     margin-right: 10px;
     margin-top:-15px;
     background-color:#b27690;
-
-    
 }
 
 @media screen and (max-width:396px){
 .padding{
     width:290px;
+    height:80px;
     }
+.optioncontainer{
+    height:100px;
+}
+.itemcontainer{
+    margin-bottom:45px;
+}
 }
 
 .beautyoptionsskin{
@@ -488,57 +481,73 @@ body{
 
 @media screen and (max-width:396px){
 .beautyoptionsskin{
-    width:91px;
+    width:90px;
+    height: 70px;
+    background-position-y: -50px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionseyes{
-    width:91px;
-    background-position-x: -435px;
+        width: 90px;
+        background-position-x: -435px;
+        background-position-y: -160px;
+        height: 70px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionsbrows{
-    width:91px;
+    width:90px;
     background-position-x: -428px;
+    background-position-y: -145px;
+    height: 70px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionsnose{
-    width:91px;
+    width:90px;
     background-position-x: -623px;
+    background-position-y: -265px;
+    height: 70px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionslips{
-    width:91px;
+    width:90px;
     background-position-x: -538px;
+    background-position-y: -248px;
+    height: 70px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionshair{
-    width:91px;
+    width:90px;
     background-position-x: -95px;
+    background-position-y: -20px;
+    height: 70px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionsmakeup{
-    width:91px;
+    width:90px;
+    height: 70px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionstops{
-    width:91px;
+    width:90px;
+    height: 70px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionsjewelry{
-    width:91px;
+    width:90px;
+    height: 70px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionsbg{
-    width:91px;
+    width:90px;
+    height: 70px;
     }
 }
 
