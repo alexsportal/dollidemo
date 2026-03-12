@@ -101,8 +101,8 @@ body{
 }
 
 #beautyparlour{
-    background-color:#D9D9D9;
-    background-image: url(DressupGame_Assets/Scenes/cloudskyfield.png);
+    background-color:#d9d9d9;
+
     background-size:cover;
     width:auto;
     height:455px;
@@ -710,7 +710,8 @@ img.noselight,
 img.eyebrows,
 img.hairstyles,
 img.lips,
-img.blushes{
+img.blushes,
+img.tops{
     width: 1000px;
     height: 410px;
     object-fit: cover;
@@ -721,6 +722,7 @@ img.blushes{
     transform: translate(-50%, -50%);
     margin:auto;
     display:none;
+
 }
 
 img.blushes{
@@ -735,9 +737,10 @@ img.hairstyles{
 .hairshape,
 .browshape,
 .lipshape,
-.blush{
+.topstyle{
     display:block;
 }
+
 
 .labelicon{
     width:30px;
