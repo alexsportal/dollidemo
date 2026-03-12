@@ -196,6 +196,7 @@ body{
     transition:ease-out .3s;
     position:relative;
     margin:auto;
+    
 }
 
 .front{
@@ -203,6 +204,7 @@ body{
     top:13px;
     left:-7px;
     z-index:2;
+    cursor:pointer;
 }
 
 .back{
