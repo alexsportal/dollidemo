@@ -221,7 +221,7 @@ html, body {
                </div>
             </div>
             <div id="menu">
-                <div class="menubutton"><u>U</u>ndo</div>
+                <div onClick="undo()" class="menubutton"><u>U</u>ndo</div>
                 <div onClick="saveImage()" class="menubutton"><u>S</u>ave</div>
             </div>
                 
@@ -651,7 +651,7 @@ function updateNosesForSkin(slideIndex) {
   activeNose.querySelectorAll(".noselight").forEach(img => img.style.display = isDark ? "none" : "block");
 }
 
-function updateBrowColor(color) {
+function updateBrowColor(color) {   
   currentBrowColor = color;
   const activeBrow = document.getElementById(currentBrowId);
   if (!activeBrow) return;
@@ -836,6 +836,7 @@ function changeSkin(n) {
 }
 
 function changeEyeShape(shapeId, el) {
+  saveState();
   currentEyeId = shapeId;
   const shapes = document.getElementsByClassName("eyeshape");
   for (let i = 0; i < shapes.length; i++) shapes[i].style.display = "none";
@@ -850,6 +851,7 @@ function changeEyeShape(shapeId, el) {
 }
 
 function changeNoseShape(shapeId, el) {
+  saveState();
   document.querySelectorAll(".noseshape").forEach(s => s.style.display = "none");
   currentNoseId = shapeId;
   document.getElementById(shapeId).style.display = "block";
@@ -859,6 +861,7 @@ function changeNoseShape(shapeId, el) {
 }
 
 function changeHairShape(shapeId, el) {
+  saveState();
   document.querySelectorAll(".hairshape").forEach(s => s.style.display = "none");
   currentHairId = shapeId;
   document.getElementById(shapeId).style.display = "block";
@@ -873,6 +876,7 @@ function changeHairShape(shapeId, el) {
 }
 
 function changeBrowShape(shapeId, el) {
+  saveState();
   document.querySelectorAll(".browshape").forEach(s => s.style.display = "none");
   currentBrowId = shapeId;
   document.getElementById(shapeId).style.display = "block";
@@ -885,6 +889,7 @@ function changeBrowShape(shapeId, el) {
 }
 
 function changeBrowColor(color, el) {
+  saveState();
   currentBrowColor = color;
   showBrowColorDisplay(color);
   const browColorDots = document.querySelectorAll('.coloroption[data-category="brows"]');
@@ -894,6 +899,7 @@ function changeBrowColor(color, el) {
 }
 
 function changeLipShape(shapeId, el) {
+ saveState();
   document.querySelectorAll(".lipshape").forEach(s => s.style.display = "none");
   currentLipId = shapeId;
   document.getElementById(shapeId).style.display = "block";
@@ -906,6 +912,7 @@ function changeLipShape(shapeId, el) {
 }
 
 function changeBlushShape(shapeId, el) {
+  saveState();
   document.querySelectorAll(".blushshape").forEach(s => s.style.display = "none");
   currentBlushId = shapeId;
   document.getElementById(shapeId).style.display = "block";
@@ -918,6 +925,7 @@ function changeBlushShape(shapeId, el) {
 }
 
 function changeLipColor(color, el) {
+  saveState();
   currentLipColor = color;
   showLipColorDisplay(color);
   const lipColorDots = document.querySelectorAll('.coloroption[data-category="lips"]');
@@ -926,6 +934,7 @@ function changeLipColor(color, el) {
   updateLipColor(color);
 }
 function changeBlushColor(color, el) {
+  saveState();
   currentBlushColor = color;
   showBlushColorDisplay(color);
   const blushColorDots = document.querySelectorAll('.coloroption[data-category="blush"]');
@@ -935,6 +944,7 @@ function changeBlushColor(color, el) {
 }
 
 function changeHairColor(color, el) {
+  saveState();
   currentHairColor = color;
   showHairColorDisplay(color);
   const hairColorDots = document.querySelectorAll('.coloroption[data-category="hairs"]');
@@ -948,6 +958,7 @@ function changeHairColor(color, el) {
 }
 
 function changeEyeColor(color, el) {
+  saveState();
   currentEyeColor = color;
   showEyeColorDisplay(color);
   const eyeColorDots = document.querySelectorAll('.coloroption[data-category="eyes"]');
@@ -969,6 +980,7 @@ function changeEyeColor(color, el) {
 }
 
 function skinSlides(n) {
+  saveState();
   let skin = document.getElementsByClassName("skins");
   let dots = document.getElementsByClassName("beautyoptionsskin");
   let skincolorsDisplay = document.getElementsByClassName("skincolorsdisplay");
@@ -987,6 +999,37 @@ function skinSlides(n) {
 
   updateEyesForSkin(slideIndex);
   updateNosesForSkin(slideIndex);
+}
+
+
+function changeBackground(imageUrl, el) {
+  saveState();
+  document.getElementById("beautyparlour").style.backgroundImage = `url(${imageUrl})`;
+  document.getElementById("beautyparlour").style.backgroundColor = ""; 
+  document.querySelectorAll(".beautyoptionsbg").forEach(dot => dot.classList.remove("active"));
+  document.querySelectorAll(".coloroption[data-category='bg']").forEach(dot => dot.classList.remove("outline"));
+
+  document.querySelectorAll(".bgcolorsdisplay").forEach(el => el.style.display = "none");
+  el.classList.add("active");
+}
+
+function changeBackgroundColor(color, el) {
+  saveState();
+  document.getElementById("beautyparlour").style.backgroundImage = "none";
+  document.getElementById("beautyparlour").style.backgroundColor = color;
+
+  document.querySelectorAll(".beautyoptionsbg").forEach(dot => dot.classList.remove("active"));
+  document.querySelectorAll(".coloroption[data-category='bg']").forEach(dot => dot.classList.remove("outline"));
+  el.classList.add("outline");
+
+  const bgDots = document.querySelectorAll(".coloroption[data-category='bg']");
+  const bgDisplays = document.getElementsByClassName("bgcolorsdisplay");
+  
+  for (let i = 0; i < bgDisplays.length; i++) bgDisplays[i].style.display = "none";
+  
+  bgDots.forEach((dot, i) => {
+    if (dot === el && bgDisplays[i]) bgDisplays[i].style.display = "block";
+  });
 }
 
 window.onload = function() {
@@ -1032,35 +1075,85 @@ window.onload = function() {
   });
 };
 
-function changeBackground(imageUrl, el) {
-  document.getElementById("beautyparlour").style.backgroundImage = `url(${imageUrl})`;
-  document.getElementById("beautyparlour").style.backgroundColor = ""; 
-  document.querySelectorAll(".beautyoptionsbg").forEach(dot => dot.classList.remove("active"));
-  document.querySelectorAll(".coloroption[data-category='bg']").forEach(dot => dot.classList.remove("outline"));
-
-  document.querySelectorAll(".bgcolorsdisplay").forEach(el => el.style.display = "none");
-  el.classList.add("active");
-}
-
-function changeBackgroundColor(color, el) {
-  document.getElementById("beautyparlour").style.backgroundImage = "none";
-  document.getElementById("beautyparlour").style.backgroundColor = color;
-
-  document.querySelectorAll(".beautyoptionsbg").forEach(dot => dot.classList.remove("active"));
-  document.querySelectorAll(".coloroption[data-category='bg']").forEach(dot => dot.classList.remove("outline"));
-  el.classList.add("outline");
-
-  const bgDots = document.querySelectorAll(".coloroption[data-category='bg']");
-  const bgDisplays = document.getElementsByClassName("bgcolorsdisplay");
-  
-  for (let i = 0; i < bgDisplays.length; i++) bgDisplays[i].style.display = "none";
-  
-  bgDots.forEach((dot, i) => {
-    if (dot === el && bgDisplays[i]) bgDisplays[i].style.display = "block";
-  });
-}
 </script>
 
+<script>
+    const undoStack = [];
+
+function saveState() {
+  undoStack.push({
+    slideIndex: slideIndex,
+    currentEyeId: currentEyeId,
+    currentEyeColor: currentEyeColor,
+    currentHairId: currentHairId,
+    currentHairColor: currentHairColor,
+    currentBrowId: currentBrowId,
+    currentBrowColor: currentBrowColor,
+    currentLipId: currentLipId,
+    currentLipColor: currentLipColor,
+    currentBlushColor: currentBlushColor,
+    currentBlushId: currentBlushId,
+    currentNoseId: currentNoseId,
+    bgImage: document.getElementById("beautyparlour").style.backgroundImage,
+    bgColor: document.getElementById("beautyparlour").style.backgroundColor,
+  });
+}
+
+function undo() {
+  if (undoStack.length === 0) return;
+  const prev = undoStack.pop();
+
+  // skin
+  skinSlides(prev.slideIndex);
+
+  // eyes
+  document.querySelectorAll(".eyeshape").forEach(s => s.style.display = "none");
+  currentEyeId = prev.currentEyeId;
+  document.getElementById(currentEyeId).style.display = "block";
+  currentEyeColor = prev.currentEyeColor;
+  updateEyesForSkin(prev.slideIndex);
+
+  // hair
+  document.querySelectorAll(".hairshape").forEach(s => s.style.display = "none");
+  currentHairId = prev.currentHairId;
+  currentHairColor = prev.currentHairColor;
+  document.getElementById(currentHairId).style.display = "block";
+  document.getElementById(currentHairId).querySelectorAll("img").forEach(img => {
+    img.style.display = img.src.includes(currentHairColor) ? "block" : "none";
+  });
+
+  // brows
+  document.querySelectorAll(".browshape").forEach(s => s.style.display = "none");
+  currentBrowId = prev.currentBrowId;
+  document.getElementById(currentBrowId).style.display = "block";
+  updateBrowColor(prev.currentBrowColor);
+
+  // lips
+  document.querySelectorAll(".lipshape").forEach(s => s.style.display = "none");
+  currentLipId = prev.currentLipId;
+  document.getElementById(currentLipId).style.display = "block";
+  updateLipColor(prev.currentLipColor);
+
+  // blush
+  document.querySelectorAll(".blushshape").forEach(s => s.style.display = "none");
+  currentBlushId = prev.currentBlushId;
+  document.getElementById(currentBlushId).style.display = "block";
+  updateBlushColor(prev.currentBlushColor);
+
+  // nose
+  document.querySelectorAll(".noseshape").forEach(s => s.style.display = "none");
+  currentNoseId = prev.currentNoseId;
+  document.getElementById(currentNoseId).style.display = "block";
+  updateNosesForSkin(prev.slideIndex);
+
+  // background
+  document.getElementById("beautyparlour").style.backgroundImage = prev.bgImage;
+  document.getElementById("beautyparlour").style.backgroundColor = prev.bgColor;
+
+  // refresh the color panel for whatever section is open
+  goToSection(currentSectionIndex);
+}
+</script>
 
 </body>
 </html>
