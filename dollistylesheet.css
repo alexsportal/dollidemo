@@ -737,7 +737,8 @@ img.hairstyles{
 .hairshape,
 .browshape,
 .lipshape,
-.topstyle{
+.topstyle,
+.blushshape{
     display:block;
 }
 
