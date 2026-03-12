@@ -140,6 +140,7 @@ body{
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+    
 }
 
 
@@ -151,6 +152,7 @@ body{
     transition:ease-out .2s;
     cursor: pointer;
     position: relative;
+    
 }
 .coloroption{
     width:30px;
@@ -171,7 +173,9 @@ body{
 .eyecolorsdisplay,
 .haircolorsdisplay,
 .browcolorsdisplay,
-.lipcolorsdisplay {
+.lipcolorsdisplay,
+.blushcolorsdisplay,
+.bgcolorsdisplay{
     width:30px;
     height:30px;
     border-radius: 3px;
@@ -481,7 +485,7 @@ body{
 .beautyoptionstops:hover,
 .beautyoptionsbg:hover{
    background-color: #d3dae5;
-
+   border-bottom:#8b3f65 solid 2px;
 }
 
 
@@ -720,11 +724,12 @@ img.blushes{
 }
 
 img.blushes{
-    z-index:1;
+    z-index:0;
 }
 img.hairstyles{
     margin-left: -.5px;
 }
+
 
 .eyeshape,
 .hairshape,
@@ -756,5 +761,6 @@ img.hairstyles{
     color:#974d73;
     text-align: center;
     font-style: italic;
-    padding:5px;
+    padding:8px;
+    margin-top:7px;
 }

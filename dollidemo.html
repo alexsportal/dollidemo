@@ -80,7 +80,31 @@ html, body {
             <div class="lipcolorsdisplay" style="background-color: #411934;"></div>
             <div class="lipcolorsdisplay" style="background-color: #a14663;"></div>
             <div class="lipcolorsdisplay" style="background-color: #cf6986;"></div>
+
+            <!--BLUSH COLOR DISPLAY-->
+            <div class="blushcolorsdisplay" style="background-color: #530a1d;"></div>
+            <div class="blushcolorsdisplay" style="background-color: #982f3f;"></div>
+            <div class="blushcolorsdisplay" style="background-color: #c9486b;"></div>
+
+            <!--BG COLOR DISPLAY-->
+             <div class="bgcolorsdisplay" style="background-color: #c85187;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #881b34;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #c66d36;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #ceab54;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #adc948;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #66c655;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #48c9a0;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #4dc3bb;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #5d72cf;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #b179d4;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #bc6ea4;"></div>
+             <div class="bgcolorsdisplay" style="background-color: #e49ec2;"></div>
+            
             </div>
+
+            
+
+
 
 
         <div class="back"></div>
@@ -92,6 +116,8 @@ html, body {
         <div onclick="changeHairColor('black', this)" class="coloroption" data-category="hairs" style="background-color: #000000;"></div>
         <div onclick="changeBrowColor('black', this)" class="coloroption" data-category="brows" style="background-color: #000000;"></div>
         <div onclick="changeLipColor('brown', this)" class="coloroption" data-category="lips" style="background-color: #391b04;"></div>
+        <div onclick="changeBlushColor('dark', this)" class="coloroption" data-category="blush" style="background-color: #530a1d;"></div>
+        <div onclick="changeBackgroundColor('#c85187', this)" class="coloroption" data-category="bg" style="background-color: #c85187;"></div>
     </div>
        <div class="coloroptions">
         <div onclick="changeSkin(2), this" class="coloroption" data-category="skin" style="background-color: #65251c;"></div>
@@ -99,34 +125,68 @@ html, body {
         <div onclick="changeHairColor('brown', this)" class="coloroption" data-category="hairs" style="background-color: #412b19;"></div>
         <div onclick="changeBrowColor('brown', this)" class="coloroption" data-category="brows" style="background-color: #412b19;"></div>
         <div onclick="changeLipColor('plum', this)" class="coloroption" data-category="lips" style="background-color: #411934;"></div> 
+        <div onclick="changeBlushColor('medium', this)" class="coloroption" data-category="blush" style="background-color: #982f3f;"></div>
+        <div onclick="changeBackgroundColor('#881b34', this)" class="coloroption" data-category="bg" style="background-color: #881b34;"></div>
+
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(3), this" class="coloroption" data-category="skin" style="background-color: #7c463b;"></div>
         <div onclick="changeEyeColor('brown', this)" class="coloroption" data-category="eyes" style="background-color: #5d3f27;"></div>
         <div onclick="changeHairColor('blonde', this)" class="coloroption" data-category="hairs" style="background-color: #906847;"></div>
-       <div onclick="changeBrowColor('blonde', this)" class="coloroption" data-category="brows" style="background-color: #906847;"></div>
+        <div onclick="changeBrowColor('blonde', this)" class="coloroption" data-category="brows" style="background-color: #906847;"></div>
         <div onclick="changeLipColor('pink', this)" class="coloroption" data-category="lips" style="background-color: #a14663;"></div>
+        <div onclick="changeBlushColor('light', this)" class="coloroption" data-category="blush" style="background-color: #c9486b;"></div>
+        <div onclick="changeBackgroundColor('#c66d36', this)" class="coloroption" data-category="bg" style="background-color: #c66d36;"></div>
+
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(4), this" class="coloroption" data-category="skin" style="background-color: #954f4b;"></div>
         <div onclick="changeHairColor('orange', this)" class="coloroption" data-category="hairs" style="background-color: #914818;"></div>
         <div onclick="changeBrowColor('orange', this)" class="coloroption" data-category="brows" style="background-color: #914818;"></div>
         <div onclick="changeLipColor('lightpink', this)" class="coloroption" data-category="lips" style="background-color: #cf6986;"></div>
+        <div onclick="changeBackgroundColor('#ceab54', this)" class="coloroption" data-category="bg" style="background-color: #ceab54;"></div>
+        
+
+
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(5), this" class="coloroption" data-category="skin" style="background-color: #c37068;"></div>
-        
+
+        <div onclick="changeBackgroundColor('#66c655', this)" class="coloroption" data-category="bg" style="background-color: #66c655;">
+        <div onclick="changeBackgroundColor('#adc948', this)" class="coloroption" data-category="bg" style="background-color: #adc948;"></div>
+        </div>
+
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(6), this" class="coloroption" data-category="skin" style="background-color: #c57e7f;"></div>
+        <div onclick="changeBackgroundColor('#66c655', this)" class="coloroption" data-category="bg" style="background-color: #66c655;"></div>
+
+    </div>
+       <div class="coloroptions">
+        <div onclick="changeBackgroundColor('#4dc3bb', this)" class="coloroption" data-category="bg" style="background-color: #48c9a0;"></div>
+
     </div>
     <div class="coloroptions">
+        <div onclick="changeBackgroundColor('#4dc3bb', this)" class="coloroption" data-category="bg" style="background-color: #4dc3bb;"></div>
+
     </div>
-    <div class="coloroptions"></div>
-    <div class="coloroptions"></div>
-    <div class="coloroptions"></div>
-    <div class="coloroptions"></div>
-    <div class="coloroptions"></div>
+    <div class="coloroptions">
+    <div onclick="changeBackgroundColor('#5d72cf', this)" class="coloroption" data-category="bg" style="background-color: #5d72cf;"></div>
+
+    </div>
+    <div class="coloroptions">
+    <div onclick="changeBackgroundColor('#b179d4', this)" class="coloroption" data-category="bg" style="background-color: #b179d4;"></div>
+
+    </div>
+    <div class="coloroptions">
+    <div onclick="changeBackgroundColor('#bc6ea4', this)" class="coloroption" data-category="bg" style="background-color: #bc6ea4;"></div>
+
+    </div>
+    <div class="coloroptions">
+    <div onclick="changeBackgroundColor('#e49ec2', this)" class="coloroption" data-category="bg" style="background-color: #e49ec2;"></div>
+
+    </div>
+ 
 </div>
         <div id="beautyparlour">  
             <div id="banner">
@@ -173,7 +233,7 @@ html, body {
                 <img src="DressupGame_Assets/Bodies/skintones/bodytoffee2.png" class="skins"/>
                 <img src="DressupGame_Assets/Bodies/skintones/bodystrawberry2.png" class="skins"/>
                 <img src="DressupGame_Assets/Bodies/skintones/bodystrawberry.png" class="skins"/>
-                
+
                 
                 </div>
 
@@ -267,9 +327,11 @@ html, body {
                 <!--MAKEUP-->
 
                 <div class="blush">
-                    <img style="display:block;" src="DressupGame_Assets/Beauty/Makeup/Blush/blush_dark.png"  class="blushes"/>
+                    <div class="blushshape" id="blush1">
+                    <img  src="DressupGame_Assets/Beauty/Makeup/Blush/blush_dark.png"  class="blushes"/>
                     <img  src="DressupGame_Assets/Beauty/Makeup/Blush/blush_medium.png"  class="blushes"/>
                     <img  src="DressupGame_Assets/Beauty/Makeup/Blush/blush_light.png"  class="blushes"/>
+                    </div>
                 </div>
 
 
@@ -307,7 +369,7 @@ html, body {
 
                 <div class="hairs" >
                     <div class="hairshape"  id="basehair">
-                    <img src="DressupGame_Assets/Hairs/Hairstyles/basehair1black.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/basehair1black.png" style="display:block" class="hairstyles"/>
                     <img src="DressupGame_Assets/Hairs/Hairstyles/basehair1brown.png"  class="hairstyles"/>
                     <img src="DressupGame_Assets/Hairs/Hairstyles/basehair1blonde.png" class="hairstyles"/>
                     <img src="DressupGame_Assets/Hairs/Hairstyles/basehair1orange.png" class="hairstyles"/>
@@ -342,11 +404,7 @@ html, body {
                     </div>
 
                 </div>
-                 
-                
-                
-         
-                <!--BACKGROUNDS-->
+          
 
                 
 
@@ -476,7 +534,7 @@ html, body {
              <div class="padding">
              <p class="optiontitle">Makeup</p>   
             <div class="optioncontainer">
-                    <div loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/blush_icon.png)"></div>
+                    <div onclick="changeBlushShape('blush1', this)" data-category="blush" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/blush_icon.png)"></div>
                     <div loading="lazy" class="beautyoptionsmakeup" ></div>
                     <div loading="lazy" class="beautyoptionsmakeup" ></div>
                     <div loading="lazy" class="beautyoptionsmakeup" ></div>
@@ -521,12 +579,12 @@ html, body {
             <div class="padding">
             <p class="optiontitle">Background</p>    
             <div class="optioncontainer">
-                    <div loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/cloudskyfield.png)"></div>
-                    <div loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/leopardprint.png)"></div>
-                    <div loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/purplesparkles.png)"></div>
-                    <div loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/pinksparkles.png)"></div>
-                    <div loading="lazy" class="beautyoptionsbg"></div>
-                    <div loading="lazy" class="beautyoptionsbg"></div>
+                <div onclick="changeBackground('DressupGame_Assets/Scenes/cloudskyfield.png', this)" loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/cloudskyfield.png)"></div>
+                <div onclick="changeBackground('DressupGame_Assets/Scenes/leopardprint.png', this)" loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/leopardprint.png)"></div>
+                <div onclick="changeBackground('DressupGame_Assets/Scenes/purplesparkles.png', this)" loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/purplesparkles.png)"></div>
+                <div onclick="changeBackground('DressupGame_Assets/Scenes/pinksparkles.png', this)" loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/pinksparkles.png)"></div>
+                <div loading="lazy" class="beautyoptionsbg"></div>
+                <div loading="lazy" class="beautyoptionsbg"></div>
             </div>
             </div>
         </div>
@@ -540,11 +598,13 @@ let currentEyeColor = "brown";
 let currentHairColor = "black";
 let currentBrowColor = "black";
 let currentLipColor = "brown";
+let currentBlushColor = "dark";
 let currentHairId = "basehair";
 let currentBrowId = "browshape2";
 let currentNoseId = "noseshape3";
 let currentLipId = "lipshape1";
 let currentEyeId = "shape-doe";
+let currentBlushId = "blush1";
 let currentSectionIndex = 0;
 let slideIndex = 1;
 const darkSkinIndices = [1, 2, 3];
@@ -552,7 +612,8 @@ const eyeColorMap = { blue: 0, green: 1, brown: 2 };
 const hairColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const browColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const lipColorMap = { brown: 0, plum: 1, pink: 2, lightpink: 3 };
-const sections = ["skin", "eyes", "brows", "nose", "lips", "hairs", "makeup", "background"];
+const blushColorMap = { dark: 0, medium: 1, light: 2,};
+const sections = ["skin", "eyes", "brows", "nose", "lips", "hairs", "makeup", "tops", "jewelry", "bg"];
 
 function saveImage() {
   window.print();
@@ -608,6 +669,15 @@ function updateLipColor(color) {
   });
 }
 
+function updateBlushColor(color) {
+  currentBlushColor = color;
+  const activeBlush = document.getElementById(currentBlushId);
+  if (!activeBlush) return;
+  activeBlush.querySelectorAll(".blushes").forEach(img => {
+    img.style.display = img.src.includes(color) ? "block" : "none";
+  });
+}
+
 function setOutline(category, index) {
   const dots = document.querySelectorAll(`.coloroption[data-category="${category}"]`);
   dots.forEach(dot => dot.classList.remove("outline"));
@@ -642,6 +712,13 @@ function showLipColorDisplay(color) {
   if (index !== undefined) lipDisplays[index].style.display = "block";
 }
 
+function showBlushColorDisplay(color) {
+  const blushDisplays = document.getElementsByClassName("blushcolorsdisplay");
+  for (let i = 0; i < blushDisplays.length; i++) blushDisplays[i].style.display = "none";
+  const index = blushColorMap[color];
+  if (index !== undefined) blushDisplays[index].style.display = "block";
+}
+
 function showColorOptions(category) {
   const all = document.querySelectorAll(".coloroption");
   all.forEach(el => el.style.display = "none");
@@ -668,6 +745,13 @@ function showColorOptions(category) {
   const lipDisplays = document.getElementsByClassName("lipcolorsdisplay");
   for (let i = 0; i < lipDisplays.length; i++) lipDisplays[i].style.display = "none";
   if (category === "lips") showLipColorDisplay(currentLipColor);
+
+  const blushDisplays = document.getElementsByClassName("blushcolorsdisplay");
+  for (let i = 0; i < blushDisplays.length; i++) blushDisplays[i].style.display = "none";
+  if (category === "blush") showBlushColorDisplay(currentBlushColor);
+
+  const bgDisplays = document.getElementsByClassName("bgcolorsdisplay");
+  for (let i = 0; i < bgDisplays.length; i++) bgDisplays[i].style.display = "none";
 
   activeColorCategory = category;
 }
@@ -725,13 +809,19 @@ function goToSection(index) {
       el.classList.toggle("active", el.getAttribute("onclick") && el.getAttribute("onclick").includes(currentNoseId));
     });
   }
+ if (category === "blush") {
+    setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
+    document.querySelectorAll(".beautyoptionsblush").forEach(el => {
+      el.classList.toggle("active", el.getAttribute("onclick") && el.getAttribute("onclick").includes(currentBlushId));
+    });
+  }
 }
 
 function hideAllColorOptions() {
   const all = document.querySelectorAll(".coloroption");
   all.forEach(el => el.style.display = "none");
 
-  document.querySelectorAll(".skincolorsdisplay, .eyecolorsdisplay, .haircolorsdisplay, .browcolorsdisplay, .lipcolorsdisplay")
+  document.querySelectorAll(".skincolorsdisplay, .eyecolorsdisplay, .haircolorsdisplay, .browcolorsdisplay, .lipcolorsdisplay, .blushcolorsdisplay")
     .forEach(el => el.style.display = "none");
 
   activeColorCategory = null;
@@ -815,6 +905,18 @@ function changeLipShape(shapeId, el) {
   el.classList.add("active");
 }
 
+function changeBlushShape(shapeId, el) {
+  document.querySelectorAll(".blushshape").forEach(s => s.style.display = "none");
+  currentBlushId = shapeId;
+  document.getElementById(shapeId).style.display = "block";
+  updateBlushColor(currentBlushColor);
+  showColorOptions("blush");
+  showBlushColorDisplay(currentBlushColor);
+  setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
+  document.querySelectorAll(".beautyoptionsmakeup").forEach(dot => dot.classList.remove("active"));
+  el.classList.add("active");
+}
+
 function changeLipColor(color, el) {
   currentLipColor = color;
   showLipColorDisplay(color);
@@ -822,6 +924,14 @@ function changeLipColor(color, el) {
   lipColorDots.forEach(dot => dot.classList.remove("outline"));
   el.classList.add("outline");
   updateLipColor(color);
+}
+function changeBlushColor(color, el) {
+  currentBlushColor = color;
+  showBlushColorDisplay(color);
+  const blushColorDots = document.querySelectorAll('.coloroption[data-category="blush"]');
+  blushColorDots.forEach(dot => dot.classList.remove("outline"));
+  el.classList.add("outline");
+  updateBlushColor(color);
 }
 
 function changeHairColor(color, el) {
@@ -880,11 +990,15 @@ function skinSlides(n) {
 }
 
 window.onload = function() {
+    const bgDots = document.querySelectorAll(".beautyoptionsbg");
+    if (bgDots.length > 0) bgDots[0].classList.add("active");
+
   document.getElementsByClassName("eyecolorsdisplay")[0] && 
-    Array.from(document.getElementsByClassName("eyecolorsdisplay")).forEach(el => el.style.display = "none");
+  Array.from(document.getElementsByClassName("eyecolorsdisplay")).forEach(el => el.style.display = "none");
   Array.from(document.getElementsByClassName("haircolorsdisplay")).forEach(el => el.style.display = "none");
   Array.from(document.getElementsByClassName("browcolorsdisplay")).forEach(el => el.style.display = "none");
   Array.from(document.getElementsByClassName("lipcolorsdisplay")).forEach(el => el.style.display = "none");
+  Array.from(document.getElementsByClassName("blushcolorsdisplay")).forEach(el => el.style.display = "none");
 
   document.querySelectorAll(".hairshape").forEach(s => s.style.display = "none");
   document.getElementById(currentHairId).style.display = "block";
@@ -895,12 +1009,16 @@ window.onload = function() {
   document.querySelectorAll(".lipshape").forEach(s => s.style.display = "none");
   document.getElementById(currentLipId).style.display = "block";
 
+  document.querySelectorAll(".blushshape").forEach(s => s.style.display = "none");
+  document.getElementById(currentBlushId).style.display = "block";
+
   showColorOptions("skin");
   setOutline("skin", 0);
   updateEyesForSkin(slideIndex);
   updateNosesForSkin(slideIndex);
   updateBrowColor(currentBrowColor);
   updateLipColor(currentLipColor);
+  updateBlushColor(currentBlushColor);
 
   document.querySelectorAll(".navbutton")[0].classList.add("active");
 
@@ -913,6 +1031,34 @@ window.onload = function() {
     el.classList.toggle("active", i === slideIndex - 1);
   });
 };
+
+function changeBackground(imageUrl, el) {
+  document.getElementById("beautyparlour").style.backgroundImage = `url(${imageUrl})`;
+  document.getElementById("beautyparlour").style.backgroundColor = ""; 
+  document.querySelectorAll(".beautyoptionsbg").forEach(dot => dot.classList.remove("active"));
+  document.querySelectorAll(".coloroption[data-category='bg']").forEach(dot => dot.classList.remove("outline"));
+
+  document.querySelectorAll(".bgcolorsdisplay").forEach(el => el.style.display = "none");
+  el.classList.add("active");
+}
+
+function changeBackgroundColor(color, el) {
+  document.getElementById("beautyparlour").style.backgroundImage = "none";
+  document.getElementById("beautyparlour").style.backgroundColor = color;
+
+  document.querySelectorAll(".beautyoptionsbg").forEach(dot => dot.classList.remove("active"));
+  document.querySelectorAll(".coloroption[data-category='bg']").forEach(dot => dot.classList.remove("outline"));
+  el.classList.add("outline");
+
+  const bgDots = document.querySelectorAll(".coloroption[data-category='bg']");
+  const bgDisplays = document.getElementsByClassName("bgcolorsdisplay");
+  
+  for (let i = 0; i < bgDisplays.length; i++) bgDisplays[i].style.display = "none";
+  
+  bgDots.forEach((dot, i) => {
+    if (dot === el && bgDisplays[i]) bgDisplays[i].style.display = "block";
+  });
+}
 </script>
 
 
