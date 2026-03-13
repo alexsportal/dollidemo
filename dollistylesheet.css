@@ -770,3 +770,9 @@ img.hairstyles{
     padding:8px;
     margin-top:7px;
 }
+
+#opacitypicker{
+    position: absolute;
+    left: 70px;
+}
+

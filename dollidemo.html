@@ -4,6 +4,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,16 +101,20 @@ html, body {
              <div class="bgcolorsdisplay" style="background-color: #e1e1e1;"></div>
              <div class="bgcolorsdisplay" style="background-color: #1c1c1c;"></div>
 
-            <div class="topscolorsdisplay" style="background-color:#e87fa0;"></div> 
+            <div class="topscolorsdisplay" style="background-color:#e87f90;"></div> 
             <div class="topscolorsdisplay" style="background-color:#c0392b;"></div> 
             <div class="topscolorsdisplay" style="background-color:#e8c84a;"></div> 
             <div class="topscolorsdisplay" style="background-color:#4caf50;"></div>
+            <div class="topscolorsdisplay" style="background-color:#2b46c0;"></div> 
             <div class="topscolorsdisplay" style="background-color:#8e44ad;"></div> 
+            <div class="topscolorsdisplay" style="background-color:#a10f71;"></div> 
             <div class="topscolorsdisplay" style="background-color:#6d4c41;"></div> 
             <div class="topscolorsdisplay" style="background-color:#ffffff;"></div> 
             <div class="topscolorsdisplay" style="background-color:#000000;"></div>
 
           <input type="color" id="colorpicker" style="display:none;" oninput="applyColorFilter(this.value)">
+          <input type="range" id="brightnesspicker" min="0.5" max="1.5" step="0.01" value="1" style="display:none;" oninput="applyBrightnessFilter(this.value)">
+          <input type="range" id="opacitypicker" min="0" max="1" step="0.01" value="1" style="display:none;" oninput="applyOpacityFilter(this.value)">
             </div>
 
             
@@ -164,33 +169,36 @@ html, body {
     <div class="coloroptions">
         <div onclick="changeSkin(5), this" class="coloroption" data-category="skin" style="background-color: #c37068;"></div>
         <div onclick="changeBackgroundColor('#66c655', this)" class="coloroption" data-category="bg" style="background-color: #66c655;"></div>
-        <div onclick="changeTopColor('purple', this)" class="coloroption" data-category="tops" style="background-color:#8e44ad;"></div>
+       <div onclick="changeTopColor('blue', this)" class="coloroption" data-category="tops" style="background-color:#2b46c0;"></div>
       
         </div>
 
     <div class="coloroptions">
         <div onclick="changeSkin(6), this" class="coloroption" data-category="skin" style="background-color: #c57e7f;"></div>
         <div onclick="changeBackgroundColor('#4dc3bb', this)" class="coloroption" data-category="bg" style="background-color: #4dc3bb;"></div>
-        <div onclick="changeTopColor('brown', this)"  class="coloroption" data-category="tops" style="background-color:#6d4c41;"></div>
+        <div onclick="changeTopColor('purple', this)" class="coloroption" data-category="tops" style="background-color:#8e44ad;"></div>
     </div>
 
     <div class="coloroptions">
         <div onclick="changeBackgroundColor('#5d72cf', this)" class="coloroption" data-category="bg" style="background-color: #5d72cf;"></div>
+         <div onclick="changeTopColor('magenta', this)" class="coloroption" data-category="tops" style="background-color:#a10f71;"></div>
+    </div>
+
+    <div class="coloroptions">
+        <div onclick="changeBackgroundColor('#b179d4', this)" class="coloroption" data-category="bg" style="background-color: #b179d4;"></div>
+        <div onclick="changeTopColor('brown', this)"  class="coloroption" data-category="tops" style="background-color:#6d4c41;"></div>
+    </div>
+
+    <div class="coloroptions">
+        <div onclick="changeBackgroundColor('#bc6ea4', this)" class="coloroption" data-category="bg" style="background-color: #bc6ea4;"></div>
         <div onclick="changeTopColor('white', this)"  class="coloroption" data-category="tops" style="background-color:#ffffff;"></div>
 
     </div>
 
     <div class="coloroptions">
-        <div onclick="changeBackgroundColor('#b179d4', this)" class="coloroption" data-category="bg" style="background-color: #b179d4;"></div>
-        <div onclick="changeTopColor('black', this)"  class="coloroption" data-category="tops" style="background-color:#000000;"></div>
-    </div>
-
-    <div class="coloroptions">
-        <div onclick="changeBackgroundColor('#bc6ea4', this)" class="coloroption" data-category="bg" style="background-color: #bc6ea4;"></div>
-    </div>
-
-    <div class="coloroptions">
         <div onclick="changeBackgroundColor('#e49ec2', this)" class="coloroption" data-category="bg" style="background-color: #e49ec2;"></div>
+        <div onclick="changeTopColor('black', this)"  class="coloroption" data-category="tops" style="background-color:#000000;"></div>
+
     </div>
 
     <div class="coloroptions">
@@ -451,9 +459,11 @@ html, body {
 
                     <div class="topstyle" id="cardigan">
                     <img src="DressupGame_Assets/Clothes/Tops/pinkcardigan.png" class="tops"/>
+                    <img src="DressupGame_Assets/Clothes/Tops/magentacardigan.png" class="tops"/>
                     <img src="DressupGame_Assets/Clothes/Tops/redcardigan.png" class="tops"/>
                     <img src="DressupGame_Assets/Clothes/Tops/yellowcardigan.png" class="tops"/>
                     <img src="DressupGame_Assets/Clothes/Tops/greencardigan.png" class="tops"/>
+                    <img src="DressupGame_Assets/Clothes/Tops/bluecardigan.png" class="tops"/>                    
                     <img src="DressupGame_Assets/Clothes/Tops/purplecardigan.png" class="tops"/>
                     <img src="DressupGame_Assets/Clothes/Tops/browncardigan.png" class="tops"/>
                     <img src="DressupGame_Assets/Clothes/Tops/whitecardigan.png" class="tops"/>
@@ -664,7 +674,7 @@ let currentLipId = "lipshape1";
 let currentEyeId = "shape-doe";
 let currentBlushId = "blush1";
 let currentTopId = "tubetop";
-let currentTopColor = "black";
+let currentTopColor = "white";
 let currentSectionIndex = 0;
 let slideIndex = 1;
 let activeColorCategory = null;
@@ -676,7 +686,7 @@ const hairColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const browColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const lipColorMap = { brown: 0, plum: 1, pink: 2, coral: 3 };
 const blushColorMap = { dark: 0, medium: 1, light: 2 };
-const topColorMap = { pink: 0, red: 1, yellow: 2, green: 3, purple: 4, brown: 5, white: 6, black: 7 };
+const topColorMap = { pink: 0, magenta:1, red: 2, yellow: 3, green: 4, blue:5, purple: 6, brown: 7, white: 8, black: 9 };
 const sections = ["skin", "eyes", "brows", "nose", "lips", "hairs", "makeup", "tops", "jewelry", "bg"];
 
 // ─── SAVE / UNDO ───────────────────────────────────────────────
@@ -706,17 +716,14 @@ function undo() {
   if (undoStack.length === 0) return;
   const prev = undoStack.pop();
 
-  // skin
   skinSlides(prev.slideIndex);
 
-  // eyes
   document.querySelectorAll(".eyeshape").forEach(s => s.style.display = "none");
   currentEyeId = prev.currentEyeId;
   document.getElementById(currentEyeId).style.display = "block";
   currentEyeColor = prev.currentEyeColor;
   updateEyesForSkin(prev.slideIndex);
 
-  // hair
   document.querySelectorAll(".hairshape").forEach(s => s.style.display = "none");
   currentHairId = prev.currentHairId;
   currentHairColor = prev.currentHairColor;
@@ -725,38 +732,32 @@ function undo() {
     img.style.display = img.src.includes(currentHairColor) ? "block" : "none";
   });
 
-  // brows
   document.querySelectorAll(".browshape").forEach(s => s.style.display = "none");
   currentBrowId = prev.currentBrowId;
   document.getElementById(currentBrowId).style.display = "block";
   updateBrowColor(prev.currentBrowColor);
 
-  // lips
   document.querySelectorAll(".lipshape").forEach(s => s.style.display = "none");
   currentLipId = prev.currentLipId;
   document.getElementById(currentLipId).style.display = "block";
   updateLipColor(prev.currentLipColor);
 
-  // blush
   document.querySelectorAll(".blushshape").forEach(s => s.style.display = "none");
   currentBlushId = prev.currentBlushId;
   document.getElementById(currentBlushId).style.display = "block";
   updateBlushColor(prev.currentBlushColor);
 
-  // nose
   document.querySelectorAll(".noseshape").forEach(s => s.style.display = "none");
   currentNoseId = prev.currentNoseId;
   document.getElementById(currentNoseId).style.display = "block";
   updateNosesForSkin(prev.slideIndex);
 
-  // tops
   document.querySelectorAll(".topstyle").forEach(s => s.style.display = "none");
   currentTopId = prev.currentTopId;
   currentTopColor = prev.currentTopColor;
   document.getElementById(currentTopId).style.display = "block";
   updateTopColor(prev.currentTopColor);
 
-  // background
   document.getElementById("beautyparlour").style.backgroundImage = prev.bgImage;
   document.getElementById("beautyparlour").style.backgroundColor = prev.bgColor;
 
@@ -770,7 +771,6 @@ function changeSkin(n) {
   skinSlides(n);
   showColorOptions("skin");
   setOutline("skin", n - 1);
-  
 }
 
 function skinSlides(n) {
@@ -874,6 +874,9 @@ function changeBrowColor(color, el) {
   showBrowColorDisplay(color);
   document.querySelectorAll('.coloroption[data-category="brows"]').forEach(dot => dot.classList.remove("outline"));
   el.classList.add("outline");
+  // clear any color filter
+  const activeBrow = document.getElementById(currentBrowId);
+  activeBrow?.querySelectorAll("img").forEach(img => img.style.filter = "");
   updateBrowColor(color);
 }
 
@@ -882,7 +885,7 @@ function updateBrowColor(color) {
   const activeBrow = document.getElementById(currentBrowId);
   if (!activeBrow) return;
   activeBrow.querySelectorAll(".eyebrows").forEach(img => {
-    img.style.display = img.src.includes(color) ? "block" : "none";
+    img.style.display = img.src.includes(color + ".") ? "block" : "none";
   });
 }
 
@@ -934,6 +937,9 @@ function changeLipColor(color, el) {
   showLipColorDisplay(color);
   document.querySelectorAll('.coloroption[data-category="lips"]').forEach(dot => dot.classList.remove("outline"));
   el.classList.add("outline");
+  const activeLip = document.getElementById(currentLipId);
+  activeLip?.querySelectorAll("img").forEach(img => img.style.filter = "");
+  activeLip?.querySelectorAll("img").forEach(img => img.style.brightness = 1);
   updateLipColor(color);
 }
 
@@ -942,7 +948,7 @@ function updateLipColor(color) {
   const activeLip = document.getElementById(currentLipId);
   if (!activeLip) return;
   activeLip.querySelectorAll(".lips").forEach(img => {
-    img.style.display = img.src.includes(color) ? "block" : "none";
+    img.style.display = img.src.includes(color + ".") ? "block" : "none";
   });
 }
 
@@ -961,7 +967,7 @@ function changeHairShape(shapeId, el) {
   currentHairId = shapeId;
   document.getElementById(shapeId).style.display = "block";
   document.getElementById(shapeId).querySelectorAll("img").forEach(img => {
-    img.style.display = img.src.includes(currentHairColor) ? "block" : "none";
+    img.style.display = img.src.includes(currentHairColor + ".") ? "block" : "none";
   });
   showColorOptions("hairs");
   showHairColorDisplay(currentHairColor);
@@ -976,10 +982,12 @@ function changeHairColor(color, el) {
   showHairColorDisplay(color);
   document.querySelectorAll('.coloroption[data-category="hairs"]').forEach(dot => dot.classList.remove("outline"));
   el.classList.add("outline");
+  // clear any color filter
   const activeShape = document.getElementById(currentHairId);
+  activeShape?.querySelectorAll("img").forEach(img => img.style.filter = "");
   if (!activeShape) return;
   activeShape.querySelectorAll("img").forEach(img => {
-    img.style.display = img.src.includes(color) ? "block" : "none";
+    img.style.display = img.src.includes(color + ".") ? "block" : "none";
   });
 }
 
@@ -1011,6 +1019,11 @@ function changeBlushColor(color, el) {
   showBlushColorDisplay(color);
   document.querySelectorAll('.coloroption[data-category="blush"]').forEach(dot => dot.classList.remove("outline"));
   el.classList.add("outline");
+  // clear any color filter
+  const activeBlush = document.getElementById(currentBlushId);
+  activeBlush?.querySelectorAll("img").forEach(img => img.style.filter = "");
+  document.getElementById("opacitypicker").value = 1;
+  activeBlush?.querySelectorAll("img").forEach(img => img.style.opacity = 1);
   updateBlushColor(color);
 }
 
@@ -1019,7 +1032,7 @@ function updateBlushColor(color) {
   const activeBlush = document.getElementById(currentBlushId);
   if (!activeBlush) return;
   activeBlush.querySelectorAll(".blushes").forEach(img => {
-    img.style.display = img.src.includes(color) ? "block" : "none";
+    img.style.display = img.src.includes(color + ".") ? "block" : "none";
   });
 }
 
@@ -1047,20 +1060,37 @@ function changeTopShape(shapeId, el) {
 
 function changeTopColor(color, el) {
   saveState();
-  currentTopColor = color;
-  showTopsColorDisplay(color);
+  // clear any color filter
+  const activeTop = document.getElementById(currentTopId);
+  activeTop?.querySelectorAll("img").forEach(img => img.style.filter = "");
   document.querySelectorAll('.coloroption[data-category="tops"]').forEach(dot => dot.classList.remove("outline"));
   el.classList.add("outline");
   updateTopColor(color);
 }
 
 function updateTopColor(color) {
-  currentTopColor = color;
   const activeTop = document.getElementById(currentTopId);
   if (!activeTop) return;
-  activeTop.querySelectorAll("img").forEach(img => {
-    img.style.display = img.src.includes(color) ? "block" : "none";
+
+  const imgs = activeTop.querySelectorAll("img");
+  let matched = false;
+  imgs.forEach(img => {
+    const fits = img.src.includes(color + ".") || img.src.includes(color + "cardigan");
+    img.style.display = fits ? "block" : "none";
+    if (fits) matched = true;
   });
+
+  if (!matched) {
+    const fallback = activeTop.querySelector("img[src*='white']")
+                  || activeTop.querySelector("img");
+    if (fallback) {
+      fallback.style.display = "block";
+      currentTopColor = fallback.src.includes("white") ? "white" : "black";
+    }
+  } else {
+    currentTopColor = color;
+  }
+  showTopsColorDisplay(currentTopColor);
 }
 
 function showTopsColorDisplay(color) {
@@ -1106,7 +1136,11 @@ function setOutline(category, index) {
 }
 
 function showColorOptions(category) {
+
   document.getElementById("colorpicker").value = "#000000";
+  document.getElementById("opacitypicker").value = 1;
+  document.getElementById("opacitypicker").style.display = category === "blush" ? "block" : "none";
+
   document.querySelectorAll(".coloroption").forEach(el => el.style.display = "none");
   document.querySelectorAll(`.coloroption[data-category="${category}"]`).forEach(el => el.style.display = "block");
   document.querySelectorAll(".skincolorsdisplay").forEach(el => el.style.display = "none");
@@ -1207,12 +1241,10 @@ function saveImage() {
 // ─── ON LOAD ───────────────────────────────────────────────────
 
 window.onload = function () {
-
   ["eyecolorsdisplay", "haircolorsdisplay", "browcolorsdisplay",
    "lipcolorsdisplay", "blushcolorsdisplay", "topscolorsdisplay", "bgcolorsdisplay"].forEach(cls => {
     Array.from(document.getElementsByClassName(cls)).forEach(el => el.style.display = "none");
   });
-
 
   document.querySelectorAll(".hairshape").forEach(s => s.style.display = "none");
   document.getElementById(currentHairId).style.display = "block";
@@ -1225,16 +1257,16 @@ window.onload = function () {
 
   document.querySelectorAll(".blushshape").forEach(s => s.style.display = "none");
   document.getElementById(currentBlushId).style.display = "block";
-  document.getElementById(currentBlushId).querySelectorAll(".blushes").forEach(img => img.style.display = "none"); 
+  document.getElementById(currentBlushId).querySelectorAll(".blushes").forEach(img => img.style.display = "none");
 
   document.querySelectorAll(".topstyle").forEach(s => s.style.display = "none");
   document.getElementById(currentTopId).style.display = "block";
 
-  document.getElementById(currentHairId).querySelectorAll("img").forEach(img => {
-    img.style.display = img.src.includes(currentHairColor) ? "block" : "none";
+  const hairEl = document.getElementById(currentHairId);
+  hairEl.querySelectorAll("img").forEach(img => {
+    img.style.display = img.src.includes(currentHairColor + ".") ? "block" : "none";
+    img.style.filter = "";
   });
-  
- 
 
   updateBrowColor(currentBrowColor);
   updateLipColor(currentLipColor);
@@ -1245,27 +1277,20 @@ window.onload = function () {
   document.querySelectorAll(".beautyoptionsskin").forEach((el, i) => {
     el.classList.toggle("active", i === slideIndex - 1);
   });
-
   document.querySelectorAll(".beautyoptionsbg")[0]?.classList.add("active");
   document.querySelectorAll(".navbutton")[0].classList.add("active");
 
-
   showColorOptions("skin");
   setOutline("skin", 0);
-  showTopsColorDisplay(currentTopColor);
-
 };
 </script>
 
 <script>
 function applyColorFilter(hexColor) {
-  if (!activeColorCategory || ["nose", "bg", "jewelry"].includes(activeColorCategory)) return;
+  if (!activeColorCategory || ["nose", "bg", "jewelry", "skin"].includes(activeColorCategory)) return;
   let activeImg = null;
 
-  if (activeColorCategory === "skin") {
-    activeImg = document.querySelector(".skins[style*='display: block'], .skins[style*='display:block']");
-
-  } else if (activeColorCategory === "hairs") {
+ if (activeColorCategory === "hairs") {
     const shape = document.getElementById(currentHairId);
     activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
   } else if (activeColorCategory === "brows") {
@@ -1286,6 +1311,8 @@ function applyColorFilter(hexColor) {
   const hue = hexToHueDegrees(hexColor);
   activeImg.style.filter = `hue-rotate(${hue}deg) saturate(2)`;
 }
+
+
 function hexToHueDegrees(hex) {
   // convert hex to RGB
   const r = parseInt(hex.slice(1, 3), 16) / 255;
@@ -1305,6 +1332,23 @@ function hexToHueDegrees(hex) {
     }
   }
   return Math.round(hue * 360);
+}
+
+function applyBrightnessFilter(value) {
+  if (activeColorCategory !== "lips") return;
+  const activeImg = document.getElementById(currentLipId)
+    ?.querySelector("img[style*='display: block'], img[style*='display:block']");
+  if (!activeImg) return;
+  const b = parseFloat(value);
+  activeImg.style.filter = `brightness(${b}) contrast(${0.9 + (b - 1) * 0.3})`;
+}
+
+function applyOpacityFilter(value) {
+  if (activeColorCategory !== "blush") return;
+  const activeImg = document.getElementById(currentBlushId)
+    ?.querySelector("img[style*='display: block'], img[style*='display:block']");
+  if (!activeImg) return;
+  activeImg.style.opacity = value;
 }
 
 </script>
