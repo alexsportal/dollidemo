@@ -1416,7 +1416,7 @@ function playSong(songId, el) {
     song.pause();
     song.currentTime = 0;
     currentSong = null;
-    document.querySelectorAll(".menusong").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".menusongs").forEach(s => s.classList.remove("active"));
     return;
   }
 
@@ -1428,7 +1428,7 @@ function playSong(songId, el) {
 
   currentSong = song;
   song.play();
-  document.querySelectorAll(".menusong").forEach(s => s.classList.remove("active"));
+  document.querySelectorAll(".menusongs").forEach(s => s.classList.remove("active"));
   el.classList.add("active");
 }
 
