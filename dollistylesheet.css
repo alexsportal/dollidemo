@@ -175,6 +175,7 @@ body{
 .browcolorsdisplay,
 .lipcolorsdisplay,
 .blushcolorsdisplay,
+.topscolorsdisplay,
 .bgcolorsdisplay{
     width:30px;
     height:30px;
@@ -203,6 +204,8 @@ body{
     background-color:rgb(241, 241, 241);
     top:13px;
     left:-7px;
+    width:30px;
+    height:30px;
     z-index:2;
     cursor:pointer;
 }
@@ -732,6 +735,7 @@ img.blushes{
 }
 img.hairstyles{
     margin-left: -.5px;
+    z-index: 1;
 }
 
 
