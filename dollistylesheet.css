@@ -576,7 +576,8 @@ body{
     box-shadow: -1px 0px 2px 1px #9c678256;
 }
 
-.menubutton{
+.menubutton,
+.menusongs{
     width:50px;
     height:30px;
     background-color:#C7A4B0;
@@ -591,10 +592,40 @@ body{
     cursor: pointer;
 }
 
-.menubutton:hover{
-    background-color:#b18393;
+
+.menuoverlay{
+    width:auto;
+    color:#380225;
+    text-align:center;
+    font-size:14px;
+    align-content: center;
+    z-index:3;
+    transition:ease-out .3s;
+    cursor: pointer;
+    cursor: pointer;
+    position:absolute;
+    top:77px;
 }
 
+.menubutton:hover,
+.menuoverlay:hover,
+.menusongs:hover{
+    background-color:#b18393;
+}
+.menuoverlay {
+  display: none;
+  
+}
+.menubutton.open .menuoverlay {
+  display: block;
+}
+
+.menusongs{
+    padding-left:5px;
+    padding-right:5px;
+    width:auto;
+    text-align:left;
+}
 #banner{
     width: auto;
     height:30px;
