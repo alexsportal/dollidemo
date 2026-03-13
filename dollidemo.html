@@ -250,9 +250,9 @@ html, body {
                 <div onClick="saveImage()" class="menubutton"><u>S</u>ave</div>
                 <div class="menubutton" onclick="this.classList.toggle('open')"><u>A</u>udio
                 <div class="menuoverlay">
-                <div class="menusongs"> Song 1</div>
-                <div class="menusongs"> Song 1</div>
-                <div class="menusongs">Song 1</div>
+                <div class="menusongs"  onclick="playSong('song1', this)"> Song 1</div>
+                <div class="menusongs" onclick="playSong('song2', this)"> Song 1</div>
+                <div class="menusongs"  onclick="playSong('song2', this)">Song 1</div>
                
                 </div>
                 </div>
@@ -697,7 +697,9 @@ html, body {
 </div>
 </div>
 
-
+<audio id="song1" src="DressupGame_Assets/Music/song1.mp3" loop></audio>
+<audio id="song2" src="DressupGame_Assets/Music/song2.mp3" loop></audio>
+<audio id="song3" src="DressupGame_Assets/Music/song2.mp3" loop></audio>
 
 <script>
 let currentEyeColor = "brown";
@@ -1401,6 +1403,37 @@ function applyOpacityFilter(value) {
   if (!activeImg) return;
   activeImg.style.opacity = value;
 }
+
+</script>
+<script>
+let currentSong = null;
+
+function playSong(songId, el) {
+  const song = document.getElementById(songId);
+  
+
+  if (currentSong === song) {
+    song.pause();
+    song.currentTime = 0;
+    currentSong = null;
+    document.querySelectorAll(".menusong").forEach(s => s.classList.remove("active"));
+    return;
+  }
+
+
+  if (currentSong) {
+    currentSong.pause();
+    currentSong.currentTime = 0;
+  }
+
+  currentSong = song;
+  song.play();
+  document.querySelectorAll(".menusong").forEach(s => s.classList.remove("active"));
+  el.classList.add("active");
+}
+
+</script>
+
 
 </script>
 </body>
