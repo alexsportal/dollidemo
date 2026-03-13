@@ -775,8 +775,28 @@ img.hairstyles{
     margin-top:7px;
 }
 
-#opacitypicker{
-    position: absolute;
-    left: 70px;
+#opacitypicker,#colorpicker{
+    position: inherit;
+    margin-left:70px;
 }
-
+.inputcontainer{
+    position: absolute;
+    display: flex;
+    left: 75px;
+    flex-direction: row;
+    width: 200px;
+    height: 21px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #b8265840;
+    margin-left: -2px;
+}
+.inputlabel{
+    position: inherit;
+    padding: 0;
+    margin: 0;
+    margin-top: -2px;
+    margin-left: 5px;
+    font-family: Zainbold;
+    color:#561a39;
+}

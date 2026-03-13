@@ -114,9 +114,11 @@ html, body {
             <div class="topscolorsdisplay" style="background-color:#ffffff;"></div> 
             <div class="topscolorsdisplay" style="background-color:#000000;"></div>
 
-            <input type="color" id="colorpicker" value="#000000" oninput="applyColorFilter(this.value)" style="width:100%; height:100%; border:none; padding:0; cursor:pointer; opacity:0; position:absolute; top:0; left:0;">
-            <input type="range" id="brightnesspicker" min="0.5" max="1.5" step="0.01" value="1" style="display:none;" oninput="applyBrightnessFilter(this.value)">
-            <input type="range" id="opacitypicker" min="0" max="1" step="0.01" value="1" style="display:none;" oninput="applyOpacityFilter(this.value)">
+            <div class="inputcontainer" style="display:none;">
+            <p  style="display:none" class="inputlabel" id="huelabel">Colors</p><input type="range" id="colorpicker" min="0" max="360" step="1" value="0" style="display:none;" oninput="applyColorFilter(this.value)">  
+            <p style="display:none" class="inputlabel" id="opacitylabel">Opacity</p><input type="range" id="opacitypicker" min="0" max="1" step="0.01" value="1" style="display:none;" oninput="applyOpacityFilter(this.value)">
+            </div>   
+
             </div>
 
             
@@ -703,6 +705,10 @@ let currentEyeId = "shape-doe";
 let currentBlushId = "blush1";
 let currentTopId = "tubetop";
 let currentTopColor = "white";
+let currentLipHue = 0;
+let currentTopHue = 0;
+let currentHairHue = 0;
+let currentBrowHue = 0;
 let currentSectionIndex = 0;
 let slideIndex = 1;
 let activeColorCategory = null;
@@ -969,6 +975,7 @@ function changeLipColor(color, el) {
   activeLip?.querySelectorAll("img").forEach(img => img.style.filter = "");
   activeLip?.querySelectorAll("img").forEach(img => img.style.brightness = 1);
   updateLipColor(color);
+  currentLipHue = 0;
 }
 
 function updateLipColor(color) {
@@ -1111,6 +1118,7 @@ function changeTopColor(color, el) {
   document.querySelectorAll('.coloroption[data-category="tops"]').forEach(dot => dot.classList.remove("outline"));
   el.classList.add("outline");
   updateTopColor(color);
+  currentTopHue = 0;
 }
 
 function updateTopColor(color) {
@@ -1181,8 +1189,18 @@ function setOutline(category, index) {
 }
 
 function showColorOptions(category) {
+  document.getElementById("huelabel").style.display = 
+  (category === "hairs" || category === "brows" || category === "tops" || category === "lips") ? "block" : "none";
+  document.getElementById("opacitylabel").style.display = 
+  category === "blush" ? "block" : "none";
+  
+  const anySliderVisible = 
+    (category === "hairs" || category === "brows" || category === "lips" || category === "tops" || category === "blush");
+  document.querySelector(".inputcontainer").style.display = anySliderVisible ? "flex" : "none";
 
-  document.getElementById("colorpicker").value = "#000000";
+  document.getElementById("colorpicker").value = 0; 
+  document.getElementById("colorpicker").style.display = 
+  (category === "hairs" || category === "brows" || category === "tops" || category === "lips") ? "block" : "none";  
   document.getElementById("opacitypicker").value = 1;
   document.getElementById("opacitypicker").style.display = category === "blush" ? "block" : "none";
 
@@ -1202,11 +1220,11 @@ function showColorOptions(category) {
     if (skinDisplays[slideIndex - 1]) skinDisplays[slideIndex - 1].style.display = "block";
   }
   if (category === "eyes")  showEyeColorDisplay(currentEyeColor);
-  if (category === "hairs") showHairColorDisplay(currentHairColor);
-  if (category === "brows") showBrowColorDisplay(currentBrowColor);
-  if (category === "lips")  showLipColorDisplay(currentLipColor);
   if (category === "blush") showBlushColorDisplay(currentBlushColor);
-  if (category === "tops")  showTopsColorDisplay(currentTopColor);
+  if (category === "hairs") document.getElementById("colorpicker").value = currentHairHue;
+  if (category === "brows") document.getElementById("colorpicker").value = currentBrowHue;
+  if (category === "lips")  document.getElementById("colorpicker").value = currentLipHue;
+  if (category === "tops")  document.getElementById("colorpicker").value = currentTopHue;
 
   activeColorCategory = category;
 }
@@ -1339,62 +1357,34 @@ window.onload = function () {
 </script>
 
 <script>
-function applyColorFilter(hexColor) {
+function applyColorFilter(value) {
   if (!activeColorCategory || ["nose", "bg", "jewelry", "skin"].includes(activeColorCategory)) return;
   let activeImg = null;
 
- if (activeColorCategory === "hairs") {
+  if (activeColorCategory === "hairs") {
     const shape = document.getElementById(currentHairId);
     activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
+    
   } else if (activeColorCategory === "brows") {
     const shape = document.getElementById(currentBrowId);
     activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
-  } else if (activeColorCategory === "lips") {
-    const shape = document.getElementById(currentLipId);
-    activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
-  } else if (activeColorCategory === "blush") {
-    const shape = document.getElementById(currentBlushId);
-    activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
-  } else if (activeColorCategory === "tops") {
+  }
+   else if (activeColorCategory === "tops") {
     const shape = document.getElementById(currentTopId);
     activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
-  }
+    currentTopHue = parseInt(value);
+}  else if (activeColorCategory === "lips") {
+    const shape = document.getElementById(currentLipId);
+    activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
+    currentLipHue = parseInt(value);
+}
 
   if (!activeImg) return;
-  const hue = hexToHueDegrees(hexColor);
-  activeImg.style.filter = `hue-rotate(${hue}deg) saturate(2)`;
+  activeImg.style.filter = `hue-rotate(${value}deg) saturate(2)`;
 }
 
 
-function hexToHueDegrees(hex) {
-  // convert hex to RGB
-  const r = parseInt(hex.slice(1, 3), 16) / 255;
-  const g = parseInt(hex.slice(3, 5), 16) / 255;
-  const b = parseInt(hex.slice(5, 7), 16) / 255;
 
-  const max = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
-  let hue = 0;
-
-  if (max !== min) {
-    const d = max - min;
-    switch (max) {
-      case r: hue = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
-      case g: hue = ((b - r) / d + 2) / 6; break;
-      case b: hue = ((r - g) / d + 4) / 6; break;
-    }
-  }
-  return Math.round(hue * 360);
-}
-
-function applyBrightnessFilter(value) {
-  if (activeColorCategory !== "lips") return;
-  const activeImg = document.getElementById(currentLipId)
-    ?.querySelector("img[style*='display: block'], img[style*='display:block']");
-  if (!activeImg) return;
-  const b = parseFloat(value);
-  activeImg.style.filter = `brightness(${b}) contrast(${0.9 + (b - 1) * 0.3})`;
-}
 
 function applyOpacityFilter(value) {
   if (activeColorCategory !== "blush") return;
