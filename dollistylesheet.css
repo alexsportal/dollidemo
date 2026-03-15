@@ -73,6 +73,7 @@ body{
     -webkit-box-shadow: 2px 8px 28px -8px #400824bf;
     -moz-box-shadow: 2px 8px 28px -8px #400824bf;
     overflow-y: hidden;
+ 
 }
 
 @media screen and (max-width:400px){
@@ -609,7 +610,8 @@ body{
 
 .menubutton:hover,
 .menuoverlay:hover,
-.menusongs:hover{
+.menusongs:hover,
+.menusongs:active{
     background-color:#b18393;
 }
 .menuoverlay {
@@ -830,4 +832,39 @@ img.hairstyles{
     margin-left: 5px;
     font-family: Zainbold;
     color:#561a39;
+}
+
+
+
+
+
+
+
+
+
+
+#loadingoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #974d73;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loader {
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #444444;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
