@@ -657,7 +657,7 @@ body{
 .nav{
     display: flex;
     flex-direction: row;
-    position: fixed;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     margin: auto;
@@ -666,7 +666,6 @@ body{
     width: 360px;
     height: 80px;
     z-index: 3;
-    flex: 100%;
     border-radius: 5px;
     background-color: #00000000;
     background-size: cover;
@@ -676,7 +675,7 @@ body{
 
 
 .navbutton{
-    width: auto;
+    width: 64px;
     height: 28px;
     transition: ease-out .3s;
     box-shadow: 1px 1px 3px #8c4d6ded;
@@ -692,13 +691,11 @@ body{
 .navbuttoncontainer{
     position: relative;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     gap: 10px;
     width: auto;
     margin: auto;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 @media screen and (max-width:396px){
@@ -709,6 +706,7 @@ body{
 @media screen and (max-width:396px){
 .navbutton{
     transform:scale(.9,.9);
+    width: auto;
     }
 }
 @media screen and (max-width:396px){
