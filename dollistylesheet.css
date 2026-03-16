@@ -8,8 +8,7 @@ body{
     height:100dvh;
     overflow-y: hidden;
     overflow-x:hidden;
-    background-image: url(DressupGame_Assets/Scenes/background2.jpg);
- 
+    background-image: url(DressupGame_Assets/Scenes/background3.jpg);
     background-size: 200%;
     box-shadow: inset 0px 0px 50px #5914374d;
     padding-top: 3px;
@@ -855,7 +854,7 @@ img.hairstyles{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url(DressupGame_Assets/Scenes/background2.jpg);
+  background-image: url(DressupGame_Assets/Scenes/background3.jpg);
   background-size: 200%;
   box-shadow: inset 0px 0px 50px #5914374d;
 }
