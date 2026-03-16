@@ -80,14 +80,14 @@ body{
     #border{
         max-width:340px;
         min-width:340px;
-        max-height:677px;
-        min-height:677px;
+        max-height:667px;
+        min-height:667px;
     }
     #gamecontain{
         max-width:330px;
         min-width:330px;
-        max-height:670px;
-        min-height:670px;
+        max-height:660px;
+        min-height:660px;
     }
 }
 
