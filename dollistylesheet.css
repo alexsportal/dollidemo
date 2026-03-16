@@ -877,7 +877,7 @@ img.hairstyles{
 }
 
 .block {
-  width: 40px;
+  width: 30px;
   height: 60px;
   animation: slide 1.5s infinite;
   border-radius: 5px;
