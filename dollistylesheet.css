@@ -915,3 +915,31 @@ span{
     margin-bottom:15px;
     color:white;
 }
+
+.musictoggle{
+   
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin: auto;
+    margin-right: 10px;
+    transition:ease-out .3s;
+    z-index:10;
+    background-image: url(DressupGame_Assets/Button_Icons/sound_mute_fill@2x.png);
+    background-size: cover;
+    cursor: pointer;
+    filter: brightness(.9);
+}
+
+.musictoggle {
+  background-image: url(DressupGame_Assets/Button_Icons/sound_mute_fill@2x.png);
+}
+
+.musictoggle.muted{
+  background-image: url(DressupGame_Assets/Button_Icons/sound_max_fill@2x.png);
+  filter: brightness(1);
+}
+
+.musictoggle:hover{
+    filter: brightness(1);
+}

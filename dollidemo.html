@@ -260,6 +260,11 @@ html, body {
                
                 </div>
                 </div>
+
+                <div class="musictoggle" onclick="toggleMute(this)">
+                  <div id="pause"></div>
+                  <div id="play"></div>
+                </div>
                
             </div>
                 
@@ -787,8 +792,15 @@ function playSong(songId, el) {
   el.classList.add("active");
 }
 
+function toggleMute(el) {
+  if (!currentSong) return;
+  currentSong.muted = !currentSong.muted;
+  el.classList.toggle("muted", currentSong.muted);
+}
 </script>
 
+<script>
 
+</script>
 </body>
 </html>
