@@ -854,17 +854,64 @@ img.hairstyles{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  background-image: url(DressupGame_Assets/Scenes/background2.jpg);
+  background-size: 200%;
+  box-shadow: inset 0px 0px 50px #5914374d;
 }
 
-#loader {
-  border: 12px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 12px solid #444444;
-  width: 70px;
-  height: 70px;
-  animation: spin 1s linear infinite;
+#loadingbar {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  background: #894367;
+  box-shadow: inset 0px 0px 5px 4px #a95b86a8, inset 1px 4px 4px 4px #6b2144ba;
+  border-radius: 20px;
+  border-start-end-radius: 20px;
+  border-end-end-radius: 20px;
+  border-start-start-radius: 20px;
+  border-end-start-radius: 20px;
+  border:solid 4px #9f557c;
+  margin: auto;
+  margin-top:-65px;
 }
 
-@keyframes spin {
-  100% { transform: rotate(360deg); }
+.block {
+  width: 40px;
+  height: 60px;
+  animation: slide 1.5s infinite;
+  border-radius: 5px;
+
+}
+
+
+.block:nth-child(1) { animation-delay: 0s; }
+.block:nth-child(2) { animation-delay: 0.2s; }
+.block:nth-child(3) { animation-delay: 0.4s; }
+.block:nth-child(4) { animation-delay: 0.6s; }
+.block:nth-child(5) { animation-delay: 0.8s; }
+.block:nth-child(6)  { animation-delay: 1.0s; }
+.block:nth-child(7)  { animation-delay: 1.2s; }
+.block:nth-child(8)  { animation-delay: 1.4s; }
+.block:nth-child(9)  { animation-delay: 1.6s; }
+.block:nth-child(10) { animation-delay: 1.8s; }
+
+@keyframes slide {
+  0%, 100% { background: #74325900; }
+  25%, 50% { background: linear-gradient(180deg, #DAB3C2 0%, #C08FA1 44.06%, #B3798F 47.89%, #B47E93 93.86%);}
+}
+
+#loadlogo{
+    width:100%;
+    max-width: 700px;
+    min-width:300px;
+    height:auto;
+    position:relative;
+    margin: auto;
+}
+
+span{
+    font-family: zainbold;
+    margin-bottom:15px;
+    color:white;
 }

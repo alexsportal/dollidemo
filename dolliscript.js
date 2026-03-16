@@ -662,9 +662,10 @@ window.onload = function () {
 
   const overlay = document.getElementById('loadingoverlay');
   overlay.style.transition = 'opacity 0.5s ease';
+setTimeout(function() {
   overlay.style.opacity = '0';
   setTimeout(function() {
     overlay.style.display = 'none';
-    document.getElementById('border').style.visibility = 'visible';
-  }, 500);
-};
+  }, 400);
+}, 2500); 
+}; 
