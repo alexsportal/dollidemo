@@ -49,6 +49,7 @@ function saveState() {
     currentTopColor: currentTopColor,
     bgImage: document.getElementById("beautyparlour").style.backgroundImage,
     bgColor: document.getElementById("beautyparlour").style.backgroundColor,
+    blushVisible: document.getElementById(currentBlushId).style.display === "block",
   });
 }
 
@@ -84,8 +85,8 @@ function undo() {
 
   document.querySelectorAll(".blushshape").forEach(s => s.style.display = "none");
   currentBlushId = prev.currentBlushId;
-  document.getElementById(currentBlushId).style.display = "block";
-  updateBlushColor(prev.currentBlushColor);
+  document.getElementById(currentBlushId).style.display = prev.blushVisible ? "block" : "none";
+  if (prev.blushVisible) updateBlushColor(prev.currentBlushColor);
 
   document.querySelectorAll(".noseshape").forEach(s => s.style.display = "none");
   currentNoseId = prev.currentNoseId;

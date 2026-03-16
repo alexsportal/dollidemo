@@ -678,8 +678,9 @@ body{
     height: 28px;
     transition: ease-out .3s;
     box-shadow: 1px 1px 3px #8c4d6ded;
-    border-radius: 10px;
+    border-radius: 8px;
     filter: brightness(1);
+    background-color:#96476f;
 }
 
 .navbutton.active {
