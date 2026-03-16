@@ -937,7 +937,7 @@ span{
 
 .musictoggle.muted{
   background-image: url(DressupGame_Assets/Button_Icons/sound_max_fill@2x.png);
-  filter: brightness(1);
+
 }
 
 .musictoggle:hover{
