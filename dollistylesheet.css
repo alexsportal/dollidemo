@@ -706,13 +706,14 @@ body{
 }
 @media screen and (max-width:396px){
 .navbutton{
-    transform:scale(.9,.9);
-    width: auto;
+  width:17%;
+  height: auto;
     }
 }
 @media screen and (max-width:396px){
 .navbuttoncontainer{
     gap:9px;
+    margin-top: 10px;
     }
 }
 
