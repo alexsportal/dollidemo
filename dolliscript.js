@@ -669,13 +669,4 @@ setTimeout(function() {
   }, 400);
 }, 2500); 
 
-function startFirstSong() {
-  const firstSong = document.getElementById('song1');
-  firstSong.play();
-  currentSong = firstSong;
-  document.querySelectorAll('.menusongs')[0]?.classList.add('active');
-  document.removeEventListener('click', startFirstSong);
-}
-document.addEventListener('click', startFirstSong);
-
 }; 
