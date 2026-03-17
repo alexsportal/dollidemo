@@ -859,7 +859,7 @@ img.hairstyles{
   justify-content: center;
   flex-direction: column;
   background-image: url(DressupGame_Assets/Scenes/background3.jpg);
-  background-size: 200%;
+  background-size: cover;
   box-shadow: inset 0px 0px 50px #5914374d;
 }
 
