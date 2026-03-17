@@ -544,7 +544,7 @@ function goToSection(index) {
 
   const containers = document.querySelectorAll(".itemcontainer");
   if (containers[index]) {
-    containers[index].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+    containers[index].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
   }
 
   document.querySelectorAll(".navbutton").forEach((btn, i) => {
