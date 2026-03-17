@@ -77,14 +77,14 @@ body{
 
 @media screen and (max-width:400px){
     #border{
-        max-width:340px;
-        min-width:340px;
+        max-width:360px;
+        min-width:360px;
         max-height:667px;
         min-height:667px;
     }
     #gamecontain{
-        max-width:330px;
-        min-width:330px;
+        max-width:350px;
+        min-width:350px;
         max-height:660px;
         min-height:660px;
     }
@@ -293,7 +293,7 @@ body{
 
 @media screen and (max-width:396px){
 .padding{
-    width:290px;
+    width:310px;
     height:100px;
     }
 .optioncontainer{
@@ -666,7 +666,7 @@ body{
     padding-top: 0;
     left: 0;
     right: 0;
-    width: 360px;
+    width: auto;
     height: 80px;
     z-index: 3;
     background-color: #c39aa8;
@@ -702,11 +702,7 @@ body{
     margin-top:6px;
 }
 
-@media screen and (max-width:396px){
-.nav{
-    width:315px;
-    }
-}
+
 @media screen and (max-width:396px){
 .navbutton{
   width:17%;
