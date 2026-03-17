@@ -542,10 +542,10 @@ function goToSection(index) {
   currentSectionIndex = index;
   const category = sections[index];
 
-  const containers = document.querySelectorAll(".itemcontainer");
-  if (containers[index]) {
-    containers[index].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
-  }
+const containers = document.querySelectorAll(".itemcontainer");
+containers.forEach((c, i) => {
+  c.style.display = i === index ? "block" : "none";
+});
 
   document.querySelectorAll(".navbutton").forEach((btn, i) => {
     btn.classList.toggle("active", i === index);
@@ -622,6 +622,9 @@ window.onload = function () {
   ["eyecolorsdisplay", "haircolorsdisplay", "browcolorsdisplay",
    "lipcolorsdisplay", "blushcolorsdisplay", "topscolorsdisplay", "bgcolorsdisplay"].forEach(cls => {
     Array.from(document.getElementsByClassName(cls)).forEach(el => el.style.display = "none");
+  });
+  document.querySelectorAll(".itemcontainer").forEach((c, i) => {
+    c.style.display = i === 0 ? "block" : "none";
   });
 
   document.querySelectorAll(".hairshape").forEach(s => s.style.display = "none");
