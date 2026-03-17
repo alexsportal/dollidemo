@@ -693,7 +693,7 @@ body{
 .navbuttoncontainer{
     position: relative;
     display: flex;
-    gap: 11px;
+    gap: 10px;
     width: auto;
     margin: auto;
     flex-wrap: wrap;
@@ -707,13 +707,15 @@ body{
   width:17%;
   height: auto;
     }
-}
-@media screen and (max-width:396px){
+.nav{
+  padding-bottom:2px;
+    }
 .navbuttoncontainer{
-    gap:9px;
+    gap:11px;
     margin-top: 10px;
     }
 }
+
 
 ::-webkit-scrollbar {
   width: 10px;
