@@ -650,7 +650,7 @@ body{
     margin-bottom:3px;
     width:auto;
     height:auto;
-    position:auto;
+    position:relative;
 }
 
 
@@ -944,4 +944,24 @@ span{
 
 .musictoggle:hover{
     filter: brightness(1);
+}
+
+#star{
+    width: 14px;
+    height:14px;
+    position: relative;
+    margin-left:14px;
+    margin-right:10px;
+    margin-top: 10px;
+    padding:0;
+}
+
+#bannertitle{
+    padding: 0;
+    text-align: left;
+    font-family: zain;
+    line-height: 0;
+    margin-top:19px;
+    margin-left:10px;
+    flex:10%;
 }
