@@ -77,16 +77,16 @@ body{
 
 @media screen and (max-width:400px){
     #border{
-        max-width:360px;
+        max-width:30px;
         min-width:360px;
-        max-height:667px;
-        min-height:667px;
+        max-height:657px;
+        min-height:657px;
     }
     #gamecontain{
         max-width:350px;
         min-width:350px;
-        max-height:660px;
-        min-height:660px;
+        max-height:650px;
+        min-height:650px;
     }
 }
 
@@ -238,7 +238,6 @@ body{
 
 #options{
     overscroll-behavior-y: contain;
-
     scroll-snap-type: x mandatory;
     background-color: #c39aa8;
     border-bottom-left-radius: 10px;
@@ -297,7 +296,7 @@ body{
     height:100px;
     }
 .optioncontainer{
-    height:97px;
+    height:90px;
 }
 
 }
@@ -694,7 +693,7 @@ body{
 .navbuttoncontainer{
     position: relative;
     display: flex;
-    gap: 10px;
+    gap: 11px;
     width: auto;
     margin: auto;
     flex-wrap: wrap;
