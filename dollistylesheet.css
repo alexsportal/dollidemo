@@ -296,7 +296,9 @@ body{
     height:100px;
     }
 .optioncontainer{
-    height:90px;
+    height: 90px;
+    width: 300px;
+    gap: 15px;
 }
 
 }
