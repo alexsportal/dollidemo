@@ -248,7 +248,7 @@ body{
     width: auto;
     flex-wrap: wrap;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     padding-top:8px;
 }
 
