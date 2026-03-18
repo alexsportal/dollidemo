@@ -160,7 +160,7 @@ a{
 }
 
 .functionimgs{
-    border-radius: 5px;
+    border-radius: 7px;
     transform:scale(.7,.7);
     box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
     -webkit-box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
