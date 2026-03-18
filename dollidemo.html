@@ -12,7 +12,10 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
 <link rel="stylesheet" href="dollistylesheet.css">
+<link rel="stylesheet" href="infoboxstylesheet.css">
 <script src="dolliscript.js" defer></script>
+
+
 
 <style media="print">
 * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -49,6 +52,228 @@ html, body {
 </head>
 
 <body>
+
+<div id="infooverlay" style="display:none;">
+
+  <div id="infoborder">
+<div id="gamecontain">
+           
+
+<div class="topitemcontainer">
+        <div id="infobox">  
+            <div id="banner">
+               <img src="DressupGame_Assets/Logos/Dolli_Logo3.png" id="dollilogo"/>
+
+             <img class="star" src="Images/star.png">
+
+                <p id="bannertitle">About Dolli</p>
+
+               <div id="exitbutton" onclick="closeInfo()">
+
+                <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="0.806641" width="25" height="25" rx="5" fill="url(#paint0_linear_3704_11563)"/>
+                <g filter="url(#filter0_i_3704_11563)">
+                <line x1="1.5" y1="-1.5" x2="14.6424" y2="-1.5" transform="matrix(0.70372 -0.710477 0.70372 0.710477 8.74756 20.4688)" stroke="#8A4466" stroke-width="3" stroke-linecap="round"/>
+                <line x1="1.5" y1="-1.5" x2="14.6424" y2="-1.5" transform="matrix(0.70372 0.710477 -0.70372 0.710477 7 9)" stroke="#8A4466" stroke-width="3" stroke-linecap="round"/>
+                </g>
+                <defs>
+                <filter id="filter0_i_3704_11563" x="7.25488" y="7.49268" width="12.5977" height="13.3521" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="1"/>
+                <feGaussianBlur stdDeviation="0.5"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.418269 0 0 0 0 0.17696 0 0 0 0 0.294167 0 0 0 1 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3704_11563"/>
+                </filter>
+                <linearGradient id="paint0_linear_3704_11563" x1="14.2916" y1="0.806641" x2="14.2916" y2="25.7089" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#EDC0D1"/>
+                <stop offset="0.442308" stop-color="#D2ACBA"/>
+                <stop offset="0.480769" stop-color="#C598A9"/>
+                <stop offset="0.942308" stop-color="#C7A4B0"/>
+                </linearGradient>
+                </defs>
+                </svg>
+               </div>
+            </div>
+
+            <div id="infomenu">
+                <div onclick="goToInfoSection(0)" class="menubutton" style="width:45px;"><u>A</u>bout</div>
+                <div onclick="goToInfoSection(1)" class="menubutton"><u>F</u>unctions</div>
+                <div onclick="goToInfoSection(2)" class="menubutton"><u>F</u>eeback</div>
+            </div>
+
+            <div id="about" class="infocontainer">
+                <section class="descsections">
+                    <h3 style="line-height: .4;">What's Dolli?</h3>
+                    <p class="desc" style="margin-top:3px">
+                    This is my working demo for a girl-game idea that I have called Dolli. This will be a 2D mobile game centered around creative self-expression through fashion and character customization.
+                    <br><br>
+                        <div style="display:flex;flex-direction: column;flex-wrap:wrap;align-content: space-between;padding-right:20px;height:50px;">
+                            <section style="flex:40%;">
+                                <div class="link"><a rel="noopener" target="_blank" href="Dolli_Overview.pdf">Concept Overview</a></div>
+                                <br>
+                                <div class="link"><a rel="noopener" target="_blank" href="">View Prototype</a></div>
+                            </section>
+                            <section style="flex:40%; align-items: center;">
+                                <img id="applogo" src="DressupGame_Assets/Logos/Dolli_AppLogo3.png"/>
+                            </section>
+                        </div>
+                    </p>
+                    <br>
+
+                    <h3>Future Features</h3>
+                    <p class="desc">
+                    Dolli will start off as an avatar maker demo with options for skin tone, facial  features, hair, clothing, and more.             
+                    <br>
+        
+                    <ul>
+                        <li>
+                        <b>Different body types/face shapes:</b> <br>
+                        Before I start adding more clothes, I’ll need to create another body type
+                        </li>
+                        <br>
+                        <li>
+                        <b>Turn your Dolli into a sticker:</b> <br>
+                        There will be an option to order a sticker of the Dolli you create.
+                        </li>
+
+                    </ul> 
+
+                 
+                    <ul>
+                        <li>
+                        <b>Create your own design:</b> <br>
+                        Use a template to create and send your own outfit ideas.
+                        </li>
+                        <br>
+                        <li>
+                        <b>Dolli store:</b> <br>
+                        Buy outfits created by other users,or sell your own.
+                        </li>
+                        <br>
+                        <li>
+                        <b>Minigames:</b> <br>
+                         Play minigames.
+                        </li>
+                    </ul> 
+                    
+             
+                    <ul>
+                        <li>
+                        <b>Personalized profiles:</b> <br>
+                        Add your interests, favorites, and your saved Dolli’s to your profile.
+                        </li>
+                        <br>
+                        <li>
+                        <b>Modded chat and social feed system:</b> <br>
+                        Add friends and create chat groups. Chat will be restricted with safeguards in place.
+                        </li>
+                     
+                    </ul> 
+                </p>
+                </section>
+
+
+            </div>
+
+
+            <div id="functions" class="infocontainer">
+           
+                <section class="descsections">
+
+                    <h3 style="line-height: .4;">Functions</h3>
+                    <p class="desc">
+                        <table>
+                        <tr>
+                            <td><img class="functionimgs" style="width:70px;" src="Images/undo.png"></td>
+                            <td>Undo the last change.<br><br></td>
+                        </tr>
+                        <tr>
+                            <td><img class="functionimgs" style="width:70px;" src="Images/save.png"></td>
+                            <td>Save your Dolli as a PDF (Currently fixing for mobile).<br><br></td>
+                        </tr>
+                        <tr>
+                            <td><img class="functionimgs" style="width:70px;" src="Images/music.png"></td>
+                            <td>Choose a song to play in the background. Click<div class="musictoggle" style="padding: 0;display: inline-block;transform: scale(.8);margin-bottom: -9px;margin-right:3px"></div>to mute.</td>
+                        </tr>
+                        </table>                    
+                        
+                    </p>
+
+                    <p class="desc">
+                     Select an option from the menu. Swipe or scroll left to view more options. Active selections are highlighted blue. Makeup and tops can be layered.             
+                    </p>
+
+                    <img class="functionimgs" src="Images/eyesmenu.png"/>
+                    
+                    <p class="desc">
+                    Use the slide to change the hue of your clothes, lips, or hair colors.        
+                    </p>
+
+                    <img class="functionimgs" style="width: 300px;margin: auto;" src="Images/color.png"/><br>    
+
+
+                    <p style="margin-top:-20px" class="desc">
+                        <table>
+                        <tr>
+                            <td><img class="functionimgs" style="width:40px;" src="Images/colormenu.png"></td>
+                            <td style="padding-left: 20px;align-content: center;">Choose a color from the color menu. If you used the hue slider and want to reset the color, select the color again.</td>
+                        </tr>
+                        
+                        </table>                    
+                        
+                    </p>
+
+                    <p style="margin-top: -30px;" class="desc">
+                    Use the slider to change the opacity of your makeup selection.              
+                    </p>
+
+                    <img class="functionimgs" style="width: 300px;margin: auto; margin-bottom: 30px;" src="Images/opacity.png"/>
+
+                </section>
+
+            </div>
+
+
+           <div id="feedback" class="infocontainer">
+           
+                <section style="width:auto" class="descsections">
+
+                    <h3 style="line-height: .4;">Feedback</h3>
+                    <p class="desc">
+                    I’m looking for constructive feedback for the UI of this demo, as well as suggestions and tips. Thank you!                
+                    </p>
+
+                       <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="bd48ad60-1199-4931-8293-8d4d32d0b51e">
+                        <input type="hidden" name="redirect" value="https://alexsportal.github.io/portfolio/sent.html">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name..">
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your last name..">
+
+                        <label for="message">Subject</label>
+                        <textarea id="message" name="message" placeholder="Write something.."></textarea>
+
+                        <input  id="send" type="submit" value="Send">
+                    
+                    </form>
+                    </section>
+
+            </div>
+
+        </div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
 
 
 <div id="border">
@@ -222,32 +447,13 @@ html, body {
                <img src="DressupGame_Assets/Logos/Dolli_Logo3.png" id="dollilogo"/>
 
               
-<svg id="star" width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g filter="url(#filter0_i_3548_10145)">
-<rect width="12" height="11.3333" fill="url(#pattern0_3548_10145)"/>
-</g>
-<defs>
-<filter id="filter0_i_3548_10145" x="0" y="0" width="13" height="11.3335" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dx="1"/>
-<feGaussianBlur stdDeviation="1"/>
-<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.415385 0 0 0 0 0.12142 0 0 0 0 0.270362 0 0 0 0.75 0"/>
-<feBlend mode="normal" in2="shape" result="effect1_innerShadow_3548_10145"/>
-</filter>
-<pattern id="pattern0_3548_10145" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_3548_10145" transform="matrix(0.00694444 0 0 0.00735294 0.00694446 0)"/>
-</pattern>
-<image id="image0_3548_10145" width="142" height="136" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI4AAACICAYAAAAxpNMVAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAA37SURBVHgB7Z1LUFRXGse/c/tF81BAcDBq0kRHk3FqbKusjDvbmkdUrEpnN7OCLGaqlEmlyWp2wC6r0FZGmJ24m50kJVSySrMaVpN2Kg8VA43C2Ao23Tybftwz57twSUMEAe85fR/nV0UVirRN8+/z/87r/xGQrNMTitT6/BCiFGpBgYD2lyokVIBEIQvxjlg0DRINAg4HxeKthI8IgZDL7Qn5K/3g9fm0DyS3sqJ9LC8tQzFfiFOg13MqxDq+jCbAwThWOLpg3B53pL6hoXZ/fT1U79+37fcsZOYgNT3NPmaAUtqVW4LrTh2FHCmcnsuRoA/I7fqDDYHDgTfA5Xbv6vtxBEo+noTUs5nEikovOHH0cYHD6G3paPV53P86eqy5qenoEVAUBXYLCg1HKGZntdmFhbbLx3+bHBwduQsOwlEjDo40lR7PN8dPvQ3+ykowguWlJXj43Q+QK+YvfHgnGgOHsPu3m0XpuRgJoD0ZKRoEH6v55C9BoeQ2/h/gEBwjHA+BLmZNASNFo1O9bx8cOnK41ueCm+AQHCGcvouRUIW/orXp6GHgBdZLXl9F6LMrkRA4AGeMOC7SyVM0Ok1HDoOLQic4ANsLB+sOj88Xqm9sBN7UH2wEXETsc0CtY3vheFwQrt5XA6Jgi4lQUKANbI7thaMAaRUx2ujsP1DHnBHOg82xtXDQptgiXfBlWwlGgjMsJ9iVrYUj2qZ0nGBXthaOaJvScYJd2VY45bApHSfYlW2FUy6b0rG7XdlWOOWyKR2725UthVNOm9Kxu13ZUjjltikdO9uVLYVTbpvSsbNd2U44ZrApHTvble2EYxab0rGrXdlOOGaxKR272pWthGMmm9LR7Qqv44CNsJVwvAqEzGRTOmhXHr+97MpWwlGIuWxKB+1KUeA9sBG2EY5+0s9MNqVjR7uyjXDMalM6drMr2wjHrDalYze7soVwzGxTOrpd3fhDJAg2wBbCwct2Zh5tdBqbfsGeLHwENsDywsHRBi/b1R9sALPTeKgJ3B5Pmx2uClteOD6F3MZfiB6EZGYw5aLpyGtgh6vClo456bv8cScrOv+EGTdWoaqmBhbm5gK/O3qmdujhyFdgUSwrHBSNp8LbFThxfNfBSOVmf30dZFKpc+82n4Wh0ZFhsCCWFE5vS6THW+H7O0aWWMGiNoNhTiieudl0yKrisVSwkpZxw+oDNrUNNZ88YbmRZjMYCTeVmIDM81nLRcJZQjifXYyECIE2j9fTiokQWAzbidSzaUhOTsFKNtufU6HbCgLas3B4nmpTi1BL3BCgACGiwGlcOMM1EBSM1UeZrcDRJ5OaheknSchlV+KU0mH2y4nRAiQUF3BJNs1mIb3X1NQdCUeLdq2AMPsBzlNKQuy7ArxrC39VpRaThiuuZl4R5gHG4rKZl5YvyEQExWIReICPWywUAChgfnOc/dVw+1C0fyffu61w9CxgICRSs69GywLGos6KBalka5YXl9jHImRmZ7V6i4kILfPWdpa5pXB6L0XCVCE3DzQ21K7GlEmxOIHSDGcmoO6tRqAXTsdxjcTr9/3zzZMnKhpfO2TbukLyc/QM5/qDjbVsuSC81XLBz4SDoqmo8ncd+9VbrM6oAokzWRXQ1mtNG4Tzj5ZIxFfh+wRFI61JguKpb2yA9PNU6I+Bsxm2RTKif229xsHFtUqfZ/zkb34tRSPZANY99//7bXppJX9GL5jXd8d9bqUHF9ekaCSbQU2wXf0NAeCacDBA2uv1hu22IisxjsZDhzYEgGvCKbLlfBEB0hJro63cq6snGDXhKAppxRVaiWQ7sFCmhGjXfBS0KRSNrG0kLwNnWbiD4K6GoKIqEOLRUUViT/yVVUCKTDiEbVjihqJEshNQKy4FTivYKlluKUh2C444aW1rXSLZAS63C1RK6hzTIU9iDMVCkY02dFZRAeJ4HkMi2QmoFZXChOIiTDhLUjiSnbG8tAhsJh5Tsm6Iz8/PyTpH8lJws3Nhbh4KCxBXOgaiaYXC8PSTpyCRbAeehSZA+vGA+2pxTGh0OpkEOepItgOv8IBH7cbPNeFcvRONFYvFgeTk/0AieRHJyUnIr+T6rw5sOo9D3GrHs+STNF7LkEhKQU0kH08l9NEGWRcOKkkB+v74/VGtCJJIENQCaoJ66Pv6aINsOHM8+GAkcenYOxOzM8/DVTXVcsfc4eBI8/D7e1BQ8x+0fxH9svRrL7xXdSMcCZI8ud109EgAj5NKnAdeRZ6cmEijC2ENvPnrW17I6wtHArSg9OCRUqvGiUh2D1rTo4djOPUeJl7aVmpPpbz07viNKx93uV2uzsOB18EKAY2SvYOjDJs9pfMFtftvg59Gt/u3Owod0EafPPmaCSeAZ5Pl6GMvcP1uKvEIUtPTCSyC2wei8Zd9z65iTnD08Xm9na8ffxPkGWV7gAUwWtNKNnu90gtdHwzsLPZk1/k4vVciYaCkRxbO1gfTwJg9JQihH7yoAN6OPQUrrVlXF7OsVlk4Ww9tbebeAzwiMez30vBOR5lSXinKrbclEnG5PZ2s7qltbJKX+azAbgrg7XjlDEBZOFsDLIAf/TiOMblxsmkVeC8YFh6pF844bcd8FYl5KC2A24eiETAAQ1NH+65EQpSSm7JwNgc4yuBRiL0WwNthaEA27nVdOXXu84XZ+brU9EwQg3nk1ZvygAXw2A/3IZNOD/g99NJfvojeAwPhlnMsC+fywRbycKr9ygXwdnANyNYLZ2ld4sADV3h2hhXAF161AN4Orveq8InjD5B8PJnAd4GEL2zGJEQ0CPcLefgD4P4H2wtJywNi/NB2tdl0W4RoECE3OXHTrFjId+OUUMIH3D7IFfPdIkSDCG0C0tvS8Q3bogjKDVJjwSYij34cS1wb7GkGQQi9O87WEjqYB4PEWLB+pJR2g0CECgcXoPDWqKx1jGPtdmVip807jEJ8WoVKb2F7HYkx4GtJgMRAMOWIOYnLu1vGgddyC6r6OQhGuHAUFWIyVsU40KoUAgkQjHDhXP0ympA1jnFgRA2rb156RthoZCKXZE9I4Uj2hHDh9IQjMuXUQPC1xKRzEIxw4VRkISgDuY3D6/WCtxICIBjhwim6pHCMBLdvKIUQCEa4cFxA3nNaO2ie7D9QB4oC74FghAoHu/ApbncIj5RKjAFHb5fbExJd5wgVjleB0P464XWcrdGarrLX1OOHNhCIUOEohLTKqzPGU3+wUbhdCROOtCl+lMOuhAlH2hQ/ymFXwoQjbYovou1KiHCkTfFHtF0JEY60Kf6ItishwpE2JQaRdsVdONKmxCHSrrgLR9qUOETaFXfhSJsSiyi74iocaVPiEWVXXIUjbUo8ouyKq3CkTZUHEXbFTTjSpsqHCLviJhxpU+VDhF1xE460qfLC2664CEfaVPnhbVdc7qn43BCs3lcDVgJvl+IF/uXFRfZ5bsPX8JfgrfABnpW2ykF7tKvqmhoo5FNh9sd+MBguwqEqhKwQnoQ5wNPJp9rFfYxfUVR6SwWIEwXSBGC9v8HcXCaoAAmyT897fT4tQd4KvbtQ6OnnqSBwgItwWH1z2uzvTEyxmpp4BMV8YZgotKt9+/Do9a9hCPijh2NtycdTrWYXkNfnxTSrAHDAcVcqN/Q0ILTj2tDu0sbX0sljfeFIFxPQ1wuZedP2sNCeE4E3gANchKNSaMaawGwY2dNgLaSxGXtYsMd1XPM3LrMqhcB4LmueKJPV1oET8PC7HxL5XPaCUY0wkPY7n3bhY+JjY98EM1EsFlnBSTPAAS7CoUAnzJKBg8+D/VKxCMaeBmeMbIShg4+5FgR+6/v/xMEsPzu+YZhX7bqJ2U7gY1VsZrK8uNQKZcaopl47Yc262npbIvHvvol3Hgm8UfYeFplUGtNIY8ABLiOOi0A8M1u+gEh9lJkanxhWSeEMb9GUcm0wGlXc9Az7vxPj9x+UdfTBmo6Qn2aERsItILuvpePrY6feFr6egy/W+P1RtvCVv25kLbMX9OZv5Zi24+uAdRev0Gxue1UqpbdEhmGXFsBqMX+h3KJBsHBeUbNn2EwugX29V2sOMbB6i2toNtdI/t6WjvHjp94O8B51MEARu9rutne2KDCFzJcnUVFdk0VE9BvaIW8zV06eu8sWyNp4dsrDAnjswYN0US1cbR+MfvL5vZEsmIyv2HMaHB0ZeLf57MRM8mmQFR61vN5Mq11kxkBVC+9jx0LgBFfh4BN/99g7ZDEzF6prOMC2+Y1zRq13NqtlniefDSseeunaF8ZPs41maHQkjq0nF2fngwtz8wHcSzLyDYVWOPrt97Ccy3azLZR+4IiQ7jFYJFb6/Z3Nb50wZJjGhl64bZAvFDtEzpiMxOjCWW9Cv7C82P3hnWgXcEZY2yH9hXqVpfnSrrbYPA37YIGFMapnu76VgiONCNEgXK2qlKEH/45dPHb2burZzLncSq7WX1W5q2EaC74x9o6az2SwAP7zXwU19OLJ4L2R9O9PnbuVW1jyz6Vmz7ncLvBXVe34+3GUwdkam00msKbhbU+lCG10huC7TC0obYTSVlY0B7Bwxhdr8zEMHF1wtpR5PgupmZn14w88tgzMgDb65Eg/2xw+jyNy/cGGtVN8G99cWpuhzBykpme0M0TsV3i90q1GRc8khQunlBuXI21shhFmT+I0+2OgdKheya2kiQp3qUJiCqgxuwpmMyggyEGE4sExAudROC7XqjHgpmUhX5gghMYohRgbeQfKtfRQVuGUcpOtdbB59Pr52Ks2sCIj0IS0RgVA2ixrVP8H5fw+4cXP9S0AAAAASUVORK5CYII="/>
-</defs>
-</svg>
+                <img class="star" src="Images/star.png">
+
 
 <p id="bannertitle">Avatar Maker Demo</p>
 
 
-               <div id="helpbutton">
+               <div id="helpbutton" onclick="openInfo()">
                     
                     <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="1" y="0.806641" width="25" height="25" rx="5" fill="url(#paint0_linear_3548_10090)"/>
@@ -836,6 +1042,6 @@ function toggleMute(el) {
 }
 </script>
 
-
+<script src="infoboxscript.js" defer></script>
 </body>
 </html>

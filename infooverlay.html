@@ -30,13 +30,182 @@
 
 .infocontainer{
     width:auto;
-    height:100%;
+    height:587px;
     display:flex;
     flex-direction: column;
     overflow-y: auto;
     flex-wrap: wrap;
     padding:10px;
+    padding-left:15px;
+    overflow-x: hidden;
 }
+
+h3{
+    line-height: 0;
+    color:#96296C;
+    font-family: zain;
+}
+
+.desc{
+   font-size: 16px;
+   color:#535353;
+   display:flex;
+   flex-direction: column;
+   padding-right:10px;
+}
+
+.descsections{
+    overflow-y: auto;
+    height: 575px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    width: 360px;
+}
+
+@media screen and (max-width:396px){
+.descsections{
+    height:545px;
+    width:330px;
+    }
+}
+
+ul{
+    color:#535353;
+    margin-left: -5px;
+    list-style: none;
+    list-style-image: url(DressupGame_Assets/Button_Icons/starpoint.png);
+}
+
+b{
+    font-family: zain;
+    color:#96296C;
+}
+
+li { 
+    
+    width:300px;
+}
+@media screen and (max-width:396px){
+li{
+    width:260px;
+    }
+}
+
+table{
+    width:330px;
+    margin-top:-20px;
+    color:#535353;
+}
+
+@media screen and (max-width:396px){
+table{
+    width:300px;
+    }
+}
+
+td{
+    align-content: start;
+}
+
+a{
+    color:#682A49 ;
+    font-size:16px;
+    height:20px;
+    padding:10px;
+    font-family: zain;
+    text-decoration: none;
+}
+
+.link{
+
+    border-radius: 7px;
+    background: linear-gradient(180deg, #C094A4 0%, #C08FA1 44.06%, #C0829A 47.89%, #B57E93 93.86%);
+    text-align: center;
+    transition:ease-out .3s;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px #8c4d6ded;
+    margin-left:5px;
+    padding-top:1px;
+    box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
+-webkit-box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
+-moz-box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
+}
+
+.link:hover{
+  outline: 2px solid #96476f;
+}
+
+#applogo{
+    width:75px;
+    height:75px;
+    border-radius:8px;
+box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
+-webkit-box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
+-moz-box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
+    outline: 2px solid #96476f;
+    
+   
+}
+
+.functionimgs{
+    transform:scale(.7,.7);
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg,#aa6e82 -3.3%, #a35b7e 39.59%, #964b71 43.32%, rgb(164, 95, 130) 88.07%);
+  border-radius: 10px;  
+}
+
+#name,#email,#message{
+  border-radius:5px;
+  height:25px;
+  width:auto;
+  resize:none;
+  border: none;
+  margin-bottom:10px;
+  margin-top:8px;
+  padding:8px;
+  box-shadow: inset 0px 1px 5px rgba(156, 103, 130, 0.38);
+  font-family: tahoma;
+  background-color:#e9e9e9;
+}
+
+
+#message{
+    height:175px;
+    overflow-y: auto;
+}
+
+
+@media screen and (max-width:396px){
+#message{
+    height:140px;
+    }
+}
+
+#send{
+    border:none;
+    font-family:zainbold;
+    font-size:16px;
+    color:white;
+    background: linear-gradient(180deg, #AA6E82 0%, #A35B7E 44.06%, #964B71 47.89%, #A45F82 93.86%); ;
+    border-radius:5px;
+    padding:5px;
+}
+
+label{
+    color:#96296C;
+    font-family: zain;
+    line-height: 1.4;
+}
+
 
 </style>
 </head>
@@ -54,7 +223,7 @@
             <div id="banner">
                <img src="DressupGame_Assets/Logos/Dolli_Logo3.png" id="dollilogo"/>
 
-                <svg id="star" width="14" height="14" viewBox="0 0 12 12" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg id="star" width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g filter="url(#filter0_i_3548_10145)">
                 <rect width="12" height="11.3333" fill="url(#pattern0_3548_10145)"/>
                 </g>
@@ -78,53 +247,199 @@
 
                 <p id="bannertitle">About Dolli</p>
 
-               <div id="helpbutton">
-                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="1" y="0.806641" width="25" height="25" rx="5" fill="url(#paint0_linear_3548_10090)"/>
-                    <g filter="url(#filter0_i_3548_10090)">
-                    <path d="M11.7132 15.76C11.6065 15.76 11.5132 15.7267 11.4332 15.66C11.3532 15.58 11.3132 15.4867 11.3132 15.38C11.3132 15.3 11.3132 15.2267 11.3132 15.16C11.3132 15.08 11.3132 15 11.3132 14.92C11.3932 14.4533 11.5465 14.0333 11.7732 13.66C12.0132 13.2733 12.2865 12.92 12.5932 12.6C12.9132 12.28 13.2199 11.98 13.5132 11.7C13.8065 11.42 14.0532 11.1467 14.2532 10.88C14.4665 10.6 14.5799 10.32 14.5932 10.04C14.6199 9.74667 14.5599 9.5 14.4132 9.3C14.2799 9.1 14.0865 8.94667 13.8332 8.84C13.5932 8.73333 13.3332 8.68 13.0532 8.68C12.5199 8.68 12.0999 8.80667 11.7932 9.06C11.4865 9.31333 11.2665 9.68667 11.1332 10.18C11.0799 10.3267 11.0065 10.4467 10.9132 10.54C10.8199 10.62 10.6865 10.66 10.5132 10.66H8.0732C7.93987 10.66 7.82654 10.6133 7.7332 10.52C7.63987 10.4133 7.5932 10.28 7.5932 10.12C7.60654 9.58667 7.7332 9.06667 7.9732 8.56C8.22654 8.05333 8.58654 7.59333 9.0532 7.18C9.5332 6.75333 10.1265 6.42 10.8332 6.18C11.5399 5.92667 12.3532 5.8 13.2732 5.8C14.2732 5.8 15.1065 5.92 15.7732 6.16C16.4399 6.4 16.9599 6.71333 17.3332 7.1C17.7199 7.48667 17.9932 7.9 18.1532 8.34C18.3132 8.76667 18.3799 9.16667 18.3532 9.54C18.3399 10.02 18.2465 10.4533 18.0732 10.84C17.8999 11.2267 17.6799 11.5867 17.4132 11.92C17.1599 12.24 16.8865 12.5533 16.5932 12.86C16.3132 13.1533 16.0532 13.4533 15.8132 13.76C15.5732 14.0533 15.3932 14.3667 15.2732 14.7C15.2465 14.7933 15.2199 14.8867 15.1932 14.98C15.1665 15.06 15.1465 15.1467 15.1332 15.24C15.0399 15.4133 14.9532 15.5467 14.8732 15.64C14.7932 15.72 14.6732 15.76 14.5132 15.76H11.7132ZM11.7532 20C11.6065 20 11.4865 19.9533 11.3932 19.86C11.2999 19.7667 11.2532 19.6467 11.2532 19.5V17.22C11.2532 17.0867 11.2999 16.9733 11.3932 16.88C11.4865 16.7733 11.6065 16.72 11.7532 16.72H14.3132C14.4599 16.72 14.5799 16.7733 14.6732 16.88C14.7799 16.9733 14.8332 17.0867 14.8332 17.22V19.5C14.8332 19.6467 14.7799 19.7667 14.6732 19.86C14.5799 19.9533 14.4599 20 14.3132 20H11.7532Z" fill="#8A4466"/>
-                    </g>
-                    <defs>
-                    <filter id="filter0_i_3548_10090" x="7.59326" y="5.7998" width="10.7999" height="15.2002" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset dy="1"/>
-                    <feGaussianBlur stdDeviation="0.5"/>
-                    <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0.418269 0 0 0 0 0.17696 0 0 0 0 0.294167 0 0 0 1 0"/>
-                    <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3548_10090"/>
-                    </filter>
-                    <linearGradient id="paint0_linear_3548_10090" x1="14.2916" y1="0.806641" x2="14.2916" y2="25.7089" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#EDC0D1"/>
-                    <stop offset="0.442308" stop-color="#D2ACBA"/>
-                    <stop offset="0.480769" stop-color="#C598A9"/>
-                    <stop offset="0.942308" stop-color="#C7A4B0"/>
-                    </linearGradient>
-                    </defs>
-                    </svg>
+               <div id="exitbutton">
+
+                <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="0.806641" width="25" height="25" rx="5" fill="url(#paint0_linear_3704_11563)"/>
+                <g filter="url(#filter0_i_3704_11563)">
+                <line x1="1.5" y1="-1.5" x2="14.6424" y2="-1.5" transform="matrix(0.70372 -0.710477 0.70372 0.710477 8.74756 20.4688)" stroke="#8A4466" stroke-width="3" stroke-linecap="round"/>
+                <line x1="1.5" y1="-1.5" x2="14.6424" y2="-1.5" transform="matrix(0.70372 0.710477 -0.70372 0.710477 7 9)" stroke="#8A4466" stroke-width="3" stroke-linecap="round"/>
+                </g>
+                <defs>
+                <filter id="filter0_i_3704_11563" x="7.25488" y="7.49268" width="12.5977" height="13.3521" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="1"/>
+                <feGaussianBlur stdDeviation="0.5"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.418269 0 0 0 0 0.17696 0 0 0 0 0.294167 0 0 0 1 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3704_11563"/>
+                </filter>
+                <linearGradient id="paint0_linear_3704_11563" x1="14.2916" y1="0.806641" x2="14.2916" y2="25.7089" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#EDC0D1"/>
+                <stop offset="0.442308" stop-color="#D2ACBA"/>
+                <stop offset="0.480769" stop-color="#C598A9"/>
+                <stop offset="0.942308" stop-color="#C7A4B0"/>
+                </linearGradient>
+                </defs>
+                </svg>
                </div>
             </div>
 
-            <div id="menu">
-                <div class="menubutton" style="width:45px;"><u>A</u>bout</div>
-                <div class="menubutton"><u>F</u>unctions</div>
-                <div class="menubutton"><u>F</u>eeback</div>
+            <div id="infomenu">
+                <div onclick="goToInfoSection(0)" class="menubutton" style="width:45px;"><u>A</u>bout</div>
+                <div onclick="goToInfoSection(1)" class="menubutton"><u>F</u>unctions</div>
+                <div onclick="goToInfoSection(2)" class="menubutton"><u>F</u>eeback</div>
             </div>
-            
-            <div class="infocontainer">
+
+            <div id="about" class="infocontainer">
+                <section class="descsections">
+                    <h3 style="line-height: .4;">What's Dolli?</h3>
+                    <p class="desc" style="margin-top:3px">
+                    This is my working demo for a girl-game idea that I have called Dolli. This will be a 2D mobile game centered around creative self-expression through fashion and character customization.
+                    <br><br>
+                        <div style="display:flex;flex-direction: column;flex-wrap:wrap;align-content: space-between;padding-right:20px;height:50px;">
+                            <section style="flex:40%;">
+                                <div class="link"><a rel="noopener" target="_blank" href="Dolli_Overview.pdf">Concept Overview</a></div>
+                                <br>
+                                <div class="link"><a rel="noopener" target="_blank" href="">View Prototype</a></div>
+                            </section>
+                            <section style="flex:40%; align-items: center;">
+                                <img id="applogo" src="DressupGame_Assets/Logos/Dolli_AppLogo3.png"/>
+                            </section>
+                        </div>
+                    </p>
+                    <br>
+
+                    <h3>Future Features</h3>
+                    <p class="desc">
+                    Dolli will start off as an avatar maker demo with options for skin tone, facial  features, hair, clothing, and more.             
+                    <br>
+        
+                    <ul>
+                        <li>
+                        <b>Different body types/face shapes:</b> <br>
+                        Before I start adding more clothes, I’ll need to create another body type
+                        </li>
+                        <br>
+                        <li>
+                        <b>Turn your Dolli into a sticker:</b> <br>
+                        There will be an option to order a sticker of the Dolli you create.
+                        </li>
+
+                    </ul> 
+
+                 
+                    <ul>
+                        <li>
+                        <b>Create your own design:</b> <br>
+                        Use a template to create and send your own outfit ideas.
+                        </li>
+                        <br>
+                        <li>
+                        <b>Dolli store:</b> <br>
+                        Buy outfits created by other users,or sell your own.
+                        </li>
+                        <br>
+                        <li>
+                        <b>Minigames:</b> <br>
+                         Play minigames.
+                        </li>
+                    </ul> 
+                    
+             
+                    <ul>
+                        <li>
+                        <b>Personalized profiles:</b> <br>
+                        Add your interests, favorites, and your saved Dolli’s to your profile.
+                        </li>
+                        <br>
+                        <li>
+                        <b>Modded chat and social feed system:</b> <br>
+                        Add friends and create chat groups. Chat will be restricted with safeguards in place.
+                        </li>
+                     
+                    </ul> 
+                </p>
+                </section>
+
+
+            </div>
+
+
+            <div id="functions" class="infocontainer">
            
-                text
+                <section class="descsections">
 
+                    <h3 style="line-height: .4;">Functions</h3>
+                    <p class="desc">
+                        <table>
+                        <tr>
+                            <td><img class="functionimgs" style="width:70px;" src="Images/undo.png"></td>
+                            <td>Undo the last change.<br><br></td>
+                        </tr>
+                        <tr>
+                            <td><img class="functionimgs" style="width:70px;" src="Images/save.png"></td>
+                            <td>Save your Dolli as a PDF (Currently fixing for mobile).<br><br></td>
+                        </tr>
+                        <tr>
+                            <td><img class="functionimgs" style="width:70px;" src="Images/music.png"></td>
+                            <td>Choose a song to play in the background. Click<div class="musictoggle" style="padding: 0;display: inline-block;transform: scale(.8);margin-bottom: -9px;margin-right:3px"></div>to mute.</td>
+                        </tr>
+                        </table>                    
+                        
+                    </p>
+
+                    <p class="desc">
+                     Select an option from the menu. Swipe or scroll left to view more options. Active selections are highlighted blue. Makeup and tops can be layered.             
+                    </p>
+
+                    <img class="functionimgs" src="Images/eyesmenu.png"/>
+                    
+                    <p class="desc">
+                    Use the slide to change the hue of your clothes, lips, or hair colors.        
+                    </p>
+
+                    <img class="functionimgs" style="width: 300px;margin: auto;" src="Images/color.png"/><br>    
+
+
+                    <p style="margin-top:-20px" class="desc">
+                        <table>
+                        <tr>
+                            <td><img class="functionimgs" style="width:40px;" src="Images/colormenu.png"></td>
+                            <td style="padding-left: 20px;align-content: center;">Choose a color from the color menu. If you used the hue slider and want to reset the color, select the color again.</td>
+                        </tr>
+                        
+                        </table>                    
+                        
+                    </p>
+
+                    <p style="margin-top: -30px;" class="desc">
+                    Use the slider to change the opacity of your makeup selection.              
+                    </p>
+
+                    <img class="functionimgs" style="width: 300px;margin: auto; margin-bottom: 30px;" src="Images/opacity.png"/>
+
+                </section>
 
             </div>
 
 
+           <div id="feedback" class="infocontainer">
+           
+                <section style="width:auto" class="descsections">
 
+                    <h3 style="line-height: .4;">Feedback</h3>
+                    <p class="desc">
+                    I’m looking for constructive feedback for the UI of this demo, as well as suggestions and tips. Thank you!                
+                    </p>
 
+                      <form>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name..">
 
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your last name..">
 
+                        <label for="message">Subject</label>
+                        <textarea id="message" name="message" placeholder="Write something.."></textarea>
 
+                        <input  id="send" type="submit" value="Send">
+                    </form>
+                    </section>
+
+            </div>
 
 
 
@@ -146,7 +461,26 @@
 
 
 
+<script>
+let currentSectionIndex = 0;
+const infosections= ["about","functions","feedback"];
 
+function goToInfoSection(index) {
+  currentSectionIndex = index;
+  const category = infosections[index];
+
+const containers = document.querySelectorAll(".infocontainer");
+containers.forEach((c, i) => {
+  c.style.display = i === index ? "block" : "none";
+});
+
+  document.querySelectorAll(".menubutton").forEach((btn, i) => {
+    btn.classList.toggle("active", i === index);
+  });
+}
+
+
+</script>
 
 
 </body>

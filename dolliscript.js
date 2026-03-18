@@ -29,6 +29,21 @@ const blushColorMap = { dark: 0, medium: 1, light: 2 };
 const topColorMap = { pink: 0, red: 1, yellow: 2, green: 3, blue: 4, purple: 5, magenta: 6, brown: 7, white: 8, black: 9 };
 const sections = ["skin", "eyes", "brows", "nose", "lips", "hairs", "makeup", "tops", "jewelry", "bg"];
 
+
+
+// ─── INFO BOX ───────────────────────────────────────────────
+
+function openInfo() {
+  document.getElementById('infooverlay').style.display = 'block';
+}
+
+function closeInfo() {
+  document.getElementById('infooverlay').style.display = 'none';
+}
+
+
+
+
 // ─── SAVE / UNDO ───────────────────────────────────────────────
 
 function saveState() {
