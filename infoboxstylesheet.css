@@ -54,7 +54,7 @@
 h3{
     line-height: 0;
     color:#96296C;
-    font-family: zain;
+    font-family: zainbold;
 }
 
 .desc{
@@ -89,7 +89,7 @@ ul{
 }
 
 b{
-    font-family: zain;
+    font-family: zainbold;
     color:#96296C;
 }
 
@@ -124,7 +124,7 @@ a{
     font-size:16px;
     height:20px;
     padding:10px;
-    font-family: zain;
+    font-family: zainreg;
     text-decoration: none;
 }
 
