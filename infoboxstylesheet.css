@@ -47,7 +47,6 @@
     overflow-y: auto;
     flex-wrap: wrap;
     padding:10px;
-    padding-left:15px;
     overflow-x: hidden;
 }
 
@@ -120,7 +119,7 @@ td{
 }
 
 a{
-    color:#682A49 ;
+    color:#e7e7e7 ;
     font-size:16px;
     height:20px;
     padding:10px;
@@ -128,6 +127,25 @@ a{
     text-decoration: none;
 }
 
+.link{
+
+    border-radius: 7px;
+    background: linear-gradient(180deg, #C094A4 0%, #C08FA1 44.06%, #C0829A 47.89%, #B57E93 93.86%);
+    text-align: center;
+    transition:ease-out .3s;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px #8c4d6ded;
+    margin-left:5px;
+    padding-top:1px;
+    box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
+    -webkit-box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
+    -moz-box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
+    
+}
+
+.link:hover{
+  outline: 2px solid #96476f;
+}
 
 #applogo{
     width:75px;
@@ -198,4 +216,8 @@ label{
     color:#96296C;
     font-family: zainreg;
     line-height: 1.4;
+}
+input:focus, textarea:focus{
+    outline: none;
+    border: none;
 }
