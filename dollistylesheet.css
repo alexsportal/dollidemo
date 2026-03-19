@@ -306,7 +306,7 @@ body{
 .optioncontainer{
     padding: 0;
     height: 108px;
-    width: auto;
+    width: 368px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -340,6 +340,7 @@ body{
 .optioncontainer{
     height: 90px;
     gap: 15px;
+    width:340px;
 }
 
 }
@@ -719,7 +720,7 @@ body{
     padding-top: 0;
     left: 0;
     right: 0;
-    width: auto;
+    width: 390px;
     height: 80px;
     z-index: 3;
     background-size: cover;
@@ -760,6 +761,7 @@ body{
     }
 .nav{
   padding-bottom:2px;
+  width:360px;
     }
 .navbuttoncontainer{
     gap:11px;
