@@ -47,8 +47,8 @@ the barrier for users of all ages.
 Background music is from Spireleaf on YouTube.
 
 
-
 © Alexsandria Manuel 2026
+All art is drawn by Alexsandria Manuel via Krita.
 
 
  *ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚
