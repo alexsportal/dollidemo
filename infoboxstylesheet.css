@@ -222,7 +222,10 @@ input:focus, textarea:focus{
     border: none;
 }
 
-placeholder{
+input[type=text],
+input[type=email],
+textarea{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+   line-height: 1.5;
+   font-size:13px;
 }
