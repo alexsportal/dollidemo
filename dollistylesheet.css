@@ -324,7 +324,7 @@ body{
     padding-right: 10px;
     padding-bottom: 3px;
     height: 110px;
-    width:auto;
+    width:368px;
     display: block;
     border-radius: 10px;
     margin: auto;
@@ -337,6 +337,7 @@ body{
 @media screen and (max-width:396px){
 .padding{
     height:100px;
+    width:339px;
     }
 .optioncontainer{
     height: 90px;
