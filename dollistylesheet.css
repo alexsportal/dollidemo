@@ -1019,3 +1019,14 @@ span{
 .link:hover{
   outline: 2px solid #96476f;
 }
+
+.copyright{
+    transform: rotate(90deg);
+    position: absolute;
+    font-size: small;
+    margin-top: 280px;
+    margin-left: 15px;
+    color: #984d73;
+    text-shadow: 0 0 8px #aca5a6;
+    font-family: 'zainbold';
+}
