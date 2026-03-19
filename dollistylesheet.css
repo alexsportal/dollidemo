@@ -345,7 +345,7 @@ body{
 }
 
 .beautyoptionsskin{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -362,7 +362,7 @@ body{
 }
 
 .beautyoptionseyes{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -375,12 +375,12 @@ body{
     background-size: 1000px;
     background-position: center;
     background-position-y: -155px;
-    background-position-x: -430px;
+    background-position-x: -424px;
     cursor:pointer;
 }
 
 .beautyoptionsbrows{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -393,12 +393,12 @@ body{
     background-size: 1000px;
     background-position: center;
     background-position-y: -140px;
-    background-position-x: -420px;
+    background-position-x: -416px;
     cursor:pointer;
 }
 
 .beautyoptionsnose{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -411,12 +411,12 @@ body{
     background-size: 1400px;
     background-position: center;
     background-position-y: -260px;
-    background-position-x: -618px;
+    background-position-x: -613px;
     cursor:pointer;
 }
 
 .beautyoptionslips{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -429,12 +429,12 @@ body{
     background-size: 1200px;
     background-position: center;
     background-position-y: -243px;
-    background-position-x: -532px;
+    background-position-x: -528px;
     cursor:pointer;
 }
 
 .beautyoptionshair{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -452,7 +452,7 @@ body{
 }
 
 .beautyoptionsmakeup{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -468,7 +468,7 @@ body{
     cursor:pointer;
 }
 .beautyoptionstops{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -485,7 +485,7 @@ body{
     cursor:pointer;
 }
 .beautyoptionsjewelry{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -502,7 +502,7 @@ body{
     cursor:pointer;
 }
 .beautyoptionsbg{
-    width: 117px;
+    width: 116px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -543,7 +543,7 @@ body{
 @media screen and (max-width:396px){
 .beautyoptionseyes{
         width: 103px;
-        background-position-x: -435px;
+        background-position-x: -430px;
         background-position-y: -160px;
         height: 70px;
     }
@@ -551,7 +551,7 @@ body{
 @media screen and (max-width:396px){
 .beautyoptionsbrows{
     width:103px;
-    background-position-x: -428px;
+    background-position-x: -423px;
     background-position-y: -145px;
     height: 70px;
     }
@@ -559,7 +559,7 @@ body{
 @media screen and (max-width:396px){
 .beautyoptionsnose{
     width:103px;
-    background-position-x: -623px;
+    background-position-x: -618px;
     background-position-y: -265px;
     height: 70px;
     }
@@ -567,7 +567,7 @@ body{
 @media screen and (max-width:396px){
 .beautyoptionslips{
     width:103px;
-    background-position-x: -538px;
+    background-position-x: -533px;
     background-position-y: -248px;
     height: 70px;
     }
@@ -576,7 +576,7 @@ body{
 .beautyoptionshair{
     width:103px;
     background-position-x: -95px;
-    background-position-y: -20px;
+    background-position-y: -13px;
     height: 70px;
     }
 }
@@ -594,8 +594,8 @@ body{
 .beautyoptionstops{
     width:103px;
     height: 70px;
-    background-position-y: -50px;
-    background-position-x: -73px;
+    background-position-y: -64px;
+    background-position-x: -79px;
     }
 .beautyoptionsmakeup{
     width:103px;
