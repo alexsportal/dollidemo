@@ -221,3 +221,8 @@ input:focus, textarea:focus{
     outline: none;
     border: none;
 }
+
+placeholder{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
