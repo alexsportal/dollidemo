@@ -1,29 +1,4 @@
-#infoborder{
-    max-width:390px;
-    min-width:390px;
-    margin:auto;
-    height:85vh;
-    max-height:685px;
-    min-height:687px;
-    left:0;
-    right:0;
-    width:auto;
-    background:linear-gradient(180deg, #DFB6C6 1%, #C7A4B0 2.68%, #A76E88 4.92%, #AD7890 73.27%, #BD8BA0 99.61%);
-    background-attachment:fixed;
-    position:relative;
-    border-radius:10px;
-    padding-top:5px;
-    overflow-y: hidden;
- 
-}
-@media screen and (max-width:400px){
-    #infoborder{
-        max-width:30px;
-        min-width:360px;
-        max-height:657px;
-        min-height:657px;
-    }
-}
+
 
 
 #infobox{
@@ -210,6 +185,7 @@ form{
     background: linear-gradient(180deg, #AA6E82 0%, #A35B7E 44.06%, #964B71 47.89%, #A45F82 93.86%); ;
     border-radius:5px;
     padding:5px;
+    width:98%;
 }
 
 label{

@@ -39,8 +39,8 @@ body{
     min-width:380px;
     margin:auto;
     height:85vh;
-    max-height:681px;
-    min-height:681px;
+    max-height:453px;
+    min-height:453px;
     width:auto;
     display:flex;
     flex-direction: column;
@@ -53,7 +53,29 @@ body{
     overflow-y: hidden;
 }
 
+
+
 #border{
+    max-width:390px;
+    min-width:390px;
+    margin:auto;
+    height:85vh;
+    max-height:457px;
+    min-height:457px;
+    left:0;
+    right:0;
+    width:auto;
+    background:linear-gradient(180deg, #DFB6C6 1%, #C7A4B0 2.68%, #A76E88 4.92%, #AD7890 73.27%, #BD8BA0 99.61%);
+    background-attachment:fixed;
+    position:relative;
+    border-radius:10px;
+    padding-top:5px;
+    box-shadow: 2px 8px 28px -8px #412b55;
+    -webkit-box-shadow: 2px 8px 28px -8px #412b55;
+    -moz-box-shadow: 2px 8px 28px -8px #412b55;
+    overflow-y: hidden;
+}
+#infoborder{
     max-width:390px;
     min-width:390px;
     margin:auto;
@@ -68,21 +90,45 @@ body{
     position:relative;
     border-radius:10px;
     padding-top:5px;
-    box-shadow: 2px 8px 28px -8px #400824bf;
-    -webkit-box-shadow: 2px 8px 28px -8px #400824bf;
-    -moz-box-shadow: 2px 8px 28px -8px #400824bf;
+    box-shadow: 2px 8px 28px -8px #412b55;
+    -webkit-box-shadow: 2px 8px 28px -8px #412b55;
+    -moz-box-shadow: 2px 8px 28px -8px #412b55;
     overflow-y: hidden;
- 
 }
-
+#infogamecontain{
+    max-width:380px;
+    min-width:380px;
+    margin:auto;
+    height:85vh;
+    max-height:681px;
+    min-height:681px;
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    background-color: #C7A4B0;
+    transition:ease-out .3s;
+    scroll-snap-type: y mandatory;
+    border-radius:10px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 @media screen and (max-width:400px){
     #border{
+        max-width:360px;
+        min-width:360px;
+    }
+    #gamecontain{
+        max-width:350px;
+        min-width:350px;
+    }
+    #infoborder{
         max-width:30px;
         min-width:360px;
         max-height:657px;
         min-height:657px;
     }
-    #gamecontain{
+    #infogamecontain{
         max-width:350px;
         min-width:350px;
         max-height:650px;
@@ -99,6 +145,7 @@ body{
     object-fit: cover;
     border-radius:10px;
 }
+
 
 #beautyparlour{
     background-color:#d9d9d9;
@@ -239,7 +286,6 @@ body{
 #options{
     overscroll-behavior-y: contain;
     scroll-snap-type: x mandatory;
-    background-color: #c39aa8;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transition: ease-out .3s;
@@ -277,34 +323,29 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 3px;
-  
     height: 110px;
-    width: 340px;
-   
     display: block;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: auto;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: #b27690;
-    box-shadow: 0px 0px 0px 1.5px #a9507d;
+    background: linear-gradient(180deg, #C7A4B0 20.19%, #BE9CA7 67.31%, #BD879E 100%);
+    box-shadow: 2px 8px 28px -8px #412b55;
+    -webkit-box-shadow: 2px 8px 10px -8px #412b55;
+    -moz-box-shadow: 2px 8px 28px -8px #412b55;
 }
 
 @media screen and (max-width:396px){
 .padding{
-    width:310px;
     height:100px;
     }
 .optioncontainer{
     height: 90px;
-    width: 300px;
     gap: 15px;
 }
 
 }
 
 .beautyoptionsskin{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -321,7 +362,7 @@ body{
 }
 
 .beautyoptionseyes{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -339,7 +380,7 @@ body{
 }
 
 .beautyoptionsbrows{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -357,7 +398,7 @@ body{
 }
 
 .beautyoptionsnose{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -375,7 +416,7 @@ body{
 }
 
 .beautyoptionslips{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -393,7 +434,7 @@ body{
 }
 
 .beautyoptionshair{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -411,7 +452,7 @@ body{
 }
 
 .beautyoptionsmakeup{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -427,7 +468,7 @@ body{
     cursor:pointer;
 }
 .beautyoptionstops{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -444,7 +485,7 @@ body{
     cursor:pointer;
 }
 .beautyoptionsjewelry{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -461,7 +502,7 @@ body{
     cursor:pointer;
 }
 .beautyoptionsbg{
-    width: 107px;
+    width: 117px;
     height:80px;
     background-color:#fbeff6;
     scroll-snap-align: center;
@@ -488,20 +529,20 @@ body{
 .beautyoptionstops:hover,
 .beautyoptionsbg:hover{
    background-color: #d3dae5;
-   border-bottom:#8b3f65 solid 2px;
+   border-bottom:#aa637e solid 2px;
 }
 
 
 @media screen and (max-width:396px){
 .beautyoptionsskin{
-    width:90px;
+    width:103px;
     height: 70px;
     background-position-y: -50px;
     }
 }
 @media screen and (max-width:396px){
 .beautyoptionseyes{
-        width: 90px;
+        width: 103px;
         background-position-x: -435px;
         background-position-y: -160px;
         height: 70px;
@@ -509,7 +550,7 @@ body{
 }
 @media screen and (max-width:396px){
 .beautyoptionsbrows{
-    width:90px;
+    width:103px;
     background-position-x: -428px;
     background-position-y: -145px;
     height: 70px;
@@ -517,7 +558,7 @@ body{
 }
 @media screen and (max-width:396px){
 .beautyoptionsnose{
-    width:90px;
+    width:103px;
     background-position-x: -623px;
     background-position-y: -265px;
     height: 70px;
@@ -525,7 +566,7 @@ body{
 }
 @media screen and (max-width:396px){
 .beautyoptionslips{
-    width:90px;
+    width:103px;
     background-position-x: -538px;
     background-position-y: -248px;
     height: 70px;
@@ -533,7 +574,7 @@ body{
 }
 @media screen and (max-width:396px){
 .beautyoptionshair{
-    width:90px;
+    width:103px;
     background-position-x: -95px;
     background-position-y: -20px;
     height: 70px;
@@ -542,22 +583,22 @@ body{
 
 @media screen and (max-width:396px){
 .beautyoptionsjewelry{
-    width:90px;
+    width:103px;
     height: 70px;
     }
 .beautyoptionsbg{
-    width:90px;
+    width:103px;
     height: 70px;
     }
     
 .beautyoptionstops{
-    width:90px;
+    width:103px;
     height: 70px;
     background-position-y: -50px;
     background-position-x: -73px;
     }
 .beautyoptionsmakeup{
-    width:90px;
+    width:103px;
     height: 70px;
     }
 }
@@ -674,7 +715,6 @@ body{
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    padding: 10px;
     padding-bottom: 0;
     padding-top: 0;
     left: 0;
@@ -682,37 +722,34 @@ body{
     width: auto;
     height: 80px;
     z-index: 3;
-    background-color: #c39aa8;
     background-size: cover;
-
 }
-
-
 
 .navbutton{
     width: 64px;
     height: 28px;
     transition: ease-out .3s;
-    box-shadow: 1px 1px 3px #8c4d6ded;
     border-radius: 8px;
     filter: brightness(1);
     background-color:#96476f;
+    box-shadow: 2px 8px 8px -8px #412b55;
+    -webkit-box-shadow: 2px 8px 8px -8px #412b55;
+    -moz-box-shadow: 2px 8px 8px -8px #412b55;
 }
 
 .navbutton.active {
-    outline: 2px solid #96476f;
+    outline: 2px solid #aa637e;
     cursor: pointer;
-    filter: brightness(1.13);
+
 }
 .navbuttoncontainer{
     position: relative;
     display: flex;
     gap: 10px;
     width: auto;
-    margin: auto;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top:6px;
+    justify-content: space-around;
+    margin-top: 6px;
 }
 
 
@@ -734,6 +771,9 @@ body{
 ::-webkit-scrollbar {
   width: 10px;
   height:10px;
+  box-shadow: 2px 8px 28px -8px #412b55;
+  -webkit-box-shadow: 2px 8px 28px -8px #412b55;
+  -moz-box-shadow: 2px 8px 28px -8px #412b55;
 }
 
 ::-webkit-scrollbar-track {
@@ -742,7 +782,7 @@ body{
 }
 
 ::-webkit-scrollbar-thumb {
-  background:#974d73;
+  background:#bb879c;
   border-radius: 10px;  
 }
 
@@ -835,6 +875,7 @@ img.hairstyles{
     position: inherit;
     margin-left:70px;
 }
+
 .inputcontainer{
     position: absolute;
     display: flex;
@@ -847,6 +888,7 @@ img.hairstyles{
     background-color: #c7a4b0c9;
     margin-left: -2px;
 }
+
 .inputlabel{
     position: inherit;
     padding: 0;
@@ -856,14 +898,6 @@ img.hairstyles{
     font-family: Zainbold;
     color:#561a39;
 }
-
-
-
-
-
-
-
-
 
 
 #loadingoverlay {
@@ -1029,4 +1063,15 @@ span{
     color: #984d73;
     text-shadow: 0 0 8px #aca5a6;
     font-family: 'zainbold';
+}
+
+.bottombox{
+    width:390px;
+    margin:auto;
+}
+@media screen and (max-width:396px){
+.bottombox{
+    width:360px;
+ 
+    }
 }
