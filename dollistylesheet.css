@@ -328,6 +328,7 @@ body{
     display: block;
     border-radius: 10px;
     margin: auto;
+    border:1px solid #c99fb2;
     background: linear-gradient(180deg, #C7A4B0 20.19%, #BE9CA7 67.31%, #BD879E 100%);
     box-shadow: 2px 4px 15px -8px #412b55;
     -webkit-box-shadow: 2px 4px 15px -8px #412b55;
@@ -532,7 +533,7 @@ body{
 .beautyoptionstops:hover,
 .beautyoptionsbg:hover{
    background-color: #d3dae5;
-   border-bottom:#aa637e solid 2px;
+   border-bottom:#b17f90 solid 2px;
 }
 
 
@@ -735,13 +736,13 @@ body{
     border-radius: 8px;
     filter: brightness(1);
     background-color:#96476f;
-    box-shadow: 2px 8px 8px -8px #412b55;
-    -webkit-box-shadow: 2px 8px 8px -8px #412b55;
-    -moz-box-shadow: 2px 8px 8px -8px #412b55;
+    box-shadow: 2px 7px 8px -8px #412b55;
+    -webkit-box-shadow: 2px 7px 8px -8px #412b55;
+    -moz-box-shadow: 2px 7px 8px -8px #412b55;
 }
 
 .navbutton.active {
-    outline: 2px solid #aa637e;
+    outline: 2px solid #b17f90;
     cursor: pointer;
 
 }
