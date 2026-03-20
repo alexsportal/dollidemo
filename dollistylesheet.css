@@ -8,7 +8,7 @@ body{
     height:100dvh;
     overflow-y: hidden;
     overflow-x:hidden;
-    background-image: url(DressupGame_Assets/Scenes/cloudysky.jpeg);
+    background-image: url(DressupGame_Assets/Scenes/background3.jpg);
     background-size: cover;
     box-shadow: inset 0px 0px 50px #5914374d;
     padding-top: 3px;
@@ -70,9 +70,9 @@ body{
     position:relative;
     border-radius:10px;
     padding-top:5px;
-    box-shadow: 2px 8px 28px -8px #412b55;
-    -webkit-box-shadow: 2px 8px 28px -8px #412b55;
-    -moz-box-shadow: 2px 8px 28px -8px #412b55;
+    box-shadow: 2px 5px 20px -8px #412b55;
+    -webkit-box-shadow: 2px 5px 20px -8px #412b55;
+    -moz-box-shadow: 2px 5px 20px -8px #412b55;
     overflow-y: hidden;
 }
 #infoborder{
@@ -90,9 +90,9 @@ body{
     position:relative;
     border-radius:10px;
     padding-top:5px;
-    box-shadow: 2px 8px 28px -8px #412b55;
-    -webkit-box-shadow: 2px 8px 28px -8px #412b55;
-    -moz-box-shadow: 2px 8px 28px -8px #412b55;
+     box-shadow: 2px 5px 20px -8px #412b55b9;
+    -webkit-box-shadow: 2px 5px 20px -8px #412b55b9;
+    -moz-box-shadow: 2px 5px 20px -8px #412b55b9;
     overflow-y: hidden;
 }
 #infogamecontain{
@@ -782,12 +782,13 @@ body{
 
 ::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: #b276906e;
+  background-color: #7f58785c;
 }
 
 ::-webkit-scrollbar-thumb {
-  background:#bb879c;
-  border-radius: 10px;  
+  border-radius: 10px;
+  background: #bc8ca2;
+  border: 1px solid #dfbecc82;  
 }
 
 
@@ -910,13 +911,13 @@ img.hairstyles{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #6f5a83;
+  background-color: #B57E93;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url(DressupGame_Assets/Scenes/cloudysky.jpeg);
+  background-image: url(DressupGame_Assets/Scenes/background3.jpg);
   background-size: cover;
   box-shadow: inset 0px 0px 50px #5914374d;
 }
@@ -1035,6 +1036,7 @@ span{
   display: none;
   padding-top: 3px;
   user-select: none;
+  background-color:#6b4c732b;
 }
 
 
