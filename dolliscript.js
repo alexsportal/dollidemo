@@ -18,10 +18,12 @@ let currentBrowHue = 0;
 let currentSectionIndex = 0;
 let slideIndex = 1;
 let activeColorCategory = null;
+let activeSkinDetails = new Set();
+let skinDetailOpacity = {};
 
 const undoStack = [];
 const darkSkinIndices = [1, 2, 3];
-const eyeColorMap = { blue: 0, green: 1, brown: 2 };
+const eyeColorMap = {purple: 0, blue: 1, green: 2, brown: 3};
 const hairColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const browColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const lipColorMap = { brown: 0, plum: 1, pink: 2, coral: 3 };
@@ -127,6 +129,14 @@ function changeSkin(n) {
   skinSlides(n);
   showColorOptions("skin");
   setOutline("skin", n - 1);
+
+activeSkinDetails.forEach(detailId => {
+    const target = document.querySelector(`.skindetails img[src*="${detailId}"]`);
+    if (target) {
+        target.style.display = 'block';
+        target.style.opacity = skinDetailOpacity[detailId] ?? 1;
+    }
+});
 }
 
 function skinSlides(n) {
@@ -407,6 +417,27 @@ function showBlushColorDisplay(color) {
   if (index !== undefined) displays[index].style.display = "block";
 }
 
+// ─── SKIN DETAILS ─────────────────────────────────────────────────────
+
+
+function changeSkinDetail(detailId, el) {
+    const target = document.querySelector(`.skindetails img[src*="${detailId}"]`);
+    if (!target) return;
+
+    if (activeSkinDetails.has(detailId)) {
+        target.style.display = 'none';
+        activeSkinDetails.delete(detailId);
+        if (el) el.classList.remove('active');
+    } else {
+        target.style.display = 'block';
+        target.style.opacity = skinDetailOpacity[detailId] ?? 1;
+        activeSkinDetails.add(detailId);
+        if (el) el.classList.add('active');
+        document.getElementById("opacitypicker").value = skinDetailOpacity[detailId] ?? 1;
+    }
+}
+
+
 // ─── TOPS ──────────────────────────────────────────────────────
 
 function changeTopShape(shapeId, el) {
@@ -514,18 +545,18 @@ function showColorOptions(category) {
   document.getElementById("huelabel").style.display = 
   (category === "hairs" || category === "brows" || category === "tops" || category === "lips") ? "block" : "none";
   document.getElementById("opacitylabel").style.display = 
-  category === "blush" ? "block" : "none";
+  (category === "blush" || category === "skin") ? "block" : "none";
   
   const anySliderVisible = 
-    (category === "hairs" || category === "brows" || category === "lips" || category === "tops" || category === "blush");
+  (category === "hairs" || category === "brows" || category === "lips" || category === "tops" || category === "blush" || category === "skin")
   document.querySelector(".inputcontainer").style.display = anySliderVisible ? "flex" : "none";
 
   document.getElementById("colorpicker").value = 0; 
   document.getElementById("colorpicker").style.display = 
   (category === "hairs" || category === "brows" || category === "tops" || category === "lips") ? "block" : "none";  
   document.getElementById("opacitypicker").value = 1;
-  document.getElementById("opacitypicker").style.display = category === "blush" ? "block" : "none";
-
+  document.getElementById("opacitypicker").style.display = 
+  (category === "blush" || category === "skin") ? "block" : "none";
   document.querySelectorAll(".coloroption").forEach(el => el.style.display = "none");
   document.querySelectorAll(`.coloroption[data-category="${category}"]`).forEach(el => el.style.display = "block");
   document.querySelectorAll(".skincolorsdisplay").forEach(el => el.style.display = "none");
@@ -557,13 +588,18 @@ function goToSection(index) {
   currentSectionIndex = index;
   const category = sections[index];
 
-const containers = document.querySelectorAll(".itemcontainer");
-containers.forEach((c, i) => {
-  c.style.display = i === index ? "block" : "none";
-});
+  const containers = document.querySelectorAll(".itemcontainer");
+  containers.forEach((c, i) => {
+    c.style.display = i === index ? "block" : "none";
+  });
 
   document.querySelectorAll(".navbutton").forEach((btn, i) => {
     btn.classList.toggle("active", i === index);
+    if (i === index) {
+      btn.src = btn.dataset.active;
+    } else {
+      btn.src = btn.dataset.inactive;
+    }
   });
 
   showColorOptions(category);
@@ -604,25 +640,25 @@ containers.forEach((c, i) => {
     });
   }
   if (category === "makeup") {
-  setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
-  document.querySelectorAll(".beautyoptionsmakeup").forEach(el => {
-    const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-    if (shapeId) {
-      const shape = document.getElementById(shapeId);
-      el.classList.toggle("active", shape?.style.display === "block");
-    }
-  });
-}
+    setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
+    document.querySelectorAll(".beautyoptionsmakeup").forEach(el => {
+      const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+      if (shapeId) {
+        const shape = document.getElementById(shapeId);
+        el.classList.toggle("active", shape?.style.display === "block");
+      }
+    });
+  }
   if (category === "tops") {
-  setOutline("tops", topColorMap[currentTopColor] ?? 8);
-  document.querySelectorAll(".beautyoptionstops").forEach(el => {
-    const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-    if (shapeId) {
-      const shape = document.getElementById(shapeId);
-      el.classList.toggle("active", shape?.style.display === "block");
-    }
-  });
-}
+    setOutline("tops", topColorMap[currentTopColor] ?? 8);
+    document.querySelectorAll(".beautyoptionstops").forEach(el => {
+      const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+      if (shapeId) {
+        const shape = document.getElementById(shapeId);
+        el.classList.toggle("active", shape?.style.display === "block");
+      }
+    });
+  }
 }
 
 // ─── SAVE IMAGE ────────────────────────────────────────────────
@@ -689,3 +725,4 @@ setTimeout(function() {
 }, 2500); 
 
 }; 
+

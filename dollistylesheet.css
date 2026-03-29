@@ -1,5 +1,5 @@
 body{
-    background-color:#6f5a83;
+    background-color:#B57E93;
     position: relative;
     margin:auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -483,8 +483,8 @@ body{
     transition:ease-out .3s;
     cursor: pointer;
     background-size: 250%;
-    background-position-y: -63px;
-    background-position-x: -86px;
+    background-position-y: -70px;
+    background-position-x: -90px;
     background-repeat: no-repeat;
     cursor:pointer;
 }
@@ -533,7 +533,7 @@ body{
 .beautyoptionstops:hover,
 .beautyoptionsbg:hover{
    background-color: #d3dae5;
-   border-bottom:#b17f90 solid 2px;
+   border-bottom:#ae7087 solid 2px;
 }
 
 
@@ -736,16 +736,20 @@ body{
     border-radius: 8px;
     filter: brightness(1);
     background-color:#96476f;
+    border-bottom:#a16588 solid 2px;
     box-shadow: 2px 7px 8px -8px #412b55;
     -webkit-box-shadow: 2px 7px 8px -8px #412b55;
-    -moz-box-shadow: 2px 7px 8px -8px #412b55;
+    -moz-box-shadow: 2px 7px 8px -8px;
+
 }
 
-.navbutton.active {
-    outline: 2px solid #b17f90;
+.navbutton.active,
+.navbutton:hover{
+    outline: 2px solid #a16588 ;
     cursor: pointer;
-
 }
+
+
 .navbuttoncontainer{
     position: relative;
     display: flex;
@@ -755,7 +759,6 @@ body{
     justify-content: space-around;
     margin-top: 6px;
 }
-
 
 @media screen and (max-width:396px){
 .navbutton{
@@ -1054,7 +1057,6 @@ span{
     box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
     -webkit-box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
     -moz-box-shadow: 2px 8px 19px -7px rgba(124,26,84,0.75);
-    
 }
 
 .link:hover{
@@ -1081,4 +1083,23 @@ span{
     width:360px;
  
     }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+.beautyoptionsskin:active ~ #beautyparlour,
+img.skins,
+img.darkeyes,
+img.lighteyes,
+img.nosedark,
+img.noselight,
+img.eyebrows,
+img.hairstyles,
+img.lips,
+img.blushes,
+img.tops {
+    animation: fadeIn 0.15s ease;
 }

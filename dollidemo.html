@@ -166,11 +166,6 @@ html, body {
                         Add your interests, favorites, and your saved Dolli’s to your profile.
                         </li>
                         <br>
-                        <li>
-                        <b>Modded chat and social feed system:</b> <br>
-                        Add friends and create chat groups. Chat will be restricted with safeguards in place.
-                        </li>
-                     
                     </ul> 
                 </p>
                 </section>
@@ -227,7 +222,7 @@ html, body {
                     </p>
 
                     <p style="margin-top: -30px;" class="desc">
-                    Use the slider to change the opacity of your makeup selection.              
+                    Use the slider to change the opacity of your skin details and makeup selection.              
                     </p>
 
                     <img class="functionimgs" style="width: 300px;margin: auto; margin-bottom: 30px;" src="Images/opacity.png"/>
@@ -290,6 +285,7 @@ html, body {
             <div class="skincolorsdisplay" style="background-color: #c37068;"></div>
             <div class="skincolorsdisplay" style="background-color: #c57e7f;"></div>
             <!--EYE COLOR DISPLAY-->
+            <div class="eyecolorsdisplay" style="background-color: #622469;"></div>
             <div class="eyecolorsdisplay" style="background-color: #1e3352;"></div>
             <div class="eyecolorsdisplay" style="background-color: #1e523f;"></div>
             <div class="eyecolorsdisplay" style="background-color: #5d3f27;"></div>
@@ -360,7 +356,7 @@ html, body {
 
     <div class="coloroptions">        
         <div onclick="changeSkin(1), this" class="coloroption" data-category="skin" style="background-color: #52281e;"></div>
-        <div onclick="changeEyeColor('blue', this)" class="coloroption" data-category="eyes" style="background-color: #1e3352;"></div>
+        <div onclick="changeEyeColor('purple', this)" class="coloroption" data-category="eyes" style="background-color: #622469;"></div>
         <div onclick="changeHairColor('black', this)" class="coloroption" data-category="hairs" style="background-color: #000000;"></div>
         <div onclick="changeBrowColor('black', this)" class="coloroption" data-category="brows" style="background-color: #000000;"></div>
         <div onclick="changeLipColor('brown', this)" class="coloroption" data-category="lips" style="background-color: #391b04;"></div>
@@ -371,7 +367,7 @@ html, body {
     </div>
        <div class="coloroptions">
         <div onclick="changeSkin(2), this" class="coloroption" data-category="skin" style="background-color: #65251c;"></div>
-        <div onclick="changeEyeColor('green', this)" class="coloroption" data-category="eyes" style="background-color: #1e523f;"></div>
+        <div onclick="changeEyeColor('blue', this)" class="coloroption" data-category="eyes" style="background-color: #1e3352;"></div>
         <div onclick="changeHairColor('brown', this)" class="coloroption" data-category="hairs" style="background-color: #412b19;"></div>
         <div onclick="changeBrowColor('brown', this)" class="coloroption" data-category="brows" style="background-color: #412b19;"></div>
         <div onclick="changeLipColor('plum', this)" class="coloroption" data-category="lips" style="background-color: #411934;"></div> 
@@ -383,7 +379,7 @@ html, body {
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(3), this" class="coloroption" data-category="skin" style="background-color: #7c463b;"></div>
-        <div onclick="changeEyeColor('brown', this)" class="coloroption" data-category="eyes" style="background-color: #5d3f27;"></div>
+        <div onclick="changeEyeColor('green', this)" class="coloroption" data-category="eyes" style="background-color: #1e523f;"></div>
         <div onclick="changeHairColor('blonde', this)" class="coloroption" data-category="hairs" style="background-color: #906847;"></div>
         <div onclick="changeBrowColor('blonde', this)" class="coloroption" data-category="brows" style="background-color: #906847;"></div>
         <div onclick="changeLipColor('pink', this)" class="coloroption" data-category="lips" style="background-color: #a14663;"></div>
@@ -393,6 +389,7 @@ html, body {
     </div>
     <div class="coloroptions">
         <div onclick="changeSkin(4), this" class="coloroption" data-category="skin" style="background-color: #954f4b;"></div>
+         <div onclick="changeEyeColor('brown', this)" class="coloroption" data-category="eyes" style="background-color: #5d3f27;"></div>
         <div onclick="changeHairColor('orange', this)" class="coloroption" data-category="hairs" style="background-color: #914818;"></div>
         <div onclick="changeBrowColor('orange', this)" class="coloroption" data-category="brows" style="background-color: #914818;"></div>
         <div onclick="changeLipColor('coral', this)" class="coloroption" data-category="lips" style="background-color: #cf6986;"></div>
@@ -510,8 +507,15 @@ html, body {
                 <img src="DressupGame_Assets/Bodies/skintones/bodytoffee2.png" class="skins"/>
                 <img src="DressupGame_Assets/Bodies/skintones/bodystrawberry2.png" class="skins"/>
                 <img src="DressupGame_Assets/Bodies/skintones/bodystrawberry.png" class="skins"/>
+                </div>
 
-                
+                <div class="skindetails"> 
+                <img src="DressupGame_Assets/Bodies/Details/freckles.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/Details/undereyeshadow.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/Details/dimples.png" class="skins"/>                
+                <img src="DressupGame_Assets/Bodies/Details/lipmark.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/Details/lefteyemark.png" class="skins"/>
+                <img src="DressupGame_Assets/Bodies/Details/righteyemark.png" class="skins"/>
                 </div>
 
                 <!--EYES-->
@@ -519,8 +523,10 @@ html, body {
                 <div class="eyeshape" id="shape-doe">
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_brown.png" style="display:block" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_purple.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/doe_eyes_dark_green.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_purple.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_green.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/doe_eyes_light_brown.png"  class="lighteyes"/>
                     
@@ -528,39 +534,92 @@ html, body {
 
                 <div class="eyeshape" id="shape-innocent">
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/innocent_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/innocent_eyes_dark_purple.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/innocent_eyes_dark_green.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/innocent_eyes_dark_brown.png"  class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/innocent_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/innocent_eyes_light_purple.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/innocent_eyes_light_green.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/innocent_eyes_light_brown.png" class="lighteyes"/>
                 </div> 
 
                 <div class="eyeshape" id="shape-sultry">
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/sultry_eyes_dark_blue.png" class="darkeyes"/>
+                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/sultry_eyes_dark_purple.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/sultry_eyes_dark_green.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/sultry_eyes_dark_brown.png"  class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/sultry_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/sultry_eyes_light_purple.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/sultry_eyes_light_green.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/sultry_eyes_light_brown.png" class="lighteyes"/>
                 </div>
                     
                 <div class="eyeshape" id="shape-almond">
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/almond_eyes_dark_blue.png" class="darkeyes"/>
+                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/almond_eyes_dark_purple.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/almond_eyes_dark_green.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/almond_eyes_dark_brown.png"  class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/almond_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/almond_eyes_light_purple.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/almond_eyes_light_green.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/almond_eyes_light_brown.png" class="lighteyes"/>
                 </div>
 
                <div class="eyeshape" id="shape-cat">
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/cat_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/cat_eyes_dark_purple.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/cat_eyes_dark_green.png" class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/cat_eyes_dark_brown.png"  class="darkeyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/cat_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/cat_eyes_light_purple.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/cat_eyes_light_green.png" class="lighteyes"/>
                     <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/cat_eyes_light_brown.png" class="lighteyes"/>
                 </div>
+
+                <div class="eyeshape" id="shape-cool">
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/cool_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/cool_eyes_dark_purple.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/cool_eyes_dark_green.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/cool_eyes_dark_brown.png"  class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/cool_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/cool_eyes_light_purple.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/cool_eyes_light_green.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/cool_eyes_light_brown.png" class="lighteyes"/>
+                </div>
+
+                <div class="eyeshape" id="shape-droop">
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/droop_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/droop_eyes_dark_purple.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/droop_eyes_dark_green.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/droop_eyes_dark_brown.png"  class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/droop_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/droop_eyes_light_purple.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/droop_eyes_light_green.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/droop_eyes_light_brown.png" class="lighteyes"/>
+                </div>
+                
+                <div class="eyeshape" id="shape-hooded">
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/hooded_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/hooded_eyes_dark_purple.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/hooded_eyes_dark_green.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/hooded_eyes_dark_green.png"  class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/hooded_eyes_light_brown.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/hooded_eyes_light_purple.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/hooded_eyes_light_green.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/hooded_eyes_light_brown.png" class="lighteyes"/>
+                </div>
+
+                <div class="eyeshape" id="shape-joy">
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/joy_eyes_dark_blue.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/joy_eyes_dark_purple.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/joy_eyes_dark_green.png" class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/darkeyes/joy_eyes_dark_brown.png"  class="darkeyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/joy_eyes_light_blue.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/joy_eyes_light_purple.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/joy_eyes_light_green.png" class="lighteyes"/>
+                    <img src="DressupGame_Assets/Beauty/Eyes/lighteyes/joy_eyes_light_brown.png" class="lighteyes"/>
+                </div>
+
 
 
                 </div>
@@ -591,12 +650,34 @@ html, body {
                     <img src="DressupGame_Assets/Beauty/Brows/brows3blonde.png" class="eyebrows"/>
                     <img src="DressupGame_Assets/Beauty/Brows/brows3orange.png" class="eyebrows"/>
                     </div>
+
+                    <div class="browshape" id="browshape4">
+                    <img src="DressupGame_Assets/Beauty/Brows/brows4black.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows4brown.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows4blonde.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows4orange.png" class="eyebrows"/>
+                    </div>
+
+                    <div class="browshape" id="browshape5">
+                    <img src="DressupGame_Assets/Beauty/Brows/brows5black.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows5brown.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows5blonde.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows5orange.png" class="eyebrows"/>
+                    </div>
+
+                    <div class="browshape" id="browshape6">
+                    <img src="DressupGame_Assets/Beauty/Brows/brows6black.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows6brown.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows6blonde.png" class="eyebrows"/>
+                    <img src="DressupGame_Assets/Beauty/Brows/brows6orange.png" class="eyebrows"/>
+                    </div>
+
                 </div>
 
                 <!--NOSE-->
 
-                <div class="noses">
-                <div class="noseshape" id="noseshape3">
+                <div class="noses" style="margin-top: 175px; position: relative;">
+                <div class="noseshape" id="noseshape3" style="position: relative;margin-top: -2px;">
                 <img loading="lazy" style="display:block" src="DressupGame_Assets/Beauty/Nose/nose3_dark.png" class="nosedark"/>
                 <img src="DressupGame_Assets/Beauty/Nose/nose3_light.png" class="noselight"/>
                 </div>
@@ -605,9 +686,29 @@ html, body {
                 <img  src="DressupGame_Assets/Beauty/Nose/nose1_light.png" class="noselight"/>
                 </div>
 
-                <div class="noseshape" id="noseshape2">
+                <div class="noseshape" id="noseshape2" style="position: relative;margin-left: 2px;">
                 <img src="DressupGame_Assets/Beauty/Nose/nose2_dark.png"  class="nosedark"/>
                 <img src="DressupGame_Assets/Beauty/Nose/nose2_light.png" class="noselight"/>
+                </div>
+
+                <div class="noseshape" id="noseshape4">
+                <img src="DressupGame_Assets/Beauty/Nose/nose4_dark.png"  class="nosedark"/>
+                <img src="DressupGame_Assets/Beauty/Nose/nose4_light.png" class="noselight"/>
+                </div>
+
+                <div class="noseshape" id="noseshape5">
+                <img src="DressupGame_Assets/Beauty/Nose/nose5_dark.png"  class="nosedark"/>
+                <img src="DressupGame_Assets/Beauty/Nose/nose5_light.png" class="noselight"/>
+                </div>
+
+                <div class="noseshape" id="noseshape6">
+                <img src="DressupGame_Assets/Beauty/Nose/nose6_dark.png"  class="nosedark"/>
+                <img src="DressupGame_Assets/Beauty/Nose/nose6_light.png" class="noselight"/>
+                </div>
+
+                <div class="noseshape" id="noseshape7">
+                <img src="DressupGame_Assets/Beauty/Nose/nose7_dark.png"  class="nosedark"/>
+                <img src="DressupGame_Assets/Beauty/Nose/nose7_light.png" class="noselight"/>
                 </div>
 
                 </div>
@@ -627,26 +728,47 @@ html, body {
                 <!--LIPS-->
 
                 <div class="lipgroup">
-                <div class="lipshape" id="lipshape1">
+                <div class="lipshape" id="lipshape1" style="position: relative;margin-left: -1pxpx;margin-top: -3px;">
                 <img src="DressupGame_Assets/Beauty/Lips/lips1brown.png" style="display:block" class="lips"/>
                 <img src="DressupGame_Assets/Beauty/Lips/lips1plum.png" class="lips"/>
                 <img src="DressupGame_Assets/Beauty/Lips/lips1coral.png" class="lips"/>
                 <img src="DressupGame_Assets/Beauty/Lips/lips1pink.png" class="lips"/>
                 </div>
 
-                <div class="lipshape" id="lipshape2">
+                <div class="lipshape" id="lipshape2" style="position: relative;margin-left: 4px;margin-top: -3px;">
                 <img src="DressupGame_Assets/Beauty/Lips/lips2brown.png" class="lips"/>
                 <img src="DressupGame_Assets/Beauty/Lips/lips2plum.png" class="lips"/>
                 <img src="DressupGame_Assets/Beauty/Lips/lips2coral.png" class="lips"/>
                 <img src="DressupGame_Assets/Beauty/Lips/lips2pink.png" class="lips"/>
                 </div>
 
-                <div class="lipshape" id="lipshape3">
+                <div class="lipshape" id="lipshape3" style="position: relative;margin-top: -2px;">
                 <img src="DressupGame_Assets/Beauty/Lips/lips3brown.png" class="lips"/>
                 <img src="DressupGame_Assets/Beauty/Lips/lips3plum.png" class="lips"/>
                 <img src="DressupGame_Assets/Beauty/Lips/lips3coral.png" class="lips"/>
                 <img src="DressupGame_Assets/Beauty/Lips/lips3pink.png" class="lips"/>
-                
+                </div>
+
+                <div class="lipshape" id="lipshape4">
+                <img src="DressupGame_Assets/Beauty/Lips/lips4brown.png" class="lips"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips4plum.png" class="lips"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips4coral.png" class="lips"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips4pink.png" class="lips"/>
+                </div>
+
+
+                <div class="lipshape" id="lipshape5">
+                <img src="DressupGame_Assets/Beauty/Lips/lips5brown.png" class="lips"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips5plum.png" class="lips"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips5coral.png" class="lips"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips5pink.png" class="lips"/>
+                </div>
+
+                <div class="lipshape" id="lipshape6">
+                <img src="DressupGame_Assets/Beauty/Lips/lips6brown.png" class="lips"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips6plum.png" class="lips"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips6coral.png" class="lips"/>
+                <img src="DressupGame_Assets/Beauty/Lips/lips6pink.png" class="lips"/>
                 </div>
                 </div>
 
@@ -698,6 +820,20 @@ html, body {
                     <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle4brown.png" class="hairstyles"/>
                     <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle4blonde.png" class="hairstyles"/>
                     <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle4orange.png" class="hairstyles"/>
+                    </div>
+
+                    <div class="hairshape" id="hairstyle5">
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle5black.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle5brown.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle5blonde.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle5orange.png" class="hairstyles"/>
+                    </div>
+
+                    <div class="hairshape" id="hairstyle6">
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle6black.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle6brown.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle6blonde.png" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/hairstyle6orange.png" class="hairstyles"/>
                     </div>
 
                 </div>
@@ -785,18 +921,48 @@ html, body {
  <section class="nav">
            
 
-        <div class="navbuttoncontainer">
-            <img loading="lazy" class="navbutton" onclick="goToSection(0)" src="DressupGame_Assets/Button_Icons/skinbutton.png"/>
-            <img loading="lazy" class="navbutton" onclick="goToSection(1)" src="DressupGame_Assets/Button_Icons/eyesbutton.png"/>
-            <img loading="lazy" class="navbutton" onclick="goToSection(2)" src="DressupGame_Assets/Button_Icons/browsbutton.png"/>
-            <img loading="lazy" class="navbutton" onclick="goToSection(3)" src="DressupGame_Assets/Button_Icons/nosebutton.png"/>
-            <img loading="lazy" class="navbutton" onclick="goToSection(4)" src="DressupGame_Assets/Button_Icons/lipsbutton.png"/>
-            <img loading="lazy" class="navbutton" onclick="goToSection(5)" src="DressupGame_Assets/Button_Icons/hairbutton.png"/>
-            <img loading="lazy" class="navbutton" onclick="goToSection(6)" src="DressupGame_Assets/Button_Icons/makeupbutton.png"/>
-            <img loading="lazy" class="navbutton" onclick="goToSection(7)" src="DressupGame_Assets/Button_Icons/topsbutton.png"/>
-            <img loading="lazy" class="navbutton" onclick="goToSection(8)" src="DressupGame_Assets/Button_Icons/jewelrybutton.png"/>
-            <img loading="lazy" class="navbutton" onclick="goToSection(9)" src="DressupGame_Assets/Button_Icons/bgbutton.png"/>
-        </div>
+<div class="navbuttoncontainer">
+    <img loading="lazy" class="navbutton" onclick="goToSection(0)" 
+        src="DressupGame_Assets/Button_Icons/skinbutton2.png"
+        data-inactive="DressupGame_Assets/Button_Icons/skinbutton.png"
+        data-active="DressupGame_Assets/Button_Icons/skinbutton2.png"/>
+    <img loading="lazy" class="navbutton" onclick="goToSection(1)" 
+        src="DressupGame_Assets/Button_Icons/eyesbutton.png"
+        data-inactive="DressupGame_Assets/Button_Icons/eyesbutton.png"
+        data-active="DressupGame_Assets/Button_Icons/eyesbutton2.png"/>
+    <img loading="lazy" class="navbutton" onclick="goToSection(2)" 
+        src="DressupGame_Assets/Button_Icons/browsbutton.png"
+        data-inactive="DressupGame_Assets/Button_Icons/browsbutton.png"
+        data-active="DressupGame_Assets/Button_Icons/browsbutton2.png"/>
+    <img loading="lazy" class="navbutton" onclick="goToSection(3)" 
+        src="DressupGame_Assets/Button_Icons/nosebutton.png"
+        data-inactive="DressupGame_Assets/Button_Icons/nosebutton.png"
+        data-active="DressupGame_Assets/Button_Icons/nosebutton2.png"/>
+    <img loading="lazy" class="navbutton" onclick="goToSection(4)" 
+        src="DressupGame_Assets/Button_Icons/lipsbutton.png"
+        data-inactive="DressupGame_Assets/Button_Icons/lipsbutton.png"
+        data-active="DressupGame_Assets/Button_Icons/lipsbutton2.png"/>
+    <img loading="lazy" class="navbutton" onclick="goToSection(5)" 
+        src="DressupGame_Assets/Button_Icons/hairbutton.png"
+        data-inactive="DressupGame_Assets/Button_Icons/hairbutton.png"
+        data-active="DressupGame_Assets/Button_Icons/hairbutton2.png"/>
+    <img loading="lazy" class="navbutton" onclick="goToSection(6)" 
+        src="DressupGame_Assets/Button_Icons/makeupbutton.png"
+        data-inactive="DressupGame_Assets/Button_Icons/makeupbutton.png"
+        data-active="DressupGame_Assets/Button_Icons/makeupbutton2.png"/>
+    <img loading="lazy" class="navbutton" onclick="goToSection(7)" 
+        src="DressupGame_Assets/Button_Icons/topsbutton.png"
+        data-inactive="DressupGame_Assets/Button_Icons/topsbutton.png"
+        data-active="DressupGame_Assets/Button_Icons/topsbutton2.png"/>
+    <img loading="lazy" class="navbutton" onclick="goToSection(8)" 
+        src="DressupGame_Assets/Button_Icons/jewelrybutton.png"
+        data-inactive="DressupGame_Assets/Button_Icons/jewelrybutton.png"
+        data-active="DressupGame_Assets/Button_Icons/jewelrybutton2.png"/>
+    <img loading="lazy" class="navbutton" onclick="goToSection(9)" 
+        src="DressupGame_Assets/Button_Icons/bgbutton.png"
+        data-inactive="DressupGame_Assets/Button_Icons/bgbutton.png"
+        data-active="DressupGame_Assets/Button_Icons/bgbutton2.png"/>
+</div>
 
         </section>
 
@@ -807,14 +973,15 @@ html, body {
         <div class="itemcontainer"> 
             
             <div class="padding">
-            <p class="optiontitle">SkinTones</p>
+            <p class="optiontitle">Skin Details</p>
             <div class="optioncontainer">
-                    <div onclick="changeSkin(1)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa.png)" ></div>
-                    <div onclick="changeSkin(2)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodycocoa2.png)"></div>
-                    <div onclick="changeSkin(3)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee.png)"></div>
-                    <div onclick="changeSkin(4)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodytoffee2.png)"></div>
-                    <div onclick="changeSkin(5)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry2.png)"></div>
-                    <div onclick="changeSkin(6)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/skintones/bodystrawberry.png)"></div>
+            <div onclick="changeSkinDetail('freckles', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/freckles.png)"></div>
+            <div onclick="changeSkinDetail('undereyeshadow', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/undereyeshadow.png)"></div>
+            <div onclick="changeSkinDetail('dimples', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/dimples.png)"></div>
+            <div onclick="changeSkinDetail('lipmark', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/lipmark.png)"></div>
+            <div onclick="changeSkinDetail('lefteyemark', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/lefteyemark.png)"></div>
+            <div onclick="changeSkinDetail('righteyemark', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/righteyemark.png)"></div>
+            <div loading="lazy" class="beautyoptionsskin"></div>
             </div>
             </div>
         </div>
@@ -830,7 +997,10 @@ html, body {
                     <div onclick="changeEyeShape('shape-sultry', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/sultry_eyes.png)"></div>
                     <div onclick="changeEyeShape('shape-almond', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/almond_eyes.png)"></div>
                     <div onclick="changeEyeShape('shape-cat', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/cat_eyes.png)"></div>
-                    <div loading="lazy" class="beautyoptionseyes"  ></div>
+                    <div onclick="changeEyeShape('shape-cool', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/cool_eyes.png)"></div>
+                    <div onclick="changeEyeShape('shape-droop', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/droop_eyes.png)"></div>
+                    <div onclick="changeEyeShape('shape-joy', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/joy_eyes.png)"></div>
+                   
             </div>
             </div>
         </div>
@@ -843,9 +1013,9 @@ html, body {
                     <div onclick="changeBrowShape('browshape1', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows1black.png)"></div>
                     <div onclick="changeBrowShape('browshape2', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows2black.png)"></div>
                     <div onclick="changeBrowShape('browshape3', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows3black.png)"></div>
-                    <div loading="lazy" class="beautyoptionsbrows" ></div>
-                    <div loading="lazy" class="beautyoptionsbrows" ></div>
-                    <div loading="lazy" class="beautyoptionsbrows" ></div>
+                    <div onclick="changeBrowShape('browshape4', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows4black.png)"></div>
+                    <div onclick="changeBrowShape('browshape5', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows5black.png)"></div>
+                    <div onclick="changeBrowShape('browshape6', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows6black.png)"></div>
             </div>
             </div>
         </div>
@@ -858,10 +1028,12 @@ html, body {
                     <div  onclick="changeNoseShape('noseshape1', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose1.png)"></div>
                     <div  onclick="changeNoseShape('noseshape2', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose2.png)"></div>
                     <div  onclick="changeNoseShape('noseshape3', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose3.png)"></div>
-                    <div loading="lazy" class="beautyoptionsnose" ></div>
-                    <div loading="lazy" class="beautyoptionsnose" ></div>
-                    <div loading="lazy" class="beautyoptionsnose" ></div>
-            </div>
+                    <div  onclick="changeNoseShape('noseshape4', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose4.png)"></div>
+                    <div  onclick="changeNoseShape('noseshape5', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose5.png)"></div>
+                    <div  onclick="changeNoseShape('noseshape6', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose6.png)"></div>
+                    <div  onclick="changeNoseShape('noseshape7', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose7.png)"></div>
+
+                </div>
             </div>
         </div>
 
@@ -873,9 +1045,9 @@ html, body {
                     <div  onclick="changeLipShape('lipshape1', this)" data-category="lips" loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/Lipsthumbnail/lips1.png)"></div>
                     <div onclick="changeLipShape('lipshape2', this)" data-category="lips" loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/Lipsthumbnail/lips2.png)"></div>
                     <div onclick="changeLipShape('lipshape3', this)" data-category="lips" loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/Lipsthumbnail/lips3.png)"></div>
-                    <div loading="lazy" class="beautyoptionslips"></div>
-                    <div loading="lazy" class="beautyoptionslips"></div>
-                    <div loading="lazy" class="beautyoptionslips"></div>
+                    <div  onclick="changeLipShape('lipshape4', this)" data-category="lips" loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/Lipsthumbnail/lips4.png)"></div>
+                    <div onclick="changeLipShape('lipshape5', this)" data-category="lips" loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/Lipsthumbnail/lips5.png)"></div>
+                    <div onclick="changeLipShape('lipshape6', this)" data-category="lips" loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/Lipsthumbnail/lips6.png)"></div>
             </div>
             </div>
         </div>
@@ -891,7 +1063,9 @@ html, body {
                     <div onclick="changeHairShape('hairstyle1', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair2.png)"></div>
                     <div onclick="changeHairShape('hairstyle4', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair3.png)"></div>
                     <div onclick="changeHairShape('hairstyle3', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair4.png)"></div>
-                    <div loading="lazy" class="beautyoptionshair"></div>
+                    <div onclick="changeHairShape('hairstyle5', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair5.png)"></div>
+                    <div onclick="changeHairShape('hairstyle6', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair6.png)"></div>
+                    
             </div>
             </div>
         </div>
@@ -1017,11 +1191,22 @@ function applyColorFilter(value) {
 
 
 function applyOpacityFilter(value) {
-  if (activeColorCategory !== "blush") return;
-  const activeImg = document.getElementById(currentBlushId)
-    ?.querySelector("img[style*='display: block'], img[style*='display:block']");
-  if (!activeImg) return;
-  activeImg.style.opacity = value;
+  if (activeColorCategory === "blush") {
+    const activeImg = document.getElementById(currentBlushId)
+      ?.querySelector("img[style*='display: block'], img[style*='display:block']");
+    if (!activeImg) return;
+    activeImg.style.opacity = value;
+  }
+
+  if (activeColorCategory === "skin") {
+    activeSkinDetails.forEach(detailId => {
+      const target = document.querySelector(`.skindetails img[src*="${detailId}"]`);
+      if (target) {
+        target.style.opacity = value;
+        skinDetailOpacity[detailId] = value;
+      }
+    });
+  }
 }
 
 </script>
