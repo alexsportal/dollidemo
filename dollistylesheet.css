@@ -735,7 +735,7 @@ body{
     transition: ease-out .3s;
     border-radius: 8px;
     filter: brightness(1);
-    background-color:#96476f;
+    background-color:#a16588 ;
     border-bottom:#a16588 solid 2px;
     box-shadow: 2px 7px 8px -8px #412b55;
     -webkit-box-shadow: 2px 7px 8px -8px #412b55;
@@ -745,7 +745,7 @@ body{
 
 .navbutton.active,
 .navbutton:hover{
-    outline: 2px solid #a16588 ;
+    outline: 2px solid #b67d92 ;
     cursor: pointer;
 }
 

@@ -688,6 +688,8 @@ function saveImage() {
 // ─── ON LOAD ───────────────────────────────────────────────────
 
 window.onload = function () {
+
+
   ["eyecolorsdisplay", "haircolorsdisplay", "browcolorsdisplay",
    "lipcolorsdisplay", "blushcolorsdisplay", "topscolorsdisplay", "bgcolorsdisplay"].forEach(cls => {
     Array.from(document.getElementsByClassName(cls)).forEach(el => el.style.display = "none");
@@ -748,4 +750,4 @@ function playClick() {
     const click = document.getElementById("clicksound");
     click.currentTime = 0;
     click.play();
-}
+} 
