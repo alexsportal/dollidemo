@@ -496,7 +496,7 @@ function updateTopColor(color) {
   const imgs = activeTop.querySelectorAll("img");
   let matched = false;
   imgs.forEach(img => {
-    const fits = img.src.includes(color + ".") || img.src.includes(color + "cardigan");
+    const fits = img.src.includes(color + ".") || img.src.includes(color + "cardigan") || img.src.includes(color + "buttonup");
     img.style.display = fits ? "block" : "none";
     if (fits) matched = true;
   });
@@ -524,7 +524,6 @@ function showTopsColorDisplay(color) {
 // ─── BACKGROUND ────────────────────────────────────────────────
 
 function changeBackground(imageUrl, el) {
-
   saveState();
   document.getElementById("beautyparlour").style.backgroundImage = `url(${imageUrl})`;
   document.getElementById("beautyparlour").style.backgroundColor = "";
