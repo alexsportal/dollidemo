@@ -746,8 +746,8 @@ setTimeout(function() {
 
 }; 
 
-function playClick() {
+/*function playClick() {
     const click = document.getElementById("clicksound");
     click.currentTime = 0;
     click.play();
-} 
+} */
