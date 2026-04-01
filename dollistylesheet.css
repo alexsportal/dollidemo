@@ -736,7 +736,7 @@ body{
     border-radius: 8px;
     filter: brightness(1);
     background-color:#a16588 ;
-    border-bottom:#953578 solid 2px;
+    border-bottom:#984871 solid 3px;
     box-shadow: 2px 7px 8px -8px #412b55;
     -webkit-box-shadow: 2px 7px 8px -8px #412b55;
     -moz-box-shadow: 2px 7px 8px -8px;
@@ -745,7 +745,7 @@ body{
 
 .navbutton.active,
 .navbutton:hover{
-    outline: 2px solid #943364 ;
+    outline: 2px solid #984871 ;
     cursor: pointer;
 }
 
