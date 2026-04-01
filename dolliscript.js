@@ -125,6 +125,7 @@ function undo() {
 // ─── SKIN ──────────────────────────────────────────────────────
 
 function changeSkin(n) {
+  playClick();
   saveState();
   skinSlides(n);
   showColorOptions("skin");
@@ -183,6 +184,7 @@ function updateEyesForSkin(slideIndex) {
 }
 
 function changeEyeShape(shapeId, el) {
+  playClick();
   saveState();
   currentEyeId = shapeId;
   document.querySelectorAll(".eyeshape").forEach(s => s.style.display = "none");
@@ -196,6 +198,7 @@ function changeEyeShape(shapeId, el) {
 }
 
 function changeEyeColor(color, el) {
+  playClick();
   saveState();
   currentEyeColor = color;
   showEyeColorDisplay(color);
@@ -222,6 +225,7 @@ function showEyeColorDisplay(color) {
 // ─── BROWS ─────────────────────────────────────────────────────
 
 function changeBrowShape(shapeId, el) {
+  playClick();
   saveState();
   document.querySelectorAll(".browshape").forEach(s => s.style.display = "none");
   currentBrowId = shapeId;
@@ -235,6 +239,7 @@ function changeBrowShape(shapeId, el) {
 }
 
 function changeBrowColor(color, el) {
+  playClick();
   saveState();
   currentBrowColor = color;
   showBrowColorDisplay(color);
@@ -265,6 +270,7 @@ function showBrowColorDisplay(color) {
 // ─── NOSE ──────────────────────────────────────────────────────
 
 function changeNoseShape(shapeId, el) {
+  playClick();
   saveState();
   document.querySelectorAll(".noseshape").forEach(s => s.style.display = "none");
   currentNoseId = shapeId;
@@ -285,6 +291,7 @@ function updateNosesForSkin(slideIndex) {
 // ─── LIPS ──────────────────────────────────────────────────────
 
 function changeLipShape(shapeId, el) {
+  playClick();
   saveState();
   document.querySelectorAll(".lipshape").forEach(s => s.style.display = "none");
   currentLipId = shapeId;
@@ -298,6 +305,7 @@ function changeLipShape(shapeId, el) {
 }
 
 function changeLipColor(color, el) {
+  playClick();
   saveState();
   currentLipColor = color;
   showLipColorDisplay(color);
@@ -329,6 +337,7 @@ function showLipColorDisplay(color) {
 // ─── HAIR ──────────────────────────────────────────────────────
 
 function changeHairShape(shapeId, el) {
+  playClick();
   saveState();
   document.querySelectorAll(".hairshape").forEach(s => s.style.display = "none");
   currentHairId = shapeId;
@@ -344,6 +353,7 @@ function changeHairShape(shapeId, el) {
 }
 
 function changeHairColor(color, el) {
+  playClick();
   saveState();
   currentHairColor = color;
   showHairColorDisplay(color);
@@ -368,6 +378,7 @@ function showHairColorDisplay(color) {
 // ─── BLUSH ─────────────────────────────────────────────────────
 
 function changeBlushShape(shapeId, el) {
+  playClick();
   saveState();
   const shape = document.getElementById(shapeId);
   const isVisible = shape.style.display === "block";
@@ -388,6 +399,7 @@ function changeBlushShape(shapeId, el) {
 }
 
 function changeBlushColor(color, el) {
+  playClick();
   saveState();
   currentBlushColor = color;
   showBlushColorDisplay(color);
@@ -421,6 +433,8 @@ function showBlushColorDisplay(color) {
 
 
 function changeSkinDetail(detailId, el) {
+  playClick();
+  saveState();
     const target = document.querySelector(`.skindetails img[src*="${detailId}"]`);
     if (!target) return;
 
@@ -441,6 +455,7 @@ function changeSkinDetail(detailId, el) {
 // ─── TOPS ──────────────────────────────────────────────────────
 
 function changeTopShape(shapeId, el) {
+  playClick();
   saveState();
   const shape = document.getElementById(shapeId);
   const isVisible = shape.style.display === "block";
@@ -464,8 +479,8 @@ function changeTopShape(shapeId, el) {
 }
 
 function changeTopColor(color, el) {
+  playClick();
   saveState();
-  // clear any color filter
   const activeTop = document.getElementById(currentTopId);
   activeTop?.querySelectorAll("img").forEach(img => img.style.filter = "");
   document.querySelectorAll('.coloroption[data-category="tops"]').forEach(dot => dot.classList.remove("outline"));
@@ -509,6 +524,7 @@ function showTopsColorDisplay(color) {
 // ─── BACKGROUND ────────────────────────────────────────────────
 
 function changeBackground(imageUrl, el) {
+  playClick();
   saveState();
   document.getElementById("beautyparlour").style.backgroundImage = `url(${imageUrl})`;
   document.getElementById("beautyparlour").style.backgroundColor = "";
@@ -519,6 +535,7 @@ function changeBackground(imageUrl, el) {
 }
 
 function changeBackgroundColor(color, el) {
+  playClick();
   saveState();
   document.getElementById("beautyparlour").style.backgroundImage = "none";
   document.getElementById("beautyparlour").style.backgroundColor = color;
@@ -585,6 +602,7 @@ function showColorOptions(category) {
 // ─── NAVIGATION ────────────────────────────────────────────────
 
 function goToSection(index) {
+  playClick();
   currentSectionIndex = index;
   const category = sections[index];
 
@@ -726,3 +744,8 @@ setTimeout(function() {
 
 }; 
 
+function playClick() {
+    const click = document.getElementById("clicksound");
+    click.currentTime = 0;
+    click.play();
+}

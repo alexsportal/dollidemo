@@ -1085,21 +1085,3 @@ span{
     }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0.6; }
-    to { opacity: 1; }
-}
-
-.beautyoptionsskin:active ~ #beautyparlour,
-img.skins,
-img.darkeyes,
-img.lighteyes,
-img.nosedark,
-img.noselight,
-img.eyebrows,
-img.hairstyles,
-img.lips,
-img.blushes,
-img.tops {
-    animation: fadeIn 0.15s ease;
-}
