@@ -14,7 +14,6 @@
 <link rel="icon" type="image/x-icon" href="DressupGame_Assets/Logos/Dolli_AppLogo3.png">
 <link rel="stylesheet" href="dollistylesheet.css">
 <link rel="stylesheet" href="infoboxstylesheet.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="dolliscript.js" defer></script>
 
 
@@ -48,6 +47,38 @@ html, body {
     size: 300px 455px;
     margin: 0;
   }
+
+  img.skins,
+img.darkeyes,
+img.lighteyes,
+img.nosedark,
+img.noselight,
+img.eyebrows,
+img.hairstyles,
+img.lips,
+img.blushes,
+img.tops{
+    width: 1000px;
+    height: 410px;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    top: 55%;
+    left:60%;
+    transform: translate(-50%, -50%);
+    margin:auto;
+  
+
+}
+
+img.blushes{
+    z-index:0;
+}
+img.hairstyles{
+    margin-left: -.3px;
+    z-index: 1;
+}
+
 
 
 </style>
@@ -490,7 +521,7 @@ html, body {
                         </div>
                     </div>
 
-                    <div onClick="saveAsImage()" class="menubutton" style="width:55px;"><u>I</u>mage</div>
+                    <div onClick="saveImage()" class="menubutton" style="width:55px;"><u>I</u>mage</div>
                 <div class="menubutton" onclick="this.classList.toggle('open')" style="width:45px;padding-left:7px"><u>M</u>usic
                 <div class="menuoverlay">
                 <div class="menusongs"  onclick="playSong('song1', this)">"Glossy"</div>
