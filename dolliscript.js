@@ -910,18 +910,21 @@ function updateDollDropdown() {
 
 function saveAsImage() {
     const canvas = document.createElement('canvas');
-    const scale = 2;
-    canvas.width = 370 * scale;
-    canvas.height = 455 * scale;
+    // match the exact print dimensions that worked
+    canvas.width = 300;
+    canvas.height = 455;
     const ctx = canvas.getContext('2d');
 
-    // draw background
     const parlour = document.getElementById('beautyparlour');
     const bgColor = parlour.style.backgroundColor;
     const bgImage = parlour.style.backgroundImage;
 
-    if (bgColor && bgColor !== 'initial' && bgColor !== '') {
+    // fill background color first
+    if (bgColor && bgColor !== '' && bgColor !== 'initial') {
         ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    } else {
+        ctx.fillStyle = '#d9d9d9';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
@@ -929,65 +932,73 @@ function saveAsImage() {
         const bgUrl = bgImage.replace(/url\(["']?/, '').replace(/["']?\)/, '');
         const bgImg = new Image();
         bgImg.crossOrigin = 'anonymous';
-        bgImg.onload = () => drawLayers(ctx, canvas, bgImg, scale);
+        bgImg.onload = () => {
+            ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+            drawLayers(ctx, canvas);
+        };
         bgImg.src = bgUrl;
     } else {
-        drawLayers(ctx, canvas, null, scale);
+        drawLayers(ctx, canvas);
     }
 }
 
-function drawLayers(ctx, canvas, bgImg, scale) {
-    if (bgImg) {
-        ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-    }
-
-    // collect all visible game images in DOM order
-    const selectors = [
-        '.skins', '.blushes', '.nosedark', '.noselight',
-        '.darkeyes', '.lighteyes', '.eyebrows', '.lips',
-        '.hairstyles', '.tops'
+function drawLayers(ctx, canvas) {
+    // draw in correct z-order, skin first then details on top
+    const orderedSelectors = [
+        '.skins',
+        '.skindetails img',
+        '.blushes',
+        '.nosedark',
+        '.noselight',
+        '.darkeyes',
+        '.lighteyes',
+        '.eyebrows',
+        '.lips',
+        '.tops',
+        '.hairstyles'
     ];
 
     const visibleImgs = [];
-    selectors.forEach(sel => {
+    orderedSelectors.forEach(sel => {
         document.querySelectorAll(sel).forEach(img => {
-            if (img.style.display === 'block') visibleImgs.push(img);
+            const isVisible = img.style.display === 'block' || 
+                              (sel === '.skindetails img' && img.style.display === 'block');
+            if (isVisible) visibleImgs.push(img);
         });
     });
 
-    // also grab visible skin details
-    document.querySelectorAll('.skindetails img').forEach(img => {
-        if (img.style.display === 'block') visibleImgs.push(img);
-    });
+    if (visibleImgs.length === 0) { exportCanvas(canvas); return; }
 
-    let loaded = 0;
-    if (visibleImgs.length === 0) exportCanvas(canvas);
+    // draw each image in order sequentially
+    let index = 0;
+    function drawNext() {
+        if (index >= visibleImgs.length) { exportCanvas(canvas); return; }
+        const img = visibleImgs[index];
+        index++;
 
-    visibleImgs.forEach(img => {
         const newImg = new Image();
         newImg.crossOrigin = 'anonymous';
         newImg.onload = () => {
-            // your images are 1000x410 centered on a 370x455 canvas
-            const drawW = 1000 * scale;
-            const drawH = 410 * scale;
-            const drawX = (canvas.width - drawW) / 2;
-            const drawY = (canvas.height * 0.55) - (drawH / 2);
+            // your images are 1000x410, displayed on a 370px wide canvas
+            // cropped from left:-70px matching print CSS
+            const srcX = (1000 - 300) / 2 + 70; // offset to match print left:-70px
+            const srcY = 0;
+            const srcW = 300 * (1000 / 370); // scale source width to match display
+            const srcH = 410;
 
             ctx.save();
-            ctx.globalAlpha = parseFloat(img.style.opacity || 1);
-            if (img.style.filter && img.style.filter.includes('hue-rotate')) {
-                // apply filter via canvas filter if supported
-                ctx.filter = img.style.filter;
-            }
-            ctx.drawImage(newImg, drawX, drawY, drawW, drawH);
+            ctx.globalAlpha = parseFloat(img.style.opacity || '1');
+            if (img.style.filter) ctx.filter = img.style.filter;
+            ctx.drawImage(newImg, srcX, srcY, srcW, srcH, 0, 45, 300, 410);
             ctx.restore();
             ctx.filter = 'none';
-
-            loaded++;
-            if (loaded === visibleImgs.length) exportCanvas(canvas);
+            drawNext();
         };
+        newImg.onerror = () => drawNext();
         newImg.src = img.src;
-    });
+    }
+
+    drawNext();
 }
 
 function exportCanvas(canvas) {
