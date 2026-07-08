@@ -723,8 +723,10 @@ function scrollOptions(direction) {
     if (!container) return;
     const item = container.querySelector("div, img");
     if (!item) return;
-    const itemWidth = item.offsetWidth + 6; // 6px for gap
-    container.scrollBy({ left: direction * itemWidth * 3, behavior: 'smooth' });
+    const itemWidth = item.offsetWidth + 6;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    const newScroll = Math.max(0, Math.min(container.scrollLeft + direction * itemWidth * 3, maxScroll));
+    container.scrollTo({ left: newScroll, behavior: 'smooth' });
 }
 // ─── ON LOAD ───────────────────────────────────────────────────
 
