@@ -520,18 +520,23 @@ function updateTopColor(color) {
 
   const imgs = activeTop.querySelectorAll("img");
   let matched = false;
+  const colorLower = color.toLowerCase();
+  const colorCap = color.charAt(0).toUpperCase() + color.slice(1);
+
   imgs.forEach(img => {
-    const fits = img.src.includes(color + ".") || img.src.includes(color + "cardigan") || img.src.includes(color + "buttonup");
+    const src = img.src;
+    const fits = src.toLowerCase().includes(colorLower + ".")
+              || src.includes(colorCap + "_")
+              || src.includes("_" + colorCap + ".");
     img.style.display = fits ? "block" : "none";
     if (fits) matched = true;
   });
 
   if (!matched) {
-    const fallback = activeTop.querySelector("img[src*='white']")
-                  || activeTop.querySelector("img");
+    const fallback = activeTop.querySelector("img");
     if (fallback) {
       fallback.style.display = "block";
-      currentTopColor = fallback.src.includes("white") ? "white" : "black";
+      currentTopColor = "white";
     }
   } else {
     currentTopColor = color;
