@@ -29,7 +29,7 @@ const eyeColorMap = {purple: 0, blue: 1, green: 2, brown: 3};
 const hairColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const browColorMap = { black: 0, brown: 1, blonde: 2, orange: 3 };
 const lipColorMap = { brown: 0, plum: 1, pink: 2, lightpink: 3 };
-const blushColorMap = { dark: 0, medium: 1, light: 2 };
+const blushColorMap = { dark: 0, medium: 1, light: 2, rouge: 3 };
 const topColorMap = { pink: 0, red: 1, yellow: 2, green: 3, blue: 4, purple: 5, magenta: 6, brown: 7, white: 8, black: 9 };
 const sections = ["skin", "eyes", "brows", "nose", "lips", "hairs", "makeup", "tops", "jewelry", "bg"];
 
