@@ -542,6 +542,17 @@ body{
     cursor:pointer;
 }
 
+.beautyoptionsjewelry.earrings{
+    background-size: 1000px;
+    background-position-y: -182px;
+    background-position-x: -452px;
+}
+
+.beautyoptionsjewelry.necklace{
+    background-size: 610px;
+    background-position-y: -155px;
+    background-position-x: -264px;
+}
 
 .beautyoptionsskin:hover,
 .beautyoptionseyes:hover,
@@ -634,6 +645,19 @@ body{
     width:93px;
     height: 70px;
     }
+
+.beautyoptionsjewelry.earrings{
+    background-size: 960px;
+    background-position-y: -180px;
+    background-position-x: -436px;
+}
+
+.beautyoptionsjewelry.necklace{
+    background-size: 547px;
+    background-position-y: -140px;
+    background-position-x: -237px;
+}
+
 .beautyoptionsbg{
     width:93px;
     height: 70px;
