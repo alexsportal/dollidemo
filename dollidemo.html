@@ -1455,7 +1455,7 @@
 <script>
 function applyColorFilter(value) {
     if (["hairs", "brows", "lips", "tops"].includes(activeColorCategory)) {
-        document.getElementById("frontcolor").style.filter = `hue-rotate(${value}deg) saturate(2)`;
+        document.getElementById("frontcolor").style.filter = `hue-rotate(${value}deg) saturate(1)`;
     }
 
   if (!activeColorCategory || ["nose", "bg", "jewelry", "skin"].includes(activeColorCategory)) return;
@@ -1480,7 +1480,7 @@ function applyColorFilter(value) {
 }
 
   if (!activeImg) return;
-  activeImg.style.filter = `hue-rotate(${value}deg) saturate(2)`;
+  activeImg.style.filter = `hue-rotate(${value}deg) saturate(1)`;
 }
 
 
