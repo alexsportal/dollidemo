@@ -905,10 +905,17 @@ img.jewelrystyle{
 img.blushes{
     z-index:0;
 }
-
+img.tops{
+    z-index:1;
+}
 img.hairstyles{
     margin-top: -0.3px;
+    z-index: 3;
+}
+
+img.jewelrystyle.necklace{
     z-index: 2;
+    pointer-events: none;
 }
 
 img.jewelrystyle.earring{

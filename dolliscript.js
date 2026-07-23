@@ -119,6 +119,7 @@ function setSelectedJewelry(el) {
 
 function showFrontColorDisplay(category, color) {
    const front = document.getElementById("frontcolor");
+   document.getElementById("frontcolor").style.zIndex = "0";
 
     if (!front) return;
 
