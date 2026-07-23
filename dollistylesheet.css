@@ -9,7 +9,7 @@ body{
     overflow-y: hidden;
     overflow-x:hidden;
     background-image: url(DressupGame_Assets/Scenes/background3.jpg);
-    background-size: cover;
+    background-size: 2061px;
     box-shadow: inset 0px 0px 50px #5914374d;
     padding-top: 3px;
     user-select: none;
@@ -1009,7 +1009,7 @@ img.jewelrystyle.earring{
   justify-content: center;
   flex-direction: column;
   background-image: url(DressupGame_Assets/Scenes/background3.jpg);
-  background-size: cover;
+  background-size: 2061px;
   box-shadow: inset 0px 0px 50px #5914374d;
 }
 
