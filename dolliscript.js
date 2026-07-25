@@ -712,6 +712,17 @@ function changeTopShape(shapeId, el) {
     showFrontColorDisplay("tops", currentTopColor);
     setOutline("tops", topColorMap[currentTopColor] ?? 8);
   }
+
+  if (el.dataset.nocolor) {
+    document.querySelectorAll('.coloroption[data-category="tops"]').forEach(dot => dot.style.display = 'none');
+    document.getElementById("huelabel").style.display = "none";
+    document.querySelector(".inputcontainer").style.display = "none";
+    document.getElementById("colorpicker").style.display = "none";
+} else {
+    showColorOptions("tops");
+    showFrontColorDisplay("tops", currentTopColor);
+    setOutline("tops", topColorMap[currentTopColor] ?? 8);
+}
 }
 
 function changeTopColor(color, el) {
