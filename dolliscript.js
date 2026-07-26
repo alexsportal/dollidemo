@@ -28,6 +28,7 @@ let selectedTopEl = null;
 let selectedMakeupEl = null;
 let selectedJewelryEl = null;
 let isZoomed = false;
+let activeDetailId = null;
 
 const undoStack = [];
 const darkSkinIndices = [1, 2, 3];
@@ -43,11 +44,21 @@ const earringIds = ["droop", "hoop"];
 const necklaceIds = ["choker", "chains", "moonchains", "heartchains", "necklacesmall", "necklacemed", "necklacelarge", "longnecklace"];
 
 const colorHex = {
-  gold: "#FFD700", silver: "#C0C0C0", red: "#CC0000",
-  pink: "#FF69B4", purple: "#800080", blue: "#175282",
-  white: "#FFFFFF", green: "#008000", black: "#222222",
-  brown: "#8B4513", blonde: "#FAD689", orange: "#FF8C00",
-  plum: "#8E4585", lightpink: "#FFB6C1", coral: "#FF6B6B"
+  gold: "linear-gradient(150deg, #ffd6ac, #976a45)",
+  silver: "linear-gradient(150deg, #ffffff, #a1a1a1)",
+  red: "linear-gradient(150deg, #CC0000, #FF4444)",
+  pink: "linear-gradient(150deg, #FF69B4, #FFB6C1)",
+  purple: "linear-gradient(150deg, #800080, #B44FBF)",
+  blue: "linear-gradient(150deg, #175282, #4A90D9)",
+  white: "linear-gradient(150deg, #FFFFFF, #e9cef8)",
+  green: "linear-gradient(150deg, #008000, #4CAF50)",
+  black: "linear-gradient(150deg, #222222, #555555)",
+  brown: "linear-gradient(150deg, #8B4513, #C47A45)",
+  blonde: "linear-gradient(150deg, #FAD689, #F5C242)",
+  orange: "linear-gradient(150deg, #FF8C00, #FFA500)",
+  plum: "linear-gradient(150deg, #8E4585, #C06BA0)",
+  lightpink: "linear-gradient(150deg, #FFB6C1, #FFDDE1)",
+  coral: "linear-gradient(150deg, #FF6B6B, #FF9A9A)"
 };
 
 let openMenu = null;
@@ -118,9 +129,7 @@ function setSelectedJewelry(el) {
 // ─── COLOR DISPLAY ──────────────────────────────────────────
 
 function showFrontColorDisplay(category, color) {
-   const front = document.getElementById("frontcolor");
-   document.getElementById("frontcolor").style.zIndex = "0";
-
+    const front = document.getElementById("frontcolor");
     if (!front) return;
 
     const classMap = {
@@ -142,10 +151,10 @@ function showFrontColorDisplay(category, color) {
 
     if (cls !== undefined && index !== undefined) {
         const displays = document.getElementsByClassName(cls);
-    if (displays[index]) {
-        front.style.backgroundColor = displays[index].style.backgroundColor;
-        front.style.filter = "none";
-    }
+        if (displays[index]) {
+            front.style.background = displays[index].style.background || displays[index].style.backgroundColor;
+            front.style.filter = "none";
+        }
     }
 }
 
@@ -547,22 +556,31 @@ function showBlushColorDisplay(color) {
 
 // ─── SKIN DETAILS ──────────────────────────────────────────────
 
+
 function changeSkinDetail(detailId, el) {
   saveState();
+  activeDetailId = detailId;
+  document.getElementById("opacitypicker").value = skinDetailOpacity[detailId] ?? 1;
   const target = document.querySelector(`.skindetails img[src*="${detailId}"]`);
   if (!target) return;
 
-  if (activeSkinDetails.has(detailId)) {
+if (activeSkinDetails.has(detailId)) {
     target.style.display = 'none';
     activeSkinDetails.delete(detailId);
     if (el) el.classList.remove('active');
-  } else {
+    if (activeSkinDetails.size === 0) {
+        document.querySelector(".inputcontainer").style.display = "none";
+    }
+} else {
     target.style.display = 'block';
     target.style.opacity = skinDetailOpacity[detailId] ?? 1;
     activeSkinDetails.add(detailId);
     if (el) el.classList.add('active');
     document.getElementById("opacitypicker").value = skinDetailOpacity[detailId] ?? 1;
-  }
+    document.querySelector(".inputcontainer").style.display = "flex";
+    document.getElementById("opacitypicker").style.display = "block";
+    document.getElementById("opacitylabel").style.display = "block";
+}
 }
 
 // ─── JEWELRY ───────────────────────────────────────────────────
@@ -667,20 +685,20 @@ function showJewelryColorDisplay(color) {
   const mainColor = parts[0];
   const secondaryColor = parts[1] || null;
 
-  if (frontDisplay) {
-    frontDisplay.style.backgroundColor = colorHex[mainColor] || mainColor;
+if (frontDisplay) {
+    frontDisplay.style.background = colorHex[mainColor] || mainColor;
     frontDisplay.style.display = "block";
-  }
-  if (backDisplay) {
+}
+if (backDisplay) {
     if (secondaryColor) {
-      backDisplay.style.backgroundColor = colorHex[secondaryColor] || secondaryColor;
-      backDisplay.style.display = "block";
-      if (backBox) backBox.classList.add("clickable");
+        backDisplay.style.background = colorHex[secondaryColor] || secondaryColor;
+        backDisplay.style.display = "block";
+        if (backBox) backBox.classList.add("clickable");
     } else {
-      backDisplay.style.display = "none";
-      if (backBox) backBox.classList.remove("clickable");
+        backDisplay.style.display = "none";
+        if (backBox) backBox.classList.remove("clickable");
     }
-  }
+}
 }
 
 // ─── TOPS ──────────────────────────────────────────────────────
@@ -773,8 +791,8 @@ function changeBackground(imageUrl, el) {
 
 function changeBackgroundColor(color, el) {
   saveState();
-  document.getElementById("beautyparlour").style.backgroundImage = "none";
-  document.getElementById("beautyparlour").style.backgroundColor = color;
+  document.getElementById("beautyparlour").style.backgroundImage = color;
+  document.getElementById("beautyparlour").style.backgroundColor = "";
   document.querySelectorAll(".beautyoptionsbg").forEach(dot => dot.classList.remove("active"));
   document.querySelectorAll(".coloroption[data-category='bg']").forEach(dot => dot.classList.remove("outline"));
   el.classList.add("outline");
@@ -785,7 +803,6 @@ function changeBackgroundColor(color, el) {
     if (dot === el && bgDisplays[i]) bgDisplays[i].style.display = "block";
   });
 }
-
 // ─── COLOR PANEL ───────────────────────────────────────────────
 
 function setOutline(category, index) {
@@ -830,6 +847,15 @@ function showColorOptions(category) {
     const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
     if (skinDisplays[slideIndex - 1]) skinDisplays[slideIndex - 1].style.display = "block";
   }
+  if (category === "skin") {
+    const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
+    if (skinDisplays[slideIndex - 1]) skinDisplays[slideIndex - 1].style.display = "block";
+    if (activeSkinDetails.size === 0) {
+        document.getElementById("opacitylabel").style.display = "none";
+        document.getElementById("opacitypicker").style.display = "none";
+        document.querySelector(".inputcontainer").style.display = "none";
+    }
+}
   if (category === "nose") {
       const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
       for (let i = 0; i < skinDisplays.length; i++) skinDisplays[i].style.display = "none";
@@ -841,14 +867,21 @@ function showColorOptions(category) {
       document.querySelectorAll('.coloroption[data-category="skin"]').forEach(el => el.style.display = "block");
   }
   if (category === "eyes") showEyeColorDisplay(currentEyeColor);
-  if (category === "blush" || category === "makeup") {
+if (category === "blush" || category === "makeup") {
     const blushOn = document.getElementById(currentBlushId)?.style.display === "block";
     if (blushOn) {
-      showBlushColorDisplay(currentBlushColor);
-      setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
-      document.querySelectorAll('.coloroption[data-category="blush"]').forEach(el => el.style.display = "block");
+        showBlushColorDisplay(currentBlushColor);
+        setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
+        document.querySelectorAll('.coloroption[data-category="blush"]').forEach(el => el.style.display = "block");
+        document.getElementById("opacitylabel").style.display = "block";
+        document.getElementById("opacitypicker").style.display = "block";
+        document.querySelector(".inputcontainer").style.display = "block";
+    } else {
+        document.getElementById("opacitylabel").style.display = "none";
+        document.getElementById("opacitypicker").style.display = "none";
+        document.querySelector(".inputcontainer").style.display = "none";
     }
-  }
+}
   if (category === "jewelry") showJewelryColorDisplay(currentJewelryColor);
   if (category === "hairs") showFrontColorDisplay("hairs", currentHairColor);
   if (category === "brows") showFrontColorDisplay("brows", currentBrowColor);
