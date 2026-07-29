@@ -737,7 +737,7 @@ body{
     text-align:center;
     font-size:14px;
     align-content: center;
-    z-index:3;
+    z-index:6;
     transition:ease-out .3s;
     cursor: pointer;
     cursor: pointer;
@@ -911,16 +911,16 @@ img.tops{
 }
 img.hairstyles{
     margin-top: -0.3px;
-    z-index: 3;
+    z-index: 1;
 }
 
 img.jewelrystyle.necklace{
-    z-index: 2;
+    z-index: 0;
     pointer-events: none;
 }
 
 img.jewelrystyle.earring{
-    z-index: 5;
+    z-index: 1;
     pointer-events: none;
 }
 

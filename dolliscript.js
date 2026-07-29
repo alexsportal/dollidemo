@@ -1,13 +1,13 @@
 let currentEyeColor = "brown";
 let currentHairColor = "black";
 let currentBrowColor = "black";
-let currentLipColor = "brown";
+let currentLipColor = "pink";
 let currentBlushColor = "dark";
-let currentHairId = "hairstyle0";
+let currentHairId = "hairstyle16";
 let currentBrowId = "browshape1";
 let currentNoseId = "noseshape2";
 let currentLipId = "lipshape1";
-let currentEyeId = "shape-doe";
+let currentEyeId = "shape-nice";
 let currentBlushId = "blush1";
 let activeTopIds = new Set(["bandeau"]);
 let currentTopId = "bandeau";
@@ -325,7 +325,7 @@ function skinSlides(n) {
 function updateEyesForSkin(slideIndex) {
   const isDark = darkSkinIndices.includes(slideIndex);
   const activeShape = document.querySelector(".eyeshape[style*='display:block'], .eyeshape[style*='display: block']")
-                   || document.getElementById("shape-doe");
+                   || document.getElementById("shape-nice");
   if (!activeShape) return;
 
   activeShape.querySelectorAll(".darkeyes").forEach(img => img.style.display = "none");
@@ -362,7 +362,7 @@ function changeEyeColor(color, el) {
   document.querySelectorAll('.coloroption[data-category="eyes"]').forEach(dot => dot.classList.remove("outline"));
   el.classList.add("outline");
   const activeShape = document.querySelector(".eyeshape[style*='display:block'], .eyeshape[style*='display: block']")
-                   || document.getElementById("shape-doe");
+                   || document.getElementById("shape-nice");
   if (!activeShape) return;
   const isDark = darkSkinIndices.includes(slideIndex);
   activeShape.querySelectorAll(".darkeyes, .lighteyes").forEach(img => {
