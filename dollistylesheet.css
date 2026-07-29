@@ -907,20 +907,20 @@ img.blushes{
     z-index:0;
 }
 img.tops{
-    z-index:1;
+    z-index:0;
 }
 img.hairstyles{
     margin-top: -0.3px;
-    z-index: 1;
+    z-index: 2;
 }
 
 img.jewelrystyle.necklace{
-    z-index: 0;
+    z-index: 1;
     pointer-events: none;
 }
 
 img.jewelrystyle.earring{
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
 }
 
