@@ -7,7 +7,7 @@ The Dolli game concept, name, character, and brand identity are original intelle
 
 
 
-**For licensing or permission inquiries: heydolli@gmail.com**
+**For licensing or permission inquiries: dressupdolli.mobile@gmail.com**
 
 
 
