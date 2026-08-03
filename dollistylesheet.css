@@ -3,7 +3,7 @@ body{
     position: relative;
     margin:auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition:ease-out .3s;
+    transition:ease .5s;
     width:auto;
     height:100dvh;
     overflow-y: hidden;
