@@ -61,6 +61,9 @@ const colorHex = {
   coral: "linear-gradient(150deg, #FF6B6B, #FF9A9A)"
 };
 
+
+// ─── MENU HOVER ───────────────────────────────────────────────
+
 let openMenu = null;
 let menuHoverEnabled = false;
 
@@ -78,9 +81,11 @@ function toggleMenu(menuId, el) {
         el.classList.add('active');
         openMenu = menuId;
         menuHoverEnabled = true;
+        document.querySelector('.inputcontainer').style.visibility = 'hidden';
     } else {
         openMenu = null;
         menuHoverEnabled = false;
+        document.querySelector('.inputcontainer').style.visibility = 'visible';
     }
 }
 
@@ -96,6 +101,18 @@ function hoverMenu(menuId, el) {
     toggleMenu(menuId, el);
 }
 
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.menubutton') && !e.target.closest('.menuoverlay')) {
+        if (openMenu) {
+            document.getElementById(openMenu + 'overlay').style.display = 'none';
+            document.querySelector(`[data-menu="${openMenu}"]`)?.classList.remove('active');
+            openMenu = null;
+            menuHoverEnabled = false;
+            document.querySelector('.inputcontainer').style.visibility = 'visible';
+        }
+    }
+});
+
 // ─── INFO BOX ───────────────────────────────────────────────
 
 function openInfo() {
@@ -106,24 +123,73 @@ function closeInfo() {
   document.getElementById('infooverlay').style.display = 'none';
 }
 
+
+// ─── ITEM BOX ───────────────────────────────────────────────
+function openItems() {
+    const items = document.getElementById("items");
+    const container = document.getElementById("itemcontainer");
+    const icon = document.querySelector("#openitems img");
+    const isOpen = items.classList.contains("opening");
+
+    if (isOpen) {
+        items.classList.remove("opening");
+        items.classList.add("closing");
+        icon.style.transform = "rotate(180deg)";
+        container.style.backgroundColor = "";
+        setTimeout(() => { items.style.display = "none"; }, 300);
+    } else {
+        items.style.display = "block";
+        items.classList.remove("closing");
+        items.classList.add("opening");
+        icon.style.transform = "rotate(360deg)";
+        container.style.backgroundColor = "#c7a4b0c9";
+    }
+
+    icon.style.transition = "transform 0.3s ease";
+}
+
 // ─── SELECTED STATES ────────────────────────────────────────
 
 function setSelectedTop(el) {
-  if (selectedTopEl) selectedTopEl.classList.remove("selected");
-  selectedTopEl = el;
-  if (el) el.classList.add("selected");
+    if (selectedTopEl) selectedTopEl.classList.remove("selected");
+    selectedTopEl = el;
+    if (el) {
+        el.classList.add("selected");
+        const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+        if (shapeId) {
+            document.querySelectorAll(".itemthumbnail").forEach(t => t.classList.remove("active"));
+            const thumb = document.querySelector(`.itemthumbnail[data-id="${shapeId}"]`);
+            if (thumb) thumb.classList.add("active");
+        }
+    }
 }
 
 function setSelectedMakeup(el) {
-  if (selectedMakeupEl) selectedMakeupEl.classList.remove("selected");
-  selectedMakeupEl = el;
-  if (el) el.classList.add("selected");
+    if (selectedMakeupEl) selectedMakeupEl.classList.remove("selected");
+    selectedMakeupEl = el;
+    if (el) {
+        el.classList.add("selected");
+        const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+        if (shapeId) {
+            document.querySelectorAll(".itemthumbnail").forEach(t => t.classList.remove("active"));
+            const thumb = document.querySelector(`.itemthumbnail[data-id="${shapeId}"]`);
+            if (thumb) thumb.classList.add("active");
+        }
+    }
 }
 
 function setSelectedJewelry(el) {
-  if (selectedJewelryEl) selectedJewelryEl.classList.remove("selected");
-  selectedJewelryEl = el;
-  if (el) el.classList.add("selected");
+    if (selectedJewelryEl) selectedJewelryEl.classList.remove("selected");
+    selectedJewelryEl = el;
+    if (el) {
+        el.classList.add("selected");
+        const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+        if (shapeId) {
+            document.querySelectorAll(".itemthumbnail").forEach(t => t.classList.remove("active"));
+            const thumb = document.querySelector(`.itemthumbnail[data-id="${shapeId}"]`);
+            if (thumb) thumb.classList.add("active");
+        }
+    }
 }
 
 // ─── COLOR DISPLAY ──────────────────────────────────────────
@@ -254,19 +320,36 @@ function undo() {
   activeJewelryIds = new Set(prev.activeJewelryIds || []);
   currentJewelryId = prev.currentJewelryId;
   currentJewelryColor = prev.currentJewelryColor;
-  activeJewelryIds.forEach(id => {
-      const shape = document.getElementById(id);
-      if (shape) shape.style.display = "block";
-      const savedCurrentId = currentJewelryId;
-      currentJewelryId = id;
-      updateJewelryColor(prev.currentJewelryColor);
-      currentJewelryId = savedCurrentId;
-  });
-
+activeJewelryIds.forEach(id => {
+    const shape = document.getElementById(id);
+    if (!shape) return;
+    const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
+    if (!img) return;
+    const jewelryClassMap = {
+        droop: "for_earrings",
+        hoop: "for_earrings",
+        choker: "for_choker",
+        heartchains: "for_chains",
+        chains: "for_chains",
+        moonchains: "for_chains",
+        necklacesmall: "for_necklace",
+        necklacemed: "for_necklace",
+        necklacelarge: "for_necklace",
+        longnecklace: "for_longnecklace"
+    };
+    const typeClass = jewelryClassMap[id] || "for_earrings";
+    const thumb = createItemThumbnail(id, img.src, typeClass, "jewelry");
+    if (selectedJewelryEl) {
+        const selectedId = selectedJewelryEl.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+        if (selectedId === id) thumb.classList.add("active");
+    }
+    items.appendChild(thumb);
+});
   document.getElementById("beautyparlour").style.backgroundImage = prev.bgImage;
   document.getElementById("beautyparlour").style.backgroundColor = prev.bgColor;
 
   goToSection(currentSectionIndex);
+  renderItemContainer()
 }
 
 // ─── SKIN ──────────────────────────────────────────────────────
@@ -523,6 +606,7 @@ function changeBlushShape(shapeId, el) {
     setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
     el.classList.add("active");
   }
+  renderItemContainer()
 }
 
 function changeBlushColor(color, el) {
@@ -536,6 +620,7 @@ function changeBlushColor(color, el) {
   document.getElementById("opacitypicker").value = 1;
   activeBlush?.querySelectorAll("img").forEach(img => img.style.opacity = 1);
   updateBlushColor(color);
+  renderItemContainer()
 }
 
 function updateBlushColor(color) {
@@ -614,6 +699,7 @@ function changeJewelryColor(color, el) {
   el.classList.add("outline");
   updateJewelryColor(color);
   showJewelryColorDisplay(color);
+  renderItemContainer()
 }
 
 function changeJewelryShape(shapeId, el) {
@@ -656,6 +742,7 @@ function changeJewelryShape(shapeId, el) {
     showColorOptions("jewelry");
     showJewelryColors(el.dataset.colors);
   }
+  renderItemContainer()
 }
 
 function showJewelryColors(colorsString) {
@@ -741,6 +828,7 @@ function changeTopShape(shapeId, el) {
     showFrontColorDisplay("tops", currentTopColor);
     setOutline("tops", topColorMap[currentTopColor] ?? 8);
 }
+renderItemContainer()
 }
 
 function changeTopColor(color, el) {
@@ -753,6 +841,7 @@ function changeTopColor(color, el) {
   showFrontColorDisplay("tops", color);
   updateTopColor(color);
   currentTopHue = 0;
+  renderItemContainer()
 }
 
 function updateTopColor(color) {
@@ -981,22 +1070,22 @@ function goToSection(index) {
       }
     });
   }
-  if (category === "jewelry") {
+if (category === "jewelry") {
     document.querySelectorAll(".beautyoptionsjewelry").forEach(el => {
-      const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-      if (shapeId) {
-        const shape = document.getElementById(shapeId);
-        el.classList.toggle("active", shape?.style.display === "block");
-      }
+        const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+        if (shapeId) {
+            const shape = document.getElementById(shapeId);
+            el.classList.toggle("active", shape?.style.display === "block");
+        }
     });
     if (activeJewelryIds.size === 0) {
-      showJewelryColors(null);
-      showJewelryColorDisplay(null);
+        showJewelryColors(null);
+        showJewelryColorDisplay(null);
     } else if (currentJewelryId) {
-      const activeEl = document.querySelector(`.beautyoptionsjewelry[onclick*="${currentJewelryId}"]`);
-      if (activeEl) showJewelryColors(activeEl.dataset.colors);
+        const activeEl = document.querySelector(`.beautyoptionsjewelry[onclick*="${currentJewelryId}"]`);
+        if (activeEl) showJewelryColors(activeEl.dataset.colors);
     }
-  }
+}
 }
 
 function scrollOptions(direction) {
@@ -1098,6 +1187,7 @@ window.onload = function () {
       }
       document.getElementById("loadpercent").textContent = percent + "%";
   }, 100);
+  renderItemContainer()
 
 };
 
@@ -1236,6 +1326,7 @@ activeJewelryIds.forEach(id => {
   document.getElementById("beautyparlour").style.backgroundColor = state.bgColor;
 
   goToSection(currentSectionIndex);
+  renderItemContainer()
 }
 
 function deleteDoll(id) {
@@ -1280,21 +1371,16 @@ function preloadImage(src) {
   img.src = src;
 }
 
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.menubutton') && !e.target.closest('.menuoverlay')) {
-        if (openMenu) {
-            document.getElementById(openMenu + 'overlay').style.display = 'none';
-            document.querySelector(`[data-menu="${openMenu}"]`)?.classList.remove('active');
-            openMenu = null;
-            menuHoverEnabled = false;
-        }
-    }
-});
+
+
+// ─── ERROR ───────────────────────────────────────────────
 
 window.onerror = function () {
   document.getElementById("erroroverlay").style.display = "flex";
   return true;
 };
+
+// ─── ZOOM TOGGLE ───────────────────────────────────────────────
 
 function toggleZoom() {
   const imgs = document.querySelectorAll(".skins, .darkeyes, .lighteyes, .nosedark, .noselight, .eyebrows, .hairstyles, .lips, .blushes, .tops, .jewelrystyle");
@@ -1312,4 +1398,154 @@ function toggleZoom() {
     }
   });
   isZoomed = !isZoomed;
+}
+
+// ─── ACTIVE ITEMS ───────────────────────────────────────────────
+
+function renderItemContainer() {
+    const items = document.getElementById("items");
+    items.innerHTML = "";
+
+    activeTopIds.forEach(topId => {
+        const shape = document.getElementById(topId);
+        if (!shape) return;
+        const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
+        if (!img) return;
+        const thumb = createItemThumbnail(topId, img.src, "for_tops", "top");
+        if (selectedTopEl) {
+            const selectedId = selectedTopEl.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+            if (selectedId === topId) thumb.classList.add("active");
+        }
+        items.appendChild(thumb);
+    });
+
+   document.querySelectorAll(".blushshape").forEach(shape => {
+    if (shape.style.display !== "block") return;
+    const blushImg = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
+    if (!blushImg) return;
+    const thumb = createItemThumbnail(shape.id, blushImg.src, "for_blushes", "blush");
+    if (selectedMakeupEl) {
+        const selectedId = selectedMakeupEl.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+        if (selectedId === shape.id) thumb.classList.add("active");
+    }
+    items.appendChild(thumb);
+});
+
+activeJewelryIds.forEach(id => {
+    const shape = document.getElementById(id);
+    if (!shape) return;
+    const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
+    if (!img) return;
+    const jewelryClassMap = {
+        droop: "for_earrings",
+        hoop: "for_earrings",
+        choker: "for_choker",
+        heartchains: "for_chains",
+        chains: "for_chains",
+        moonchains: "for_chains",
+        necklacesmall: "for_necklace",
+        necklacemed: "for_necklace",
+        necklacelarge: "for_necklace",
+        longnecklace: "for_longnecklace"
+    };
+    const typeClass = jewelryClassMap[id] || "for_earrings";
+    const thumb = createItemThumbnail(id, img.src, typeClass, "jewelry");
+    if (selectedJewelryEl) {
+        const selectedId = selectedJewelryEl.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+        if (selectedId === id) thumb.classList.add("active");
+    }
+    items.appendChild(thumb);
+});
+}
+
+function createItemThumbnail(id, imgSrc, typeClass, category) {
+    const div = document.createElement("div");
+    div.className = `itemthumbnail ${typeClass}`;
+    div.style.backgroundImage = `url(${imgSrc})`;
+    div.dataset.id = id;
+    div.dataset.category = category;
+    div.onclick = () => selectItemThumbnail(div, id, category);
+
+    const del = document.createElement("div");
+    del.className = "delete";
+    const x = document.createElement("img");
+    x.src = "DressupGame_Assets/Button_Icons/x.png";
+    x.style.width = "8px";
+    x.style.margin = "auto";
+    x.alt = "Delete item";
+    x.onclick = (e) => { 
+        e.stopPropagation(); 
+        const opacity = window.getComputedStyle(del).opacity;
+        if (parseFloat(opacity) >= 1) deleteItem(id, category); 
+    };    
+    del.appendChild(x);
+    div.appendChild(del);
+
+    return div;
+}
+
+function selectItemThumbnail(el, id, category) {
+    const del = el.querySelector(".delete");
+    const delOpacity = del ? parseFloat(window.getComputedStyle(del).opacity) : 0;
+    const isActive = el.classList.contains("active");
+
+    if (isActive && delOpacity >= 1) {
+        deleteItem(id, category);
+        return;
+    }
+
+    document.querySelectorAll(".itemthumbnail").forEach(t => t.classList.remove("active"));
+    el.classList.add("active");
+  
+
+    if (category === "top") {
+        currentTopId = id;
+        const btn = document.querySelector(`.beautyoptionstops[onclick*="${id}"]`);
+        if (btn) setSelectedTop(btn);
+        goToSection(sections.indexOf("tops"));
+        showFrontColorDisplay("tops", currentTopColor);
+    }
+    if (category === "blush") {
+        const btn = document.querySelector(`.beautyoptionsmakeup[onclick*="${id}"]`);
+        if (btn) setSelectedMakeup(btn);
+        goToSection(sections.indexOf("makeup"));
+    }
+    if (category === "jewelry") {
+      const btn = document.querySelector(`.beautyoptionsjewelry[onclick*="${id}"]`);
+      if (btn) {
+          currentJewelryId = id;
+          setSelectedJewelry(btn);
+          showJewelryColors(btn.dataset.colors);
+          showJewelryColorDisplay(currentJewelryColor);
+    }
+    goToSection(sections.indexOf("jewelry"));
+}
+}
+
+function deleteItem(id, category) {
+    if (category === "top") {
+        const shape = document.getElementById(id);
+        if (shape) shape.style.display = "none";
+        activeTopIds.delete(id);
+        const el = document.querySelector(`.beautyoptionstops[onclick*="${id}"]`);
+        if (el) { el.classList.remove("active"); if (selectedTopEl === el) setSelectedTop(null); }
+        if (currentTopId === id) {
+            currentTopId = activeTopIds.size > 0 ? [...activeTopIds][0] : null;
+        }
+    }
+    if (category === "blush") {
+        const shape = document.getElementById(currentBlushId);
+        if (shape) { shape.style.display = "none"; shape.querySelectorAll(".blushes").forEach(img => img.style.display = "none"); }
+        const el = document.querySelector(`.beautyoptionsmakeup[onclick*="${currentBlushId}"]`);
+        if (el) { el.classList.remove("active"); if (selectedMakeupEl === el) setSelectedMakeup(null); }
+    }
+    if (category === "jewelry") {
+        const shape = document.getElementById(id);
+        if (shape) shape.style.display = "none";
+        activeJewelryIds.delete(id);
+        const el = document.querySelector(`.beautyoptionsjewelry[onclick*="${id}"]`);
+        if (el) { el.classList.remove("active"); if (selectedJewelryEl === el) setSelectedJewelry(null); }
+        if (activeJewelryIds.size === 0) { showJewelryColors(null); showJewelryColorDisplay(null); }
+    }
+    renderItemContainer();
 }

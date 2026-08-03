@@ -69,7 +69,7 @@
                                 <div class="link"><a rel="noopener" target="_blank" href="https://www.figma.com/proto/TljZGiUfTqPP7d7XkWqEzk/MobileDolls?node-id=2043-1267&t=6CUYs28Y2XMkpWXT-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3104%3A8499&show-proto-sidebar=1">View Prototype</a></div>
                             </section>
                             <section style="flex:40%; align-items: center;">
-                                <img id="applogo" src="DressupGame_Assets/Logos/Dolli_AppLogo3.png"/>
+                                <img id="applogo" src="DressupGame_Assets/Logos/Dolli_AppLogo3.png" alt="Dolli mobile app logo concept."/>
                             </section>
                         </div>
                     </p>
@@ -134,15 +134,15 @@
                     <p class="desc">
                         <table>
                         <tr>
-                            <td><img class="functionimgs" style="width:70px;" src="Images/undo.png"></td>
+                            <td><img class="functionimgs" style="width:70px;" src="Images/undo.png" alt="Undo from the menu."></td>
                             <td>Undo the last change.<br><br></td>
                         </tr>
                         <tr>
-                            <td><img class="functionimgs" style="width:70px;" src="Images/save.png"></td>
+                            <td><img class="functionimgs" style="width:70px;" src="Images/save.png" alt="Save button from the menu."></td>
                             <td>Save your Dolli as a PDF (Currently fixing for mobile).<br><br></td>
                         </tr>
                         <tr>
-                            <td><img class="functionimgs" style="width:70px;" src="Images/music.png"></td>
+                            <td><img class="functionimgs" style="width:70px;" src="Images/music.png" alt="Music dropdown button from the menu."></td>
                             <td>Choose a song to play in the background. Click<div class="musictoggle" style="padding: 0;display: inline-block;transform: scale(.8);margin-bottom: -9px;margin-right:3px"></div>to mute.</td>
                         </tr>
                         </table>                    
@@ -153,19 +153,19 @@
                      Select an option from the menu. Swipe or scroll left to view more options. Active selections are highlighted blue. Makeup and tops can be layered.             
                     </p>
 
-                    <img class="functionimgs" src="Images/eyesmenu.png"/>
+                    <img class="functionimgs" src="Images/eyesmenu.png" alt="Eye shape menu."/>
                     
                     <p class="desc">
                     Use the slide to change the hue of your clothes, lips, or hair colors.        
                     </p>
 
-                    <img class="functionimgs" style="width: 300px;margin: auto;" src="Images/color.png"/><br>    
+                    <img class="functionimgs" style="width: 300px;margin: auto;" src="Images/color.png" alt="Color slider for editable items."/><br>    
 
 
                     <p style="margin-top:-20px" class="desc">
                         <table>
                         <tr>
-                            <td><img class="functionimgs" style="width:40px;" src="Images/colormenu.png"></td>
+                            <td><img class="functionimgs" style="width:40px;" src="Images/colormenu.png" alt="Color menu box."></td>
                             <td style="padding-left: 20px;align-content: center;">Choose a color from the color menu. If you used the hue slider and want to reset the color, select the color again.</td>
                         </tr>
                         
@@ -177,7 +177,7 @@
                     Use the slider to change the opacity of your skin details and makeup selection.              
                     </p>
 
-                    <img class="functionimgs" style="width: 300px;margin: auto; margin-bottom: 30px;" src="Images/opacity.png"/>
+                    <img class="functionimgs" style="width: 300px;margin: auto; margin-bottom: 30px;" src="Images/opacity.png" alt="Opacity slider for editable items."/>
 
                 </section>
 
@@ -434,7 +434,7 @@
             <div id="menu">
                 <div onClick="undo(); closeMenus();" class="menubutton" style="width:45px;"><u>U</u>ndo</div>
                 <div onClick="saveCurrentDoll(); closeMenus();" class="menubutton" style="width:35px;"><u>S</u>ave</div>
-                    <div class="menubutton" data-menu="dolls" onclick="toggleMenu('dolls', this)" onmouseenter="hoverMenu('dolls', this)" style="width:45px;padding-left:7px"><u>D</u>olls
+                    <div class="menubutton" data-menu="dolls" onclick="toggleMenu('dolls', this)" onmouseenter="hoverMenu('dolls', this)" style="border-bottom: none;width:45px;padding-left:7px"><u>D</u>olls
                         <div class="menuoverlay" id="dollsoverlay">
                         <div class="menusongs" style="color:#888;font-style:italic;">No saved Dolls</div>
                         </div>
@@ -458,6 +458,48 @@
                 </div>
                
             </div>
+
+            <div id="itemcontainer">
+              <div onclick="openItems()" id="openitems">
+                <p style="position: relative;top: 3.5px;">Items <img src="DressupGame_Assets/Button_Icons/open.png" alt="Toggle active item dropdown."/></p>
+              </div>  
+
+              <div id="items">
+                <div class="itemthumbnail for_tops" style="background-image: url(DressupGame_Assets/Clothes/Under/Bandeau/pattern_bandeau_black.png);">       
+                 <div class="delete">
+                   <img style="width: 8px;margin: auto;" src="DressupGame_Assets/Button_Icons/x.png" alt="Delete active item dropdown."/>
+                 </div>
+                </div>
+
+                <div class="itemthumbnail for_tops"  style="background-image: url(DressupGame_Assets/Clothes/Tops/Buttonup/buttonup_black.png);">       
+                 <div class="delete">
+                   <img style="width: 8px;margin: auto;" src="DressupGame_Assets/Button_Icons/x.png" alt="Delete active item dropdown."/>
+                 </div>
+                </div>
+
+                <div class="itemthumbnail for_tops"  style="background-image: url(DressupGame_Assets/Clothes/Tops/FishnetSleeves/fishnet_sleeves_black.png);">       
+                 <div class="delete">
+                   <img style="width: 8px;margin: auto;" src="DressupGame_Assets/Button_Icons/x.png" alt="Delete active item dropdown."/>
+                 </div>
+                </div>
+                
+                <div class="itemthumbnail">x</div>
+                <div class="itemthumbnail">x</div>
+                <div class="itemthumbnail">x</div>
+                <div class="itemthumbnail">x</div>
+                <div class="itemthumbnail">x</div>
+                <div class="itemthumbnail">x</div>
+                <div class="itemthumbnail">x</div>
+                <div class="itemthumbnail">x</div>
+                <div class="itemthumbnail">x</div>
+              </div>
+
+
+
+
+            </div>
+
+
                 <p class="copyright">© Alexsandria Manuel 2026</p>
 
                 <!--BODIES-->
@@ -1020,7 +1062,7 @@
                 <div class="clothes">
 
 
-                    <div class="topstyle" id="tubetop">
+                    <div class="topstyle" id="tubetop" style="filter:saturate(0.7)">
 
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Under/Tube/tubetop_pink.PNG" data-color="pink" class="tops"/>
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Under/Tube/tubetop_red.PNG" data-color="red" class="tops"/>
@@ -1049,7 +1091,7 @@
                     </div>
                   
 
-                    <div class="topstyle" id="tank1">
+                    <div class="topstyle" id="tank1" style="filter:saturate(0.7)">
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Under/Tank1/tank1_pink.PNG" data-color="pink" class="tops"/>
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Under/Tank1/tank1_red.PNG" data-color="red" class="tops"/>
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Under/Tank1/tank1_yellow.PNG" data-color="yellow" class="tops"/>
@@ -1062,7 +1104,7 @@
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Under/Tank1/tank1_black.png" data-color="black" class="tops"/>
                     </div>
                     
-                    <div class="topstyle" id="tank2">
+                    <div class="topstyle" id="tank2" style="filter:saturate(0.7)">
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Under/Tank2/tank2_pink.png" data-color="pink" class="tops"/>
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Under/Tank2/tank2_red.PNG" data-color="red" class="tops"/>
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Under/Tank2/tank2_yellow.PNG" data-color="yellow" class="tops"/>
@@ -1172,7 +1214,7 @@
 
                     <div class="topstyle" id="tlc">
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Tlc/tlc_pink.png" data-color="pink" class="tops"/>
-                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Tlc/tlc_white.png" data-color="red" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Tlc/tlc_red.png" data-color="red" class="tops"/>
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Tlc/tlc_yellow.png" data-color="yellow" class="tops"/>
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Tlc/tlc_green.png" data-color="green" class="tops"/>
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Tlc/tlc_blue.png" data-color="blue" class="tops"/>                    
@@ -1209,6 +1251,45 @@
                     <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/NiaLong/nia_black.png" data-color="black" class="tops"/>
                     </div>
 
+                    
+                    <div class="topstyle" id="cropped">
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_pink.webp" data-color="pink" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_red.webp" data-color="red" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_yellow.webp" data-color="yellow" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_brown.webp" data-color="green" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_blue.webp" data-color="blue" class="tops"/>                    
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_purple.webp" data-color="purple" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_magenta.webp" data-color="magenta" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_brown.webp" data-color="brown" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_white.webp" data-color="white" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_black.webp" data-color="black" class="tops"/>
+                    </div>
+
+                    <div class="topstyle" id="sweater">
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_pink.webp" data-color="pink" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_red.webp" data-color="red" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_yellow.webp" data-color="yellow" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_green.webp" data-color="green" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_blue.webp" data-color="blue" class="tops"/>                    
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_purple.webp" data-color="purple" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_magenta.webp" data-color="magenta" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_brown.webp" data-color="brown" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_white.webp" data-color="white" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Sweater/sweater_black.webp" data-color="black" class="tops"/>
+                    </div>
+
+                    <div class="topstyle" id="blouse">
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_pink.webp" data-color="pink" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_red.webp" data-color="red" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_yellow.webp" data-color="yellow" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_green.webp" data-color="green" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_blue.webp" data-color="blue" class="tops"/>                    
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_purple.webp" data-color="purple" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_magenta.webp" data-color="magenta" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_brown.webp" data-color="brown" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_white.webp" data-color="white" class="tops"/>
+                    <img loading="lazy" src="DressupGame_Assets/Clothes/Tops/Blouse/blouse_black.webp" data-color="black" class="tops"/>
+                    </div>
 
 
 
@@ -1428,6 +1509,10 @@
                     <div onclick="changeTopShape('bandeau', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Under/Bandeau/pattern_bandeau_black.png);" ></div>
                     <div onclick="changeTopShape('beyonce', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Tops/Beyonce/beyonce_black.png);"></div> 
                     <div onclick="changeTopShape('nia', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Tops/NiaLong/nia_black.png);"></div> 
+                    <div onclick="changeTopShape('cropped', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Tops/Cropped/croppedtshirt_black.webp);"></div> 
+                    <div onclick="changeTopShape('blouse', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Tops/Blouse/blouse_black.webp);"></div> 
+                    <div onclick="changeTopShape('sweater', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Tops/Sweater/sweater_black.webp);"></div> 
+
                     <div onclick="changeTopShape('hearttop', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Tops/HeartTop/heart_tshirt_black.png);"></div> 
                     <div onclick="changeTopShape('tshirt', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Tops/Tshirt/tshirt_black.png);"></div> 
                     <div onclick="changeTopShape('tlc', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Tops/Tlc/tlc_black.png);"></div> 

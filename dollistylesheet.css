@@ -157,6 +157,7 @@ body{
     border-top-right-radius:5px;
     position: relative;
     box-shadow: inset -1px 0px 2px 1px #9c678256;
+    z-index: -1;
 }
 
 
@@ -503,8 +504,8 @@ body{
     transition:ease-out .3s;
     cursor: pointer;
     background-size: 311%;
-    background-position-y: -83px;
-    background-position-x: -120px;
+    background-position-y: -87px;
+    background-position-x: -117px;
     background-repeat: no-repeat;
     cursor:pointer;
 }
@@ -670,8 +671,8 @@ body{
     width: 93px;
     height: 76px;
     background-size: 315%;
-    background-position-y: -73px;
-    background-position-x: -101px;
+    background-position-y: -79px;
+    background-position-x: -106px;
     }
     
 .beautyoptionsmakeup{
@@ -693,6 +694,8 @@ body{
     height:30px;
     background-color: #C7A4B0;
     display:flex;
+    position:relative;
+    z-index: 7;
     flex-direction: row;
     margin-top:-7px;
     border-top:solid 7px #a76e88;
@@ -732,18 +735,18 @@ body{
 
 
 .menuoverlay{
-    width:auto;
-    color:#380225;
-    text-align:center;
-    font-size:14px;
+    width: auto;
+    color: #380225;
+    text-align: center;
+    font-size: 14px;
     align-content: center;
-    z-index:6;
-    transition:ease-out .3s;
+    transition: ease-out .3s;
     cursor: pointer;
     cursor: pointer;
-    position:absolute;
-    top:77px;
-    margin-left:-7px;
+    top: 30px;
+    position: absolute;
+    margin-left: -7px;
+    z-index:100;
 }
 
 .menubutton:hover,
@@ -758,6 +761,10 @@ body{
 }
 .menubutton.open .menuoverlay {
   display: block;
+}
+
+.menubutton.active{
+    border-bottom:none;
 }
 
 .menusongs{
@@ -906,6 +913,9 @@ img.jewelrystyle{
 img.blushes{
     z-index:0;
 }
+img.skins{
+    z-index:0;
+}
 img.tops{
     z-index:0;
 }
@@ -975,28 +985,30 @@ img.jewelrystyle.earring{
 
 #opacitypicker,#colorpicker{
     position: inherit;
-    margin-left:70px;
-    width:189px;
+    margin-left: 70px;
+    width: 134px;
 }
 
 .inputcontainer{
     position: absolute;
     display: flex;
-    left: 75px;
+    left: 135px;
     flex-direction: row;
-    width: 267px;
+    width: 209px;
     height: 21px;
     padding: 5px;
     border-radius: 5px;
     background-color: #c7a4b0c9;
-    margin-left: -2px;
-    margin-top: -19px;
+    z-index: 0;
+    margin-top: -19px;transform: translateZ(0);
+
 }
 
 .inputlabel{
     position: inherit;
     padding: 0;
     margin: 0;
+    z-index: 0;
     margin-top: -2px;
     margin-left: 5px;
     font-family: Zainbold;
@@ -1161,12 +1173,12 @@ span{
 .copyright{
     transform: rotate(90deg);
     position: absolute;
-    font-size: small;
-    margin-top: 280px;
-    margin-left: 15px;
+    font-size: 12px;
+    margin-top: 287px;
     color: #ffffff;
-    text-shadow: 0 0 3px #290040;
-    font-family: 'zainbold';
+    text-shadow: 0 0 2px #290040;
+    font-family: zainreg;
+    left: 17px;
 }
 
 .bottombox{
@@ -1234,10 +1246,11 @@ span{
     margin-top: -11px;
 }
 .inputcontainer{
-    width:237px;
+    width: 186px;
+    margin-left: -7px;
 }
 #opacitypicker,#colorpicker{
-    width:162px;
+    width: 113px;
 }
 }
 
@@ -1291,3 +1304,189 @@ span{
     outline: 3px solid #96476f;
 }
 
+
+
+
+
+
+
+
+#itemcontainer{
+    position: absolute;
+    background-color: #00000000;
+    height: 376px;
+    width: 66px;
+    z-index: 3;
+    left: 80px;
+}
+
+#openitems{
+    margin: auto;
+    position: relative;
+    top: -9px;
+    text-align: center;
+    height: 19.5px;
+    font-size: 9px;
+    background-color: #a15b7e;
+    width: auto;
+    color: white;
+    cursor: pointer;
+}
+
+#openitems img{
+    width: 6px;
+    margin-left: 3px;
+    transform: rotate(180deg);
+}
+
+#items{
+    width: 92%;
+    height: stretch;
+    margin: auto;
+    margin-right: 3px;
+    display: flex;
+    gap: 10px;
+    overflow-y: scroll;
+    flex-direction: column;
+    max-height: 340px;
+    display: none;
+    margin-top: -1px;
+    animation: dropdown 0.3s ease;
+    transform-origin: top;
+}
+
+
+#items.opening {
+    animation: dropdown 0.3s ease forwards;
+}
+
+#items.closing {
+    animation: dropup 0.3s ease forwards;
+}
+
+@keyframes dropdown {
+    from { opacity: 0; transform: scaleY(0); }
+    to { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes dropup {
+    from { opacity: 1; transform: scaleY(1); }
+    to { opacity: 0; transform: scaleY(0); }
+}
+
+.itemthumbnail{
+    width: 89%;
+    border-radius: 7px;
+    margin-left: 2px;
+    margin-top: 2px;
+    min-height: 53px;
+    height:53px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: #ffffffb8;
+    cursor: pointer;
+    transition: ease-out .3s;
+}
+
+.itemthumbnail:hover{
+    outline: 2px solid #a15b7e;
+}
+
+.itemthumbnail .delete {
+    opacity: 0.3;
+}
+
+.itemthumbnail.active .delete {
+    opacity: 1;
+}
+
+.itemthumbnail.active {
+    outline: 2px solid #96476f;
+    background-color: #ffffff;
+}
+
+.itemthumbnail.for_tops{
+    background-size: 224px;
+    background-position-x: 132px;
+    background-position-y: 205px;
+}
+
+.itemthumbnail.for_earrings{
+    background-size: 2039%;
+    background-position-x: -476px;
+    background-position-y: 17%;
+}
+
+.itemthumbnail.for_choker,
+.itemthumbnail.for_chains{
+    background-size: 1512%;
+    background-position-x: -331px;
+    background-position-y: 22%;
+}
+
+.itemthumbnail.for_necklace{
+    background-size: 1349%;
+    background-position-x: -291px;
+    background-position-y: 22%;
+}
+
+.itemthumbnail.for_longnecklace{
+    background-size: 1319%;
+    background-position-x: -278px;
+    background-position-y: 29%;
+}
+
+
+.itemthumbnail.for_blushes{
+    background-size: 905%;
+    background-position-x: -179px;
+    background-position-y: 13%;
+}
+
+.delete {
+    bottom: -36px;
+    width: 80%;
+    height: 13px;
+    margin: auto;
+    border-radius: 5px;
+    position: relative;
+    background: linear-gradient(180deg, #AA6E82 0%, #A35B7E 44.06%, #94436C 47.89%, #A45F82 93.86%);
+    display: flex;
+    transition:ease-out .3s;
+    opacity:0.3;
+}
+
+
+@media screen and (max-width:396px){
+#itemcontainer{
+    width: 60px;
+}
+#items{
+    width:56px;
+}
+.itemthumbnail.for_earrings {
+    background-size: 2039%;
+    background-position-x: -433px;
+    background-position-y: 17%;
+}
+.itemthumbnail.for_blushes {
+    background-size: 969%;
+    background-position-x: -177px;
+    background-position-y: 15%;
+}
+.itemthumbnail.for_choker, .itemthumbnail.for_chains {
+    background-size: 1512%;
+    background-position-x: -300px;
+    background-position-y: 22%;
+}
+.itemthumbnail.for_necklace {
+    background-size: 1349%;
+    background-position-x: -266px;
+    background-position-y: 22%;
+}
+.itemthumbnail.for_longnecklace {
+    background-size: 1319%;
+    background-position-x: -254px;
+    background-position-y: 29%;
+}
+}
