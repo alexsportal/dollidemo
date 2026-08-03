@@ -1376,11 +1376,12 @@ span{
 
 .itemthumbnail{
     width: 89%;
+    max-width: 89%;
     border-radius: 7px;
     margin-left: 2px;
     margin-top: 2px;
-    min-height: 53px;
-    height:53px;
+    min-height: 55px;
+    height: 55px;
     margin-bottom: 10px;
     box-sizing: border-box;
     background-color: #ffffffb8;
