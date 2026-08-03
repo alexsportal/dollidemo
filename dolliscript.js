@@ -1167,27 +1167,14 @@ window.onload = function () {
   setOutline("skin", 0);
   showFrontColorDisplay(currentHairColor);
 
-  const overlay = document.getElementById('loadingoverlay');
-  overlay.style.transition = 'opacity 0.5s ease';
-  setTimeout(function () {
-    overlay.style.opacity = '0';
-    setTimeout(function () {
-      overlay.style.display = 'none';
-    }, 200);
-  }, 1500);
-
+const overlay = document.getElementById('loadingoverlay');
+overlay.style.transition = 'opacity 0.5s ease';
+overlay.style.opacity = '0';
+setTimeout(function () {
+    overlay.style.display = 'none';
+}, 500);
   updateDollDropdown();
 
-  let percent = 0;
-  const percentInterval = setInterval(() => {
-      percent += Math.floor(Math.random() * 10) + 3;
-      if (percent >= 100) {
-          percent = 100;
-          clearInterval(percentInterval);
-      }
-      document.getElementById("loadpercent").textContent = percent + "%";
-  }, 100);
-  renderItemContainer()
 
 };
 
