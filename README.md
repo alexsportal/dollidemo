@@ -1,28 +1,52 @@
-**All artwork, illustrations, and visual assets in this project are original works by Alexsandria Manuel and are protected under copyright. No artwork may be reused, reproduced, modified, or repurposed in any form without explicit written permission from the creator.**
+**LICENSE
+The Dolli game concept, name, character, and brand identity are original intellectual property of Alexsandria Manuel.**
 
-*ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚
- 
+
+
+**All visual assets, artwork, and game concepts are the exclusive property of Alexsandria Manuel. No part of this project may be copied, distributed, or used commercially without written permission.** 
+
+
+
+**For licensing or permission inquiries: heydolli@gmail.com**
+
+
+
+♡✧--Credits--✧♡
+Background music is from Spireleaf on YouTube.
+
+Visual assets drawn by Alexsandria Manuel via Krita and Procreate.
+© Alexsandria Manuel 2026
+
+© Dolli
+
+
+
+
+
+\*ੈ✩‧₊˚༺☆༻\*ੈ✩‧₊˚
+
 Dolli is a 2D mobile game centered around
 creative self-expression through fashion
-and character customization. 
+and character customization.
+
 
 
 ♡✧--Core Experience--✧♡
 When you open Dolli, you’ll be welcomed into a personal
-interface; a stylized home screen that feels 
+interface; a stylized home screen that feels
 like stepping into a character's phone.
 Each new feature of the game will be
 presented as an app icon, making
 navigation feel familiar, intuitive, and playful.
 
 
+
 ♡✧--Vision--✧♡
 Dolli launches as an
 avatar maker with
 detailed options for
-skin tone, facial 
-features, hair, clothing, and more. 
-through the tutorial, making the
+skin tone, facial
+features, hair, clothing, and more. In the mobile game, Dolli will guide players through the tutorial to make the
 introduction feel friendly and
 welcoming. She's the face of the
 brand and the emotional anchor of
@@ -44,10 +68,6 @@ clearly and visually, lowering
 the barrier for users of all ages.
 
 
-♡✧--Credits--✧♡
-Background music is from Spireleaf on YouTube.
 
-Visual assets drawn by Alexsandria Manuel via Krita and Procreate.
-© Alexsandria Manuel 2026
 
- *ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚
+
