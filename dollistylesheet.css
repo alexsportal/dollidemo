@@ -865,7 +865,7 @@ body{
 
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
   height:10px;
   box-shadow: 2px 8px 28px -8px #412b55;
   -webkit-box-shadow: 2px 8px 28px -8px #412b55;
@@ -1340,7 +1340,7 @@ span{
 }
 
 #items{
-    width: 92%;
+    width: 90%;
     height: stretch;
     margin: auto;
     margin-right: 3px;
@@ -1408,40 +1408,40 @@ span{
 
 .itemthumbnail.for_tops{
     background-size: 224px;
-    background-position-x: 132px;
-    background-position-y: 205px;
+    background-position-x: 134px;
+    background-position-y: 209px;
 }
 
 .itemthumbnail.for_earrings{
-    background-size: 2039%;
-    background-position-x: -476px;
+    background-size: 2088%;
+    background-position-x: -530px;
     background-position-y: 17%;
 }
 
 .itemthumbnail.for_choker,
 .itemthumbnail.for_chains{
-    background-size: 1512%;
-    background-position-x: -331px;
-    background-position-y: 22%;
+    background-size: 1391%;
+    background-position-x: -329px;
+    background-position-y: 22.3%;
 }
 
 .itemthumbnail.for_necklace{
     background-size: 1349%;
-    background-position-x: -291px;
+    background-position-x: -318px;
     background-position-y: 22%;
 }
 
 .itemthumbnail.for_longnecklace{
     background-size: 1319%;
-    background-position-x: -278px;
+    background-position-x: -302px;
     background-position-y: 29%;
 }
 
 
 .itemthumbnail.for_blushes{
     background-size: 905%;
-    background-position-x: -179px;
-    background-position-y: 13%;
+    background-position-x: -195px;
+    background-position-y: 14%;
 }
 
 .delete {
@@ -1463,31 +1463,31 @@ span{
     width: 60px;
 }
 #items{
-    width:56px;
+    width:57px;
 }
 .itemthumbnail.for_earrings {
-    background-size: 2039%;
-    background-position-x: -433px;
-    background-position-y: 17%;
+background-size: 2039%;
+        background-position-x: -495px;
+        background-position-y: 17%;
 }
 .itemthumbnail.for_blushes {
-    background-size: 969%;
-    background-position-x: -177px;
-    background-position-y: 15%;
+        background-size: 823%;
+        background-position-x: -167px;
+        background-position-y: 14%;
 }
 .itemthumbnail.for_choker, .itemthumbnail.for_chains {
     background-size: 1512%;
-    background-position-x: -300px;
-    background-position-y: 22%;
+    background-position-x: -344px;
+    background-position-y: 22.1%;
 }
 .itemthumbnail.for_necklace {
-    background-size: 1349%;
-    background-position-x: -266px;
+    background-size: 1155%;
+    background-position-x: -257px;
     background-position-y: 22%;
 }
 .itemthumbnail.for_longnecklace {
-    background-size: 1319%;
-    background-position-x: -254px;
+    background-size: 1116%;
+    background-position-x: -242px;
     background-position-y: 29%;
 }
 }
