@@ -1413,35 +1413,41 @@ span{
 }
 
 .itemthumbnail.for_earrings{
-    background-size: 2088%;
-    background-position-x: -530px;
-    background-position-y: 17%;
+    background-size: 940px;
+    background-position-x: 459px;
+    background-position-y: 953px;
 }
 
-.itemthumbnail.for_choker,
+
 .itemthumbnail.for_chains{
-    background-size: 1391%;
-    background-position-x: -329px;
-    background-position-y: 22.3%;
+    background-size: 616px;
+    background-position-x: 323px;
+    background-position-y: 591px;
 }
 
-.itemthumbnail.for_necklace{
-    background-size: 1349%;
-    background-position-x: -318px;
-    background-position-y: 22%;
+.itemthumbnail.for_choker{
+    background-size: 616px;
+    background-position-x: 324px;
+    background-position-y: 598px;
 }
 
-.itemthumbnail.for_longnecklace{
-    background-size: 1319%;
-    background-position-x: -302px;
-    background-position-y: 29%;
+.itemthumbnail.for_necklace {
+    background-size: 616px;
+    background-position-x: 323px;
+    background-position-y: 591px;
 }
 
+.itemthumbnail.for_longnecklace {
+    background-size: 616px;
+    background-position-x: 330px;
+    background-position-y: 544px;
 
-.itemthumbnail.for_blushes{
-    background-size: 905%;
-    background-position-x: -195px;
-    background-position-y: 14%;
+}
+
+.itemthumbnail.for_blushes {
+    background-size: 589px;
+    background-position-x: 324px;
+    background-position-y: 614px;
 }
 
 .delete {
@@ -1466,28 +1472,40 @@ span{
     width:57px;
 }
 .itemthumbnail.for_earrings {
-background-size: 2039%;
-        background-position-x: -495px;
-        background-position-y: 17%;
+    background-size: 940px;
+    background-position-x: 459px;
+    background-position-y: 953px;
 }
-.itemthumbnail.for_blushes {
-        background-size: 823%;
-        background-position-x: -167px;
-        background-position-y: 14%;
+
+
+.itemthumbnail.for_chains {
+    background-size: 616px;
+    background-position-x: 323px;
+    background-position-y: 591px;
 }
-.itemthumbnail.for_choker, .itemthumbnail.for_chains {
-    background-size: 1512%;
-    background-position-x: -344px;
-    background-position-y: 22.1%;
+
+.itemthumbnail.for_choker{
+    background-size: 616px;
+    background-position-x: 324px;
+    background-position-y: 598px;
 }
+
 .itemthumbnail.for_necklace {
-    background-size: 1155%;
-    background-position-x: -257px;
-    background-position-y: 22%;
+    background-size: 616px;
+    background-position-x: 323px;
+    background-position-y: 591px;
 }
+
 .itemthumbnail.for_longnecklace {
-    background-size: 1116%;
-    background-position-x: -242px;
-    background-position-y: 29%;
+    background-size: 616px;
+    background-position-x: 330px;
+    background-position-y: 544px;
+
+}
+
+.itemthumbnail.for_blushes {
+    background-size: 589px;
+    background-position-x: 324px;
+    background-position-y: 614px;
 }
 }
