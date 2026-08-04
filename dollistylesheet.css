@@ -3,12 +3,12 @@ body{
     position: relative;
     margin:auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition:ease .5s;
+    transition:ease-out .3s;
     width:auto;
     height:100dvh;
     overflow-y: hidden;
     overflow-x:hidden;
-    background-image: url(DressupGame_Assets/Scenes/background3.webp);
+    background-image: url(DressupGame_Assets/Scenes/background3.jpg);
     background-size: 2061px;
     box-shadow: inset 0px 0px 50px #5914374d;
     padding-top: 3px;
@@ -294,7 +294,7 @@ body{
     height: auto;
     margin: auto;
     scroll-snap-align: center;
-    margin-bottom: 33px;
+
 }
 
 .optiontitle{
@@ -315,16 +315,19 @@ body{
 #options{
     overscroll-behavior-y: contain;
     scroll-snap-type: x mandatory;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;;
     transition: ease-out .3s;
+    position: relative;
+    top: -6px;
+    z-index: 11;
     display: flex;
     flex-direction: column;
     width: auto;
     flex-wrap: wrap;
     overflow-x: hidden;
     overflow-y: hidden;
-    padding-top:8px;
+    background: linear-gradient(180deg, #C7A4B0 20.19%, #BE9CA7 67.31%, #BD879E 100%);
+
 }
 
  #options::-webkit-scrollbar{
@@ -334,7 +337,9 @@ body{
 
 .optioncontainer{
     padding: 0;
-    height: 108px;
+    height: 154px;
+    position: relative;
+    top: 7px;
     width: 329px;
     display: flex;
     flex-wrap: wrap;
@@ -352,19 +357,18 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 3px;
-    height: 110px;
-    width:368px;
+    height: 160px;
+    width: 368px;
     display: block;
     border-radius: 10px;
     margin: auto;
-  
 }
 
 
 .beautyoptionsskin{
     width: 104px;
     z-index: 2;
-    height:80px;
+    height:66px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -382,7 +386,7 @@ body{
 .beautyoptionseyes{
     width: 104px;
     z-index: 2;
-    height:80px;
+    height:66px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -401,7 +405,7 @@ body{
 .beautyoptionsbrows{
     width: 104px;
     z-index: 2;
-    height:80px;
+    height:66px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -420,7 +424,7 @@ body{
 .beautyoptionsnose{
     width: 104px;
     z-index: 2;
-    height:80px;
+    height:66px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -439,7 +443,7 @@ body{
 .beautyoptionslips{
     width: 104px;
     z-index: 2;
-    height: 80px;
+    height:66px;
     background-color: #fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -458,7 +462,7 @@ body{
 .beautyoptionshair{
     width: 104px;
     z-index: 2;
-    height:80px;
+    height:66px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -477,7 +481,7 @@ body{
 .beautyoptionsmakeup{
     width: 104px;
     z-index: 2;
-    height:80px;
+    height:66px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -494,7 +498,7 @@ body{
 .beautyoptionstops{
     width: 104px;
     z-index: 2;
-    height:80px;
+    height:66px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -512,7 +516,7 @@ body{
 .beautyoptionsjewelry{
     width: 104px;
     z-index: 2;
-    height:80px;
+    height:66px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -530,7 +534,7 @@ body{
 .beautyoptionsbg{
     width: 104px;
     z-index: 2;
-    height:80px;
+    height:66px;
     background-color:#fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
@@ -597,7 +601,7 @@ body{
 @media screen and (max-width:396px){
 .beautyoptionsskin{
     width:93px;
-    height: 76px;
+    height: 54px;
     background-position-y: -41px;
     background-size: 422px;
     }
@@ -607,7 +611,7 @@ body{
     width: 93px;
     background-position-x: -435px;
     background-position-y: -160px;
-    height: 76px;
+    height: 54px;
     }
 }
 @media screen and (max-width:396px){
@@ -615,7 +619,7 @@ body{
     width:93px;
     background-position-x: -428px;
     background-position-y: -145px;
-    height: 76px;
+    height: 54px;
     }
 }
 @media screen and (max-width:396px){
@@ -623,7 +627,7 @@ body{
     width:93px;
     background-position-x: -623px;
     background-position-y: -265px;
-    height: 76px;
+    height: 54px;
     }
 }
 @media screen and (max-width:396px){
@@ -631,7 +635,7 @@ body{
     width: 93px;
     background-position-x: -584px;
     background-position-y: -268px;
-    height: 76px;
+    height: 54px;
     background-size: 1300px;
     }
 }
@@ -640,14 +644,14 @@ body{
     width:93px;
     background-position-x: -98px;
     background-position-y: -13px;
-    height: 76px;
+    height: 54px;
     }
 }
 
 @media screen and (max-width:396px){
 .beautyoptionsjewelry{
     width:93px;
-    height: 76px;
+    height: 54px;
     }
 
 .beautyoptionsjewelry.earrings{
@@ -664,12 +668,12 @@ body{
 
 .beautyoptionsbg{
     width:93px;
-    height: 76px;
+    height: 54px;
     }
     
 .beautyoptionstops{
     width: 93px;
-    height: 76px;
+    height: 54px;
     background-size: 315%;
     background-position-y: -79px;
     background-position-x: -106px;
@@ -677,7 +681,7 @@ body{
     
 .beautyoptionsmakeup{
     width: 93px;
-    height: 76px;
+    height: 54px;
     background-position-y: -41px;
     background-size: 422px;
     margin-top: 0px;
@@ -801,72 +805,117 @@ body{
 
 .nav{
     display: flex;
+    
     flex-direction: row;
     position: relative;
-    justify-content: space-between;
-    align-items: center;
     margin: auto;
+    margin-top:10px;
     padding-bottom: 0;
     padding-top: 0;
     left: 0;
     right: 0;
+
     width: 390px;
-    height: 80px;
+    height: 43px;
     z-index: 3;
     background-size: cover;
+    flex-wrap: nowrap;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    clip-path: border-box;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.nav::-webkit-scrollbar{
+    display: none;
 }
 
 .navbutton{
-    width: 64px;
-    height: 28px;
+    height: 56.2px;
+    margin-left: -20.5px;
     transition: ease-out .3s;
     border-radius: 8px;
-    filter: brightness(1);
-    background-color:#a16588 ;
-    border-bottom:#984871 solid 3px;
-    box-shadow: 2px 7px 8px -8px #412b55;
-    -webkit-box-shadow: 2px 7px 8px -8px #412b55;
-    -moz-box-shadow: 2px 7px 8px -8px;
+    position: relative;
+    filter: brightness(1);    
+    cursor: pointer;
+
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.navbutton.active{
+    z-index: 10;
 
 }
 
-.navbutton.active,
-.navbutton:hover,
-.next:hover{
-    outline: 2px solid #984871 ;
-    cursor: pointer;
+.navbutton.active:hover{
+    z-index: 10;
+    -webkit-filter:unset;
+}
+
+.navbutton:hover{
+    -webkit-filter: brightness(1.1);
 }
 
 
 .navbuttoncontainer{
     position: relative;
     display: flex;
-    gap: 10px;
+    padding-left: 21px;
     width: auto;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-around;
-    margin-top: 6px;
+
+}
+
+#scrollguide{
+    position: absolute;
+    width: 100%;
+    height: 36px;
+    z-index: 20;
+    transition: ease-out smooth 0.3s;
+    opacity:.8;
+}
+
+.dot{
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    background-color: white;
+    position: inherit;
+    border-radius: 100px;
+    display:block;
+    animation-name: scrollguidedot;
+    animation-duration: 1s;
+    animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+    animation-iteration-count: infinite;
+}
+
+@keyframes scrollguidedot{
+  0%   {left:100%;}
+
+  100% {left:0%;}
 }
 
 @media screen and (max-width:396px){
 .navbutton{
-  width:17%;
-  height: auto;
+  height: 52.7px;
     }
 .nav{
   padding-bottom:2px;
   width:360px;
     }
-.navbuttoncontainer{
-    gap:11px;
-    margin-top: 10px;
-    }
+
 }
 
 
 ::-webkit-scrollbar {
   width: 4px;
-  height:10px;
+  height:4px;
   box-shadow: 2px 8px 28px -8px #412b55;
   -webkit-box-shadow: 2px 8px 28px -8px #412b55;
   -moz-box-shadow: 2px 8px 28px -8px #412b55;
@@ -1028,7 +1077,7 @@ img.jewelrystyle.earring{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url(DressupGame_Assets/Scenes/background3.webp);
+  background-image: url(DressupGame_Assets/Scenes/background3.jpg);
   background-size: 2061px;
   box-shadow: inset 0px 0px 50px #5914374d;
 }
@@ -1197,8 +1246,9 @@ span{
     width: 8px;
     text-align: center;
     padding-left: 5px;
+    margin-top: 7px;
     padding-right: 5px;
-    height: 78px;
+    height: 139px;
     flex: auto;
     background: linear-gradient(90deg, #AA6E82 0%, #A35B7E 44.06%, #964B71 47.89%, #A45F82 93.86%);
     border-radius: 6px;
@@ -1210,6 +1260,11 @@ span{
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition: ease-out .3s;
     cursor: pointer;
+    opacity:.8;
+}
+
+.next:hover{
+    opacity:1;
 }
 
 .optionnav{
@@ -1217,9 +1272,9 @@ span{
     display: flex;
     flex-direction: row;
     width: 379px;
+    height: auto;
     gap: 341px;
     margin: auto;
-    margin-top:28px;
     z-index: 1;
     left: 0;
     right: 0;
@@ -1228,21 +1283,25 @@ span{
 
 @media screen and (max-width:396px){
 .padding{
-    height:100px;
+    height:135px;
     width:342px;
     }
 .optioncontainer{
-    height: 90px;
+    height: 126px;
     gap: 8px;
     width: 294px;
 }
 .optionnav{
     width: 350px;
+    height: auto;
     gap: 310px;
-    margin-top: 30px;
+    margin-top: 17px;
+}
+#options{
+    top:-7px;
 }
 .next{
-    height: 76px;
+    height: 116px;
     margin-top: -11px;
 }
 .inputcontainer{

@@ -1287,7 +1287,9 @@
 <section class="bottombox">
 
  <section class="nav">
-           
+    <div id="scrollguide" onmouseenter="closeGuide();" ontouchmove="closeGuide();">
+        <div class="dot"></div>
+    </div>       
 
 <div class="navbuttoncontainer">
     <img loading="lazy" class="navbutton" onclick="goToSection(0)" 
@@ -1352,7 +1354,7 @@
             
 
 
-            <p class="optiontitle">Skin Details</p>
+       
             <div class="optioncontainer">
             <div onclick="changeSkinDetail('freckles', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/freckles.png)"></div>
             <div onclick="changeSkinDetail('undereyeshadow', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/undereyeshadow.png)"></div>
@@ -1360,7 +1362,7 @@
             <div onclick="changeSkinDetail('lipmark', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/lipmark.png)"></div>
             <div onclick="changeSkinDetail('lefteyemark', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/lefteyemark.png)"></div>
             <div onclick="changeSkinDetail('righteyemark', this)" data-category="skin" loading="lazy" class="beautyoptionsskin" style="background-image:url(DressupGame_Assets/Bodies/Details/detailthumbnail/righteyemark.png)"></div>
-            <div loading="lazy" class="beautyoptionsskin"></div>
+   
             </div>
             </div>
         </div>
@@ -1369,7 +1371,7 @@
             
             
             <div class="padding">
-            <p class="optiontitle">Eyes</p>
+
             <div class="optioncontainer">
                     <div onclick="changeEyeShape('shape-nice', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/nice_eyes.png)"></div> 
                     <div onclick="changeEyeShape('shape-brat', this)" data-category="eyes" loading="lazy" class="beautyoptionseyes"  style="background-image:url(DressupGame_Assets/Beauty/Eyes/Eyesthumbnail/brat_eyes.png)"></div>
@@ -1385,7 +1387,7 @@
         <div class="itemcontainer"> 
             
             <div class="padding">
-            <p class="optiontitle">Eyebrows</p>   
+        
             <div class="optioncontainer">
                     <div onclick="changeBrowShape('browshape1', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows" style="background-image:url(DressupGame_Assets/Beauty/Brows/brows1_black.webp)"></div>
                     <div onclick="changeBrowShape('browshape8', this)" data-category="brows"  loading="lazy" class="beautyoptionsbrows"  style="background-image:url(DressupGame_Assets/Beauty/Brows/brows8_black.webp)"></div>
@@ -1402,7 +1404,7 @@
         <div class="itemcontainer"> 
             
              <div class="padding">
-             <p class="optiontitle">Noses</p>   
+
             <div class="optioncontainer">
                     <div  onclick="changeNoseShape('noseshape2', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose2.png)"></div>
                     <div  onclick="changeNoseShape('noseshape3', this)" loading="lazy" class="beautyoptionsnose" style="background-image:url(DressupGame_Assets/Beauty/Nose/Nosethumbnail/nose3.png)"></div>
@@ -1419,7 +1421,7 @@
         <div class="itemcontainer"> 
             
              <div class="padding">
-             <p class="optiontitle">Lips</p>   
+
             <div class="optioncontainer">
                     <div  onclick="changeLipShape('lipshape1', this)" data-category="lips" loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/Lipsthumbnail/lips1.png)"></div>
                     <div onclick="changeLipShape('lipshape2', this)" data-category="lips" loading="lazy" class="beautyoptionslips" style="background-image:url(DressupGame_Assets/Beauty/Lips/Lipsthumbnail/lips2.png)"></div>
@@ -1436,7 +1438,7 @@
         <div class="itemcontainer" > 
             
              <div class="padding">
-             <p class="optiontitle">Hairstyles</p>   
+
             <div class="optioncontainer">
                     <div onclick="changeHairShape('hairstyle16', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair16.png)"></div>
                     <div onclick="changeHairShape('hairstyle7', this)" data-category="hairs" loading="lazy" class="beautyoptionshair" style="background-image:url(DressupGame_Assets/Hairs/Hairthumbnails/hair7.png)"></div>
@@ -1464,12 +1466,15 @@
         <div class="itemcontainer"> 
             
              <div class="padding">
-             <p class="optiontitle">Makeup</p>   
+  
             <div class="optioncontainer">
                     <div onclick="changeBlushShape('blush1', this)" data-category="blush" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/blush1.png)"></div>
                     <div onclick="changeBlushShape('blush2', this)" data-category="blush" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/blush2.png)"></div>
                     <div onclick="changeBlushShape('blush3', this)" data-category="blush" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/blush3.png)"></div>
                     <div onclick="changeBlushShape('highlight', this)" data-category="blush" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/highlighter.png)"></div>
+                    <div loading="lazy" class="beautyoptionsmakeup"></div>
+                    <div loading="lazy" class="beautyoptionsmakeup"></div>
+                    
 
             </div>
             </div>
@@ -1478,7 +1483,7 @@
         <div class="itemcontainer"> 
             
              <div class="padding">
-             <p class="optiontitle">Tops</p>   
+
             <div class="optioncontainer">  
                     <div onclick="changeTopShape('bandeau', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Under/Bandeau/pattern_bandeau_black.webp);" ></div>
                     <div onclick="changeTopShape('beyonce', this)" data-category="tops" loading="lazy" class="beautyoptionstops" style="background-image: url(DressupGame_Assets/Clothes/Tops/Beyonce/beyonce_black.webp);"></div> 
@@ -1506,7 +1511,7 @@
         <div class="itemcontainer"> 
             
              <div class="padding">
-             <p class="optiontitle">Jewelries</p>   
+           
             <div class="optioncontainer">
                   <div onclick="changeJewelryShape('droop', this)" data-colors="gold,silver" class="beautyoptionsjewelry earrings" style="background-image:url(DressupGame_Assets/Clothes/Jewelry/Jewelry_Thumbnails/droops.png)"></div>
                   <div onclick="changeJewelryShape('hoop', this)" data-colors="gold,silver" class="beautyoptionsjewelry earrings" style="background-image:url(DressupGame_Assets/Clothes/Jewelry/Jewelry_Thumbnails/hoops.png)"></div>
@@ -1532,7 +1537,7 @@
          <div class="itemcontainer" > 
             
             <div class="padding">
-            <p class="optiontitle">Backgrounds</p>    
+        
             <div class="optioncontainer">
                 <div onclick="changeBackground('DressupGame_Assets/Scenes/cloudysky.webp', this)" loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/cloudysky.webp)"></div>
                 <div onclick="changeBackground('DressupGame_Assets/Scenes/pinkleopardprint.webp', this)" loading="lazy" class="beautyoptionsbg" style="background-image:url(DressupGame_Assets/Scenes/pinkleopardprint.webp)"></div>
@@ -1677,6 +1682,11 @@ function toggleMute(el) {
   currentSong.muted = !currentSong.muted;
   el.classList.toggle("muted", currentSong.muted);
 }
+
+function closeGuide() {
+  document.getElementById('scrollguide').style.display = 'none';
+}
+
 </script>
 
 <script src="infoboxscript.js" defer></script>
