@@ -320,7 +320,7 @@ function undo() {
   activeJewelryIds = new Set(prev.activeJewelryIds || []);
   currentJewelryId = prev.currentJewelryId;
   currentJewelryColor = prev.currentJewelryColor;
-activeJewelryIds.forEach(id => {
+  activeJewelryIds.forEach(id => {
     const shape = document.getElementById(id);
     if (!shape) return;
     const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");

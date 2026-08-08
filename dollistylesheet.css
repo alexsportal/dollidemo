@@ -377,9 +377,10 @@ body{
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
     cursor: pointer;
-    background-size: 707px;
+    background-size: 825px;
     background-position: center;
-    background-position-y: -119px;
+    background-position-x: -356px;
+    background-position-y: -139px;
     cursor: pointer;
 }
 
@@ -489,9 +490,10 @@ body{
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
     cursor: pointer;
-    background-size: 450px;
+    background-size: 825px;
     background-position: center;
-    background-position-y: -40px;
+    background-position-x: -356px;
+    background-position-y: -139px;
     cursor:pointer;
 }
 .beautyoptionstops{
@@ -601,10 +603,10 @@ body{
 .beautyoptionsskin{
     width:93px;
     height: 54px;
-    background-size: 707px;
-
-    background-position-y: -130px;
-    cursor: pointer;
+        background-size: 786px;
+        background-position: center;
+        background-position-x: -341px;
+        background-position-y: -141px;
     }
 }
 @media screen and (max-width:396px){
@@ -685,9 +687,10 @@ body{
 .beautyoptionsmakeup{
     width: 93px;
     height: 54px;
-    background-position-y: -41px;
-    background-size: 422px;
-    margin-top: 0px;
+    background-size: 786px;
+    background-position: center;
+    background-position-x: -341px;
+    background-position-y: -141px;
     }
 
 .optiontitle{
