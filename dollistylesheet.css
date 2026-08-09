@@ -6,12 +6,12 @@ body{
     transition:ease-out .3s;
     width:auto;
     height:100dvh;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x:hidden;
     background-image: url(DressupGame_Assets/Scenes/background1.webp);
     background-size: 2061px;
     box-shadow: inset 0px 0px 50px #5914374d;
-    padding-top: 5px;
+    padding-top: 3px;
     user-select: none;
 
 }
@@ -58,6 +58,7 @@ body{
 
 
 #border{
+    top:10px;
     max-width:390px;
     min-width:390px;
     margin:auto;
@@ -125,16 +126,16 @@ body{
         min-width:350px;
     }
     #infoborder{
-        max-width:30px;
-        min-width:360px;
-        max-height:657px;
-        min-height:657px;
+        max-width: 30px;
+        min-width: 360px;
+        max-height: 633px;
+        min-height: 645px;
     }
     #infogamecontain{
         max-width:350px;
-        min-width:350px;
-        max-height:650px;
-        min-height:650px;
+        min-width: 350px;
+        max-height: 595px;
+        min-height: 639px;
     }
 }
 
@@ -1195,16 +1196,16 @@ span{
 }
 
 #infooverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9998;
-  display: none;
-  padding-top: 3px;
-  user-select: none;
-  background-color:#6b4c732b;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    display: none;
+
+    user-select: none;
+    background-color: #6b4c732b;
 }
 
 
@@ -1240,6 +1241,8 @@ span{
 
 .bottombox{
     width:390px;
+    position:relative;
+    top:10px;
     margin:auto;
 }
 @media screen and (max-width:396px){
@@ -1583,41 +1586,7 @@ span{
     font-size: xx-large;
 }
 
-/*
 
-@media screen and (min-width:768px){
-.bottombox {
-    width: 390px;
-    margin: auto;
-    position: relative;
-    transform: scale(1.3);
-    top: 180px;
-    overflow-y: auto;
-}
-#border{
-    transform: scale(1.3);
-    top: 80px;
-}
-.loadingtext{
-    font-size: larger;
-}
-}
-
-@media screen and (min-device-width:820px){
-.bottombox {
-        width: 390px;
-        margin: auto;
-        position: relative;
-        transform: scale(1.5);
-        top: 292px;
-        overflow-y: auto;
-}
-#border{
-        transform: scale(1.5);
-        top: 125px;
-}
-}
-*/
 
 
 
@@ -1671,13 +1640,12 @@ span{
         width: 390px;
         margin: auto;
         position: relative;
-        transform: scale(1.1);
-        top: 67px;
+        transform: scale(1);
+        top: 10px;
         overflow-y: auto;
 }
 #border{
-        transform: scale(1.1);
-        top: 34px;
+        transform: scale(1);
+        top: 11px;
 }
 }
-
