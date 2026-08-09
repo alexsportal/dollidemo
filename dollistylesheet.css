@@ -1577,6 +1577,12 @@ span{
 }
 }
 
+
+.loadingtext{
+    font-family: zainreg;
+    font-size: xx-large;
+}
+
 /*
 
 @media screen and (min-width:768px){
