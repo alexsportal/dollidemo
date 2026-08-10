@@ -930,9 +930,7 @@ body{
 }
 
 @media screen and (max-width:396px){
-.navbutton{
-  height: 52.7px;
-    }
+
 .nav{
   padding-bottom:2px;
   width:360px;
