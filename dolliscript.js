@@ -1537,8 +1537,7 @@ function deleteItem(id, category) {
     renderItemContainer();
 }
 
-
-
+// ─── SCROLL ───────────────────────────────────────────────
 
 let mouseDown = false;
 let startX, scrollLeft;
@@ -1562,7 +1561,6 @@ const move = (e) => {
   slider.scrollLeft = scrollLeft - scroll;
 }
 
-// Add the event listeners
 slider.addEventListener('mousemove', move, false);
 slider.addEventListener('mousedown', startDragging, false);
 slider.addEventListener('mouseup', stopDragging, false);

@@ -882,11 +882,28 @@ body{
 
 }
 
+.navbuttonicons{
+    position: relative;
+    z-index: 100;
+    width: 26px;
+    left: -5px;
+    top: 2px;
+}
+
+.navbuttontext{
+    position: relative;
+    font-size: 11px;
+    top: -35px;
+    left: 26px;
+    z-index: 20;
+    color: #511a36;
+}
+
 #scrollguide{
     position: absolute;
     width: 100%;
     height: 36px;
-    z-index: 20;
+    z-index: 200;
     transition: ease-out smooth 0.3s;
     opacity:.8;
 }
@@ -895,6 +912,7 @@ body{
     width: 25px;
     height: 25px;
     top: 5px;
+    z-index: 100;
     background-color: white;
     position: inherit;
     border-radius: 100px;
