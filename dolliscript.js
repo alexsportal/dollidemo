@@ -1492,6 +1492,7 @@ function selectItemThumbnail(el, id, category) {
         goToSection(sections.indexOf("tops"));
         showFrontColorDisplay("tops", currentTopColor);
     }
+    
     if (category === "blush") {
         const btn = document.querySelector(`.beautyoptionsmakeup[onclick*="${id}"]`);
         if (btn) setSelectedMakeup(btn);
