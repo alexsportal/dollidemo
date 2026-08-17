@@ -269,6 +269,19 @@
             <div class="blushcolorsdisplay" style="background:linear-gradient(180deg, #e06a88, #c9486b);"></div>
             <div class="blushcolorsdisplay" style="background:linear-gradient(180deg, #c0003a, #930027);"></div>
 
+            <!--SHADOW1 COLOR DISPLAY-->
+            <div class="shadow1colorsdisplay" style="background:linear-gradient(180deg, #5c3a5e, #3c2340);"></div>
+            <div class="shadow1colorsdisplay" style="background:linear-gradient(180deg, #c98fae, #b06f92);"></div>
+
+            <!--SHADOW2 COLOR DISPLAY-->
+            <div class="shadow2colorsdisplay" style="background:linear-gradient(180deg, #4a2d3f, #2e1a28);"></div>
+            <div class="shadow2colorsdisplay" style="background:linear-gradient(180deg, #d9a8c0, #c088a3);"></div>
+
+            <!--SHADOW3 COLOR DISPLAY-->
+            <div class="shadow3colorsdisplay" style="background:linear-gradient(180deg, #33202e, #1f1119);"></div>
+            <div class="shadow3colorsdisplay" style="background:linear-gradient(180deg, #e6c2d4, #d1a3ba);"></div>
+
+
              <!--BG COLOR DISPLAY-->
              <div class="bgcolorsdisplay" style="background: linear-gradient(180deg, #C85187, #ae2563);"></div>
              <div class="bgcolorsdisplay" style="background: linear-gradient(180deg, #881B34, #70041E);"></div>
@@ -316,6 +329,9 @@
         <div onclick="changeHairColor('black', this)" class="coloroption" data-category="hairs" style="background:linear-gradient(180deg, #292828, #000000);"></div>
         <div onclick="changeBrowColor('black', this)" class="coloroption" data-category="brows" style="background:linear-gradient(180deg, #292828, #000000);"></div>
         <div onclick="changeLipColor('brown', this)" class="coloroption" data-category="lips" style="background:linear-gradient(180deg, #5c2e0a, #391b04);"></div>
+        <div onclick="changeEyeMakeupColor('shadow1', 'dark', this)" class="coloroption" data-category="shadow1" style="background:linear-gradient(180deg, #5c3a5e, #3c2340);"></div>
+        <div onclick="changeEyeMakeupColor('shadow2', 'dark', this)" class="coloroption" data-category="shadow2" style="background:linear-gradient(180deg, #4a2d3f, #2e1a28);"></div>
+        <div onclick="changeEyeMakeupColor('shadow3', 'dark', this)" class="coloroption" data-category="shadow3" style="background:linear-gradient(180deg, #33202e, #1f1119);"></div>
         <div onclick="changeBlushColor('dark', this)" class="coloroption" data-category="blush" style="background:linear-gradient(180deg, #7a1230, #530a1d);"></div>
         <div onclick="changeBackgroundColor('linear-gradient(180deg, #C85187, #ae2563)', this)" class="coloroption" data-category="bg" style="background:linear-gradient(180deg, #C85187, #ae2563);"></div>
         <div onclick="changeTopColor('pink', this)"   class="coloroption" data-category="tops" style="background:linear-gradient(180deg, #f0a0bc, #e87fa0);"></div>
@@ -328,6 +344,9 @@
         <div onclick="changeHairColor('brown', this)" class="coloroption" data-category="hairs" style="background:linear-gradient(180deg, #5e3e27, #412b19);"></div>
         <div onclick="changeBrowColor('brown', this)" class="coloroption" data-category="brows" style="background:linear-gradient(180deg, #5e3e27, #412b19);"></div>
         <div onclick="changeLipColor('plum', this)" class="coloroption" data-category="lips" style="background:linear-gradient(180deg, #6a2d52, #411934);"></div> 
+        <div onclick="changeEyeMakeupColor('shadow1', 'light', this)" class="coloroption" data-category="shadow1" style="background:linear-gradient(180deg, #c98fae, #b06f92);"></div>
+        <div onclick="changeEyeMakeupColor('shadow2', 'light', this)" class="coloroption" data-category="shadow2" style="background:linear-gradient(180deg, #d9a8c0, #c088a3);"></div>
+        <div onclick="changeEyeMakeupColor('shadow3', 'light', this)" class="coloroption" data-category="shadow3" style="background:linear-gradient(180deg, #e6c2d4, #d1a3ba);"></div>
         <div onclick="changeBlushColor('medium', this)" class="coloroption" data-category="blush" style="background:linear-gradient(180deg, #c04858, #982f3f);"></div>
         <div onclick="changeBackgroundColor('linear-gradient(180deg, #881b34, #70041e)', this)" class="coloroption" data-category="bg" style="background: linear-gradient(180deg, #881B34, #70041E);"></div>
         <div onclick="changeTopColor('red', this)"    class="coloroption" data-category="tops" style="background:linear-gradient(180deg, #d95244, #c0392b);"></div>
@@ -340,6 +359,7 @@
         <div onclick="changeHairColor('blonde', this)" class="coloroption" data-category="hairs" style="background:linear-gradient(180deg, #b8865e, #906847);"></div>
         <div onclick="changeBrowColor('blonde', this)" class="coloroption" data-category="brows" style="background:linear-gradient(180deg, #b8865e, #906847);"></div>
         <div onclick="changeLipColor('pink', this)" class="coloroption" data-category="lips" style="background:linear-gradient(180deg, #c45e7e, #a14663);"></div>
+        
         <div onclick="changeBlushColor('light', this)" class="coloroption" data-category="blush" style="background:linear-gradient(180deg, #e06a88, #c9486b);"></div>
         <div onclick="changeBackgroundColor('linear-gradient(180deg, #C66D36, #964512)', this)" class="coloroption" data-category="bg" style="background: linear-gradient(180deg, #C66D36, #964512);"></div>
         <div onclick="changeTopColor('yellow', this)"  class="coloroption" data-category="tops" style="background:linear-gradient(180deg, #f0d870, #e8c84a);"></div>
@@ -702,9 +722,9 @@
                 <img loading="lazy" src="DressupGame_Assets/Beauty/Nose/nose5_light.webp" class="noselight"/>
                 </div>
 
-                <div class="noseshape" id="noseshape6"  style="transform: scale(.95);position:relative">
-                <img  style="margin-left: 1.5px;" loading="lazy" src="DressupGame_Assets/Beauty/Nose/nose6_dark.webp"  class="nosedark"/>
-                <img style="margin-left: 1.5px;" loading="lazy" src="DressupGame_Assets/Beauty/Nose/nose6_light.webp" class="noselight"/>
+                <div class="noseshape" id="noseshape6"  style="transform: scale(.95);">
+                <img  style="margin-left: 1.5px;margin-top:1px" loading="lazy" src="DressupGame_Assets/Beauty/Nose/nose6_dark.webp"  class="nosedark"/>
+                <img style="margin-left: 1.5px;margin-top:1px" loading="lazy" src="DressupGame_Assets/Beauty/Nose/nose6_light.webp" class="noselight"/>
                 </div>
 
                 <div class="noseshape" id="noseshape7" style="position: relative;margin-top: -1px;margin-left: -2px;">
@@ -751,6 +771,184 @@
                     <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Blush/highlight_light.webp" data-color="light"  class="blushes"/>
                     <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Blush/highlight_rouge.webp" data-color="rouge"  class="blushes"/>
                     </div>
+                </div>
+
+                <!--EYE MAKEUP-->
+                <div class="eyemakeup">
+                <div class="eyemakeupshape" id="shadow3-cool" data-type="shadow3" data-family="cool">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Cool_Eyes/cool_eyes_shadow3_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Cool_Eyes/cool_eyes_shadow3_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+
+                <div class="eyemakeupshape" id="shadow2-cool" data-type="shadow2" data-family="cool">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Cool_Eyes/cool_eyes_shadow2_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Cool_Eyes/cool_eyes_shadow2_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow1-cool" data-type="shadow1" data-family="cool">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Cool_Eyes/cool_eyes_shadow1_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Cool_Eyes/cool_eyes_shadow1_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="liner-cool" data-type="liner" data-family="cool">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Cool_Eyes/cool_eyes_liner.webp" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="lashes-cool" data-type="lashes" data-family="cool">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Cool_Eyes/cool_eyes_lashes.webp" class="eyemakeups"/>
+                </div>
+
+
+
+                <div class="eyemakeupshape" id="shadow3-brat" data-type="shadow3" data-family="brat">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Brat_Eyes/brat_eyes_shadow3_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Brat_Eyes/brat_eyes_shadow3_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow2-brat" data-type="shadow2" data-family="brat">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Brat_Eyes/brat_eyes_shadow2_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Brat_Eyes/brat_eyes_shadow2_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow1-brat" data-type="shadow1" data-family="brat">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Brat_Eyes/brat_eyes_shadow1_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Brat_Eyes/brat_eyes_shadow1_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="liner-brat" data-type="liner" data-family="brat">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Brat_Eyes/brat_eyes_liner.webp" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="lashes-brat" data-type="lashes" data-family="brat">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Brat_Eyes/brat_eyes_lashes.webp" class="eyemakeups"/>
+                </div>
+
+
+
+
+                <div class="eyemakeupshape" id="shadow3-droop" data-type="shadow3" data-family="droop">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Droop_Eyes/droop_eyes_shadow3_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Droop_Eyes/droop_eyes_shadow3_light.webp" data-color="light" class="eyemakeups"/>
+                </div>                
+                <div class="eyemakeupshape" id="shadow2-droop" data-type="shadow2" data-family="droop">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Droop_Eyes/droop_eyes_shadow2_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Droop_Eyes/droop_eyes_shadow2_light.webp" data-color="light" class="eyemakeups"/>
+                </div>                
+                <div class="eyemakeupshape" id="shadow1-droop" data-type="shadow1" data-family="droop">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Droop_Eyes/droop_eyes_shadow1_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Droop_Eyes/droop_eyes_shadow1_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="liner-droop" data-type="liner" data-family="droop">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Droop_Eyes/droop_eyes_liner.webp" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="lashes-droop" data-type="lashes" data-family="droop">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Droop_Eyes/droop_eyes_lashes.webp" class="eyemakeups"/>
+                </div>               
+
+
+
+                <div class="eyemakeupshape" id="shadow3-nice" data-type="shadow3" data-family="nice">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Nice_Eyes/nice_eyes_shadow3_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Nice_Eyes/nice_eyes_shadow3_light.webp" data-color="light" class="eyemakeups"/>
+                </div>                
+                <div class="eyemakeupshape" id="shadow2-nice" data-type="shadow2" data-family="nice">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Nice_Eyes/nice_eyes_shadow2_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Nice_Eyes/nice_eyes_shadow2_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow1-nice" data-type="shadow1" data-family="nice">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Nice_Eyes/nice_eyes_shadow1_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Nice_Eyes/nice_eyes_shadow1_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="liner-nice" data-type="liner" data-family="nice">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Nice_Eyes/nice_eyes_liner.webp" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="lashes-nice" data-type="lashes" data-family="nice">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Nice_Eyes/nice_eyes_lashes.webp" class="eyemakeups"/>
+                </div>
+
+
+
+
+                <div class="eyemakeupshape" id="shadow3-joy" data-type="shadow3" data-family="joy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Joy_Eyes/joy_eyes_shadow3_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Joy_Eyes/joy_eyes_shadow3_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow2-joy" data-type="shadow2" data-family="joy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Joy_Eyes/joy_eyes_shadow2_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Joy_Eyes/joy_eyes_shadow2_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow1-joy" data-type="shadow1" data-family="joy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Joy_Eyes/joy_eyes_shadow1_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Joy_Eyes/joy_eyes_shadow1_light.webp" data-color="light" class="eyemakeups"/>
+                </div>                
+                <div class="eyemakeupshape" id="liner-joy" data-type="liner" data-family="joy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Joy_Eyes/joy_eyes_liner.webp" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="lashes-joy" data-type="lashes" data-family="joy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Joy_Eyes/joy_eyes_lashes.webp" class="eyemakeups"/>
+                </div>
+
+
+
+
+                <div class="eyemakeupshape" id="shadow3-calm" data-type="shadow3" data-family="calm">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Calm_Eyes/calm_eyes_shadow3_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Calm_Eyes/calm_eyes_shadow3_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow2-calm" data-type="shadow2" data-family="calm">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Calm_Eyes/calm_eyes_shadow2_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Calm_Eyes/calm_eyes_shadow2_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow1-calm" data-type="shadow1" data-family="calm">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Calm_Eyes/calm_eyes_shadow1_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Calm_Eyes/calm_eyes_shadow1_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="liner-calm" data-type="liner" data-family="calm">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Calm_Eyes/calm_eyes_liner.webp" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="lashes-calm" data-type="lashes" data-family="calm">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Calm_Eyes/calm_eyes_lashes.webp" class="eyemakeups"/>
+                </div>
+
+
+
+
+                <div class="eyemakeupshape" id="shadow3-sweet" data-type="shadow3" data-family="sweet">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Sweet_Eyes/sweet_eyes_shadow3_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Sweet_Eyes/sweet_eyes_shadow3_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow2-sweet" data-type="shadow2" data-family="sweet">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Sweet_Eyes/sweet_eyes_shadow2_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Sweet_Eyes/sweet_eyes_shadow2_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="shadow1-sweet" data-type="shadow1" data-family="sweet">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Sweet_Eyes/sweet_eyes_shadow1_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Sweet_Eyes/sweet_eyes_shadow1_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="liner-sweet" data-type="liner" data-family="sweet">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Sweet_Eyes/sweet_eyes_liner.webp" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="lashes-sweet" data-type="lashes" data-family="sweet">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Sweet_Eyes/sweet_eyes_lashes.webp" class="eyemakeups"/>
+                </div>
+
+
+
+
+                <div class="eyemakeupshape" id="shadow3-happy" data-type="shadow3" data-family="happy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Happy_Eyes/happy_eyes_shadow3_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Happy_Eyes/happy_eyes_shadow3_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                  <div class="eyemakeupshape" id="shadow2-happy" data-type="shadow2" data-family="happy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Happy_Eyes/happy_eyes_shadow2_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Happy_Eyes/happy_eyes_shadow2_light.webp" data-color="light" class="eyemakeups"/>
+                </div>              
+                <div class="eyemakeupshape" id="shadow1-happy" data-type="shadow1" data-family="happy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Happy_Eyes/happy_eyes_shadow1_dark.webp" data-color="dark" class="eyemakeups"/>
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Happy_Eyes/happy_eyes_shadow1_light.webp" data-color="light" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="liner-happy" data-type="liner" data-family="happy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Happy_Eyes/happy_eyes_liner.webp" class="eyemakeups"/>
+                </div>
+                <div class="eyemakeupshape" id="lashes-happy" data-type="lashes" data-family="happy">
+                    <img loading="lazy" src="DressupGame_Assets/Beauty/Makeup/Eyeshadow/Happy_Eyes/happy_eyes_lashes.webp" class="eyemakeups"/>
+                </div>
+
+
+
                 </div>
 
 
@@ -971,7 +1169,7 @@
                     </div>
 
                     <div class="hairshape" id="hairstyle17">
-                    <img src="DressupGame_Assets/Hairs/Hairstyles/Hairstyle17/hairstyle17_black.webp" data-color="black" class="hairstyles"/>
+                    <img src="DressupGame_Assets/Hairs/Hairstyles/Hairstyle17/hairstyle17_black.webp"  data-color="black" class="hairstyles"/>
                     <img src="DressupGame_Assets/Hairs/Hairstyles/Hairstyle17/hairstyle17_brown.webp"  data-color="brown" class="hairstyles"/>
                     <img src="DressupGame_Assets/Hairs/Hairstyles/Hairstyle17/hairstyle17_blonde.webp" data-color="blonde" class="hairstyles"/>
                     <img src="DressupGame_Assets/Hairs/Hairstyles/Hairstyle17/hairstyle17_orange.webp" data-color="orange" class="hairstyles"/>
@@ -1582,9 +1780,12 @@
                     <div onclick="changeBlushShape('blush2', this)" data-category="blush" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/blush2.png)"></div>
                     <div onclick="changeBlushShape('blush3', this)" data-category="blush" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/blush3.png)"></div>
                     <div onclick="changeBlushShape('highlight', this)" data-category="blush" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/highlight1.png)"></div>
-                    <div loading="lazy" class="beautyoptionsmakeup" style="background-color: #ffffff55;cursor: default;"></div>
-                    <div loading="lazy" class="beautyoptionsmakeup" style="background-color: #ffffff55;cursor: default;"></div>
-                    
+                    <div onclick="changeEyeMakeupType('shadow1', this)" data-category="shadow1" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/shadow1.png)"></div>
+                    <div onclick="changeEyeMakeupType('shadow2', this)" data-category="shadow2" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/shadow2.png)"></div>
+                    <div onclick="changeEyeMakeupType('shadow3', this)" data-category="shadow3" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/shadow3.png)"></div>
+                    <div onclick="changeEyeMakeupType('liner', this)" data-category="liner" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/liner1.png)"></div>
+                    <div onclick="changeEyeMakeupType('lashes', this)" data-category="lashes" loading="lazy" class="beautyoptionsmakeup" style="background-image:url(DressupGame_Assets/Beauty/Makeup/Makeup_Thumbnails/lashes1.png)"></div>
+                                        
 
             </div>
             </div>
@@ -1710,13 +1911,14 @@
 
 <script>
 function applyColorFilter(value) {
-    if (["hairs", "brows", "lips", "tops"].includes(activeColorCategory)) {
-        document.getElementById("frontcolor").style.filter = `hue-rotate(${value}deg) saturate(1.1)`;
-    }
+
+  if (["hairs", "brows", "lips", "tops"].includes(activeColorCategory) || eyeMakeupTypes.includes(activeColorCategory)) {
+        document.getElementById("frontcolor").style.filter = `hue-rotate(${value}deg) saturate(1.1)`;}
 
   if (!activeColorCategory || ["nose", "bg", "jewelry", "skin"].includes(activeColorCategory)) return;
   let activeImg = null;
 
+  
   if (activeColorCategory === "hairs") {
     const shape = document.getElementById(currentHairId);
     activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
@@ -1734,6 +1936,13 @@ function applyColorFilter(value) {
     activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
     currentLipHue = parseInt(value);
 }
+
+  else if (eyeMakeupTypes.includes(activeColorCategory)) {
+    const family = getEyeFamily();
+    const shape = document.getElementById(`${activeColorCategory}-${family}`);
+    activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
+    eyeMakeupState[activeColorCategory].hue = parseInt(value);
+  }
 
   if (!activeImg) return;
   activeImg.style.filter = `hue-rotate(${value}deg) saturate(1.1)`;
@@ -1757,6 +1966,16 @@ if (activeColorCategory === "skin" && activeDetailId) {
         skinDetailOpacity[activeDetailId] = value;
     }
 }
+ if (eyeMakeupTypes.includes(activeColorCategory)) {
+    const family = getEyeFamily();
+    const shape = document.getElementById(`${activeColorCategory}-${family}`);
+    const activeImg = shape?.querySelector("img[style*='display: block'], img[style*='display:block']");
+    if (activeImg) {
+      activeImg.style.opacity = value;
+      eyeMakeupState[activeColorCategory].opacity = value;
+    }
+  }
+
 }
 
 </script>

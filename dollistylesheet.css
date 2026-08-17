@@ -6,7 +6,7 @@ body{
     transition:ease-out .3s;
     width:auto;
     height:100dvh;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x:hidden;
     background-image: url(DressupGame_Assets/Scenes/background1.webp);
     background-size: 2061px;
@@ -16,6 +16,11 @@ body{
 
 }
 
+/* Oxygen Cherry - https://www.cursors-4u.com/cursor/oxygen-cherry-12 */
+* {
+  cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-5eda5de9-32.webp') 32 32, auto !important;
+}
+/* End www.Cursors-4U.com Code */
 
 
 @font-face {
@@ -35,6 +40,15 @@ body{
     src: url(Zain/Zain-LightItalic.ttf);
 }
 
+
+img{
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
 
 #gamecontain{
     max-width:380px;
@@ -211,7 +225,6 @@ body{
     border-radius: 3px;
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
     transition:ease-out .2s;
-    cursor: pointer;
     position: relative;
     
 }
@@ -223,11 +236,14 @@ body{
     transition:ease-out .2s;
     box-shadow:inset 0px 2px 4px rgba(0, 0, 0, 0.25);
     position:absolute;
+   
+
 }
 
 .outline,
 .coloroption:hover{
    outline:3px solid #96476f;
+   cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
 }
 
 .skincolorsdisplay,
@@ -380,12 +396,12 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: 825px;
     background-position: center;
     background-position-x: -356px;
     background-position-y: -139px;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
 }
 
 .beautyoptionseyes{
@@ -399,7 +415,7 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: 1059px;
     background-position-y: -180px;
     background-position-x: -460px;
@@ -417,7 +433,7 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: 1090px;
     background-position: center;
     background-position-y: -162px;
@@ -436,7 +452,7 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: 1400px;
     background-position: center;
     background-position-y: -267px;
@@ -455,12 +471,12 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0, 0, 0, 1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition: ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: 1486px;
     background-position: center;
     background-position-y: -317px;
     background-position-x: -673px;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
 }
 
 .beautyoptionshair{
@@ -474,7 +490,7 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: 280px;
     background-position: center;
     background-position-y: -25px;
@@ -493,7 +509,7 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: 825px;
     background-position: center;
     background-position-x: -356px;
@@ -511,7 +527,7 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: 311%;
     background-position-y: -87px;
     background-position-x: -117px;
@@ -529,7 +545,7 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: 1400px;
     background-position: center;
     background-position-y: -260px;
@@ -547,7 +563,7 @@ body{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     background-size: cover;
     background-position: 20%;
     cursor:pointer;
@@ -739,9 +755,8 @@ body{
     align-content: center;
     z-index:3;
     transition:ease-out .3s;
-    cursor: pointer;
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     padding-left:5px;
     padding-right:5px;
     
@@ -755,8 +770,7 @@ body{
     font-size: 14px;
     align-content: center;
     transition: ease-out .3s;
-    cursor: pointer;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     top: 30px;
     position: absolute;
     margin-left: -7px;
@@ -848,8 +862,7 @@ body{
     border-radius: 8px;
     position: relative;
     filter: brightness(1);    
-    cursor: pointer;
-
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -879,6 +892,8 @@ body{
     width: auto;
     flex-wrap: nowrap;
     justify-content: space-around;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
+
 
 }
 
@@ -888,6 +903,8 @@ body{
     width: 26px;
     left: -5px;
     top: 2px;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
+
 }
 
 .navbuttontext{
@@ -897,6 +914,8 @@ body{
     left: 26px;
     z-index: 20;
     color: #511a36;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
+
 }
 
 #scrollguide{
@@ -970,7 +989,8 @@ img.hairstyles,
 img.lips,
 img.blushes,
 img.tops,
-img.jewelrystyle{
+img.jewelrystyle,
+img.eyemakeups{
     width: 1000px;
     height: 410px;
     object-fit: cover;
@@ -1009,10 +1029,15 @@ img.jewelrystyle.earring{
     pointer-events: none;
 }
 
+img.eyemakeups{
+    z-index: 1;      
+}
+
 
 
 
 .eyeshape,
+.eyemakeupshape,
 .hairshape,
 .browshape,
 .lipshape,
@@ -1032,17 +1057,26 @@ img.jewelrystyle.earring{
 #helpbutton{
     position: relative;
     top: 2px;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     transition:ease-out .3s;
     margin-right:5px;
 }
 
+#helpbutton img{
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-help-9c8f8385-32.webp') 32 32, auto !important;
+}
+
+
 #exitbutton{
     position: relative;
     top: 2px;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     transition:ease-out .3s;
     margin-right:5px;
+}
+
+#exitbutton img{
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
 }
 
 #helpbutton:hover,
@@ -1062,6 +1096,8 @@ img.jewelrystyle.earring{
     position: inherit;
     margin-left: 70px;
     width: 134px;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
+
 }
 
 .inputcontainer{
@@ -1077,6 +1113,16 @@ img.jewelrystyle.earring{
     z-index: 0;
     margin-top: -19px;transform: translateZ(0);
 
+}
+
+.inputcontainer.dual-sliders {
+    height: 48px;
+}
+.inputcontainer.dual-sliders #opacitypicker {
+    margin-top: 29px;
+}
+.inputcontainer.dual-sliders #opacitylabel.inputlabel {
+    margin-top: 25px;
 }
 
 .inputlabel{
@@ -1175,7 +1221,7 @@ span{
     z-index:10;
     background-image: url(DressupGame_Assets/Button_Icons/sound_mute_fill@2x.png);
     background-size: cover;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     filter: brightness(.9);
 }
 
@@ -1232,7 +1278,7 @@ span{
     background: linear-gradient(180deg, #C094A4 0%, #C08FA1 44.06%, #C0829A 47.89%, #B57E93 93.86%);
     text-align: center;
     transition:ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     box-shadow: 1px 1px 3px #8c4d6ded;
     margin-left:5px;
     padding-top:1px;
@@ -1287,7 +1333,7 @@ span{
     -webkit-box-shadow: 1px 4px 10px -10px rgba(0, 0, 0, 1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
     transition: ease-out .3s;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     opacity:.8;
 }
 
@@ -1346,7 +1392,7 @@ span{
     height: 30px;
     border-radius: 3px;
     position: absolute;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     display: none;
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
     transition: ease-out .2s;
@@ -1417,13 +1463,18 @@ span{
     background-color: #a15b7e;
     width: auto;
     color: white;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
+}
+
+#openitems p{
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
 }
 
 #openitems img{
     width: 6px;
     margin-left: 3px;
     transform: rotate(180deg);
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
 }
 
 #items{
@@ -1472,7 +1523,7 @@ span{
     margin-bottom: 10px;
     box-sizing: border-box;
     background-color: #ffffffb8;
-    cursor: pointer;
+    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
     transition: ease-out .3s;
 }
 

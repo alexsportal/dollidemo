@@ -29,6 +29,14 @@ let selectedMakeupEl = null;
 let selectedJewelryEl = null;
 let isZoomed = false;
 let activeDetailId = null;
+let activeEyeMakeupTypes = new Set();
+let eyeMakeupState = {
+  shadow1: { color: "dark", hue: 0, opacity: 1 },
+  shadow2: { color: "dark", hue: 0, opacity: 1 },
+  shadow3: { color: "dark", hue: 0, opacity: 1 },
+  liner:   { hue: 0, opacity: 1 },
+  lashes:  { hue: 0, opacity: 1 }
+};
 
 const undoStack = [];
 const darkSkinIndices = [1, 2, 3];
@@ -42,7 +50,8 @@ const sections = ["skin", "eyes", "brows", "nose", "lips", "hairs", "makeup", "t
 const jewelryColorMap = { gold: 0, silver: 1, red: 2, pink: 3, purple: 4, blue: 5, white: 6, green: 7, black: 8 };
 const earringIds = ["droop", "hoop"];
 const necklaceIds = ["choker", "chains", "moonchains", "heartchains", "necklacesmall", "necklacemed", "necklacelarge", "longnecklace"];
-
+const eyeMakeupColorMap = { dark: 0, light: 1 };
+const eyeMakeupTypes = ["shadow1", "shadow2", "shadow3", "liner", "lashes"];
 const colorHex = {
   gold: "linear-gradient(150deg, #ffd6ac, #976a45)",
   silver: "linear-gradient(150deg, #ffffff, #a1a1a1)",
@@ -125,6 +134,7 @@ function closeInfo() {
 
 
 // ─── ITEM BOX ───────────────────────────────────────────────
+
 function openItems() {
     const items = document.getElementById("items");
     const container = document.getElementById("itemcontainer");
@@ -202,14 +212,20 @@ function showFrontColorDisplay(category, color) {
         hairs: "haircolorsdisplay",
         brows: "browcolorsdisplay",
         lips: "lipcolorsdisplay",
-        tops: "topscolorsdisplay"
+        tops: "topscolorsdisplay",
+        shadow1: "shadow1colorsdisplay",
+        shadow2: "shadow2colorsdisplay",
+        shadow3: "shadow3colorsdisplay"
     };
 
     const indexMap = {
         hairs: hairColorMap[color],
         brows: browColorMap[color],
         lips: lipColorMap[color],
-        tops: topColorMap[color]
+        tops: topColorMap[color],
+        shadow1: eyeMakeupColorMap[color],
+        shadow2: eyeMakeupColorMap[color],
+        shadow3: eyeMakeupColorMap[color]
     };
 
     const cls = classMap[category];
@@ -428,6 +444,7 @@ function updateEyesForSkin(slideIndex) {
 function changeEyeShape(shapeId, el) {
   saveState();
   currentEyeId = shapeId;
+  activeEyeMakeupTypes.forEach(type => showEyeMakeupShape(type, getEyeFamily()));
   document.querySelectorAll(".eyeshape").forEach(s => s.style.display = "none");
   document.getElementById(shapeId).style.display = "block";
   updateEyesForSkin(slideIndex);
@@ -639,6 +656,71 @@ function showBlushColorDisplay(color) {
   if (index !== undefined) displays[index].style.display = "block";
 }
 
+
+// ─── EYE MAKEUP ──────────────────────────────────────────────
+
+function getEyeFamily() {
+  return currentEyeId.replace("shape-", "");
+}
+
+function showEyeMakeupShape(type, family) {
+
+  document.querySelectorAll(`.eyemakeupshape[data-type="${type}"]`).forEach(shape => {
+    shape.querySelectorAll(".eyemakeups").forEach(img => img.style.display = "none");
+  });
+
+  const shape = document.getElementById(`${type}-${family}`);
+  if (!shape) return;
+
+  const state = eyeMakeupState[type];
+
+  shape.querySelectorAll(".eyemakeups").forEach(img => {
+    const hasColor = img.dataset.color !== undefined;
+    const isMatch = !hasColor || img.dataset.color === state.color;
+    if (isMatch) {
+      img.style.display = "block";
+      img.style.filter = `hue-rotate(${state.hue}deg) saturate(1.1)`;
+      img.style.opacity = state.opacity;
+    }
+  });
+}
+
+function changeEyeMakeupColor(type, color, el) {
+  saveState();
+  eyeMakeupState[type].color = color;
+  eyeMakeupState[type].hue = 0;
+  document.getElementById("colorpicker").value = 0;
+  document.querySelectorAll(`.coloroption[data-category="${type}"]`).forEach(dot => dot.classList.remove("outline"));
+  el.classList.add("outline");
+  showEyeMakeupShape(type, getEyeFamily());
+  showFrontColorDisplay(type, color); 
+}
+
+function changeEyeMakeupType(type, el) {
+  saveState();
+  const family = getEyeFamily();
+  const isActive = activeEyeMakeupTypes.has(type);
+
+  if (isActive) {
+    activeEyeMakeupTypes.delete(type);
+    document.querySelectorAll(`.eyemakeupshape[data-type="${type}"]`).forEach(shape => {
+      shape.querySelectorAll(".eyemakeups").forEach(img => img.style.display = "none");
+    });
+    el.classList.remove("active");
+    if (selectedMakeupEl === el) setSelectedMakeup(null);
+  } else {
+    activeEyeMakeupTypes.add(type);
+    showEyeMakeupShape(type, family);
+    el.classList.add("active");
+    setSelectedMakeup(el);
+    showColorOptions(type);
+  }
+
+  renderItemContainer();
+}
+
+
+
 // ─── SKIN DETAILS ──────────────────────────────────────────────
 
 
@@ -820,9 +902,9 @@ function changeTopShape(shapeId, el) {
 
   if (el.dataset.nocolor) {
     document.querySelectorAll('.coloroption[data-category="tops"]').forEach(dot => dot.style.display = 'none');
-    document.getElementById("huelabel").style.display = "none";
-    document.querySelector(".inputcontainer").style.display = "none";
-    document.getElementById("colorpicker").style.display = "none";
+    document.getElementById("huelabel").style.display = "block";
+    document.querySelector(".inputcontainer").style.display = "block";
+    document.getElementById("colorpicker").style.display = "block";
 } else {
     showColorOptions("tops");
     showFrontColorDisplay("tops", currentTopColor);
@@ -892,6 +974,7 @@ function changeBackgroundColor(color, el) {
     if (dot === el && bgDisplays[i]) bgDisplays[i].style.display = "block";
   });
 }
+
 // ─── COLOR PANEL ───────────────────────────────────────────────
 
 function setOutline(category, index) {
@@ -900,85 +983,118 @@ function setOutline(category, index) {
   if (dots[index]) dots[index].classList.add("outline");
 }
 
+function restoreEyeMakeupUI(type) {
+  activeColorCategory = type;
+  const state = eyeMakeupState[type];
+
+  document.getElementById("huelabel").style.display = "block";
+  document.getElementById("colorpicker").style.display = "block";
+  document.getElementById("colorpicker").value = state.hue;
+
+  document.getElementById("opacitylabel").style.display = "block";
+  document.getElementById("opacitypicker").style.display = "block";
+  document.getElementById("opacitypicker").value = state.opacity;
+
+  document.querySelector(".inputcontainer").style.display = "flex";
+  document.querySelector(".inputcontainer").classList.add("dual-sliders");
+
+  if (state.color !== undefined) {
+    document.querySelectorAll(`.coloroption[data-category="${type}"]`).forEach(el => el.style.display = "block");
+    showFrontColorDisplay(type, state.color);   // FIXED — was `color`
+    setOutline(type, eyeMakeupColorMap[state.color]);
+  }
+}
+
 function showColorOptions(category) {
     document.getElementById("frontcolor").style.backgroundColor = "#f1f1f1";
 
-  document.getElementById("huelabel").style.display =
-    (category === "hairs" || category === "brows" || category === "tops" || category === "lips") ? "block" : "none";
+    document.getElementById("huelabel").style.display =
+      (category === "hairs" || category === "brows" || category === "tops" || category === "lips" || eyeMakeupTypes.includes(category)) ? "block" : "none";
 
-  document.getElementById("opacitylabel").style.display =
-    (category === "blush" || category === "makeup" || category === "skin") && category !== "nose" ? "block" : "none";
+    document.getElementById("opacitylabel").style.display =
+      (category === "blush" || category === "makeup" || category === "skin" || eyeMakeupTypes.includes(category)) && category !== "nose" ? "block" : "none";
 
-  const anySliderVisible =
-    (category === "hairs" || category === "brows" || category === "lips" || category === "tops" ||
-     category === "blush" || category === "makeup" || category === "skin" || category === "nose");
-  document.querySelector(".inputcontainer").style.display = anySliderVisible ? "flex" : "none";
+    const anySliderVisible =
+      (category === "hairs" || category === "brows" || category === "lips" || category === "tops" ||
+       category === "blush" || category === "makeup" || category === "skin" || category === "nose" ||
+       eyeMakeupTypes.includes(category));
+    document.querySelector(".inputcontainer").style.display = anySliderVisible ? "flex" : "none";
+    document.querySelector(".inputcontainer").classList.remove("dual-sliders");
 
-  document.getElementById("colorpicker").value = 0;
-  document.getElementById("colorpicker").style.display =
-    (category === "hairs" || category === "brows" || category === "tops" || category === "lips") ? "block" : "none";
+    document.getElementById("colorpicker").value = 0;
+    document.getElementById("colorpicker").style.display =
+      (category === "hairs" || category === "brows" || category === "tops" || category === "lips" || eyeMakeupTypes.includes(category)) ? "block" : "none";
 
-  document.getElementById("opacitypicker").value = 1;
-  document.getElementById("opacitypicker").style.display =
-    (category === "blush" || category === "makeup" || category === "skin") && category !== "nose" ? "block" : "none";
-  document.querySelectorAll(".coloroption").forEach(el => el.style.display = "none");
-  document.querySelectorAll(`.coloroption[data-category="${category}"]`).forEach(el => {
-    el.style.display = el.classList.contains("jewelry-dot") ? "inline-block" : "block";
-  });
+    document.getElementById("opacitypicker").value = 1;
+    document.getElementById("opacitypicker").style.display =
+      (category === "blush" || category === "makeup" || category === "skin" || eyeMakeupTypes.includes(category)) && category !== "nose" ? "block" : "none";
 
-  document.querySelectorAll(".skincolorsdisplay").forEach(el => el.style.display = "none");
-  document.querySelectorAll(".eyecolorsdisplay").forEach(el => el.style.display = "none");
-  document.querySelectorAll(".blushcolorsdisplay").forEach(el => el.style.display = "none");
-  document.querySelectorAll(".bgcolorsdisplay").forEach(el => el.style.display = "none");
-  document.querySelectorAll(".jewelrycolorsdisplay-front, .jewelrycolorsdisplay-back").forEach(el => el.style.display = "none");
+    document.querySelectorAll(".coloroption").forEach(el => el.style.display = "none");
+    document.querySelectorAll(`.coloroption[data-category="${category}"]`).forEach(el => {
+      el.style.display = el.classList.contains("jewelry-dot") ? "inline-block" : "block";
+    });
 
-  if (category === "skin") {
-    const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
-    if (skinDisplays[slideIndex - 1]) skinDisplays[slideIndex - 1].style.display = "block";
-  }
-  if (category === "skin") {
-    const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
-    if (skinDisplays[slideIndex - 1]) skinDisplays[slideIndex - 1].style.display = "block";
-    if (activeSkinDetails.size === 0) {
-        document.getElementById("opacitylabel").style.display = "none";
-        document.getElementById("opacitypicker").style.display = "none";
-        document.querySelector(".inputcontainer").style.display = "none";
-    }
-}
-  if (category === "nose") {
+    document.querySelectorAll(".skincolorsdisplay").forEach(el => el.style.display = "none");
+    document.querySelectorAll(".eyecolorsdisplay").forEach(el => el.style.display = "none");
+    document.querySelectorAll(".blushcolorsdisplay").forEach(el => el.style.display = "none");
+    document.querySelectorAll(".bgcolorsdisplay").forEach(el => el.style.display = "none");
+    document.querySelectorAll(".jewelrycolorsdisplay-front, .jewelrycolorsdisplay-back").forEach(el => el.style.display = "none");
+    document.querySelectorAll(".shadow1colorsdisplay, .shadow2colorsdisplay, .shadow3colorsdisplay").forEach(el => el.style.display = "none");
+
+
+    activeColorCategory = category;
+
+    if (category === "skin") {
       const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
-      for (let i = 0; i < skinDisplays.length; i++) skinDisplays[i].style.display = "none";
       if (skinDisplays[slideIndex - 1]) skinDisplays[slideIndex - 1].style.display = "block";
-      document.getElementById("opacitylabel").style.display = "none";
-      document.getElementById("opacitypicker").style.display = "none";
-      document.getElementById("huelabel").style.display = "none";
-      document.getElementById("colorpicker").style.display = "none";
-      document.querySelectorAll('.coloroption[data-category="skin"]').forEach(el => el.style.display = "block");
-  }
-  if (category === "eyes") showEyeColorDisplay(currentEyeColor);
-if (category === "blush" || category === "makeup") {
-    const blushOn = document.getElementById(currentBlushId)?.style.display === "block";
-    if (blushOn) {
-        showBlushColorDisplay(currentBlushColor);
-        setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
-        document.querySelectorAll('.coloroption[data-category="blush"]').forEach(el => el.style.display = "block");
-        document.getElementById("opacitylabel").style.display = "block";
-        document.getElementById("opacitypicker").style.display = "block";
-        document.querySelector(".inputcontainer").style.display = "block";
-    } else {
+      if (activeSkinDetails.size === 0) {
+          document.getElementById("opacitylabel").style.display = "none";
+          document.getElementById("opacitypicker").style.display = "none";
+          document.querySelector(".inputcontainer").style.display = "none";
+      }
+    }
+    if (category === "nose") {
+        const skinDisplays = document.getElementsByClassName("skincolorsdisplay");
+        for (let i = 0; i < skinDisplays.length; i++) skinDisplays[i].style.display = "none";
+        if (skinDisplays[slideIndex - 1]) skinDisplays[slideIndex - 1].style.display = "block";
         document.getElementById("opacitylabel").style.display = "none";
         document.getElementById("opacitypicker").style.display = "none";
-        document.querySelector(".inputcontainer").style.display = "none";
+        document.getElementById("huelabel").style.display = "none";
+        document.getElementById("colorpicker").style.display = "none";
+        document.querySelectorAll('.coloroption[data-category="skin"]').forEach(el => el.style.display = "block");
     }
-}
-  if (category === "jewelry") showJewelryColorDisplay(currentJewelryColor);
-  if (category === "hairs") showFrontColorDisplay("hairs", currentHairColor);
-  if (category === "brows") showFrontColorDisplay("brows", currentBrowColor);
-  if (category === "lips")  showFrontColorDisplay("lips", currentLipColor);
-  if (category === "tops")  showFrontColorDisplay("tops", currentTopColor);
+    if (category === "eyes") showEyeColorDisplay(currentEyeColor);
 
+    if (category === "blush" || category === "makeup") {
+        const selCategory = selectedMakeupEl?.dataset.category;
+        if (eyeMakeupTypes.includes(selCategory)) {
+            restoreEyeMakeupUI(selCategory);
+        } else {
+            const blushOn = document.getElementById(currentBlushId)?.style.display === "block";
+            if (blushOn) {
+                showBlushColorDisplay(currentBlushColor);
+                setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
+                document.querySelectorAll('.coloroption[data-category="blush"]').forEach(el => el.style.display = "block");
+                document.getElementById("opacitylabel").style.display = "block";
+                document.getElementById("opacitypicker").style.display = "block";
+                document.querySelector(".inputcontainer").style.display = "block";
+            } else {
+                document.getElementById("opacitylabel").style.display = "none";
+                document.getElementById("opacitypicker").style.display = "none";
+                document.querySelector(".inputcontainer").style.display = "none";
+            }
+        }
+    }
 
-  activeColorCategory = category;
+    if (eyeMakeupTypes.includes(category)) {
+        restoreEyeMakeupUI(category);
+    }
+
+    if (category === "jewelry") showJewelryColorDisplay(currentJewelryColor);
+    if (category === "hairs") showFrontColorDisplay("hairs", currentHairColor);
+    if (category === "brows") showFrontColorDisplay("brows", currentBrowColor);
+    if (category === "lips")  showFrontColorDisplay("lips", currentLipColor);
+    if (category === "tops")  showFrontColorDisplay("tops", currentTopColor);
 }
 
 // ─── NAVIGATION ────────────────────────────────────────────────
@@ -1370,7 +1486,7 @@ window.onerror = function () {
 // ─── ZOOM TOGGLE ───────────────────────────────────────────────
 
 function toggleZoom() {
-  const imgs = document.querySelectorAll(".skins, .darkeyes, .lighteyes, .nosedark, .noselight, .eyebrows, .hairstyles, .lips, .blushes, .tops, .jewelrystyle");
+  const imgs = document.querySelectorAll(".skins, .darkeyes, .lighteyes, .nosedark, .noselight, .eyebrows, .hairstyles, .lips, .blushes, .tops, .jewelrystyle, .eyemakeups");
   imgs.forEach(img => {
     if (isZoomed) {
       img.style.width = "1000px";
