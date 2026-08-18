@@ -738,7 +738,7 @@ function changeSkinDetail(detailId, el) {
       target.style.opacity = skinDetailOpacity[detailId] ?? 1;
       activeSkinDetails.add(detailId);
       if (el) el.classList.add('active');
-      activeItemKey = `skindetail:${detailId}`;   // ADD
+      activeItemKey = `skindetail:${detailId}`;  
       document.getElementById("opacitypicker").value = skinDetailOpacity[detailId] ?? 1;
       document.querySelector(".inputcontainer").style.display = "flex";
       document.getElementById("opacitypicker").style.display = "block";
@@ -1532,7 +1532,7 @@ function renderItemContainer() {
       const img = document.querySelector(`.skindetails img[src*="${detailId}"]`);
       if (!img) return;
       const btn = document.querySelector(`.beautyoptionsskin[onclick*="'${detailId}'"]`);
-      const thumbUrl = getButtonThumbnailUrl(btn) || img.src;   // CHANGED
+      const thumbUrl = getButtonThumbnailUrl(btn) || img.src;   
       const thumb = createItemThumbnail(detailId, thumbUrl, "for_skindetails", "skindetail");
       if (activeItemKey === `skindetail:${detailId}`) thumb.classList.add("active");
       items.appendChild(thumb);
@@ -1544,7 +1544,7 @@ function renderItemContainer() {
       const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
       if (!img) return;
       const btn = document.querySelector(`.beautyoptionsmakeup[onclick*="changeEyeMakeupType('${type}'"]`);
-      const thumbUrl = getButtonThumbnailUrl(btn) || img.src;   // CHANGED
+      const thumbUrl = getButtonThumbnailUrl(btn) || img.src;   
       const thumb = createItemThumbnail(type, thumbUrl, "for_eyemakeup", "eyemakeup");
       if (activeItemKey === `eyemakeup:${type}`) thumb.classList.add("active");
       items.appendChild(thumb);
@@ -1555,7 +1555,7 @@ function renderItemContainer() {
       const blushImg = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
       if (!blushImg) return;
       const btn = document.querySelector(`.beautyoptionsmakeup[onclick*="${shape.id}"]`);
-      const thumbUrl = getButtonThumbnailUrl(btn) || blushImg.src;   // CHANGED
+      const thumbUrl = getButtonThumbnailUrl(btn) || blushImg.src;  
       const thumb = createItemThumbnail(shape.id, thumbUrl, "for_blushes", "blush");
       if (activeItemKey === `blush:${shape.id}`) thumb.classList.add("active");
       items.appendChild(thumb);
@@ -1580,7 +1580,7 @@ function renderItemContainer() {
       };
       const typeClass = jewelryClassMap[id] || "for_earrings";
       const btn = document.querySelector(`.beautyoptionsjewelry[onclick*="${id}"]`);
-      const thumbUrl = getButtonThumbnailUrl(btn) || img.src;   // CHANGED
+      const thumbUrl = getButtonThumbnailUrl(btn) || img.src;  
       const thumb = createItemThumbnail(id, thumbUrl, typeClass, "jewelry");
       if (activeItemKey === `jewelry:${id}`) thumb.classList.add("active");
       items.appendChild(thumb);
@@ -1695,7 +1695,7 @@ function deleteItem(id, category) {
       activeSkinDetails.delete(id);
       const el = document.querySelector(`.beautyoptionsskin[onclick*="'${id}'"]`);
       if (el) el.classList.remove("active");
-      if (activeItemKey === `skindetail:${id}`) activeItemKey = null;   // ADD
+      if (activeItemKey === `skindetail:${id}`) activeItemKey = null;  
       if (activeSkinDetails.size === 0) {
           document.querySelector(".inputcontainer").style.display = "none";
       }
