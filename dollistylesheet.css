@@ -1583,9 +1583,20 @@ span{
 }
 
 .itemthumbnail.for_blushes {
-    background-size: 589px;
-    background-position-x: 324px;
-    background-position-y: 614px;
+    background-size: 427px;
+    background-position-x: 243px;
+    background-position-y: 448px;
+}
+
+.itemthumbnail.for_skindetails {
+    background-size: 427px;
+    background-position-x: 243px;
+    background-position-y: 448px;
+}
+.itemthumbnail.for_eyemakeup {
+    background-size: 427px;
+    background-position-x: 243px;
+    background-position-y: 448px;
 }
 
 .delete {

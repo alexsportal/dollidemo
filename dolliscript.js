@@ -166,11 +166,9 @@ function setSelectedTop(el) {
     if (el) {
         el.classList.add("selected");
         const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-        if (shapeId) {
-            document.querySelectorAll(".itemthumbnail").forEach(t => t.classList.remove("active"));
-            const thumb = document.querySelector(`.itemthumbnail[data-id="${shapeId}"]`);
-            if (thumb) thumb.classList.add("active");
-        }
+        if (shapeId) activeItemKey = `top:${shapeId}`;
+    } else if (activeItemKey?.startsWith("top:")) {
+        activeItemKey = null;
     }
 }
 
@@ -180,11 +178,10 @@ function setSelectedMakeup(el) {
     if (el) {
         el.classList.add("selected");
         const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-        if (shapeId) {
-            document.querySelectorAll(".itemthumbnail").forEach(t => t.classList.remove("active"));
-            const thumb = document.querySelector(`.itemthumbnail[data-id="${shapeId}"]`);
-            if (thumb) thumb.classList.add("active");
-        }
+        const cat = el.dataset.category === "blush" ? "blush" : "eyemakeup";
+        if (shapeId) activeItemKey = `${cat}:${shapeId}`;
+    } else if (activeItemKey?.startsWith("blush:") || activeItemKey?.startsWith("eyemakeup:")) {
+        activeItemKey = null;
     }
 }
 
@@ -194,11 +191,9 @@ function setSelectedJewelry(el) {
     if (el) {
         el.classList.add("selected");
         const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-        if (shapeId) {
-            document.querySelectorAll(".itemthumbnail").forEach(t => t.classList.remove("active"));
-            const thumb = document.querySelector(`.itemthumbnail[data-id="${shapeId}"]`);
-            if (thumb) thumb.classList.add("active");
-        }
+        if (shapeId) activeItemKey = `jewelry:${shapeId}`;
+    } else if (activeItemKey?.startsWith("jewelry:")) {
+        activeItemKey = null;
     }
 }
 
@@ -730,24 +725,26 @@ function changeSkinDetail(detailId, el) {
   document.getElementById("opacitypicker").value = skinDetailOpacity[detailId] ?? 1;
   const target = document.querySelector(`.skindetails img[src*="${detailId}"]`);
   if (!target) return;
-
-if (activeSkinDetails.has(detailId)) {
-    target.style.display = 'none';
-    activeSkinDetails.delete(detailId);
-    if (el) el.classList.remove('active');
-    if (activeSkinDetails.size === 0) {
-        document.querySelector(".inputcontainer").style.display = "none";
-    }
-} else {
-    target.style.display = 'block';
-    target.style.opacity = skinDetailOpacity[detailId] ?? 1;
-    activeSkinDetails.add(detailId);
-    if (el) el.classList.add('active');
-    document.getElementById("opacitypicker").value = skinDetailOpacity[detailId] ?? 1;
-    document.querySelector(".inputcontainer").style.display = "flex";
-    document.getElementById("opacitypicker").style.display = "block";
-    document.getElementById("opacitylabel").style.display = "block";
-}
+  if (activeSkinDetails.has(detailId)) {
+      target.style.display = 'none';
+      activeSkinDetails.delete(detailId);
+      if (el) el.classList.remove('active');
+      if (activeItemKey === `skindetail:${detailId}`) activeItemKey = null;  
+      if (activeSkinDetails.size === 0) {
+          document.querySelector(".inputcontainer").style.display = "none";
+      }
+  } else {
+      target.style.display = 'block';
+      target.style.opacity = skinDetailOpacity[detailId] ?? 1;
+      activeSkinDetails.add(detailId);
+      if (el) el.classList.add('active');
+      activeItemKey = `skindetail:${detailId}`;   // ADD
+      document.getElementById("opacitypicker").value = skinDetailOpacity[detailId] ?? 1;
+      document.querySelector(".inputcontainer").style.display = "flex";
+      document.getElementById("opacitypicker").style.display = "block";
+      document.getElementById("opacitylabel").style.display = "block";
+  }
+  renderItemContainer();
 }
 
 // ─── JEWELRY ───────────────────────────────────────────────────
@@ -1167,14 +1164,19 @@ function goToSection(index) {
       document.querySelector(".inputcontainer").style.display = "none";
   }
   if (category === "makeup") {
-    setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
-    document.querySelectorAll(".beautyoptionsmakeup").forEach(el => {
-      const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-      if (shapeId) {
-        const shape = document.getElementById(shapeId);
-        el.classList.toggle("active", shape?.style.display === "block");
-      }
-    });
+      setOutline("blush", blushColorMap[currentBlushColor] ?? 0);
+      document.querySelectorAll(".beautyoptionsmakeup").forEach(el => {
+        const cat = el.dataset.category;
+        if (eyeMakeupTypes.includes(cat)) {
+          el.classList.toggle("active", activeEyeMakeupTypes.has(cat));   // NEW branch
+        } else {
+          const shapeId = el.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
+          if (shapeId) {
+            const shape = document.getElementById(shapeId);
+            el.classList.toggle("active", shape?.style.display === "block");
+          }
+        }
+      });
   }
   if (category === "tops") {
     setOutline("tops", topColorMap[currentTopColor] ?? 8);
@@ -1282,6 +1284,7 @@ window.onload = function () {
   showColorOptions("skin");
   setOutline("skin", 0);
   showFrontColorDisplay(currentHairColor);
+  renderItemContainer(); 
 
 const overlay = document.getElementById('loadingoverlay');
 overlay.style.transition = 'opacity 0.5s ease';
@@ -1504,61 +1507,84 @@ function toggleZoom() {
 }
 
 // ─── ACTIVE ITEMS ───────────────────────────────────────────────
+function getButtonThumbnailUrl(el) {
+    if (!el) return null;
+    const match = el.style.backgroundImage.match(/url\(["']?([^"')]+)["']?\)/);
+    return match ? match[1] : null;
+}
 
 function renderItemContainer() {
     const items = document.getElementById("items");
     items.innerHTML = "";
 
-    activeTopIds.forEach(topId => {
-        const shape = document.getElementById(topId);
-        if (!shape) return;
-        const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
-        if (!img) return;
-        const thumb = createItemThumbnail(topId, img.src, "for_tops", "top");
-        if (selectedTopEl) {
-            const selectedId = selectedTopEl.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-            if (selectedId === topId) thumb.classList.add("active");
-        }
-        items.appendChild(thumb);
-    });
+  activeTopIds.forEach(topId => {
+      const shape = document.getElementById(topId);
+      if (!shape) return;
+      const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
+      if (!img) return;
+      const thumb = createItemThumbnail(topId, img.src, "for_tops", "top");
+      if (activeItemKey === `top:${topId}`) thumb.classList.add("active");
+      items.appendChild(thumb);
+  });
 
-   document.querySelectorAll(".blushshape").forEach(shape => {
-    if (shape.style.display !== "block") return;
-    const blushImg = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
-    if (!blushImg) return;
-    const thumb = createItemThumbnail(shape.id, blushImg.src, "for_blushes", "blush");
-    if (selectedMakeupEl) {
-        const selectedId = selectedMakeupEl.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-        if (selectedId === shape.id) thumb.classList.add("active");
-    }
-    items.appendChild(thumb);
-});
 
-activeJewelryIds.forEach(id => {
-    const shape = document.getElementById(id);
-    if (!shape) return;
-    const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
-    if (!img) return;
-    const jewelryClassMap = {
-        droop: "for_earrings",
-        hoop: "for_earrings",
-        choker: "for_choker",
-        heartchains: "for_chains",
-        chains: "for_chains",
-        moonchains: "for_chains",
-        necklacesmall: "for_necklace",
-        necklacemed: "for_necklace",
-        necklacelarge: "for_necklace",
-        longnecklace: "for_longnecklace"
-    };
-    const typeClass = jewelryClassMap[id] || "for_earrings";
-    const thumb = createItemThumbnail(id, img.src, typeClass, "jewelry");
-    if (selectedJewelryEl) {
-        const selectedId = selectedJewelryEl.getAttribute("onclick")?.match(/'([^']+)'/)?.[1];
-        if (selectedId === id) thumb.classList.add("active");
-    }
-    items.appendChild(thumb);
-});
+  activeSkinDetails.forEach(detailId => {
+      const img = document.querySelector(`.skindetails img[src*="${detailId}"]`);
+      if (!img) return;
+      const btn = document.querySelector(`.beautyoptionsskin[onclick*="'${detailId}'"]`);
+      const thumbUrl = getButtonThumbnailUrl(btn) || img.src;   // CHANGED
+      const thumb = createItemThumbnail(detailId, thumbUrl, "for_skindetails", "skindetail");
+      if (activeItemKey === `skindetail:${detailId}`) thumb.classList.add("active");
+      items.appendChild(thumb);
+  });
+
+  activeEyeMakeupTypes.forEach(type => {
+      const shape = document.getElementById(`${type}-${getEyeFamily()}`);
+      if (!shape) return;
+      const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
+      if (!img) return;
+      const btn = document.querySelector(`.beautyoptionsmakeup[onclick*="changeEyeMakeupType('${type}'"]`);
+      const thumbUrl = getButtonThumbnailUrl(btn) || img.src;   // CHANGED
+      const thumb = createItemThumbnail(type, thumbUrl, "for_eyemakeup", "eyemakeup");
+      if (activeItemKey === `eyemakeup:${type}`) thumb.classList.add("active");
+      items.appendChild(thumb);
+  });
+
+  document.querySelectorAll(".blushshape").forEach(shape => {
+      if (shape.style.display !== "block") return;
+      const blushImg = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
+      if (!blushImg) return;
+      const btn = document.querySelector(`.beautyoptionsmakeup[onclick*="${shape.id}"]`);
+      const thumbUrl = getButtonThumbnailUrl(btn) || blushImg.src;   // CHANGED
+      const thumb = createItemThumbnail(shape.id, thumbUrl, "for_blushes", "blush");
+      if (activeItemKey === `blush:${shape.id}`) thumb.classList.add("active");
+      items.appendChild(thumb);
+  });
+
+  activeJewelryIds.forEach(id => {
+      const shape = document.getElementById(id);
+      if (!shape) return;
+      const img = shape.querySelector("img[style*='display: block'], img[style*='display:block']");
+      if (!img) return;
+      const jewelryClassMap = {   
+          droop: "for_earrings",
+          hoop: "for_earrings",
+          choker: "for_choker",
+          heartchains: "for_chains",
+          chains: "for_chains",
+          moonchains: "for_chains",
+          necklacesmall: "for_necklace",
+          necklacemed: "for_necklace",
+          necklacelarge: "for_necklace",
+          longnecklace: "for_longnecklace"
+      };
+      const typeClass = jewelryClassMap[id] || "for_earrings";
+      const btn = document.querySelector(`.beautyoptionsjewelry[onclick*="${id}"]`);
+      const thumbUrl = getButtonThumbnailUrl(btn) || img.src;   // CHANGED
+      const thumb = createItemThumbnail(id, thumbUrl, typeClass, "jewelry");
+      if (activeItemKey === `jewelry:${id}`) thumb.classList.add("active");
+      items.appendChild(thumb);
+  });
 }
 
 function createItemThumbnail(id, imgSrc, typeClass, category) {
@@ -1597,9 +1623,18 @@ function selectItemThumbnail(el, id, category) {
         return;
     }
 
-    document.querySelectorAll(".itemthumbnail").forEach(t => t.classList.remove("active"));
-    el.classList.add("active");
-  
+    activeItemKey = `${category}:${id}`;   
+
+    if (category === "skindetail") {
+        goToSection(sections.indexOf("skin"));
+        document.getElementById("opacitypicker").value = skinDetailOpacity[id] ?? 1;
+    }
+
+    if (category === "eyemakeup") {
+        const btn = document.querySelector(`.beautyoptionsmakeup[onclick*="changeEyeMakeupType('${id}'"]`);
+        if (btn) setSelectedMakeup(btn);
+        goToSection(sections.indexOf("makeup"));
+    }
 
     if (category === "top") {
         currentTopId = id;
@@ -1608,22 +1643,25 @@ function selectItemThumbnail(el, id, category) {
         goToSection(sections.indexOf("tops"));
         showFrontColorDisplay("tops", currentTopColor);
     }
-    
+
     if (category === "blush") {
         const btn = document.querySelector(`.beautyoptionsmakeup[onclick*="${id}"]`);
         if (btn) setSelectedMakeup(btn);
         goToSection(sections.indexOf("makeup"));
     }
+
     if (category === "jewelry") {
-      const btn = document.querySelector(`.beautyoptionsjewelry[onclick*="${id}"]`);
-      if (btn) {
-          currentJewelryId = id;
-          setSelectedJewelry(btn);
-          showJewelryColors(btn.dataset.colors);
-          showJewelryColorDisplay(currentJewelryColor);
+        const btn = document.querySelector(`.beautyoptionsjewelry[onclick*="${id}"]`);
+        if (btn) {
+            currentJewelryId = id;
+            setSelectedJewelry(btn);
+            showJewelryColors(btn.dataset.colors);
+            showJewelryColorDisplay(currentJewelryColor);
+        }
+        goToSection(sections.indexOf("jewelry"));
     }
-    goToSection(sections.indexOf("jewelry"));
-}
+
+   
 }
 
 function deleteItem(id, category) {
@@ -1650,6 +1688,26 @@ function deleteItem(id, category) {
         const el = document.querySelector(`.beautyoptionsjewelry[onclick*="${id}"]`);
         if (el) { el.classList.remove("active"); if (selectedJewelryEl === el) setSelectedJewelry(null); }
         if (activeJewelryIds.size === 0) { showJewelryColors(null); showJewelryColorDisplay(null); }
+    }
+   if (category === "skindetail") {
+      const target = document.querySelector(`.skindetails img[src*="${id}"]`);
+      if (target) target.style.display = "none";
+      activeSkinDetails.delete(id);
+      const el = document.querySelector(`.beautyoptionsskin[onclick*="'${id}'"]`);
+      if (el) el.classList.remove("active");
+      if (activeItemKey === `skindetail:${id}`) activeItemKey = null;   // ADD
+      if (activeSkinDetails.size === 0) {
+          document.querySelector(".inputcontainer").style.display = "none";
+      }
+    }
+
+    if (category === "eyemakeup") {
+        activeEyeMakeupTypes.delete(id);
+        document.querySelectorAll(`.eyemakeupshape[data-type="${id}"]`).forEach(shape => {
+            shape.querySelectorAll(".eyemakeups").forEach(img => img.style.display = "none");
+        });
+        const el = document.querySelector(`.beautyoptionsmakeup[onclick*="changeEyeMakeupType('${id}'"]`);
+        if (el) { el.classList.remove("active"); if (selectedMakeupEl === el) setSelectedMakeup(null); }
     }
     renderItemContainer();
 }
