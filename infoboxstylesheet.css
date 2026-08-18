@@ -167,7 +167,7 @@ form{
 
 
 #message{
-    height:175px;
+    height:170px;
     overflow-y: auto;
     
 }
@@ -175,7 +175,7 @@ form{
 
 @media screen and (max-width:396px){
 #message{
-    height:140px;
+    height:130px;
     }
 }
 
