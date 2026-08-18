@@ -11,6 +11,7 @@ body{
     background-image: url(DressupGame_Assets/Scenes/background1.webp);
     background-size: 2061px;
     box-shadow: inset 0px 0px 50px #5914374d;
+    padding-top: 3px;
     user-select: none;
 
 }
