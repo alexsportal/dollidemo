@@ -792,7 +792,7 @@ img{
 }
 
 .menubutton.active{
-    border-bottom:none;
+    border-bottom: 2px #a12d69 solid;
 }
 
 .menusongs{
