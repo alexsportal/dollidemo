@@ -482,19 +482,19 @@ img{
 .beautyoptionshair{
     width: 104px;
     z-index: 2;
-    height:66px;
-    background-color:#fbeff6;
+    height: 66px;
+    background-color: #fbeff6;
     scroll-snap-align: center;
     border-radius: 5px;
-    box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    -webkit-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
+    box-shadow: 1px 4px 10px -10px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 1px 4px 10px -10px rgba(0, 0, 0, 1);
     -moz-box-shadow: 1px 4px 10px -10px rgba(0,0,0,1);
-    transition:ease-out .3s;
-    cursor: url('https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp') 39 33, auto !important;
-    background-size: 280px;
+    transition: ease-out .3s;
+    cursor: url(https://cdn.cursors-4u.net/previews/oxygen-cherry-hand-d8d991ef-32.webp) 39 33, auto !important;
+    background-size: 110px;
     background-position: center;
-    background-position-y: -25px;
-    background-position-x: -90px;
+    background-position-y: -23px;
+    background-position-x: -118px;  
     cursor:pointer;
 }
 
@@ -667,8 +667,9 @@ img{
 @media screen and (max-width:396px){
 .beautyoptionshair{
     width:93px;
-    background-position-x: -98px;
-    background-position-y: -27px;
+    background-size: 86px;
+    background-position-x: -85px;
+    background-position-y: -15px;
     height: 54px;
     }
 }
