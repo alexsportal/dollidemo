@@ -3,7 +3,7 @@ The Dolli game concept, name, character, and brand identity are original intelle
 
 
 
-**All visual assets, artwork, and game concepts are the exclusive property of Alexsandria Manuel. No part of this project may be copied, distributed, or used commercially without written permission.** 
+**All visual assets, artwork, and game concepts are the exclusive property of Alexsandria Manuel. No part of this project may be copied, distributed, or used commercially without written permission.**
 
 
 
@@ -12,8 +12,6 @@ The Dolli game concept, name, character, and brand identity are original intelle
 
 
 ♡✧--Credits--✧♡
-Background music is from Spireleaf on YouTube.
-
 Visual assets drawn by Alexsandria Manuel via Krita and Procreate.
 © Alexsandria Manuel 2026
 
@@ -66,8 +64,4 @@ from MS Paint's classic color
 menu. Options are laid out
 clearly and visually, lowering
 the barrier for users of all ages.
-
-
-
-
 
